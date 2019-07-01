@@ -20,6 +20,10 @@ class BookieUri {
     // confirmPassword - password confirmation
     static let registerPostUri = "http://47.103.15.32:8080/reg"
     
+    // parameters: <none>
+    // put image data in the request body
+    static let imageCoverUploadUri = "http://47.103.15.32:8080/img/upload"
+    
     // parameters:
     // fileId - cover image file id
     static let imageCoverGetUri = "http://47.103.15.32:8080/img/download"
@@ -59,4 +63,40 @@ class BookieUri {
 
     // parameters: <none>
     static let adminGetAllUsers = "http://47.103.15.32:8080/admin/alluser"
+    
+    // parameters: <none>
+    static let adminGetAllBills = "http://47.103.15.32:8080/admin/allorders"
+    
+    // parameters:
+    // userId - user's numeric id
+    static let disableUser = "http://47.103.15.32:8080/admin/disableuser"
+    
+    // parameters:
+    // userId - user's numeric id
+    static let enableUser = "http://47.103.15.32:8080/admin/enableuser"
+    
+    // parameters:
+    // isbn - book's isbn
+    static let disableBook = "http://47.103.15.32:8080/admin/disablebook"
+    
+    // parameters:
+    // isbn - book's isbn
+    static let enableBook = "http://47.103.15.32:8080/admin/enablebook"
+    
+    // parameters:
+    // isbn - book's isbn
+    // storage - book's new storage
+    static let modifyStorage = "http://47.103.15.32:8080/admin/setstorage"
+    
+    // parameters:
+    // title
+    // author
+    // type
+    // description
+    // storage
+    // coverId
+    // isbn
+    // price
+    // coupon_price
+    static let addNewBook = "http://47.103.15.32:8080/admin/addbook"
 }

@@ -9,5 +9,6 @@ target 'Bookie' do
   pod 'Alamofire'
   pod 'Alamofire-SwiftyJSON'
   pod 'SwiftyJSON'
+  pod 'YPImagePicker'
   pod 'IQKeyboardManager'
 end

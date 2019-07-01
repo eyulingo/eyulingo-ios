@@ -39,8 +39,11 @@ class AdminUserVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        loadAllUser()
     }
     
     @IBOutlet weak var userTableView: UITableView!
@@ -49,7 +52,7 @@ class AdminUserVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
         userTableView.reloadData()
     }
     
-    func loadMyCart() {
+    func loadAllUser() {
         headlines.removeAll()
         refreshContent()
         Alamofire.request(BookieUri.adminGetAllUsers,
@@ -96,4 +99,92 @@ class AdminUserVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
         return cell
     }
 
+    
+    // Tap on table Row
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let userObject = headlines[indexPath.row]
+        
+        let alertController = UIAlertController(title: "想进行什么操作？",
+                                                message: "您刚刚选定了 #\(userObject.userId) 号用户 \(userObject.userName)。",
+            preferredStyle: .actionSheet)
+        let cancelAction = UIAlertAction(title: "取消",
+                                         style: .cancel,
+                                         handler: nil)
+    
+        var activeAction: UIAlertAction?
+        if userObject.available {
+            activeAction = UIAlertAction(title: "冻结该用户",
+                                         style: .destructive,
+                                         handler: { _ in
+                                            let postParams: Parameters = [
+                                                "userId": userObject.userId
+                                            ]
+                Alamofire.request(BookieUri.disableUser,
+                                  method: .post,
+                                  parameters: postParams
+                    ).responseSwiftyJSON(completionHandler: { responseJSON in
+                        var errorCode = "general error"
+                        if responseJSON.error == nil {
+                            let jsonResp = responseJSON.value
+                            if jsonResp != nil {
+                                if jsonResp!["status"].stringValue == "ok" {
+                                    self.makeAlert("成功", "成功冻结了此用户。", completion: {
+                                        self.loadAllUser()
+                                    })
+                                    return
+                                } else {
+                                    errorCode = jsonResp!["status"].stringValue
+                                }
+                            } else {
+                                errorCode = "bad response"
+                            }
+                        } else {
+                            errorCode = "no response"
+                        }
+                        self.makeAlert("冻结用户失败", "服务器报告了一个 “\(errorCode)” 错误。", completion: { })
+                    })
+                })
+        } else {
+            activeAction = UIAlertAction(title: "解冻该用户",
+                                         style: .destructive,
+                                         handler: { _ in
+                                            let postParams: Parameters = [
+                                                "userId": userObject.userId
+                                            ]
+                                            Alamofire.request(BookieUri.enableUser,
+                                                              method: .post,
+                                                              parameters: postParams
+                                                ).responseSwiftyJSON(completionHandler: { responseJSON in
+                                                    var errorCode = "general error"
+                                                    if responseJSON.error == nil {
+                                                        let jsonResp = responseJSON.value
+                                                        if jsonResp != nil {
+                                                            if jsonResp!["status"].stringValue == "ok" {
+                                                                self.makeAlert("成功", "成功解冻了此用户。", completion: {
+                                                                    self.loadAllUser()
+                                                                })
+                                                                return
+                                                            } else {
+                                                                errorCode = jsonResp!["status"].stringValue
+                                                            }
+                                                        } else {
+                                                            errorCode = "bad response"
+                                                        }
+                                                    } else {
+                                                        errorCode = "no response"
+                                                    }
+                                                    self.makeAlert("解冻用户失败", "服务器报告了一个 “\(errorCode)” 错误。", completion: { })
+                                                })
+            })
+        }
+        
+        alertController.addAction(cancelAction)
+        alertController.addAction(activeAction!)
+        if let popoverController = alertController.popoverPresentationController {
+            popoverController.sourceView = self.view
+            popoverController.sourceRect = tableView.cellForRow(at: indexPath)!.frame
+        }
+        
+        self.present(alertController, animated: true, completion: nil)
+    }
 }

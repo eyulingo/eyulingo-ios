@@ -144,6 +144,8 @@ class BookQueryVC: UIViewController, UITableViewDataSource, UITableViewDelegate,
         let destinationStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let destinationViewController = destinationStoryboard.instantiateViewController(withIdentifier: "BookDetailVC") as! BookDetailVC
         destinationViewController.currentBook = bookObject
-        self.present(destinationViewController, animated: true, completion: nil)
+        self.present(destinationViewController, animated: true, completion: {
+            self.searchTextOver(self.searchTextField)
+        })
     }
 }
