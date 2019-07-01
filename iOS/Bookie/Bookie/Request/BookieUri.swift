@@ -31,6 +31,9 @@ class BookieUri {
     // parameters: <none>
     static let myCartGetUri = "http://47.103.15.32:8080/market"
     
+    // parameters: <none>
+    static let myOrdersGetUri = "http://47.103.15.32:8080/bill"
+    
     // parameters:
     // isbn - To remove book's ISBN
     static let removeFromCartPostUri = "http://47.103.15.32:8080/del"
@@ -49,4 +52,11 @@ class BookieUri {
     // phoneNo
     // address
     static let purchasePostUri = "http://47.103.15.32:8080/buy"
+    
+    // == Admin Features ==
+    // parameters: <none>
+    static let adminGetAllBooks = "http://47.103.15.32:8080/admin/allbook"
+
+    // parameters: <none>
+    static let adminGetAllUsers = "http://47.103.15.32:8080/admin/alluser"
 }

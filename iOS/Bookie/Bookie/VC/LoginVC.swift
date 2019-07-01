@@ -120,10 +120,18 @@ class LoginVC: UIViewController, UITextFieldDelegate {
                 } else {
                     errorStr = "no response"
                 }
-                loadingAlert.dismiss(animated: true, completion: {
-                    self.makeAlert("登录失败", "服务器报告了一个 “\(errorStr)” 错误。",
-                        completion: { })
-                })
+                
+                if errorStr == "account_locked" {
+                    loadingAlert.dismiss(animated: true, completion: {
+                        self.makeAlert("登录失败", "您的账户已被冻结。再注册一个吧（×）",
+                            completion: { })
+                    })
+                } else {
+                    loadingAlert.dismiss(animated: true, completion: {
+                        self.makeAlert("登录失败", "服务器报告了一个 “\(errorStr)” 错误。",
+                            completion: { })
+                    })
+                }
             })
         })
     }

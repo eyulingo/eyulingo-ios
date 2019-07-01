@@ -9,10 +9,9 @@
 import Foundation
 
 struct Bill {
-    var bookName: String
-    var count: Int
-    var author: String
     var receiver: String
+    var flushId: String
     var phoneNo: String
+    var address: String
     var purchasedTime: String
 }

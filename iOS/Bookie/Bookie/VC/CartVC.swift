@@ -42,10 +42,17 @@ class CartVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        loadMyCart()
-        tableViewContent.rowHeight = 130
+//        loadMyCart()
+//        tableViewContent.rowHeight = 130
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        // Do any additional setup after loading the view.
+                loadMyCart()
+                tableViewContent.rowHeight = 130
+    }
     
     func refreshContent() {
         tableViewContent.reloadData()
@@ -143,6 +150,13 @@ class CartVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         let archiveAction = UIAlertAction(title: "立即购买",
                                           style: .default,
                                           handler: { _ in
+                                            let destinationStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                                            let destinationViewController = destinationStoryboard.instantiateViewController(withIdentifier: "PurchaseVC") as! PurchaseVC
+                                            destinationViewController.bookIsbn = cartObject.isbn
+                                            destinationViewController.bookCount = cartObject.count
+                                            self.present(destinationViewController, animated: true, completion: {
+                                                self.loadMyCart()
+                                            })
             
         })
         alertController.addAction(cancelAction)

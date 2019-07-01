@@ -45,7 +45,7 @@ class BookDetailVC: UIViewController {
     
     var currentBook: Book?
     
-    @IBAction func addToCart(_ sender: UIBarButtonItem) {
+    @IBAction func addToCart(_ sender: UIButton) {
         if currentBook == nil {
             return
         }
@@ -93,8 +93,15 @@ class BookDetailVC: UIViewController {
         })
     }
     
-    @IBAction func purchaseNow(_ sender: UIBarButtonItem) {
-        
+    @IBAction func purchaseNow(_ sender: UIButton) {
+        if currentBook == nil {
+            return
+        }
+        let destinationStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let destinationViewController = destinationStoryboard.instantiateViewController(withIdentifier: "PurchaseVC") as! PurchaseVC
+        destinationViewController.bookIsbn = currentBook!.isbn
+        destinationViewController.bookCount = countPicker.selectedSegmentIndex + 1
+        self.present(destinationViewController, animated: true, completion: nil)
     }
     
     @IBAction func dismissMe(_ sender: UIBarButtonItem) {
