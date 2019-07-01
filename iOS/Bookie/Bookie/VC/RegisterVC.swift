@@ -76,6 +76,10 @@ class RegisterVC: UIViewController, UITextFieldDelegate {
         confirmPassWordField.text = ""
         onFieldEdited(userNameField)
     }
+
+    @IBAction func dismissMe(_ sender: UIBarButtonItem) {
+        self.dismiss(animated: true, completion: nil)
+    }
     
     @IBAction func registerButtonTapped(_ sender: UIButton) {
         let postParams: Parameters = [

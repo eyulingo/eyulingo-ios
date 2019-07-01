@@ -23,4 +23,30 @@ class BookieUri {
     // parameters:
     // fileId - cover image file id
     static let imageCoverGetUri = "http://47.103.15.32:8080/img/download"
+    
+    // parameters:
+    // q - query keyword
+    static let bookSearchGetUri = "http://47.103.15.32:8080/search"
+    
+    // parameters: <none>
+    static let myCartGetUri = "http://47.103.15.32:8080/market"
+    
+    // parameters:
+    // isbn - To remove book's ISBN
+    static let removeFromCartPostUri = "http://47.103.15.32:8080/del"
+    
+    // parameters:
+    // isbn
+    // count
+    // later = true
+    static let addToCartPostUri = "http://47.103.15.32:8080/buy"
+    
+    // parameters:
+    // isbn
+    // count
+    // later = false
+    // receiver
+    // phoneNo
+    // address
+    static let purchasePostUri = "http://47.103.15.32:8080/buy"
 }

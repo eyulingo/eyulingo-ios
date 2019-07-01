@@ -13,6 +13,6 @@ struct Cart {
     var count: Int
     var isbn: String
     var author: String
-    var storage: Int
+//    var storage: Int
     var couponPrice: Double
 }
