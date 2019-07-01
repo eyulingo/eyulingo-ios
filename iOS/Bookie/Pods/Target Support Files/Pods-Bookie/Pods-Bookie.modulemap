@@ -1,0 +1,6 @@
+framework module Pods_Bookie {
+  umbrella header "Pods-Bookie-umbrella.h"
+
+  export *
+  module * { export * }
+}
