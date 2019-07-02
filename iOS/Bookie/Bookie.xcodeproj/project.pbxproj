@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4B19E0AB9F2DB44AFBE702D7 /* Pods_Bookie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B04C21B53B0F9E631204C3F4 /* Pods_Bookie.framework */; };
+		8A2622FA22CB3E3E00C39943 /* Chp.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A2622F922CB3E3E00C39943 /* Chp.png */; };
 		8A55B27F22C8CE85007E77FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A55B27E22C8CE85007E77FD /* AppDelegate.swift */; };
 		8A55B28122C8CE85007E77FD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A55B28022C8CE85007E77FD /* SceneDelegate.swift */; };
 		8A55B28322C8CE85007E77FD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A55B28222C8CE85007E77FD /* ViewController.swift */; };
@@ -37,6 +38,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8A2622F922CB3E3E00C39943 /* Chp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Chp.png; sourceTree = "<group>"; };
 		8A55B27B22C8CE85007E77FD /* Bookie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bookie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A55B27E22C8CE85007E77FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8A55B28022C8CE85007E77FD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -99,9 +101,18 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		8A2622F822CB3E3100C39943 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				8A2622F922CB3E3E00C39943 /* Chp.png */,
+			);
+			path = Image;
+			sourceTree = "<group>";
+		};
 		8A55B27222C8CE85007E77FD = {
 			isa = PBXGroup;
 			children = (
+				8A2622F822CB3E3100C39943 /* Image */,
 				8A55B27D22C8CE85007E77FD /* Bookie */,
 				8A55B27C22C8CE85007E77FD /* Products */,
 				217D389985AAA164A5BFF890 /* Pods */,
@@ -236,6 +247,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A2622FA22CB3E3E00C39943 /* Chp.png in Resources */,
 				8A55B28B22C8CE8A007E77FD /* LaunchScreen.storyboard in Resources */,
 				8A55B28822C8CE8A007E77FD /* Assets.xcassets in Resources */,
 				8A55B28622C8CE85007E77FD /* Main.storyboard in Resources */,
