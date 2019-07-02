@@ -15,5 +15,4 @@ class PYConverter {
         CFStringTransform(pinyin, nil, kCFStringTransformStripCombiningMarks, false)
         return pinyin.uppercased
     }
-
 }

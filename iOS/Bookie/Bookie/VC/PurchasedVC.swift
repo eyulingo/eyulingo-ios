@@ -30,7 +30,7 @@ class PurchasedVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return headlines.count
+        return sortedBillDict[indexArray[section]]!.count
     }
     
     func makeAlert(_ title: String, _ message: String, completion: @escaping () -> ()) {
@@ -45,7 +45,54 @@ class PurchasedVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
     @IBOutlet weak var tableViewContent: UITableView!
     
     var headlines: [Bill] = []
+    var sortedBillDict = [String: [Bill]]()
+    var indexArray = [String]()
+    
+    func buildIndex() {
+        
+        indexArray.removeAll()
+        sortedBillDict.removeAll()
+        
+        for bill in headlines {
+            
+            let result = "\(DateAndTimeParser.parseDayFromString(bill.purchasedTime))"
+            
+            if !indexArray.contains(result) {
+                indexArray.append(result)
+                indexArray.sort()
+            }
+            
+            if sortedBillDict[result] == nil {
+                sortedBillDict[result] = [bill]
+            } else {
+                if !sortedBillDict[result]!.contains(where: {
+                    return $0.flushId == bill.flushId
+                }) {
+                    sortedBillDict[result]!.append(bill)
+                    sortedBillDict[result]!.sort(by: {$0.purchasedTime < $1.purchasedTime} )
+                }
+            }
+        }
+        refreshContent()
+    }
 
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return indexArray.count
+    }
+//
+//    func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+//        return indexArray
+//    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "\(indexArray[section]) 的 \(sortedBillDict[indexArray[section]]?.count ?? 0) 笔订单"
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 20
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -82,6 +129,7 @@ class PurchasedVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
                                                            purchasedTime: billItem["time"].stringValue))
                                 self.refreshContent()
                             }
+                            self.buildIndex()
                             return
                         } else {
                             errorCode = jsonResp!["status"].stringValue
@@ -100,7 +148,7 @@ class PurchasedVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
         let cell = tableView.dequeueReusableCell(withIdentifier: "billCell", for: indexPath)
             as! BillHeadlineTableViewCell
         
-        let headline = headlines[indexPath.row]
+        let headline = sortedBillDict[indexArray[indexPath.section]]![indexPath.row]
         
         cell.titleTextField.text = "\(headline.receiver)"
         cell.authorTextField.text = "联系电话：\(headline.phoneNo)"
@@ -109,6 +157,39 @@ class PurchasedVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
         cell.countField.text = "(收)"
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let billObject = sortedBillDict[indexArray[indexPath.section]]![indexPath.row]
+        
+        let alertController = UIAlertController(title: "想进行什么操作？",
+                                                message: "您刚刚选定了流水号为 \(billObject.flushId) 的订单。",
+            preferredStyle: .actionSheet)
+        let cancelAction = UIAlertAction(title: "取消",
+                                         style: .cancel,
+                                         handler: nil)
+        let seeBookSellingInfo = UIAlertAction(title: "查看所有配送给 “\(billObject.receiver)” 的订单",
+                                               style: .default,
+                                               handler: { _ in
+                                                var log: String = ""
+                                                var counter: Int = 0
+                                                for bill in self.headlines {
+                                                    if bill.receiver == billObject.receiver {
+                                                        counter += 1
+                                                        log += "\n\(DateAndTimeParser.parseDateAndTimeString(bill.purchasedTime))\n配送给 \(bill.address) \(bill.receiver)\n联系电话：\(bill.phoneNo)\n"
+                                                    }
+                                                }
+                                                self.makeAlert("配送给 \(billObject.receiver) 的订单共计 \(counter) 笔。", log, completion: { })
+        })
+        alertController.addAction(cancelAction)
+        alertController.addAction(seeBookSellingInfo)
+        
+        if let popoverController = alertController.popoverPresentationController {
+            popoverController.sourceView = self.view
+            popoverController.sourceRect = tableView.cellForRow(at: indexPath)!.frame
+        }
+        
+        self.present(alertController, animated: true, completion: nil)
     }
 
 }

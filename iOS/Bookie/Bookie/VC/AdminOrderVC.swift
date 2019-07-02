@@ -21,8 +21,12 @@ class AdminBillHeadlineTableViewCell: UITableViewCell {
 }
 
 class AdminOrderVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    var sortedBillDict = [String: [AdminBill]]()
+    var indexArray = [String]()
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return headlines.count
+        return sortedBillDict[indexArray[section]]!.count
     }
     
     func makeAlert(_ title: String, _ message: String, completion: @escaping () -> ()) {
@@ -61,6 +65,49 @@ class AdminOrderVC: UIViewController, UITableViewDataSource, UITableViewDelegate
         loadAllOrder()
     }
     
+    func buildDictionary() {
+        
+        indexArray.removeAll()
+        sortedBillDict.removeAll()
+        
+        for bill in headlines {
+            let result = "\(bill.userId)"
+            
+            if !indexArray.contains(result) {
+                indexArray.append(result)
+                indexArray.sort()
+            }
+            
+            if sortedBillDict[result] == nil {
+                sortedBillDict[result] = [bill]
+            } else {
+                if !sortedBillDict[result]!.contains(where: {
+                    return $0.timeStamp == bill.timeStamp && $0.userId == bill.userId && $0.bookIsbn == bill.bookIsbn
+                }) {
+                    sortedBillDict[result]!.append(bill)
+                    sortedBillDict[result]!.sort(by: {$0.bookIsbn < $1.bookIsbn} )
+                }
+            }
+        }
+        refreshContent()
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return indexArray.count
+    }
+    
+    func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+        return indexArray
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "用户 #\(indexArray[section]) 的 \(sortedBillDict[indexArray[section]]?.count ?? 0) 笔订单"
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 20
+    }
+    
     func loadAllOrder() {
         headlines.removeAll()
         refreshContent()
@@ -80,6 +127,7 @@ class AdminOrderVC: UIViewController, UITableViewDataSource, UITableViewDelegate
                                                                 timeStamp: orderItem["timestamp"].stringValue))
                                 self.refreshContent()
                             }
+                            self.buildDictionary()
                             return
                         } else {
                             errorCode = jsonResp!["status"].stringValue
@@ -98,14 +146,63 @@ class AdminOrderVC: UIViewController, UITableViewDataSource, UITableViewDelegate
         let cell = tableView.dequeueReusableCell(withIdentifier: "adminBillCell", for: indexPath)
             as! AdminBillHeadlineTableViewCell
         
-        let headline = headlines[indexPath.row]
+        let headline = sortedBillDict[indexArray[indexPath.section]]![indexPath.row]
         
         cell.titleTextField.text = "ISBN: \(headline.bookIsbn)"
-        cell.deliveryInfoField.text = "用户 #\(headline.userId) \(headline.userName)"
+        cell.deliveryInfoField.text = "用户名：\(headline.userName)"
         cell.authorTextField.text = ""
         cell.purchaseTimeField.text = "购买于 \(DateAndTimeParser.parseDateAndTimeString(headline.timeStamp))"
         cell.countField.text = "×\(headline.count)"
         
         return cell
+    }
+    
+    // Tap on table Row
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let billObject = sortedBillDict[indexArray[indexPath.section]]![indexPath.row]
+        
+        let alertController = UIAlertController(title: "想进行什么操作？",
+                                                message: "您刚刚选定了 \(billObject.userName) 的一笔订单。",
+            preferredStyle: .actionSheet)
+        let cancelAction = UIAlertAction(title: "取消",
+                                         style: .cancel,
+                                         handler: nil)
+        let seeBookSellingInfo = UIAlertAction(title: "查看该书籍销售情况",
+                                               style: .default,
+                                               handler: { _ in
+                                                var log: String = ""
+                                                var counter: Int = 0
+                                                for bill in self.headlines {
+                                                    if bill.bookIsbn == billObject.bookIsbn {
+                                                        counter += bill.count
+                                                        log += "\n\(DateAndTimeParser.parseDateAndTimeString(bill.timeStamp))\n#\(bill.userId) \(bill.userName) 购买了 \(bill.count) 册。\n"
+                                                    }
+                                                }
+                                                self.makeAlert("此图书共售出 \(counter) 册。", log, completion: { })
+        })
+        
+        let seeThatDayAllData = UIAlertAction(title: "查看当天全部订单",
+                                               style: .default,
+                                               handler: { _ in
+                                                var log: String = ""
+                                                var counter: Int = 0
+                                                for bill in self.headlines {
+                                                    if DateAndTimeParser.parseDayFromString(bill.timeStamp) == DateAndTimeParser.parseDayFromString(billObject.timeStamp) {
+                                                        counter += bill.count
+                                                        log += "\n\(DateAndTimeParser.parseDateAndTimeString(bill.timeStamp))\n#\(bill.userId) \(bill.userName) 购买了 \(bill.count) 册。\n"
+                                                    }
+                                                }
+                                                self.makeAlert("\(DateAndTimeParser.parseDayFromString(billObject.timeStamp)) 共售出图书 \(counter) 册。", log, completion: { })
+        })
+        alertController.addAction(cancelAction)
+        alertController.addAction(seeBookSellingInfo)
+        alertController.addAction(seeThatDayAllData)
+        
+        if let popoverController = alertController.popoverPresentationController {
+            popoverController.sourceView = self.view
+            popoverController.sourceRect = tableView.cellForRow(at: indexPath)!.frame
+        }
+        
+        self.present(alertController, animated: true, completion: nil)
     }
 }
