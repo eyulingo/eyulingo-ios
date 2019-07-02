@@ -38,6 +38,12 @@ class AdminOrderVC: UIViewController, UITableViewDataSource, UITableViewDelegate
         orderTableView.reloadData()
     }
     
+    @IBAction func logOutButtonTapped(_ sender: UIButton) {
+        Alamofire.request(BookieUri.logOutPostUri, method: .post).response(completionHandler: { _ in
+            self.dismiss(animated: true, completion: nil)
+        })
+    }
+    
     @IBOutlet weak var orderTableView: UITableView!
     
     var headlines: [AdminBill] = []
@@ -47,7 +53,7 @@ class AdminOrderVC: UIViewController, UITableViewDataSource, UITableViewDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        overrideUserInterfaceStyle = .dark
         // Do any additional setup after loading the view.
     }
     
@@ -97,7 +103,7 @@ class AdminOrderVC: UIViewController, UITableViewDataSource, UITableViewDelegate
         cell.titleTextField.text = "ISBN: \(headline.bookIsbn)"
         cell.deliveryInfoField.text = "用户 #\(headline.userId) \(headline.userName)"
         cell.authorTextField.text = ""
-        cell.purchaseTimeField.text = "购买于 \(headline.timeStamp)"
+        cell.purchaseTimeField.text = "购买于 \(DateAndTimeParser.parseDateAndTimeString(headline.timeStamp))"
         cell.countField.text = "×\(headline.count)"
         
         return cell

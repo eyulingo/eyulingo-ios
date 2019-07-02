@@ -15,6 +15,8 @@ class LoginVC: UIViewController, UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        overrideUserInterfaceStyle = .light
 
         // Do any additional setup after loading the view.
         textChanged(userNameField)
@@ -41,8 +43,8 @@ class LoginVC: UIViewController, UITextFieldDelegate {
         if textField == userNameField {
             passwordField.becomeFirstResponder()
         } else if textField == passwordField {
-            loginButtonTapped(loginButton)
             passwordField.resignFirstResponder()
+            loginButtonTapped(loginButton)
         }
         return true
     }

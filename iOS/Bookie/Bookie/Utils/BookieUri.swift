@@ -14,6 +14,9 @@ class BookieUri {
     // password - password (废话)
     static let loginPostUri = "http://47.103.15.32:8080/login"
     
+    // parameters: <none>
+    static let logOutPostUri = "http://47.103.15.32:8080/login?logout"
+    
     // parameters:
     // username - username
     // password - password

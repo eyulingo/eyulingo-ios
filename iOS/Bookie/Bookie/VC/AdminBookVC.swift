@@ -27,18 +27,31 @@ class AdminBookVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
     @IBOutlet weak var bookTableView: UITableView!
     
     var bookList: [Book] = []
+    var sortedBookDict = [String: [Book]]()
+    var indexArray = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         bookTableView.delegate = self
         bookTableView.dataSource = self
-        loadAllBooks()
+        
         // Do any additional setup after loading the view.
+        overrideUserInterfaceStyle = .dark
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        loadAllBooks()
+    }
+    
+    @IBAction func logOutButtonTapped(_ sender: UIButton) {
+        Alamofire.request(BookieUri.logOutPostUri, method: .post).response(completionHandler: { _ in
+            self.dismiss(animated: true, completion: nil)
+        })
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return bookList.count
+        return sortedBookDict[indexArray[section]]?.count ?? 0
     }
     
     func makeAlert(_ title: String, _ message: String, completion: @escaping () -> ()) {
@@ -54,9 +67,54 @@ class AdminBookVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
     @IBAction func addNewBookButtonTapped(_ sender: UIButton) {
         self.performSegue(withIdentifier: "addNewBookSegue", sender: self)
     }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return indexArray.count
+    }
+    
+    func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+        return indexArray
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return indexArray[section]
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 20
+    }
+    
     func refreshContent() {
         bookTableView.reloadData()
     }
+    
+    func buildDictionary() {
+        indexArray.removeAll()
+        sortedBookDict.removeAll()
+        
+        for book in bookList {
+            let result = "\(PYConverter.transformChinese(book.title + book.author).first!)"
+            
+            if !indexArray.contains(result) {
+                indexArray.append(result)
+                indexArray.sort()
+            }
+            
+            if sortedBookDict[result] == nil {
+                sortedBookDict[result] = [book]
+            } else {
+                if !sortedBookDict[result]!.contains(where: {
+                    return $0.title == book.title
+                }) {
+                    sortedBookDict[result]!.append(book)
+                    sortedBookDict[result]!.sort(by: {$0.title < $1.title} )
+                }
+            }
+            NSLog("\(book.title + book.author) => \(result)")
+        }
+        refreshContent()
+    }
+    
     
     func loadAllBooks() {
         bookList.removeAll()
@@ -80,8 +138,8 @@ class AdminBookVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
                                                           storage: bookItem["storage"].intValue,
                                                           price: bookItem["price"].doubleValue,
                                                           couponPrice: bookItem["couponPrice"].doubleValue))
-                                self.refreshContent()
                             }
+                            self.buildDictionary()
                             return
                         } else {
                             errorCode = jsonResp!["status"].stringValue
@@ -96,11 +154,12 @@ class AdminBookVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
             })
     }
     
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "adminBookCell", for: indexPath)
             as! AdminBookHeadlineTableViewCell
         
-        let headline = bookList[indexPath.row]
+        let headline = sortedBookDict[indexArray[indexPath.section]]![indexPath.row]
 //        cell.coverImage.image = nil
         cell.titleTextField.text = headline.title
         cell.authorTextField.text = "\(headline.author) 著"
@@ -120,7 +179,7 @@ class AdminBookVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
     
     // Tap on table Row
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let bookObject = bookList[indexPath.row]
+        let bookObject = sortedBookDict[indexArray[indexPath.section]]![indexPath.row]
         
         let alertController = UIAlertController(title: "想进行什么操作？",
                                                 message: "您刚刚选定了 \(bookObject.author) 的《\(bookObject.title)》。",
@@ -138,6 +197,9 @@ class AdminBookVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
                                                         textField.text = String(bookObject.storage)
                                                         textField.keyboardType = .numberPad
                                                     }
+                                                    
+                                                    
+                                                    alert.addAction(UIAlertAction(title: "取消", style: .default, handler: nil))
                                                    
                                                     alert.addAction(UIAlertAction(title: "好", style: .default, handler: { [weak alert] (_) in
                                                         let newStorage = Int(alert?.textFields![0].text! ?? String(bookObject.storage))
@@ -170,9 +232,6 @@ class AdminBookVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
                                                                 self.makeAlert("修改库存失败", "服务器报告了一个 “\(errorCode)” 错误。", completion: { })
                                                             })
                                                     }))
-                                                    
-                                                    alert.addAction(UIAlertAction(title: "取消", style: .default, handler: nil))
-                                                    
                                                     self.present(alert, animated: true, completion: nil)
         })
         

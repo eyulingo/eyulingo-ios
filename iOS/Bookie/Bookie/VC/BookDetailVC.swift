@@ -41,6 +41,7 @@ class BookDetailVC: UIViewController {
         descriptionTextField.text = currentBook?.description
         isbnText.text = currentBook?.isbn
         storageTextField.text = "\(currentBook?.storage ?? 0)" + " 册"
+        overrideUserInterfaceStyle = .light
     }
     
     var currentBook: Book?

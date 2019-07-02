@@ -22,6 +22,13 @@ class BookHeadlineTableViewCell: UITableViewCell {
 
 
 class BookQueryVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate {
+    
+    @IBAction func logOutButtonTapped(_ sender: UIButton) {
+        Alamofire.request(BookieUri.logOutPostUri, method: .post).response(completionHandler: { _ in
+            self.dismiss(animated: true, completion: nil)
+        })
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return bookList.count
     }
@@ -46,11 +53,13 @@ class BookQueryVC: UIViewController, UITableViewDataSource, UITableViewDelegate,
         super.viewDidLoad()
         searchTextField.delegate = self
         // Do any additional setup after loading the view.
+        overrideUserInterfaceStyle = .light
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == searchTextField {
             searchTextOver(textField)
+            searchTextField.resignFirstResponder()
         }
         return true
     }

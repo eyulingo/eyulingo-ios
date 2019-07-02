@@ -15,6 +15,7 @@ class RegisterVC: UIViewController, UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        overrideUserInterfaceStyle = .light
 
         userNameField.delegate = self
         eMailField.delegate = self
@@ -47,6 +48,7 @@ class RegisterVC: UIViewController, UITextFieldDelegate {
         } else if textField == passWordField {
             confirmPassWordField.becomeFirstResponder()
         } else {
+            confirmPassWordField.resignFirstResponder()
             registerButtonTapped(registerButton)
         }
         return true

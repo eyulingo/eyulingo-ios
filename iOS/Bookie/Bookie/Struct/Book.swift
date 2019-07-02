@@ -10,6 +10,8 @@ import UIKit
 import Alamofire
 
 struct Book {
+
+
     var disabled: Bool
     var title: String
     var isbn: String

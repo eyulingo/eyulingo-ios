@@ -43,6 +43,7 @@ class AdminAddBookVC: UIViewController, UITextFieldDelegate {
         descriptionTextField.delegate = self
         storageTextField.delegate = self
         priceTextField.delegate = self
+        overrideUserInterfaceStyle = .dark
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

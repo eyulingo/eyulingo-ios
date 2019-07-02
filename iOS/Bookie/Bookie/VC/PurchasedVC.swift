@@ -22,6 +22,13 @@ class BillHeadlineTableViewCell: UITableViewCell {
 }
 
 class PurchasedVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    @IBAction func logOutButtonTapped(_ sender: UIButton) {
+        Alamofire.request(BookieUri.logOutPostUri, method: .post).response(completionHandler: { _ in
+            self.dismiss(animated: true, completion: nil)
+        })
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return headlines.count
     }
@@ -43,6 +50,7 @@ class PurchasedVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        overrideUserInterfaceStyle = .light
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -97,7 +105,7 @@ class PurchasedVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
         cell.titleTextField.text = "\(headline.receiver)"
         cell.authorTextField.text = "联系电话：\(headline.phoneNo)"
         cell.deliveryInfoField.text = "配送地址：\(headline.address)"
-        cell.purchaseTimeField.text = "购买于 \(headline.purchasedTime)"
+        cell.purchaseTimeField.text = "购买于 \(DateAndTimeParser.parseDateAndTimeString(headline.purchasedTime))"
         cell.countField.text = "(收)"
         
         return cell
