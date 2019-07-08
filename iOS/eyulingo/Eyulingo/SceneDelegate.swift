@@ -1,6 +1,6 @@
 //
 //  SceneDelegate.swift
-//  Bookie
+//  Eyulingo
 //
 //  Created by 法好 on 2019/6/30.
 //  Copyright © 2019 yuetsin. All rights reserved.

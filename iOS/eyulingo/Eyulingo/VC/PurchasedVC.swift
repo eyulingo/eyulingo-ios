@@ -1,6 +1,6 @@
 //
 //  PurchasedVC.swift
-//  Bookie
+//  Eyulingo
 //
 //  Created by 法好 on 2019/7/1.
 //  Copyright © 2019 yuetsin. All rights reserved.
@@ -24,7 +24,7 @@ class BillHeadlineTableViewCell: UITableViewCell {
 class PurchasedVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBAction func logOutButtonTapped(_ sender: UIButton) {
-        Alamofire.request(BookieUri.logOutPostUri, method: .post).response(completionHandler: { _ in
+        Alamofire.request(EyulingoUri.logOutPostUri, method: .post).response(completionHandler: { _ in
             self.dismiss(animated: true, completion: nil)
         })
     }
@@ -113,7 +113,7 @@ class PurchasedVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
     func loadMyBills() {
         headlines.removeAll()
         refreshContent()
-        Alamofire.request(BookieUri.myOrdersGetUri,
+        Alamofire.request(EyulingoUri.myOrdersGetUri,
                           method: .get)
             .responseSwiftyJSON(completionHandler: { responseJSON in
                 var errorCode = "general error"

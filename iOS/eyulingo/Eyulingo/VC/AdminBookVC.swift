@@ -1,6 +1,6 @@
 //
 //  AdminBookVC.swift
-//  Bookie
+//  Eyulingo
 //
 //  Created by 法好 on 2019/7/1.
 //  Copyright © 2019 yuetsin. All rights reserved.
@@ -45,7 +45,7 @@ class AdminBookVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
     }
     
     @IBAction func logOutButtonTapped(_ sender: UIButton) {
-        Alamofire.request(BookieUri.logOutPostUri, method: .post).response(completionHandler: { _ in
+        Alamofire.request(EyulingoUri.logOutPostUri, method: .post).response(completionHandler: { _ in
             self.dismiss(animated: true, completion: nil)
         })
     }
@@ -120,7 +120,7 @@ class AdminBookVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
         bookList.removeAll()
         refreshContent()
         bookTableView.rowHeight = 160
-        Alamofire.request(BookieUri.adminGetAllBooks,
+        Alamofire.request(EyulingoUri.adminGetAllBooks,
                           method: .get)
             .responseSwiftyJSON(completionHandler: { responseJSON in
                 var errorCode = "general error"
@@ -207,7 +207,7 @@ class AdminBookVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
                                                             "isbn": bookObject.isbn,
                                                             "storage": newStorage!
                                                         ]
-                                                        Alamofire.request(BookieUri.modifyStorage,
+                                                        Alamofire.request(EyulingoUri.modifyStorage,
                                                                           method: .post,
                                                                           parameters: postParams
                                                             ).responseSwiftyJSON(completionHandler: { responseJSON in
@@ -253,7 +253,7 @@ class AdminBookVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
                                             let postParams: Parameters = [
                                                 "isbn": bookObject.isbn
                                             ]
-                                            Alamofire.request(BookieUri.enableBook,
+                                            Alamofire.request(EyulingoUri.enableBook,
                                                               method: .post,
                                                               parameters: postParams
                                                 ).responseSwiftyJSON(completionHandler: { responseJSON in
@@ -285,7 +285,7 @@ class AdminBookVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
                                             let postParams: Parameters = [
                                                 "isbn": bookObject.isbn
                                             ]
-                                            Alamofire.request(BookieUri.disableBook,
+                                            Alamofire.request(EyulingoUri.disableBook,
                                                               method: .post,
                                                               parameters: postParams
                                                 ).responseSwiftyJSON(completionHandler: { responseJSON in

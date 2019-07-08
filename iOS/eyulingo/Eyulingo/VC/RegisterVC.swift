@@ -1,6 +1,6 @@
 //
 //  RegisterVC.swift
-//  Bookie
+//  Eyulingo
 //
 //  Created by 法好 on 2019/7/1.
 //  Copyright © 2019 yuetsin. All rights reserved.
@@ -101,7 +101,7 @@ class RegisterVC: UIViewController, UITextFieldDelegate {
         
         self.present(loadingAlert, animated: true, completion: {
             var errorStr = "general error"
-            Alamofire.request(BookieUri.registerPostUri,
+            Alamofire.request(EyulingoUri.registerPostUri,
                               method: .post,
                               parameters: postParams)
                 .responseSwiftyJSON(completionHandler: { responseJSON in
@@ -110,7 +110,7 @@ class RegisterVC: UIViewController, UITextFieldDelegate {
                         if jsonResp != nil {
                             if jsonResp!["status"].stringValue == "ok" {
                                 loadingAlert.dismiss(animated: true, completion: {
-                                    self.makeAlert("注册成功", "您现在可以登录 Bookie 了。", completion: {
+                                    self.makeAlert("注册成功", "您现在可以登录 Eyulingo 了。", completion: {
                                             self.dismiss(animated: true, completion: nil)
                                         })
                                     })

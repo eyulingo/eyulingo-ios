@@ -1,6 +1,6 @@
 //
 //  AdminUserVC.swift
-//  Bookie
+//  Eyulingo
 //
 //  Created by 法好 on 2019/7/1.
 //  Copyright © 2019 yuetsin. All rights reserved.
@@ -22,7 +22,7 @@ class UserHeadlineTableViewCell: UITableViewCell {
 class AdminUserVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBAction func logOutButtonTapped(_ sender: UIButton) {
-        Alamofire.request(BookieUri.logOutPostUri, method: .post).response(completionHandler: { _ in
+        Alamofire.request(EyulingoUri.logOutPostUri, method: .post).response(completionHandler: { _ in
             self.dismiss(animated: true, completion: nil)
         })
     }
@@ -61,7 +61,7 @@ class AdminUserVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
     func loadAllUser() {
         headlines.removeAll()
         refreshContent()
-        Alamofire.request(BookieUri.adminGetAllUsers,
+        Alamofire.request(EyulingoUri.adminGetAllUsers,
                           method: .get)
             .responseSwiftyJSON(completionHandler: { responseJSON in
                 var errorCode = "general error"
@@ -125,7 +125,7 @@ class AdminUserVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
                                             let postParams: Parameters = [
                                                 "userId": userObject.userId
                                             ]
-                Alamofire.request(BookieUri.disableUser,
+                Alamofire.request(EyulingoUri.disableUser,
                                   method: .post,
                                   parameters: postParams
                     ).responseSwiftyJSON(completionHandler: { responseJSON in
@@ -157,7 +157,7 @@ class AdminUserVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
                                             let postParams: Parameters = [
                                                 "userId": userObject.userId
                                             ]
-                                            Alamofire.request(BookieUri.enableUser,
+                                            Alamofire.request(EyulingoUri.enableUser,
                                                               method: .post,
                                                               parameters: postParams
                                                 ).responseSwiftyJSON(completionHandler: { responseJSON in

@@ -28,11 +28,11 @@
 		<true/>
 	</dict>
 	<key>NSCameraUsageDescription</key>
-	<string>BookieBookie! 需要授权来访问相机。</string>
+	<string>Eyulingo! 需要授权来访问相机。</string>
 	<key>NSMicrophoneUsageDescription</key>
-	<string>BookieBookie! 需要授权来访问您的麦克风。</string>
+	<string>Eyulingo! 需要授权来访问您的麦克风。</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>BookieBookie! 需要授权来访问您的相册。</string>
+	<string>Eyulingo! 需要授权来访问您的相册。</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

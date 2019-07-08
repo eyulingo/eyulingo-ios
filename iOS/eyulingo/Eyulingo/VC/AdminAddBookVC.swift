@@ -1,6 +1,6 @@
 //
 //  AdminAddBookVC.swift
-//  Bookie
+//  Eyulingo
 //
 //  Created by 法好 on 2019/7/1.
 //  Copyright © 2019 yuetsin. All rights reserved.
@@ -116,7 +116,7 @@ class AdminAddBookVC: UIViewController, UITextFieldDelegate {
                 form.append(data, withName: "file",
                             fileName: bookNameText + "_" +  authorNameText + ".jpg",
                             mimeType: "image/jpg")
-            }, to: BookieUri.imageCoverUploadUri, encodingCompletion: { result in
+            }, to: EyulingoUri.imageCoverUploadUri, encodingCompletion: { result in
                 switch result {
                 case .success(let upload, _, _):
                     upload.responseString { response in
@@ -141,7 +141,7 @@ class AdminAddBookVC: UIViewController, UITextFieldDelegate {
                             "coupon_price": priceDouble
                             
                         ]
-                        Alamofire.request(BookieUri.addNewBook,
+                        Alamofire.request(EyulingoUri.addNewBook,
                                           method: .post,
                                           parameters: postParams)
                         .responseSwiftyJSON(completionHandler: { responseJSON in

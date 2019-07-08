@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8A06394622D32FDC00699037 /* DateAndTimeParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A06394522D32FDC00699037 /* DateAndTimeParser.swift */; };
 		8A2622FA22CB3E3E00C39943 /* Chp.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A2622F922CB3E3E00C39943 /* Chp.png */; };
 		8A55B27F22C8CE85007E77FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A55B27E22C8CE85007E77FD /* AppDelegate.swift */; };
 		8A55B28122C8CE85007E77FD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A55B28022C8CE85007E77FD /* SceneDelegate.swift */; };
@@ -15,7 +16,6 @@
 		8A55B28822C8CE8A007E77FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A55B28722C8CE8A007E77FD /* Assets.xcassets */; };
 		8A55B28B22C8CE8A007E77FD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A55B28922C8CE8A007E77FD /* LaunchScreen.storyboard */; };
 		8A6DD6F222CAE3FA00BD7904 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6DD6F122CAE3FA00BD7904 /* TabBarController.swift */; };
-		8A6DD6F422CAEA6A00BD7904 /* DateAndTimeParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6DD6F322CAEA6600BD7904 /* DateAndTimeParser.swift */; };
 		8A6DD6FC22CAF55500BD7904 /* PinYinConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6DD6FB22CAF55500BD7904 /* PinYinConverter.swift */; };
 		8AC9E7D922C9A31400F80460 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC9E7D822C9A31400F80460 /* LoginVC.swift */; };
 		8AC9E7DB22C9A34700F80460 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC9E7DA22C9A34700F80460 /* RegisterVC.swift */; };
@@ -39,6 +39,7 @@
 
 /* Begin PBXFileReference section */
 		45982A63EC1B9CEFF959ADD9 /* Pods-Eyulingo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eyulingo.debug.xcconfig"; path = "Target Support Files/Pods-Eyulingo/Pods-Eyulingo.debug.xcconfig"; sourceTree = "<group>"; };
+		8A06394522D32FDC00699037 /* DateAndTimeParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateAndTimeParser.swift; sourceTree = "<group>"; };
 		8A2622F922CB3E3E00C39943 /* Chp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Chp.png; sourceTree = "<group>"; };
 		8A55B27B22C8CE85007E77FD /* Eyulingo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eyulingo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A55B27E22C8CE85007E77FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -49,7 +50,6 @@
 		8A55B28A22C8CE8A007E77FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8A55B28C22C8CE8A007E77FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8A6DD6F122CAE3FA00BD7904 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
-		8A6DD6F322CAEA6600BD7904 /* DateAndTimeParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DateAndTimeParser.swift; path = "/Users/yue/Documents/GitHub/SE-228/iOS/Bookie/Bookie/Utils/DateAndTimeParser.swift"; sourceTree = "<absolute>"; };
 		8A6DD6FB22CAF55500BD7904 /* PinYinConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinYinConverter.swift; sourceTree = "<group>"; };
 		8AC9E7D822C9A31400F80460 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		8AC9E7DA22C9A34700F80460 /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
@@ -183,7 +183,7 @@
 		8AC9E7EF22C9A87F00F80460 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				8A6DD6F322CAEA6600BD7904 /* DateAndTimeParser.swift */,
+				8A06394522D32FDC00699037 /* DateAndTimeParser.swift */,
 				8AC9E7F022C9A89200F80460 /* BookieUri.swift */,
 				8A6DD6FB22CAF55500BD7904 /* PinYinConverter.swift */,
 			);
@@ -316,11 +316,11 @@
 				8AC9E7FD22C9C1A300F80460 /* AdminBill.swift in Sources */,
 				8AC9E7DD22C9A37500F80460 /* BookQueryVC.swift in Sources */,
 				8AC9E7E122C9A3AE00F80460 /* PurchasedVC.swift in Sources */,
-				8A6DD6F422CAEA6A00BD7904 /* DateAndTimeParser.swift in Sources */,
 				8AC9E7E522C9A3F700F80460 /* AdminBookVC.swift in Sources */,
 				8AC9E7EB22C9A43C00F80460 /* AdminAddBookVC.swift in Sources */,
 				8AC9E7D922C9A31400F80460 /* LoginVC.swift in Sources */,
 				8AC9E7F122C9A89200F80460 /* BookieUri.swift in Sources */,
+				8A06394622D32FDC00699037 /* DateAndTimeParser.swift in Sources */,
 				8A55B28122C8CE85007E77FD /* SceneDelegate.swift in Sources */,
 				8AC9E7E722C9A40C00F80460 /* AdminUserVC.swift in Sources */,
 				8AC9E7F522C9AF4A00F80460 /* PurchaseVC.swift in Sources */,
@@ -476,8 +476,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = F6EKR37AV8;
-				INFOPLIST_FILE = Bookie/Info.plist;
+				DEVELOPMENT_TEAM = 24XARD42BP;
+				INFOPLIST_FILE = Eyulingo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -499,8 +499,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = F6EKR37AV8;
-				INFOPLIST_FILE = Bookie/Info.plist;
+				DEVELOPMENT_TEAM = 24XARD42BP;
+				INFOPLIST_FILE = Eyulingo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

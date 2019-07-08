@@ -1,6 +1,6 @@
 //
-//  BookieUri.swift
-//  Bookie
+//  EyulingoUri.swift
+//  Eyulingo
 //
 //  Created by 法好 on 2019/7/1.
 //  Copyright © 2019 yuetsin. All rights reserved.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class BookieUri {
+class EyulingoUri {
     // parameters:
     // username - username
     // password - password (废话)

@@ -1,6 +1,6 @@
 //
 //  BookDetailVC.swift
-//  Bookie
+//  Eyulingo
 //
 //  Created by 法好 on 2019/7/1.
 //  Copyright © 2019 yuetsin. All rights reserved.
@@ -66,7 +66,7 @@ class BookDetailVC: UIViewController {
         loadingAlert.view.addSubview(loadingIndicator)
         
         self.present(loadingAlert, animated: true, completion: {
-            Alamofire.request(BookieUri.addToCartPostUri,
+            Alamofire.request(EyulingoUri.addToCartPostUri,
                               method: .post,
                               parameters: postParams)
             .responseSwiftyJSON(completionHandler: { responseJSON in

@@ -1,6 +1,6 @@
 //
 //  PinYinConverter.swift
-//  Bookie
+//  Eyulingo
 //
 //  Created by 法好 on 2019/7/2.
 //  Copyright © 2019 yuetsin. All rights reserved.

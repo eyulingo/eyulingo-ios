@@ -1,6 +1,6 @@
 //
 //  LoginVC.swift
-//  Bookie
+//  Eyulingo
 //
 //  Created by 法好 on 2019/7/1.
 //  Copyright © 2019 yuetsin. All rights reserved.
@@ -90,7 +90,7 @@ class LoginVC: UIViewController, UITextFieldDelegate {
         
         self.present(loadingAlert, animated: true, completion: {
             var errorStr = "general error"
-            Alamofire.request(BookieUri.loginPostUri,
+            Alamofire.request(EyulingoUri.loginPostUri,
                               method: .post,
                               parameters: postParams)
             .responseSwiftyJSON(completionHandler: { responseJSON in

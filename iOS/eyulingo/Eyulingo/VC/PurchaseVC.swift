@@ -1,6 +1,6 @@
 //
 //  PurchaseVC.swift
-//  Bookie
+//  Eyulingo
 //
 //  Created by 法好 on 2019/7/1.
 //  Copyright © 2019 yuetsin. All rights reserved.
@@ -84,7 +84,7 @@ class PurchaseVC: UIViewController, UITextFieldDelegate {
             "phoneNo": deliveryPhoneNo.text!,
             "address": deliveryAddress.text!
         ]
-        Alamofire.request(BookieUri.purchasePostUri,
+        Alamofire.request(EyulingoUri.purchasePostUri,
                           method: .post,
                           parameters: postParams)
             .responseSwiftyJSON(completionHandler: { responseJSON in

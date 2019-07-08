@@ -1,6 +1,6 @@
 //
 //  CartVC.swift
-//  Bookie
+//  Eyulingo
 //
 //  Created by 法好 on 2019/7/1.
 //  Copyright © 2019 yuetsin. All rights reserved.
@@ -24,7 +24,7 @@ class CartHeadlineTableViewCell: UITableViewCell {
 class CartVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBAction func logOutButtonTapped(_ sender: UIButton) {
-        Alamofire.request(BookieUri.logOutPostUri, method: .post).response(completionHandler: { _ in
+        Alamofire.request(EyulingoUri.logOutPostUri, method: .post).response(completionHandler: { _ in
             self.dismiss(animated: true, completion: nil)
         })
     }
@@ -70,7 +70,7 @@ class CartVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     func loadMyCart() {
         headlines.removeAll()
         refreshContent()
-        Alamofire.request(BookieUri.myCartGetUri,
+        Alamofire.request(EyulingoUri.myCartGetUri,
                           method: .get)
             .responseSwiftyJSON(completionHandler: { responseJSON in
                 var errorCode = "general error"
@@ -130,7 +130,7 @@ class CartVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
                                             let postParams: Parameters = [
                                                 "isbn": cartObject.isbn
                                             ]
-                                            Alamofire.request(BookieUri.removeFromCartPostUri,
+                                            Alamofire.request(EyulingoUri.removeFromCartPostUri,
                                                               method: .post,
                                                               parameters: postParams)
                                                 .responseSwiftyJSON(completionHandler: { responseJSON in

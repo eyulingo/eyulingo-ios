@@ -1,6 +1,6 @@
 //
 //  Book.swift
-//  Bookie
+//  Eyulingo
 //
 //  Created by 法好 on 2019/7/1.
 //  Copyright © 2019 yuetsin. All rights reserved.
@@ -26,7 +26,7 @@ struct Book {
         let params: Parameters = [
             "fileId": coverUrl
         ]
-        Alamofire.request(BookieUri.imageCoverGetUri, method: .get, parameters: params)
+        Alamofire.request(EyulingoUri.imageCoverGetUri, method: .get, parameters: params)
             .responseData(completionHandler: { responseData in
                 if responseData.data == nil {
                     return
