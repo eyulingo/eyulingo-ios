@@ -43,7 +43,7 @@ class AdminOrderVC: UIViewController, UITableViewDataSource, UITableViewDelegate
     }
     
     @IBAction func logOutButtonTapped(_ sender: UIButton) {
-        Alamofire.request(EyulingoUri.logOutPostUri, method: .post).response(completionHandler: { _ in
+        Alamofire.request(BookieUri.logOutPostUri, method: .post).response(completionHandler: { _ in
             self.dismiss(animated: true, completion: nil)
         })
     }
@@ -111,7 +111,7 @@ class AdminOrderVC: UIViewController, UITableViewDataSource, UITableViewDelegate
     func loadAllOrder() {
         headlines.removeAll()
         refreshContent()
-        Alamofire.request(EyulingoUri.adminGetAllBills,
+        Alamofire.request(BookieUri.adminGetAllBills,
                           method: .get)
             .responseSwiftyJSON(completionHandler: { responseJSON in
                 var errorCode = "general error"

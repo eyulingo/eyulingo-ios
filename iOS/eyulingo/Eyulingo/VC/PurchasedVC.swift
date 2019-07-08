@@ -24,7 +24,7 @@ class BillHeadlineTableViewCell: UITableViewCell {
 class PurchasedVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBAction func logOutButtonTapped(_ sender: UIButton) {
-        Alamofire.request(EyulingoUri.logOutPostUri, method: .post).response(completionHandler: { _ in
+        Alamofire.request(BookieUri.logOutPostUri, method: .post).response(completionHandler: { _ in
             self.dismiss(animated: true, completion: nil)
         })
     }
@@ -113,7 +113,7 @@ class PurchasedVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
     func loadMyBills() {
         headlines.removeAll()
         refreshContent()
-        Alamofire.request(EyulingoUri.myOrdersGetUri,
+        Alamofire.request(BookieUri.myOrdersGetUri,
                           method: .get)
             .responseSwiftyJSON(completionHandler: { responseJSON in
                 var errorCode = "general error"

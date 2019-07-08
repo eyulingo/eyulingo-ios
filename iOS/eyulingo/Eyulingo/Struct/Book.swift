@@ -26,7 +26,7 @@ struct Book {
         let params: Parameters = [
             "fileId": coverUrl
         ]
-        Alamofire.request(EyulingoUri.imageCoverGetUri, method: .get, parameters: params)
+        Alamofire.request(BookieUri.imageCoverGetUri, method: .get, parameters: params)
             .responseData(completionHandler: { responseData in
                 if responseData.data == nil {
                     return

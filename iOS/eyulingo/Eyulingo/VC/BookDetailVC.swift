@@ -66,7 +66,7 @@ class BookDetailVC: UIViewController {
         loadingAlert.view.addSubview(loadingIndicator)
         
         self.present(loadingAlert, animated: true, completion: {
-            Alamofire.request(EyulingoUri.addToCartPostUri,
+            Alamofire.request(BookieUri.addToCartPostUri,
                               method: .post,
                               parameters: postParams)
             .responseSwiftyJSON(completionHandler: { responseJSON in

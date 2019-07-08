@@ -116,7 +116,7 @@ class AdminAddBookVC: UIViewController, UITextFieldDelegate {
                 form.append(data, withName: "file",
                             fileName: bookNameText + "_" +  authorNameText + ".jpg",
                             mimeType: "image/jpg")
-            }, to: EyulingoUri.imageCoverUploadUri, encodingCompletion: { result in
+            }, to: BookieUri.imageCoverUploadUri, encodingCompletion: { result in
                 switch result {
                 case .success(let upload, _, _):
                     upload.responseString { response in
@@ -141,7 +141,7 @@ class AdminAddBookVC: UIViewController, UITextFieldDelegate {
                             "coupon_price": priceDouble
                             
                         ]
-                        Alamofire.request(EyulingoUri.addNewBook,
+                        Alamofire.request(BookieUri.addNewBook,
                                           method: .post,
                                           parameters: postParams)
                         .responseSwiftyJSON(completionHandler: { responseJSON in

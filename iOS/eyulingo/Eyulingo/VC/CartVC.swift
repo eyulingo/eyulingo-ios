@@ -24,7 +24,7 @@ class CartHeadlineTableViewCell: UITableViewCell {
 class CartVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBAction func logOutButtonTapped(_ sender: UIButton) {
-        Alamofire.request(EyulingoUri.logOutPostUri, method: .post).response(completionHandler: { _ in
+        Alamofire.request(BookieUri.logOutPostUri, method: .post).response(completionHandler: { _ in
             self.dismiss(animated: true, completion: nil)
         })
     }
@@ -70,7 +70,7 @@ class CartVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     func loadMyCart() {
         headlines.removeAll()
         refreshContent()
-        Alamofire.request(EyulingoUri.myCartGetUri,
+        Alamofire.request(BookieUri.myCartGetUri,
                           method: .get)
             .responseSwiftyJSON(completionHandler: { responseJSON in
                 var errorCode = "general error"
@@ -130,7 +130,7 @@ class CartVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
                                             let postParams: Parameters = [
                                                 "isbn": cartObject.isbn
                                             ]
-                                            Alamofire.request(EyulingoUri.removeFromCartPostUri,
+                                            Alamofire.request(BookieUri.removeFromCartPostUri,
                                                               method: .post,
                                                               parameters: postParams)
                                                 .responseSwiftyJSON(completionHandler: { responseJSON in

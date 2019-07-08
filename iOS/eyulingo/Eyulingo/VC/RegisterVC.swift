@@ -101,7 +101,7 @@ class RegisterVC: UIViewController, UITextFieldDelegate {
         
         self.present(loadingAlert, animated: true, completion: {
             var errorStr = "general error"
-            Alamofire.request(EyulingoUri.registerPostUri,
+            Alamofire.request(BookieUri.registerPostUri,
                               method: .post,
                               parameters: postParams)
                 .responseSwiftyJSON(completionHandler: { responseJSON in

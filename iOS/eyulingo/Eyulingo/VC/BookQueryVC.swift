@@ -24,7 +24,7 @@ class BookHeadlineTableViewCell: UITableViewCell {
 class BookQueryVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate {
     
     @IBAction func logOutButtonTapped(_ sender: UIButton) {
-        Alamofire.request(EyulingoUri.logOutPostUri, method: .post).response(completionHandler: { _ in
+        Alamofire.request(BookieUri.logOutPostUri, method: .post).response(completionHandler: { _ in
             self.dismiss(animated: true, completion: nil)
         })
     }
@@ -83,7 +83,7 @@ class BookQueryVC: UIViewController, UITableViewDataSource, UITableViewDelegate,
         let getParams: Parameters = [
             "q": keyWord
         ]
-        Alamofire.request(EyulingoUri.bookSearchGetUri,
+        Alamofire.request(BookieUri.bookSearchGetUri,
                           method: .get, parameters: getParams)
         .responseSwiftyJSON(completionHandler: { responseJSON in
             var errorCode = "general error"

@@ -22,7 +22,7 @@ class UserHeadlineTableViewCell: UITableViewCell {
 class AdminUserVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBAction func logOutButtonTapped(_ sender: UIButton) {
-        Alamofire.request(EyulingoUri.logOutPostUri, method: .post).response(completionHandler: { _ in
+        Alamofire.request(BookieUri.logOutPostUri, method: .post).response(completionHandler: { _ in
             self.dismiss(animated: true, completion: nil)
         })
     }
@@ -61,7 +61,7 @@ class AdminUserVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
     func loadAllUser() {
         headlines.removeAll()
         refreshContent()
-        Alamofire.request(EyulingoUri.adminGetAllUsers,
+        Alamofire.request(BookieUri.adminGetAllUsers,
                           method: .get)
             .responseSwiftyJSON(completionHandler: { responseJSON in
                 var errorCode = "general error"
@@ -125,7 +125,7 @@ class AdminUserVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
                                             let postParams: Parameters = [
                                                 "userId": userObject.userId
                                             ]
-                Alamofire.request(EyulingoUri.disableUser,
+                Alamofire.request(BookieUri.disableUser,
                                   method: .post,
                                   parameters: postParams
                     ).responseSwiftyJSON(completionHandler: { responseJSON in
@@ -157,7 +157,7 @@ class AdminUserVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
                                             let postParams: Parameters = [
                                                 "userId": userObject.userId
                                             ]
-                                            Alamofire.request(EyulingoUri.enableUser,
+                                            Alamofire.request(BookieUri.enableUser,
                                                               method: .post,
                                                               parameters: postParams
                                                 ).responseSwiftyJSON(completionHandler: { responseJSON in

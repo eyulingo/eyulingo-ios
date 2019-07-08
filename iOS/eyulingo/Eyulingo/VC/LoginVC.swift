@@ -90,7 +90,7 @@ class LoginVC: UIViewController, UITextFieldDelegate {
         
         self.present(loadingAlert, animated: true, completion: {
             var errorStr = "general error"
-            Alamofire.request(EyulingoUri.loginPostUri,
+            Alamofire.request(BookieUri.loginPostUri,
                               method: .post,
                               parameters: postParams)
             .responseSwiftyJSON(completionHandler: { responseJSON in

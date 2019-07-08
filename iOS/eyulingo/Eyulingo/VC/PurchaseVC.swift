@@ -84,7 +84,7 @@ class PurchaseVC: UIViewController, UITextFieldDelegate {
             "phoneNo": deliveryPhoneNo.text!,
             "address": deliveryAddress.text!
         ]
-        Alamofire.request(EyulingoUri.purchasePostUri,
+        Alamofire.request(BookieUri.purchasePostUri,
                           method: .post,
                           parameters: postParams)
             .responseSwiftyJSON(completionHandler: { responseJSON in
