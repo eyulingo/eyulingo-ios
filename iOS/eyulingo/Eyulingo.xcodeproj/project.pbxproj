@@ -117,7 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				8A2622F822CB3E3100C39943 /* Image */,
-				8A55B27D22C8CE85007E77FD /* Bookie */,
+				8A55B27D22C8CE85007E77FD /* Eyulingo */,
 				8A55B27C22C8CE85007E77FD /* Products */,
 				217D389985AAA164A5BFF890 /* Pods */,
 				4252CC02B76CE81154847519 /* Frameworks */,
@@ -132,7 +132,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		8A55B27D22C8CE85007E77FD /* Bookie */ = {
+		8A55B27D22C8CE85007E77FD /* Eyulingo */ = {
 			isa = PBXGroup;
 			children = (
 				8AC9E7EF22C9A87F00F80460 /* Utils */,
@@ -146,7 +146,7 @@
 				8A55B28922C8CE8A007E77FD /* LaunchScreen.storyboard */,
 				8A55B28C22C8CE8A007E77FD /* Info.plist */,
 			);
-			path = Bookie;
+			path = Eyulingo;
 			sourceTree = "<group>";
 		};
 		8AC9E7D722C9A2E500F80460 /* VC */ = {
