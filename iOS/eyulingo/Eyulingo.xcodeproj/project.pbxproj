@@ -39,7 +39,7 @@
 
 /* Begin PBXFileReference section */
 		8A2622F922CB3E3E00C39943 /* Chp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Chp.png; sourceTree = "<group>"; };
-		8A55B27B22C8CE85007E77FD /* Bookie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bookie.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A55B27B22C8CE85007E77FD /* Eyulingo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eyulingo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A55B27E22C8CE85007E77FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8A55B28022C8CE85007E77FD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		8A55B28222C8CE85007E77FD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -123,7 +123,7 @@
 		8A55B27C22C8CE85007E77FD /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8A55B27B22C8CE85007E77FD /* Bookie.app */,
+				8A55B27B22C8CE85007E77FD /* Eyulingo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -189,9 +189,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8A55B27A22C8CE85007E77FD /* Bookie */ = {
+		8A55B27A22C8CE85007E77FD /* Eyulingo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8A55B28F22C8CE8A007E77FD /* Build configuration list for PBXNativeTarget "Bookie" */;
+			buildConfigurationList = 8A55B28F22C8CE8A007E77FD /* Build configuration list for PBXNativeTarget "Eyulingo" */;
 			buildPhases = (
 				26D4C209FC1FCC015928D988 /* [CP] Check Pods Manifest.lock */,
 				8A55B27722C8CE85007E77FD /* Sources */,
@@ -203,9 +203,9 @@
 			);
 			dependencies = (
 			);
-			name = Bookie;
+			name = Eyulingo;
 			productName = Bookie;
-			productReference = 8A55B27B22C8CE85007E77FD /* Bookie.app */;
+			productReference = 8A55B27B22C8CE85007E77FD /* Eyulingo.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -224,7 +224,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 8A55B27622C8CE85007E77FD /* Build configuration list for PBXProject "Bookie" */;
+			buildConfigurationList = 8A55B27622C8CE85007E77FD /* Build configuration list for PBXProject "Eyulingo" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -237,7 +237,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8A55B27A22C8CE85007E77FD /* Bookie */,
+				8A55B27A22C8CE85007E77FD /* Eyulingo */,
 			);
 		};
 /* End PBXProject section */
@@ -479,7 +479,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = io.github.yuetsin.Bookie;
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.eyulingo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -502,7 +502,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = io.github.yuetsin.Bookie;
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.eyulingo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
@@ -513,7 +513,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		8A55B27622C8CE85007E77FD /* Build configuration list for PBXProject "Bookie" */ = {
+		8A55B27622C8CE85007E77FD /* Build configuration list for PBXProject "Eyulingo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8A55B28D22C8CE8A007E77FD /* Debug */,
@@ -522,7 +522,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8A55B28F22C8CE8A007E77FD /* Build configuration list for PBXNativeTarget "Bookie" */ = {
+		8A55B28F22C8CE8A007E77FD /* Build configuration list for PBXNativeTarget "Eyulingo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8A55B29022C8CE8A007E77FD /* Debug */,
