@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_BookieVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_BookieVersionString[];
+FOUNDATION_EXPORT double Pods_EyulingoVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_EyulingoVersionString[];
 

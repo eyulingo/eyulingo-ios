@@ -1,0 +1,6 @@
+framework module Pods_Eyulingo {
+  umbrella header "Pods-Eyulingo-umbrella.h"
+
+  export *
+  module * { export * }
+}
