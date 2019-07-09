@@ -86,7 +86,7 @@ class MyProfileViewController: UIViewController, profileChangesDelegate {
                         case .success(let upload, _, _):
                             upload.responseString { response in
                                 if response.error != nil {
-                                    loadingAlert.dismiss(animated: true, completion: {
+                                    picker.dismiss(animated: true, completion: {
                                         self.makeAlert("上传图片失败", "服务器报告了一个 “no response” 错误。",
                                             completion: { })
                                     })
