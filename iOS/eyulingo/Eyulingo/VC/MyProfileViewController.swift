@@ -61,7 +61,14 @@ class MyProfileViewController: UIViewController, profileChangesDelegate {
         config.library.minNumberOfItems = 1
         let picker = YPImagePicker(configuration: config)
         
-        picker.didFinishPicking { [unowned picker] items, _ in
+        
+        picker.didFinishPicking { [unowned picker] items, cancelled in
+            if cancelled {
+                print("Picker was canceled")
+                loadingAlert.dismiss(animated: true, completion: nil)
+                picker.dismiss(animated: true, completion: nil)
+            }
+            
             if let photo = items.singlePhoto {
                 
                 guard let data = photo.image.jpegData(compressionQuality: 0.8) else {
@@ -78,13 +85,20 @@ class MyProfileViewController: UIViewController, profileChangesDelegate {
                         switch result {
                         case .success(let upload, _, _):
                             upload.responseString { response in
+                                if response.error != nil {
+                                    loadingAlert.dismiss(animated: true, completion: {
+                                        self.makeAlert("上传图片失败", "服务器报告了一个 “no response” 错误。",
+                                            completion: { })
+                                    })
+                                    return
+                                }
                                 let responseJson: JSON = JSON.init(parseJSON: response.value!)
                                 if responseJson["status"].stringValue != "ok" {
                                     picker.dismiss(animated: true, completion: {
-                                        loadingAlert.dismiss(animated: true, completion: {
-                                            self.makeAlert("上传图片失败", "服务器报告了一个 “\(responseJson["status"])” 错误。",
+                                        
+                                        self.makeAlert("上传图片失败", "服务器报告了一个 “\(responseJson["status"])” 错误。",
                                                 completion: { })
-                                        })
+                                        
                                     })
                                 }
                                 let fileId = responseJson["file_id"].stringValue
