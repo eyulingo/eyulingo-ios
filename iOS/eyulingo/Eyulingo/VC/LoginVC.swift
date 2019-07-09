@@ -90,31 +90,21 @@ class LoginVC: UIViewController, UITextFieldDelegate {
         
         self.present(loadingAlert, animated: true, completion: {
             var errorStr = "general error"
-            Alamofire.request(BookieUri.loginPostUri,
+            Alamofire.request(Eyulingo_UserUri.loginPostUri,
                               method: .post,
                               parameters: postParams)
             .responseSwiftyJSON(completionHandler: { responseJSON in
                 if responseJSON.error == nil {
                     let jsonResp = responseJSON.value
                     if jsonResp != nil {
-                        if jsonResp!["status"].stringValue == "login_successfully" {
-                            let role = jsonResp!["role"].stringValue
-                            if role == "R_ADMIN" {
-                                loadingAlert.dismiss(animated: true, completion: {
-//                                    let destinationStoryboard = UIStoryboard(name: "Main", bundle:nil)
-//                                    let destinationViewController = destinationStoryboard.instantiateViewController(withIdentifier: "NormalUserVC") as! UITabBarController
-//                                    self.present(destinationViewController, animated: true, completion: nil)
-                                    self.performSegue(withIdentifier: "adminUserSegue", sender: self)
-                                })
-                            } else {
+                        if jsonResp!["status"].stringValue == "ok" {
+                            
                                 loadingAlert.dismiss(animated: true, completion: {
 //                                    let destinationStoryboard = UIStoryboard(name: "Main", bundle:nil)
 //                                    let destinationViewController = destinationStoryboard.instantiateViewController(withIdentifier: "AdminVC") as! UITabBarController
 //                                    self.present(destinationViewController, animated: true, completion: nil)
                                     self.performSegue(withIdentifier: "normalUserSegue", sender: self)
                                 })
-                            }
-                            return
                         } else {
                             errorStr = jsonResp!["status"].stringValue
                         }
@@ -127,7 +117,7 @@ class LoginVC: UIViewController, UITextFieldDelegate {
                 
                 if errorStr == "account_locked" {
                     loadingAlert.dismiss(animated: true, completion: {
-                        self.makeAlert("登录失败", "您的账户已被冻结。再注册一个吧（×）",
+                        self.makeAlert("登录失败", "您的账户已被冻结。",
                             completion: { })
                     })
                 } else {

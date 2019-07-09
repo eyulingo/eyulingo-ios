@@ -26,6 +26,7 @@ class LightTabBarController: UITabBarController {
         super.viewDidLoad()
         
         overrideUserInterfaceStyle = .light
+//        overrideUserInterfaceStyle = .unspecified
         // Do any additional setup after loading the view.
     }
 }

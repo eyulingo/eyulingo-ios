@@ -19,6 +19,7 @@ class RegisterVC: UIViewController, UITextFieldDelegate {
 
         userNameField.delegate = self
         eMailField.delegate = self
+        captchaTextField.delegate = self
         passWordField.delegate = self
         confirmPassWordField.delegate = self
         // Do any additional setup after loading the view.
@@ -36,14 +37,17 @@ class RegisterVC: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var userNameField: UITextField!
     @IBOutlet weak var eMailField: UITextField!
+    @IBOutlet weak var captchaTextField: UITextField!
     @IBOutlet weak var passWordField: UITextField!
     @IBOutlet weak var confirmPassWordField: UITextField!
-    
+    @IBOutlet weak var verifyButton: UIButton!
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == userNameField {
             eMailField.becomeFirstResponder()
         } else if textField == eMailField {
+            captchaTextField.becomeFirstResponder()
+        } else if textField == captchaTextField {
             passWordField.becomeFirstResponder()
         } else if textField == passWordField {
             confirmPassWordField.becomeFirstResponder()
@@ -58,13 +62,18 @@ class RegisterVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var registerButton: UIButton!
     
     @IBAction func onFieldEdited(_ sender: UITextField) {
-        if userNameField.text == "" && eMailField.text == "" && passWordField.text == "" && confirmPassWordField.text == "" {
+        if EmailVerifier.verify(eMailField.text ?? "") {
+            verifyButton.isEnabled = true
+        } else {
+            verifyButton.isEnabled = false
+        }
+        if userNameField.text == "" && eMailField.text == "" && passWordField.text == "" && confirmPassWordField.text == "" && captchaTextField.text == "" {
             resetButton.isEnabled = false
         } else {
             resetButton.isEnabled = true
         }
         
-        if userNameField.text == "" || eMailField.text == "" || passWordField.text == "" || confirmPassWordField.text == "" || passWordField.text != confirmPassWordField.text {
+        if userNameField.text == "" || eMailField.text == "" || passWordField.text == "" || confirmPassWordField.text == "" || passWordField.text != confirmPassWordField.text || captchaTextField.text == "" {
             registerButton.isEnabled = false
         } else {
             registerButton.isEnabled = true
@@ -74,6 +83,7 @@ class RegisterVC: UIViewController, UITextFieldDelegate {
     @IBAction func resetButtonTapped(_ sender: UIButton) {
         userNameField.text = ""
         eMailField.text = ""
+        captchaTextField.text = ""
         passWordField.text = ""
         confirmPassWordField.text = ""
         onFieldEdited(userNameField)
@@ -85,9 +95,11 @@ class RegisterVC: UIViewController, UITextFieldDelegate {
     
     @IBAction func registerButtonTapped(_ sender: UIButton) {
         let postParams: Parameters = [
+            "email": eMailField.text!,
             "username": userNameField.text!,
             "password": passWordField.text!,
-            "confirmPassword": confirmPassWordField.text!
+            "confirm_password": confirmPassWordField.text!,
+            "confirm_code": captchaTextField.text!
         ]
         
         let loadingAlert = UIAlertController(title: nil, message: "请稍等……", preferredStyle: .alert)
@@ -101,7 +113,7 @@ class RegisterVC: UIViewController, UITextFieldDelegate {
         
         self.present(loadingAlert, animated: true, completion: {
             var errorStr = "general error"
-            Alamofire.request(BookieUri.registerPostUri,
+            Alamofire.request(Eyulingo_UserUri.registerPostUri,
                               method: .post,
                               parameters: postParams)
                 .responseSwiftyJSON(completionHandler: { responseJSON in
