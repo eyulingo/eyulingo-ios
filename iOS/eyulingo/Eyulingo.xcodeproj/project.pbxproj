@@ -24,6 +24,9 @@
 		8A723DA922D4659E008FD0C9 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A723DA822D4659E008FD0C9 /* CartViewController.swift */; };
 		8A723DAB22D465A9008FD0C9 /* OrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A723DAA22D465A9008FD0C9 /* OrdersViewController.swift */; };
 		8A723DAD22D465B5008FD0C9 /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A723DAC22D465B5008FD0C9 /* MyProfileViewController.swift */; };
+		8A723DB022D4704F008FD0C9 /* EyUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A723DAF22D4704F008FD0C9 /* EyUser.swift */; };
+		8A723DB222D4721E008FD0C9 /* ProfileContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A723DB122D4721E008FD0C9 /* ProfileContentViewController.swift */; };
+		8A723DB422D47954008FD0C9 /* LogoutNow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A723DB322D47954008FD0C9 /* LogoutNow.swift */; };
 		8AC9E7D922C9A31400F80460 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC9E7D822C9A31400F80460 /* LoginVC.swift */; };
 		8AC9E7DB22C9A34700F80460 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC9E7DA22C9A34700F80460 /* RegisterVC.swift */; };
 		8AC9E7DD22C9A37500F80460 /* BookQueryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC9E7DC22C9A37500F80460 /* BookQueryVC.swift */; };
@@ -64,6 +67,9 @@
 		8A723DA822D4659E008FD0C9 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 		8A723DAA22D465A9008FD0C9 /* OrdersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersViewController.swift; sourceTree = "<group>"; };
 		8A723DAC22D465B5008FD0C9 /* MyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
+		8A723DAF22D4704F008FD0C9 /* EyUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyUser.swift; sourceTree = "<group>"; };
+		8A723DB122D4721E008FD0C9 /* ProfileContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileContentViewController.swift; sourceTree = "<group>"; };
+		8A723DB322D47954008FD0C9 /* LogoutNow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutNow.swift; sourceTree = "<group>"; };
 		8AC9E7D822C9A31400F80460 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		8AC9E7DA22C9A34700F80460 /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
 		8AC9E7DC22C9A37500F80460 /* BookQueryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookQueryVC.swift; sourceTree = "<group>"; };
@@ -164,7 +170,8 @@
 			isa = PBXGroup;
 			children = (
 				8AC9E7EF22C9A87F00F80460 /* Utils */,
-				8AC9E7EC22C9A7E400F80460 /* Struct */,
+				8AC9E7EC22C9A7E400F80460 /* [Deprecated] Struct */,
+				8A723DAE22D47039008FD0C9 /* Struct */,
 				8A0AF9E622D421FA009430B9 /* [deprecated] VC */,
 				8AC9E7D722C9A2E500F80460 /* VC */,
 				8A55B27E22C8CE85007E77FD /* AppDelegate.swift */,
@@ -178,6 +185,14 @@
 			path = Eyulingo;
 			sourceTree = "<group>";
 		};
+		8A723DAE22D47039008FD0C9 /* Struct */ = {
+			isa = PBXGroup;
+			children = (
+				8A723DAF22D4704F008FD0C9 /* EyUser.swift */,
+			);
+			path = Struct;
+			sourceTree = "<group>";
+		};
 		8AC9E7D722C9A2E500F80460 /* VC */ = {
 			isa = PBXGroup;
 			children = (
@@ -188,11 +203,12 @@
 				8A723DA822D4659E008FD0C9 /* CartViewController.swift */,
 				8A723DAA22D465A9008FD0C9 /* OrdersViewController.swift */,
 				8A723DAC22D465B5008FD0C9 /* MyProfileViewController.swift */,
+				8A723DB122D4721E008FD0C9 /* ProfileContentViewController.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
 		};
-		8AC9E7EC22C9A7E400F80460 /* Struct */ = {
+		8AC9E7EC22C9A7E400F80460 /* [Deprecated] Struct */ = {
 			isa = PBXGroup;
 			children = (
 				8AC9E7ED22C9A7F400F80460 /* Book.swift */,
@@ -201,7 +217,7 @@
 				8AC9E7FA22C9B57E00F80460 /* User.swift */,
 				8AC9E7FC22C9C1A300F80460 /* AdminBill.swift */,
 			);
-			path = Struct;
+			path = "[Deprecated] Struct";
 			sourceTree = "<group>";
 		};
 		8AC9E7EF22C9A87F00F80460 /* Utils */ = {
@@ -212,6 +228,7 @@
 				8A06394522D32FDC00699037 /* DateAndTimeParser.swift */,
 				8A6DD6FB22CAF55500BD7904 /* PinYinConverter.swift */,
 				8A0AF9E422D41F6E009430B9 /* JudgeValidEmail.swift */,
+				8A723DB322D47954008FD0C9 /* LogoutNow.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -343,6 +360,7 @@
 				8AC9E7DF22C9A39700F80460 /* CartVC.swift in Sources */,
 				8AC9E7E922C9A42300F80460 /* AdminOrderVC.swift in Sources */,
 				8A723DA722D46590008FD0C9 /* SearchViewController.swift in Sources */,
+				8A723DB222D4721E008FD0C9 /* ProfileContentViewController.swift in Sources */,
 				8AC9E7FD22C9C1A300F80460 /* AdminBill.swift in Sources */,
 				8AC9E7DD22C9A37500F80460 /* BookQueryVC.swift in Sources */,
 				8AC9E7E122C9A3AE00F80460 /* PurchasedVC.swift in Sources */,
@@ -351,10 +369,12 @@
 				8A723DAD22D465B5008FD0C9 /* MyProfileViewController.swift in Sources */,
 				8AC9E7D922C9A31400F80460 /* LoginVC.swift in Sources */,
 				8A06394622D32FDC00699037 /* DateAndTimeParser.swift in Sources */,
+				8A723DB022D4704F008FD0C9 /* EyUser.swift in Sources */,
 				8A55B28122C8CE85007E77FD /* SceneDelegate.swift in Sources */,
 				8AC9E7E722C9A40C00F80460 /* AdminUserVC.swift in Sources */,
 				8AC9E7F522C9AF4A00F80460 /* PurchaseVC.swift in Sources */,
 				8AC9E7DB22C9A34700F80460 /* RegisterVC.swift in Sources */,
+				8A723DB422D47954008FD0C9 /* LogoutNow.swift in Sources */,
 				8AC9E7E322C9A3CD00F80460 /* BookDetailVC.swift in Sources */,
 				8A6DD6F222CAE3FA00BD7904 /* TabBarController.swift in Sources */,
 				8A6DD6FC22CAF55500BD7904 /* PinYinConverter.swift in Sources */,

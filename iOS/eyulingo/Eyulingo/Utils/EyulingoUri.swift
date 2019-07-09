@@ -13,8 +13,10 @@ class Eyulingo_UserUri {
     // parameters:
     // username - username
     // password - password (废话)
-    
     static let loginPostUri = baseUri + "/login"
+    
+    // parameters: <none>
+    static let logOutPostUri = baseUri + "/login?logout"
     
     // parameters:
     // email - 电子邮箱
@@ -109,4 +111,12 @@ class Eyulingo_UserUri {
     
     // parameters: <none>
     static let purchasedGetUri = baseUri + "/orderlist"
+    
+    // parameters:
+    // fileId - 图像 ID
+    static let imageGetUri = baseUri + "/img/download"
+    
+    // parameters:
+    // <Image Object>
+    static let imagePostUri = baseUri + "/img/upload"
 }

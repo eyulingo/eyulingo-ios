@@ -98,13 +98,13 @@ class LoginVC: UIViewController, UITextFieldDelegate {
                     let jsonResp = responseJSON.value
                     if jsonResp != nil {
                         if jsonResp!["status"].stringValue == "ok" {
-                            
                                 loadingAlert.dismiss(animated: true, completion: {
 //                                    let destinationStoryboard = UIStoryboard(name: "Main", bundle:nil)
 //                                    let destinationViewController = destinationStoryboard.instantiateViewController(withIdentifier: "AdminVC") as! UITabBarController
 //                                    self.present(destinationViewController, animated: true, completion: nil)
                                     self.performSegue(withIdentifier: "normalUserSegue", sender: self)
                                 })
+                            return
                         } else {
                             errorStr = jsonResp!["status"].stringValue
                         }
