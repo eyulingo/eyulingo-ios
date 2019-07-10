@@ -39,7 +39,7 @@
                                 </items>
                             </navigationBar>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="LOS-Gi-gBt">
-                                <rect key="frame" x="68" y="262.66666666666669" width="278.33333333333331" height="211"/>
+                                <rect key="frame" x="68" y="235.66666666666663" width="278.33333333333331" height="265"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="输入凭据" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="32A-Z8-1fy">
                                         <rect key="frame" x="64.333333333333329" y="0.0" width="149.33333333333337" height="44.333333333333336"/>
@@ -48,7 +48,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="eCS-qL-RSa">
-                                        <rect key="frame" x="0.0" y="68.333333333333314" width="278.33333333333331" height="90"/>
+                                        <rect key="frame" x="0.0" y="68.333333333333343" width="278.33333333333331" height="90"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="eZA-RX-Tpj">
                                                 <rect key="frame" x="1.3333333333333428" y="0.0" width="275.66666666666663" height="34"/>
@@ -108,8 +108,15 @@
                                             <constraint firstAttribute="bottom" secondItem="eZA-RX-Tpj" secondAttribute="bottom" constant="56" id="ypN-Rr-Ai6"/>
                                         </constraints>
                                     </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vpf-j4-jtp">
+                                        <rect key="frame" x="100.66666666666666" y="182.33333333333334" width="77" height="30"/>
+                                        <state key="normal" title="忘了密码？"/>
+                                        <connections>
+                                            <action selector="forgetPasswordTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ssE-V3-mSy"/>
+                                        </connections>
+                                    </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SeI-di-Qxv">
-                                        <rect key="frame" x="47.000000000000014" y="182.33333333333331" width="184.33333333333337" height="28.666666666666657"/>
+                                        <rect key="frame" x="47.000000000000014" y="236.33333333333334" width="184.33333333333337" height="28.666666666666657"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="28.666666666666657" id="N9h-BD-gUR"/>
                                             <constraint firstAttribute="width" constant="184.33000000000001" id="cnK-F4-iuy"/>
@@ -139,6 +146,7 @@ Project Eyulingo. 一切权利保留。</string>
                         <outlet property="resetButton" destination="bbW-N8-J2a" id="lCX-Js-rZX"/>
                         <outlet property="userNameField" destination="4Wz-B9-gGh" id="Mm0-E4-BRe"/>
                         <segue destination="ANh-au-Fu3" kind="presentation" identifier="normalUserSegue" modalPresentationStyle="currentContext" modalTransitionStyle="flipHorizontal" id="yMo-Z3-MRa"/>
+                        <segue destination="Bg6-mM-aeh" kind="showDetail" identifier="forgetPasswordSegue" id="MZu-io-wmV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -565,7 +573,7 @@ Project Eyulingo. 一切权利保留。</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jeS-rf-jtp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-128" y="-588"/>
+            <point key="canvasLocation" x="-387" y="-579"/>
         </scene>
         <!--已购项目-->
         <scene sceneID="lDG-Ju-rGt">
@@ -843,7 +851,7 @@ Project Eyulingo. 一切权利保留。</string>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Tp5-DY-VTi">
-                                                    <rect key="frame" x="230" y="0.0" width="144" height="144"/>
+                                                    <rect key="frame" x="230" y="-0.33333333333333215" width="144" height="145"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="144" id="27T-XS-viH"/>
                                                     </constraints>
@@ -1144,7 +1152,7 @@ Project Eyulingo. 一切权利保留。</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cek-jA-wEu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1572" y="1670"/>
+            <point key="canvasLocation" x="1590" y="1670"/>
         </scene>
         <!--Change Password View Controller-->
         <scene sceneID="XZZ-MR-MBd">
@@ -1299,6 +1307,170 @@ Project Eyulingo. 一切权利保留。</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wis-zI-fwf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="894" y="1670"/>
+        </scene>
+        <!--Forget Password View Controller-->
+        <scene sceneID="0H8-V1-2Pr">
+            <objects>
+                <viewController storyboardIdentifier="FindPasswordVC" id="Bg6-mM-aeh" customClass="ForgetPasswordViewController" customModule="Eyulingo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xlT-yK-YYV">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JnM-f1-yFo">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="115.33333333333333"/>
+                                <items>
+                                    <navigationItem title="找回密码" id="PlG-1d-4cY">
+                                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="stop" id="dpv-Co-Nh6">
+                                            <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <connections>
+                                                <action selector="dismissMe:" destination="Bg6-mM-aeh" id="4aA-Rg-qyB"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="ZpF-it-QcT">
+                                <rect key="frame" x="89" y="174.66666666666663" width="236" height="367"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="提供信息" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pBF-kZ-UvD">
+                                        <rect key="frame" x="43.333333333333343" y="0.0" width="149.33333333333334" height="44.333333333333336"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="37"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="Lqn-zI-8jF">
+                                        <rect key="frame" x="0.0" y="68.333333333333343" width="236" height="246.00000000000003"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="vqe-CZ-sA5">
+                                                <rect key="frame" x="0.0" y="0.0" width="236" height="34"/>
+                                                <subviews>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="用户名" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="dRE-bi-6cn">
+                                                        <rect key="frame" x="0.0" y="0.0" width="183" height="34"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="34" id="DzO-xe-V0k"/>
+                                                            <constraint firstAttribute="width" constant="183" id="VJ3-B1-ssV"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                                        <connections>
+                                                            <action selector="onFieldEdited:" destination="Bg6-mM-aeh" eventType="editingChanged" id="2a3-zM-Iw7"/>
+                                                        </connections>
+                                                    </textField>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PsA-7x-KLs">
+                                                        <rect key="frame" x="205" y="2" width="31" height="30"/>
+                                                        <state key="normal" title="验证"/>
+                                                        <connections>
+                                                            <action selector="getCheckCode:" destination="Bg6-mM-aeh" eventType="touchUpInside" id="lbc-wo-MD7"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="zDl-cB-ofj">
+                                                <rect key="frame" x="0.0" y="56" width="236" height="34"/>
+                                                <subviews>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="验证码" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ayN-9O-7Pm">
+                                                        <rect key="frame" x="0.0" y="0.0" width="236" height="34"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="236" id="RZH-lt-47V"/>
+                                                            <constraint firstAttribute="height" constant="34" id="nHd-dJ-4Y0"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="next" enablesReturnKeyAutomatically="YES" textContentType="one-time-code"/>
+                                                        <connections>
+                                                            <action selector="onFieldEdited:" destination="Bg6-mM-aeh" eventType="editingChanged" id="uW1-i1-eCY"/>
+                                                        </connections>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="Tdp-jB-fVE">
+                                                <rect key="frame" x="0.0" y="112" width="236" height="34"/>
+                                                <subviews>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="新密码" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="cwu-Sd-5Gw">
+                                                        <rect key="frame" x="0.0" y="0.0" width="236" height="34"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="236" id="0NI-lg-5F4"/>
+                                                            <constraint firstAttribute="height" constant="34" id="zRh-0l-faK"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" textContentType="password"/>
+                                                        <connections>
+                                                            <action selector="onFieldEdited:" destination="Bg6-mM-aeh" eventType="editingChanged" id="ewV-XY-IYi"/>
+                                                        </connections>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="TQf-l2-SRO">
+                                                <rect key="frame" x="0.0" y="168" width="236" height="34"/>
+                                                <subviews>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="确认新密码" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="HAy-hB-cp1">
+                                                        <rect key="frame" x="0.0" y="0.0" width="236" height="34"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="34" id="avP-yt-G7m"/>
+                                                            <constraint firstAttribute="width" constant="236" id="hq0-KN-naI"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" textContentType="password"/>
+                                                        <connections>
+                                                            <action selector="onFieldEdited:" destination="Bg6-mM-aeh" eventType="editingChanged" id="crY-tL-pga"/>
+                                                        </connections>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="vLA-IW-5Ks">
+                                                <rect key="frame" x="88.333333333333343" y="224" width="59.666666666666657" height="22"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E6s-gR-KaW">
+                                                        <rect key="frame" x="0.0" y="0.0" width="17.666666666666668" height="22"/>
+                                                        <state key="normal" image="arrow.clockwise" catalog="system"/>
+                                                        <connections>
+                                                            <action selector="resetButtonTapped:" destination="Bg6-mM-aeh" eventType="touchUpInside" id="zsD-oc-bpD"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iOg-UR-imD">
+                                                        <rect key="frame" x="39.666666666666657" y="0.0" width="20" height="22"/>
+                                                        <state key="normal" image="arrow.right.circle" catalog="system"/>
+                                                        <connections>
+                                                            <action selector="submitButtonTapped:" destination="Bg6-mM-aeh" eventType="touchUpInside" id="fhO-jQ-uVa"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ts5-4V-3QU">
+                                        <rect key="frame" x="26" y="338.33333333333337" width="184.33333333333334" height="28.666666666666686"/>
+                                        <string key="text">Copyright © 2019
+Project Eyulingo. 一切权利保留。</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <color key="textColor" cocoaTouchSystemColor="secondaryLabelColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="JnM-f1-yFo" firstAttribute="leading" secondItem="xlT-yK-YYV" secondAttribute="leading" id="1ll-i6-RD5"/>
+                            <constraint firstAttribute="trailing" secondItem="JnM-f1-yFo" secondAttribute="trailing" id="72F-rd-Yh9"/>
+                            <constraint firstItem="JnM-f1-yFo" firstAttribute="top" secondItem="xlT-yK-YYV" secondAttribute="top" id="XVW-tt-9IG"/>
+                            <constraint firstItem="ZpF-it-QcT" firstAttribute="centerX" secondItem="xlT-yK-YYV" secondAttribute="centerX" id="bdW-Br-yDs"/>
+                            <constraint firstItem="ZpF-it-QcT" firstAttribute="centerY" secondItem="xlT-yK-YYV" secondAttribute="centerY" id="slK-kU-qsI"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ahp-we-wBd"/>
+                    </view>
+                    <connections>
+                        <outlet property="captchaField" destination="ayN-9O-7Pm" id="rHs-RT-b5G"/>
+                        <outlet property="confirmNewPasswordField" destination="HAy-hB-cp1" id="Y5g-NW-sGE"/>
+                        <outlet property="getCheckCodeButton" destination="PsA-7x-KLs" id="ugT-g7-krW"/>
+                        <outlet property="newPasswordField" destination="cwu-Sd-5Gw" id="Jgs-bn-plk"/>
+                        <outlet property="resetButton" destination="E6s-gR-KaW" id="o3s-Wp-DBt"/>
+                        <outlet property="submitButton" destination="iOg-UR-imD" id="a3O-Tt-k2d"/>
+                        <outlet property="userNameField" destination="dRE-bi-6cn" id="9ky-v9-Ujv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7hW-bR-Mk4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="400" y="-580"/>
         </scene>
     </scenes>
     <resources>

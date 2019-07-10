@@ -119,4 +119,15 @@ class Eyulingo_UserUri {
     // parameters:
     // <Image Object>
     static let imagePostUri = baseUri + "/img/upload"
+    
+    // parameters:
+    // username - 用户名
+    static let findCheckCodePostUri = baseUri + "/findcheckcode"
+    
+    // parameters:
+    // username - 用户名
+    // new_password - 新密码
+    // confirm_password - 确认密码
+    // check_code - 验证码
+    static let resetPasswordPostUri = baseUri + "/findpassword"
 }

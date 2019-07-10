@@ -20,6 +20,7 @@
 		8A55B28B22C8CE8A007E77FD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A55B28922C8CE8A007E77FD /* LaunchScreen.storyboard */; };
 		8A6DD6F222CAE3FA00BD7904 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6DD6F122CAE3FA00BD7904 /* TabBarController.swift */; };
 		8A6DD6FC22CAF55500BD7904 /* PinYinConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6DD6FB22CAF55500BD7904 /* PinYinConverter.swift */; };
+		8A71175D22D5D268002F9202 /* ForgetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A71175C22D5D268002F9202 /* ForgetPasswordViewController.swift */; };
 		8A723DA722D46590008FD0C9 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A723DA622D46590008FD0C9 /* SearchViewController.swift */; };
 		8A723DA922D4659E008FD0C9 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A723DA822D4659E008FD0C9 /* CartViewController.swift */; };
 		8A723DAB22D465A9008FD0C9 /* OrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A723DAA22D465A9008FD0C9 /* OrdersViewController.swift */; };
@@ -65,6 +66,7 @@
 		8A55B28C22C8CE8A007E77FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8A6DD6F122CAE3FA00BD7904 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		8A6DD6FB22CAF55500BD7904 /* PinYinConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinYinConverter.swift; sourceTree = "<group>"; };
+		8A71175C22D5D268002F9202 /* ForgetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordViewController.swift; sourceTree = "<group>"; };
 		8A723DA622D46590008FD0C9 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		8A723DA822D4659E008FD0C9 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 		8A723DAA22D465A9008FD0C9 /* OrdersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersViewController.swift; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 			children = (
 				8AC9E7D822C9A31400F80460 /* LoginVC.swift */,
 				8AC9E7DA22C9A34700F80460 /* RegisterVC.swift */,
+				8A71175C22D5D268002F9202 /* ForgetPasswordViewController.swift */,
 			);
 			path = LoginPage;
 			sourceTree = "<group>";
@@ -428,6 +431,7 @@
 				8A6DD6FC22CAF55500BD7904 /* PinYinConverter.swift in Sources */,
 				8AC9E7F322C9ACC900F80460 /* Bill.swift in Sources */,
 				8A0AF9E522D41F6E009430B9 /* JudgeValidEmail.swift in Sources */,
+				8A71175D22D5D268002F9202 /* ForgetPasswordViewController.swift in Sources */,
 				8A723DA922D4659E008FD0C9 /* CartViewController.swift in Sources */,
 				8AC9E7FB22C9B57E00F80460 /* User.swift in Sources */,
 			);

@@ -203,6 +203,10 @@ class MyProfileViewController: UIViewController, profileChangesDelegate, profile
     
     func setProfileInfo() {
         if currentUser != nil {
+            self.contentVC?.setUserProfile(avatar: nil,
+                                           userId: self.currentUser!.userId!,
+                                           userName: self.currentUser!.userName!,
+                                           email: self.currentUser!.userEmail!)
             let params: Parameters = [
                 "fileId": currentUser!.avatarId!
             ]

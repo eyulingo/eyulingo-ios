@@ -78,6 +78,10 @@ class LoginVC: UIViewController, UITextFieldDelegate {
         textChanged(userNameField)
     }
     
+    @IBAction func forgetPasswordTapped(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "forgetPasswordSegue", sender: self)
+    }
+    
     @IBAction func loginButtonTapped(_ sender: UIButton) {
         let postParams: Parameters = [
             "username": userNameField.text!,
