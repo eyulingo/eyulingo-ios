@@ -36,7 +36,7 @@ class PurchaseVC: UIViewController, UITextFieldDelegate {
         deliveryName.delegate = self
         deliveryPhoneNo.delegate = self
         deliveryAddress.delegate = self
-        overrideUserInterfaceStyle = .light
+//        overrideUserInterfaceStyle = .light
     }
     
     @IBOutlet weak var deliveryName: UITextField!

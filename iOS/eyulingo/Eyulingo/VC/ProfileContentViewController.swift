@@ -36,12 +36,21 @@ class ProfileContentViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.tableView.deselectRow(at: indexPath, animated: true)
-        if indexPath.row == 0 {
-            self.delegate?.updateAvatar()
-        } else if indexPath.row == 4 {
-            self.delegate?.updateEmail()
-        } else if indexPath.row == 5 {
-            self.delegate?.updatePassword()
+        
+        if indexPath.section == 0 {
+            if indexPath.row == 0 {
+                self.delegate?.updateAvatar()
+            } else if indexPath.row == 3 {
+                self.delegate?.updateEmail()
+            } else if indexPath.row == 4 {
+                self.delegate?.updatePassword()
+            }
+        } else {
+            if indexPath.row == 0 {
+                self.delegate?.editReceiveAddress()
+            } else if indexPath.row == 1 {
+                self.delegate?.contactSupport()
+            }
         }
     }
 }
@@ -49,7 +58,9 @@ class ProfileContentViewController: UITableViewController {
 
 protocol profileChangesDelegate {
     func updateAvatar() -> ()
-    func updateUserName() -> ()
+//    func updateUserName() -> ()
     func updateEmail() -> ()
     func updatePassword() -> ()
+    func editReceiveAddress() -> ()
+    func contactSupport() -> ()
 }

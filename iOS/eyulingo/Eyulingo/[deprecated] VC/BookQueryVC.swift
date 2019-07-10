@@ -53,7 +53,7 @@ class BookQueryVC: UIViewController, UITableViewDataSource, UITableViewDelegate,
         super.viewDidLoad()
         searchTextField.delegate = self
         // Do any additional setup after loading the view.
-        overrideUserInterfaceStyle = .light
+//        overrideUserInterfaceStyle = .light
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

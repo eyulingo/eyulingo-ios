@@ -37,7 +37,7 @@ class AdminBookVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
         bookTableView.dataSource = self
         
         // Do any additional setup after loading the view.
-        overrideUserInterfaceStyle = .dark
+//        overrideUserInterfaceStyle = .dark
     }
     
     override func viewDidAppear(_ animated: Bool) {

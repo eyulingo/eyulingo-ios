@@ -16,13 +16,18 @@ class LoginVC: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        overrideUserInterfaceStyle = .light
+//        overrideUserInterfaceStyle = .light
 
         // Do any additional setup after loading the view.
         textChanged(userNameField)
         
         userNameField.delegate = self
         passwordField.delegate = self
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        UINavigationBar.appearance().tintColor = .systemBlue
     }
     
     func makeAlert(_ title: String, _ message: String, completion: @escaping () -> ()) {
@@ -83,7 +88,7 @@ class LoginVC: UIViewController, UITextFieldDelegate {
         
         let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
         loadingIndicator.hidesWhenStopped = true
-        loadingIndicator.style = UIActivityIndicatorView.Style.medium
+//        loadingIndicator.style = UIActivityIndicatorView.Style.medium
         loadingIndicator.startAnimating();
         
         loadingAlert.view.addSubview(loadingIndicator)

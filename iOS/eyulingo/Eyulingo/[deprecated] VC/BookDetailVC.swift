@@ -41,7 +41,7 @@ class BookDetailVC: UIViewController {
         descriptionTextField.text = currentBook?.description
         isbnText.text = currentBook?.isbn
         storageTextField.text = "\(currentBook?.storage ?? 0)" + " 册"
-        overrideUserInterfaceStyle = .light
+//        overrideUserInterfaceStyle = .light
     }
     
     var currentBook: Book?
@@ -60,7 +60,7 @@ class BookDetailVC: UIViewController {
         
         let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
         loadingIndicator.hidesWhenStopped = true
-        loadingIndicator.style = UIActivityIndicatorView.Style.medium
+//        loadingIndicator.style = UIActivityIndicatorView.Style.large
         loadingIndicator.startAnimating();
         
         loadingAlert.view.addSubview(loadingIndicator)

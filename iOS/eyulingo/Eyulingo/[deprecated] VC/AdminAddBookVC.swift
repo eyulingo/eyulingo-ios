@@ -43,7 +43,7 @@ class AdminAddBookVC: UIViewController, UITextFieldDelegate {
         descriptionTextField.delegate = self
         storageTextField.delegate = self
         priceTextField.delegate = self
-        overrideUserInterfaceStyle = .dark
+//        overrideUserInterfaceStyle = .dark
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -101,7 +101,7 @@ class AdminAddBookVC: UIViewController, UITextFieldDelegate {
         
         let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
         loadingIndicator.hidesWhenStopped = true
-        loadingIndicator.style = UIActivityIndicatorView.Style.medium
+//        loadingIndicator.style = UIActivityIndicatorView.Style.medium
         loadingIndicator.startAnimating();
         
         loadingAlert.view.addSubview(loadingIndicator)

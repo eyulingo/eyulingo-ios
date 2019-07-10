@@ -12,9 +12,11 @@ class DarkTabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        overrideUserInterfaceStyle = .dark
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        UINavigationBar.appearance().tintColor = .systemBlue
     }
 }
 
@@ -25,7 +27,7 @@ class LightTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        overrideUserInterfaceStyle = .light
+//        overrideUserInterfaceStyle = .light
 //        overrideUserInterfaceStyle = .unspecified
         // Do any additional setup after loading the view.
     }

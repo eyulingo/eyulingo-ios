@@ -15,7 +15,7 @@ class RegisterVC: UIViewController, UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        overrideUserInterfaceStyle = .light
+//        overrideUserInterfaceStyle = .light
 
         userNameField.delegate = self
         eMailField.delegate = self
@@ -24,6 +24,10 @@ class RegisterVC: UIViewController, UITextFieldDelegate {
         confirmPassWordField.delegate = self
         // Do any additional setup after loading the view.
         onFieldEdited(userNameField)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        UINavigationBar.appearance().tintColor = .systemBlue
     }
     
     func makeAlert(_ title: String, _ message: String, completion: @escaping () -> ()) {
@@ -80,6 +84,59 @@ class RegisterVC: UIViewController, UITextFieldDelegate {
         }
     }
     
+    @IBAction func getCheckCode(_ sender: UIButton) {
+        let emailAddr = eMailField.text ?? ""
+        if !EmailVerifier.verify(emailAddr) {
+            makeAlert("无法发送验证码", "您输入的邮箱格式不正确。请检查后重试。", completion: { })
+            return
+        }
+        let postParams: Parameters = [
+            "email": emailAddr
+        ]
+        
+        let loadingAlert = UIAlertController(title: nil, message: "请稍等……", preferredStyle: .alert)
+        
+        let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
+        loadingIndicator.hidesWhenStopped = true
+        //        loadingIndicator.style = UIActivityIndicatorView.Style.medium
+        loadingIndicator.startAnimating();
+        
+        loadingAlert.view.addSubview(loadingIndicator)
+        
+        self.present(loadingAlert, animated: true, completion: {
+            var errorStr = "general error"
+        Alamofire.request(Eyulingo_UserUri.captchaGetPostUri,
+                          method: .post,
+                          parameters: postParams,
+                          encoding: JSONEncoding.default).responseSwiftyJSON(completionHandler: { responseJSON in
+                            if responseJSON.error == nil {
+                                let jsonResp = responseJSON.value
+                                if jsonResp != nil {
+                                    if jsonResp!["status"].stringValue == "ok" {
+                                        loadingAlert.dismiss(animated: true, completion: {
+                                            self.makeAlert("发送成功", "请检查“\(emailAddr)”的收件箱。", completion: {
+                                                self.dismiss(animated: true, completion: nil)
+                                            })
+                                        })
+                                        
+                                        return
+                                    } else {
+                                        errorStr = jsonResp!["status"].stringValue
+                                    }
+                                } else {
+                                    errorStr = "bad response"
+                                }
+                            } else {
+                                errorStr = "no response"
+                            }
+                            loadingAlert.dismiss(animated: true, completion: {
+                                self.makeAlert("获取验证码失败", "服务器报告了一个 “\(errorStr)” 错误。",
+                                    completion: { })
+                            })
+                          })
+        })
+    }
+    
     @IBAction func resetButtonTapped(_ sender: UIButton) {
         userNameField.text = ""
         eMailField.text = ""
@@ -106,7 +163,7 @@ class RegisterVC: UIViewController, UITextFieldDelegate {
         
         let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
         loadingIndicator.hidesWhenStopped = true
-        loadingIndicator.style = UIActivityIndicatorView.Style.medium
+//        loadingIndicator.style = UIActivityIndicatorView.Style.medium
         loadingIndicator.startAnimating();
         
         loadingAlert.view.addSubview(loadingIndicator)

@@ -13,6 +13,7 @@ import YPImagePicker
 import Alamofire_SwiftyJSON
 
 class MyProfileViewController: UIViewController, profileChangesDelegate {
+
     
     
     var currentUser: EyUser?
@@ -25,6 +26,9 @@ class MyProfileViewController: UIViewController, profileChangesDelegate {
         loadUserProfile()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        UINavigationBar.appearance().tintColor = .systemBlue
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if contentVC == nil {
@@ -42,7 +46,7 @@ class MyProfileViewController: UIViewController, profileChangesDelegate {
         
         let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
         loadingIndicator.hidesWhenStopped = true
-        loadingIndicator.style = UIActivityIndicatorView.Style.medium
+//        loadingIndicator.style = UIActivityIndicatorView.Style.medium
         loadingIndicator.startAnimating();
         
         loadingAlert.view.addSubview(loadingIndicator)
@@ -59,7 +63,13 @@ class MyProfileViewController: UIViewController, profileChangesDelegate {
         config.library.onlySquare = true
         config.library.maxNumberOfItems = 1
         config.library.minNumberOfItems = 1
+        config.hidesStatusBar = false
         let picker = YPImagePicker(configuration: config)
+        
+        if #available(iOS 13.0, *) {
+            // Picker doesn't support dark mode. Should override it manually
+            picker.overrideUserInterfaceStyle = .light
+        }
         
         
         picker.didFinishPicking { [unowned picker] items, cancelled in
@@ -136,9 +146,7 @@ class MyProfileViewController: UIViewController, profileChangesDelegate {
                                         }
                                         if errorCode != "ok" {
                                             picker.dismiss(animated: true, completion: {
-                                                loadingAlert.dismiss(animated: true, completion: {
                                                     self.makeAlert("上传图片失败", "服务器报告了一个 “\(errorCode)” 错误。", completion: { })
-                                                })
                                             })
                                         }
                                     })
@@ -157,10 +165,6 @@ class MyProfileViewController: UIViewController, profileChangesDelegate {
         present(picker, animated: true, completion: nil)
     }
     
-    func updateUserName() {
-        
-    }
-    
     func updateEmail() {
         
     }
@@ -168,6 +172,15 @@ class MyProfileViewController: UIViewController, profileChangesDelegate {
     func updatePassword() {
         
     }
+    
+    func editReceiveAddress() {
+        
+    }
+    
+    func contactSupport() {
+        
+    }
+    
     
     @IBAction func logOutButtonTapped(_ sender: UIButton) {
         LogOutHelper.logOutNow {

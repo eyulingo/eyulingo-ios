@@ -51,7 +51,7 @@ class CartVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         // Do any additional setup after loading the view.
 //        loadMyCart()
 //        tableViewContent.rowHeight = 130
-        overrideUserInterfaceStyle = .light
+//        overrideUserInterfaceStyle = .light
     }
     
     override func viewDidAppear(_ animated: Bool) {
