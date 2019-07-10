@@ -193,17 +193,57 @@
 			path = Struct;
 			sourceTree = "<group>";
 		};
-		8AC9E7D722C9A2E500F80460 /* VC */ = {
+		8AC867DC22D5C8B0008E9CDA /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				8A6DD6F122CAE3FA00BD7904 /* TabBarController.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		8AC867DD22D5C8BC008E9CDA /* LoginPage */ = {
 			isa = PBXGroup;
 			children = (
 				8AC9E7D822C9A31400F80460 /* LoginVC.swift */,
 				8AC9E7DA22C9A34700F80460 /* RegisterVC.swift */,
-				8A6DD6F122CAE3FA00BD7904 /* TabBarController.swift */,
+			);
+			path = LoginPage;
+			sourceTree = "<group>";
+		};
+		8AC867DE22D5C8CA008E9CDA /* SearchPage */ = {
+			isa = PBXGroup;
+			children = (
 				8A723DA622D46590008FD0C9 /* SearchViewController.swift */,
-				8A723DA822D4659E008FD0C9 /* CartViewController.swift */,
+			);
+			path = SearchPage;
+			sourceTree = "<group>";
+		};
+		8AC867DF22D5C8D3008E9CDA /* ProfilePage */ = {
+			isa = PBXGroup;
+			children = (
 				8A723DAA22D465A9008FD0C9 /* OrdersViewController.swift */,
 				8A723DAC22D465B5008FD0C9 /* MyProfileViewController.swift */,
 				8A723DB122D4721E008FD0C9 /* ProfileContentViewController.swift */,
+			);
+			path = ProfilePage;
+			sourceTree = "<group>";
+		};
+		8AC867E022D5C8DC008E9CDA /* CartPage */ = {
+			isa = PBXGroup;
+			children = (
+				8A723DA822D4659E008FD0C9 /* CartViewController.swift */,
+			);
+			path = CartPage;
+			sourceTree = "<group>";
+		};
+		8AC9E7D722C9A2E500F80460 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				8AC867E022D5C8DC008E9CDA /* CartPage */,
+				8AC867DF22D5C8D3008E9CDA /* ProfilePage */,
+				8AC867DE22D5C8CA008E9CDA /* SearchPage */,
+				8AC867DD22D5C8BC008E9CDA /* LoginPage */,
+				8AC867DC22D5C8B0008E9CDA /* Common */,
 			);
 			path = VC;
 			sourceTree = "<group>";
