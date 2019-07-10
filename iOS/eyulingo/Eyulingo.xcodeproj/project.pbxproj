@@ -24,12 +24,8 @@
 		8A55B28822C8CE8A007E77FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A55B28722C8CE8A007E77FD /* Assets.xcassets */; };
 		8A55B28B22C8CE8A007E77FD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A55B28922C8CE8A007E77FD /* LaunchScreen.storyboard */; };
 		8A6DD6FC22CAF55500BD7904 /* PinYinConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6DD6FB22CAF55500BD7904 /* PinYinConverter.swift */; };
-		8A723DA722D46590008FD0C9 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A723DA622D46590008FD0C9 /* SearchViewController.swift */; };
-		8A723DA922D4659E008FD0C9 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A723DA822D4659E008FD0C9 /* CartViewController.swift */; };
-		8A723DAB22D465A9008FD0C9 /* OrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A723DAA22D465A9008FD0C9 /* OrdersViewController.swift */; };
-		8A723DAD22D465B5008FD0C9 /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A723DAC22D465B5008FD0C9 /* MyProfileViewController.swift */; };
-		8AC9E7D922C9A31400F80460 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC9E7D822C9A31400F80460 /* LoginVC.swift */; };
-		8AC9E7DB22C9A34700F80460 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC9E7DA22C9A34700F80460 /* RegisterVC.swift */; };
+		8A723DB022D4704F008FD0C9 /* EyUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A723DAF22D4704F008FD0C9 /* EyUser.swift */; };
+		8A723DB422D47954008FD0C9 /* LogoutNow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A723DB322D47954008FD0C9 /* LogoutNow.swift */; };
 		8AC9E7DD22C9A37500F80460 /* BookQueryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC9E7DC22C9A37500F80460 /* BookQueryVC.swift */; };
 		8AC9E7DF22C9A39700F80460 /* CartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC9E7DE22C9A39700F80460 /* CartVC.swift */; };
 		8AC9E7E122C9A3AE00F80460 /* PurchasedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC9E7E022C9A3AE00F80460 /* PurchasedVC.swift */; };
@@ -73,12 +69,8 @@
 		8A55B28A22C8CE8A007E77FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8A55B28C22C8CE8A007E77FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8A6DD6FB22CAF55500BD7904 /* PinYinConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinYinConverter.swift; sourceTree = "<group>"; };
-		8A723DA622D46590008FD0C9 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
-		8A723DA822D4659E008FD0C9 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
-		8A723DAA22D465A9008FD0C9 /* OrdersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersViewController.swift; sourceTree = "<group>"; };
-		8A723DAC22D465B5008FD0C9 /* MyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
-		8AC9E7D822C9A31400F80460 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
-		8AC9E7DA22C9A34700F80460 /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
+		8A723DAF22D4704F008FD0C9 /* EyUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyUser.swift; sourceTree = "<group>"; };
+		8A723DB322D47954008FD0C9 /* LogoutNow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutNow.swift; sourceTree = "<group>"; };
 		8AC9E7DC22C9A37500F80460 /* BookQueryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookQueryVC.swift; sourceTree = "<group>"; };
 		8AC9E7DE22C9A39700F80460 /* CartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartVC.swift; sourceTree = "<group>"; };
 		8AC9E7E022C9A3AE00F80460 /* PurchasedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchasedVC.swift; sourceTree = "<group>"; };
@@ -192,16 +184,22 @@
 			path = Eyulingo;
 			sourceTree = "<group>";
 		};
+		8A723DAE22D47039008FD0C9 /* Struct */ = {
+			isa = PBXGroup;
+			children = (
+				8A723DAF22D4704F008FD0C9 /* EyUser.swift */,
+			);
+			path = Struct;
+			sourceTree = "<group>";
+		};
 		8AC9E7D722C9A2E500F80460 /* VC */ = {
 			isa = PBXGroup;
 			children = (
-				8AC9E7D822C9A31400F80460 /* LoginVC.swift */,
-				8AC9E7DA22C9A34700F80460 /* RegisterVC.swift */,
-				8A6DD6F122CAE3FA00BD7904 /* TabBarController.swift */,
-				8A723DA622D46590008FD0C9 /* SearchViewController.swift */,
-				8A723DA822D4659E008FD0C9 /* CartViewController.swift */,
-				8A723DAA22D465A9008FD0C9 /* OrdersViewController.swift */,
-				8A723DAC22D465B5008FD0C9 /* MyProfileViewController.swift */,
+				8A19637D22D5C1B200646684 /* CartPage */,
+				8A19637A22D5C1B100646684 /* Common */,
+				8A19637C22D5C1B200646684 /* OrderPage */,
+				8A19637B22D5C1B200646684 /* ProfilePage */,
+				8A19637922D5C1B100646684 /* SearchPage */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -353,6 +351,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8AE40BC122D5C30C00E9CE4B /* CartPage in Sources */,
+				8AE40BC222D5C30C00E9CE4B /* Common in Sources */,
+				8AE40BC322D5C30C00E9CE4B /* OrderPage in Sources */,
+				8AE40BC422D5C30C00E9CE4B /* ProfilePage in Sources */,
+				8AE40BC522D5C30C00E9CE4B /* SearchPage in Sources */,
 				8A06394B22D3316F00699037 /* EyulingoUri.swift in Sources */,
 				8A55B28322C8CE85007E77FD /* ViewController.swift in Sources */,
 				8AC9E7F722C9B0D000F80460 /* Cart.swift in Sources */,
