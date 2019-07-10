@@ -39,7 +39,6 @@ class Eyulingo_UserUri {
     // origin_password - 旧密码
     // new_password - 新密码
     // confirm_new_password - 确认新密码
-
     static let passwordChangePostUri = baseUri + "/changepassword"
     
     // parameters:

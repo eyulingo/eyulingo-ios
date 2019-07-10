@@ -10,6 +10,7 @@
 		8A06394622D32FDC00699037 /* DateAndTimeParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A06394522D32FDC00699037 /* DateAndTimeParser.swift */; };
 		8A06394B22D3316F00699037 /* EyulingoUri.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A06394922D3316F00699037 /* EyulingoUri.swift */; };
 		8A06394C22D3316F00699037 /* BookieUri.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A06394A22D3316F00699037 /* BookieUri.swift */; };
+		8A08B12222D5A7E600FACE22 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A08B12122D5A7E600FACE22 /* ChangePasswordViewController.swift */; };
 		8A0AF9E522D41F6E009430B9 /* JudgeValidEmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0AF9E422D41F6E009430B9 /* JudgeValidEmail.swift */; };
 		8A2622FA22CB3E3E00C39943 /* Chp.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A2622F922CB3E3E00C39943 /* Chp.png */; };
 		8A55B27F22C8CE85007E77FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A55B27E22C8CE85007E77FD /* AppDelegate.swift */; };
@@ -24,6 +25,13 @@
 		8A723DA922D4659E008FD0C9 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A723DA822D4659E008FD0C9 /* CartViewController.swift */; };
 		8A723DAB22D465A9008FD0C9 /* OrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A723DAA22D465A9008FD0C9 /* OrdersViewController.swift */; };
 		8A723DAD22D465B5008FD0C9 /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A723DAC22D465B5008FD0C9 /* MyProfileViewController.swift */; };
+<<<<<<< Updated upstream
+=======
+		8A723DB022D4704F008FD0C9 /* EyUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A723DAF22D4704F008FD0C9 /* EyUser.swift */; };
+		8A723DB222D4721E008FD0C9 /* ProfileContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A723DB122D4721E008FD0C9 /* ProfileContentViewController.swift */; };
+		8A723DB422D47954008FD0C9 /* LogoutNow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A723DB322D47954008FD0C9 /* LogoutNow.swift */; };
+		8AC8532622D5B79E00AA3742 /* ChangeEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC8532522D5B79E00AA3742 /* ChangeEmailViewController.swift */; };
+>>>>>>> Stashed changes
 		8AC9E7D922C9A31400F80460 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC9E7D822C9A31400F80460 /* LoginVC.swift */; };
 		8AC9E7DB22C9A34700F80460 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC9E7DA22C9A34700F80460 /* RegisterVC.swift */; };
 		8AC9E7DD22C9A37500F80460 /* BookQueryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC9E7DC22C9A37500F80460 /* BookQueryVC.swift */; };
@@ -48,6 +56,7 @@
 		8A06394522D32FDC00699037 /* DateAndTimeParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateAndTimeParser.swift; sourceTree = "<group>"; };
 		8A06394922D3316F00699037 /* EyulingoUri.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EyulingoUri.swift; sourceTree = "<group>"; };
 		8A06394A22D3316F00699037 /* BookieUri.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookieUri.swift; sourceTree = "<group>"; };
+		8A08B12122D5A7E600FACE22 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
 		8A0AF9E422D41F6E009430B9 /* JudgeValidEmail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JudgeValidEmail.swift; sourceTree = "<group>"; };
 		8A2622F922CB3E3E00C39943 /* Chp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Chp.png; sourceTree = "<group>"; };
 		8A55B27B22C8CE85007E77FD /* Eyulingo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eyulingo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -64,6 +73,13 @@
 		8A723DA822D4659E008FD0C9 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 		8A723DAA22D465A9008FD0C9 /* OrdersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersViewController.swift; sourceTree = "<group>"; };
 		8A723DAC22D465B5008FD0C9 /* MyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
+<<<<<<< Updated upstream
+=======
+		8A723DAF22D4704F008FD0C9 /* EyUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyUser.swift; sourceTree = "<group>"; };
+		8A723DB122D4721E008FD0C9 /* ProfileContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileContentViewController.swift; sourceTree = "<group>"; };
+		8A723DB322D47954008FD0C9 /* LogoutNow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutNow.swift; sourceTree = "<group>"; };
+		8AC8532522D5B79E00AA3742 /* ChangeEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeEmailViewController.swift; sourceTree = "<group>"; };
+>>>>>>> Stashed changes
 		8AC9E7D822C9A31400F80460 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		8AC9E7DA22C9A34700F80460 /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
 		8AC9E7DC22C9A37500F80460 /* BookQueryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookQueryVC.swift; sourceTree = "<group>"; };
@@ -178,16 +194,75 @@
 			path = Eyulingo;
 			sourceTree = "<group>";
 		};
+<<<<<<< Updated upstream
 		8AC9E7D722C9A2E500F80460 /* VC */ = {
+=======
+		8A723DAE22D47039008FD0C9 /* Struct */ = {
+			isa = PBXGroup;
+			children = (
+				8A723DAF22D4704F008FD0C9 /* EyUser.swift */,
+			);
+			path = Struct;
+			sourceTree = "<group>";
+		};
+		8AC8532022D5B74500AA3742 /* ProfilePage */ = {
+			isa = PBXGroup;
+			children = (
+				8A723DAC22D465B5008FD0C9 /* MyProfileViewController.swift */,
+				8A723DB122D4721E008FD0C9 /* ProfileContentViewController.swift */,
+				8A08B12122D5A7E600FACE22 /* ChangePasswordViewController.swift */,
+				8AC8532522D5B79E00AA3742 /* ChangeEmailViewController.swift */,
+			);
+			path = ProfilePage;
+			sourceTree = "<group>";
+		};
+		8AC8532122D5B75200AA3742 /* Common */ = {
+>>>>>>> Stashed changes
 			isa = PBXGroup;
 			children = (
 				8AC9E7D822C9A31400F80460 /* LoginVC.swift */,
 				8AC9E7DA22C9A34700F80460 /* RegisterVC.swift */,
 				8A6DD6F122CAE3FA00BD7904 /* TabBarController.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		8AC8532222D5B76500AA3742 /* SearchPage */ = {
+			isa = PBXGroup;
+			children = (
 				8A723DA622D46590008FD0C9 /* SearchViewController.swift */,
+			);
+			path = SearchPage;
+			sourceTree = "<group>";
+		};
+		8AC8532322D5B76D00AA3742 /* CartPage */ = {
+			isa = PBXGroup;
+			children = (
 				8A723DA822D4659E008FD0C9 /* CartViewController.swift */,
+			);
+			path = CartPage;
+			sourceTree = "<group>";
+		};
+		8AC8532422D5B77400AA3742 /* OrderPage */ = {
+			isa = PBXGroup;
+			children = (
 				8A723DAA22D465A9008FD0C9 /* OrdersViewController.swift */,
+<<<<<<< Updated upstream
 				8A723DAC22D465B5008FD0C9 /* MyProfileViewController.swift */,
+=======
+			);
+			path = OrderPage;
+			sourceTree = "<group>";
+		};
+		8AC9E7D722C9A2E500F80460 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				8AC8532122D5B75200AA3742 /* Common */,
+				8AC8532222D5B76500AA3742 /* SearchPage */,
+				8AC8532322D5B76D00AA3742 /* CartPage */,
+				8AC8532422D5B77400AA3742 /* OrderPage */,
+				8AC8532022D5B74500AA3742 /* ProfilePage */,
+>>>>>>> Stashed changes
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -333,6 +408,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A08B12222D5A7E600FACE22 /* ChangePasswordViewController.swift in Sources */,
 				8A06394B22D3316F00699037 /* EyulingoUri.swift in Sources */,
 				8A55B28322C8CE85007E77FD /* ViewController.swift in Sources */,
 				8AC9E7F722C9B0D000F80460 /* Cart.swift in Sources */,
@@ -353,6 +429,7 @@
 				8A06394622D32FDC00699037 /* DateAndTimeParser.swift in Sources */,
 				8A55B28122C8CE85007E77FD /* SceneDelegate.swift in Sources */,
 				8AC9E7E722C9A40C00F80460 /* AdminUserVC.swift in Sources */,
+				8AC8532622D5B79E00AA3742 /* ChangeEmailViewController.swift in Sources */,
 				8AC9E7F522C9AF4A00F80460 /* PurchaseVC.swift in Sources */,
 				8AC9E7DB22C9A34700F80460 /* RegisterVC.swift in Sources */,
 				8AC9E7E322C9A3CD00F80460 /* BookDetailVC.swift in Sources */,
