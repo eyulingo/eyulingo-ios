@@ -115,7 +115,7 @@ class RegisterVC: UIViewController, UITextFieldDelegate {
                                     if jsonResp!["status"].stringValue == "ok" {
                                         loadingAlert.dismiss(animated: true, completion: {
                                             self.makeAlert("发送成功", "请检查“\(emailAddr)”的收件箱。", completion: {
-                                                self.dismiss(animated: true, completion: nil)
+                                                
                                             })
                                         })
                                         
@@ -172,7 +172,8 @@ class RegisterVC: UIViewController, UITextFieldDelegate {
             var errorStr = "general error"
             Alamofire.request(Eyulingo_UserUri.registerPostUri,
                               method: .post,
-                              parameters: postParams)
+                              parameters: postParams,
+                              encoding: JSONEncoding.default)
                 .responseSwiftyJSON(completionHandler: { responseJSON in
                     if responseJSON.error == nil {
                         let jsonResp = responseJSON.value

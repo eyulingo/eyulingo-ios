@@ -428,7 +428,7 @@ Project Eyulingo. 一切权利保留。</string>
                                                             <constraint firstAttribute="width" constant="236" id="h0i-u0-TNC"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits" returnKeyType="next" enablesReturnKeyAutomatically="YES" textContentType="username"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next" enablesReturnKeyAutomatically="YES" textContentType="username"/>
                                                         <connections>
                                                             <action selector="onFieldEdited:" destination="1if-Vv-8i7" eventType="editingChanged" id="h0X-h4-u5L"/>
                                                         </connections>
@@ -445,7 +445,7 @@ Project Eyulingo. 一切权利保留。</string>
                                                             <constraint firstAttribute="height" constant="34" id="Oq3-BM-oAj"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES" textContentType="email"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="done" enablesReturnKeyAutomatically="YES" textContentType="email"/>
                                                         <connections>
                                                             <action selector="onFieldEdited:" destination="1if-Vv-8i7" eventType="editingChanged" id="84y-Hd-X7l"/>
                                                         </connections>
@@ -453,6 +453,9 @@ Project Eyulingo. 一切权利保留。</string>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Me1-4G-7aE">
                                                         <rect key="frame" x="205" y="2" width="31" height="30"/>
                                                         <state key="normal" title="验证"/>
+                                                        <connections>
+                                                            <action selector="getCheckCode:" destination="1if-Vv-8i7" eventType="touchUpInside" id="Psu-JA-dOy"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -466,7 +469,7 @@ Project Eyulingo. 一切权利保留。</string>
                                                             <constraint firstAttribute="height" constant="34" id="vno-JR-Z9l"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done" enablesReturnKeyAutomatically="YES" textContentType="one-time-code"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="done" enablesReturnKeyAutomatically="YES" textContentType="one-time-code"/>
                                                         <connections>
                                                             <action selector="onFieldEdited:" destination="1if-Vv-8i7" eventType="editingChanged" id="mk3-l9-HtX"/>
                                                         </connections>
