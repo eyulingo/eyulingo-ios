@@ -71,7 +71,7 @@ class MyProfileViewController: UIViewController, profileChangesDelegate, profile
         }
         
         var config = YPImagePickerConfiguration()
-        config.onlySquareImagesFromCamera = true
+        config.onlySquareImagesFromCamera = false
         config.onlySquareImagesFromLibrary = true
         config.library.onlySquare = true
         config.library.maxNumberOfItems = 1
@@ -109,22 +109,34 @@ class MyProfileViewController: UIViewController, profileChangesDelegate, profile
                         case .success(let upload, _, _):
                             upload.responseString { response in
                                 if response.error != nil {
-                                    picker.dismiss(animated: true, completion: {
-                                        self.makeAlert("上传图片失败", "服务器报告了一个 “no response” 错误。",
-                                            completion: { })
+                                    loadingAlert.dismiss(animated: true, completion: {
+                                        picker.dismiss(animated: true, completion: {
+                                            self.makeAlert("上传图片失败", "服务器报告了一个 “no response” 错误。",
+                                                completion: { })
+                                        })
                                     })
                                     return
                                 }
                                 let responseJson: JSON = JSON.init(parseJSON: response.value!)
                                 if responseJson["status"].stringValue != "ok" {
                                     picker.dismiss(animated: true, completion: {
-                                        
-                                        self.makeAlert("上传图片失败", "服务器报告了一个 “\(responseJson["status"])” 错误。",
-                                                completion: { })
-                                        
+                                        loadingAlert.dismiss(animated: true, completion: {
+                                            self.makeAlert("上传图片失败", "服务器报告了一个 “\(responseJson["status"])” 错误。",
+                                                    completion: { })
+                                        })
                                     })
                                 }
                                 let fileId = responseJson["file_id"].stringValue
+                                
+                                if fileId == "" {
+                                    picker.dismiss(animated: true, completion: {
+                                        loadingAlert.dismiss(animated: true, completion: {
+                                            self.makeAlert("上传图片失败", "图片过大，请再挑一张。",
+                                                completion: { })
+                                        })
+                                    })
+                                    return
+                                }
                                 
                                 let postParams: Parameters = [
                                     "avatar_id": fileId
