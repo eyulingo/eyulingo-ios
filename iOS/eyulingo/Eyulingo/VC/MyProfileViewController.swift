@@ -7,15 +7,22 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
+import YPImagePicker
+import Alamofire_SwiftyJSON
 
-class MyProfileViewController: UIViewController {
+class MyProfileViewController: UIViewController, profileChangesDelegate {
 
+    
+    
+    var currentUser: EyUser?
+    var contentVC: ProfileContentViewController?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        definesPresentationContext = true
         // Do any additional setup after loading the view.
-<<<<<<< Updated upstream:iOS/eyulingo/Eyulingo/VC/MyProfileViewController.swift
-=======
         loadUserProfile()
     }
     
@@ -29,11 +36,6 @@ class MyProfileViewController: UIViewController {
                 contentVC = segue.destination as? ProfileContentViewController
                 contentVC?.delegate = self
             }
-        }
-        
-        if segue.identifier == "ChangeEmailSegue" {
-            let emailViewController = segue.destination as! ChangeEmailViewController
-            emailViewController.originEmailAddress = currentUser?.userEmail
         }
         super.prepare(for: segue, sender: sender)
     }
@@ -163,16 +165,12 @@ class MyProfileViewController: UIViewController {
         present(picker, animated: true, completion: nil)
     }
     
-    
-
-
-    
     func updateEmail() {
-        self.performSegue(withIdentifier: "ChangeEmailSegue", sender: self)
+        
     }
     
     func updatePassword() {
-        self.performSegue(withIdentifier: "ChangePasswordSegue", sender: self)
+        
     }
     
     func editReceiveAddress() {
@@ -266,7 +264,6 @@ class MyProfileViewController: UIViewController {
                 }
                 self.makeAlert("获取个人资料失败", "服务器报告了一个 “\(errorCode)” 错误。", completion: { })
             })
->>>>>>> Stashed changes:iOS/eyulingo/Eyulingo/VC/ProfilePage/MyProfileViewController.swift
     }
     
 
