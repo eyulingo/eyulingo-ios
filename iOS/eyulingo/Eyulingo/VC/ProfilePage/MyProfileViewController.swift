@@ -12,10 +12,12 @@ import SwiftyJSON
 import YPImagePicker
 import Alamofire_SwiftyJSON
 
-class MyProfileViewController: UIViewController, profileChangesDelegate {
+class MyProfileViewController: UIViewController, profileChangesDelegate, profileRefreshDelegate {
+    
+    func refreshProfile() {
+        loadUserProfile()
+    }
 
-    
-    
     var currentUser: EyUser?
     var contentVC: ProfileContentViewController?
     
@@ -41,6 +43,7 @@ class MyProfileViewController: UIViewController, profileChangesDelegate {
         if segue.identifier == "ChangeEmailSegue" {
             let emailViewController = segue.destination as! ChangeEmailViewController
             emailViewController.originEmailAddress = currentUser?.userEmail
+            emailViewController.delegate = self
         }
         
         if segue.identifier == "ChangePasswordSegue" {
@@ -287,4 +290,8 @@ class MyProfileViewController: UIViewController, profileChangesDelegate {
     }
     */
 
+}
+
+protocol profileRefreshDelegate {
+    func refreshProfile() -> ()
 }

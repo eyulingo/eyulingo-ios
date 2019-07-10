@@ -13,6 +13,8 @@ import UIKit
 
 class ChangeEmailViewController: UIViewController, UITextFieldDelegate {
     var originEmailAddress: String?
+    
+    var delegate: profileRefreshDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -140,7 +142,9 @@ class ChangeEmailViewController: UIViewController, UITextFieldDelegate {
                             if jsonResp!["status"].stringValue == "ok" {
                                 loadingAlert.dismiss(animated: true, completion: {
                                     self.makeAlert("成功", "您的电子邮件地址已更新。", completion: {
-                                        self.dismiss(animated: true, completion: nil)
+                                        self.dismiss(animated: true, completion: {
+                                            self.delegate?.refreshProfile()
+                                        })
                                     })
                                 })
                                 return
