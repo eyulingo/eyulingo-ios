@@ -47,7 +47,7 @@ class ForgetPasswordViewController: UIViewController, UITextFieldDelegate {
             resetButton.isEnabled = true
         }
         
-        if userNameField.text == "" || captchaField.text == "" || newPasswordField.text == "" || confirmNewPasswordField.text == "" {
+        if userNameField.text == "" || captchaField.text == "" || newPasswordField.text == "" || confirmNewPasswordField.text == "" || newPasswordField.text != confirmNewPasswordField.text {
             submitButton.isEnabled = false
         } else {
             submitButton.isEnabled = true
@@ -139,7 +139,7 @@ class ForgetPasswordViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func submitButtonTapped(_ sender: UIButton) {
-        if userNameField.text == "" || captchaField.text == "" || newPasswordField.text == "" || confirmNewPasswordField.text == ""{
+        if userNameField.text == "" || captchaField.text == "" || newPasswordField.text == "" || confirmNewPasswordField.text == "" || newPasswordField.text != confirmNewPasswordField.text {
             makeAlert("找回密码失败", "输入信息不完整。\n请检查后再试一次。", completion: {})
             return
         }
