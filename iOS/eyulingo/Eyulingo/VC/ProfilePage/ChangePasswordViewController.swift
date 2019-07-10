@@ -13,6 +13,9 @@ import Alamofire_SwiftyJSON
 
 class ChangePasswordViewController: UIViewController, UITextFieldDelegate {
 
+    
+    var originUserName: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,6 +25,11 @@ class ChangePasswordViewController: UIViewController, UITextFieldDelegate {
         
         onFieldEdited(originPasswordField)
         
+        userName.isEnabled = false
+        
+        if originUserName != nil {
+            userName.text = originUserName
+        }
         // Do any additional setup after loading the view.
         
 //        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: #selector(dismissMe(_:)))
@@ -31,8 +39,7 @@ class ChangePasswordViewController: UIViewController, UITextFieldDelegate {
         UINavigationBar.appearance().tintColor = .systemBlue
     }
     
-    @IBOutlet weak var navigationBar: UINavigationBar!
-    
+    @IBOutlet weak var userName: UITextField!
     @IBOutlet weak var originPasswordField: UITextField!
     @IBOutlet weak var newPasswordField: UITextField!
     @IBOutlet weak var confirmNewPasswordField: UITextField!

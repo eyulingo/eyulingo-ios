@@ -42,6 +42,11 @@ class MyProfileViewController: UIViewController, profileChangesDelegate {
             let emailViewController = segue.destination as! ChangeEmailViewController
             emailViewController.originEmailAddress = currentUser?.userEmail
         }
+        
+        if segue.identifier == "ChangePasswordSegue" {
+            let passwordViewController = segue.destination as! ChangePasswordViewController
+            passwordViewController.originUserName = currentUser?.userName
+        }
         super.prepare(for: segue, sender: sender)
     }
     

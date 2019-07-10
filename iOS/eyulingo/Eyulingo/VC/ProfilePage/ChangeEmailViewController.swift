@@ -37,6 +37,8 @@ class ChangeEmailViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var resetButton: UIButton!
     @IBOutlet var submitButton: UIButton!
 
+    @IBOutlet weak var verifyButton: UIButton!
+    
     func makeAlert(_ title: String, _ message: String, completion: @escaping () -> Void) {
         let controller = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "嗯", style: .default, handler: { _ in
@@ -180,6 +182,9 @@ class ChangeEmailViewController: UIViewController, UITextFieldDelegate {
     }
 
     @IBAction func onFieldEdited(_ sender: UITextField) {
+
+        verifyButton.isEnabled = EmailVerifier.verify(newEmailField.text ?? "")
+
         if newEmailField.text == "" && confirmCode.text == "" {
             resetButton.isEnabled = false
         } else {
