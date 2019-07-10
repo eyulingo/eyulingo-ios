@@ -11,6 +11,11 @@
 		8A06394B22D3316F00699037 /* EyulingoUri.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A06394922D3316F00699037 /* EyulingoUri.swift */; };
 		8A06394C22D3316F00699037 /* BookieUri.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A06394A22D3316F00699037 /* BookieUri.swift */; };
 		8A0AF9E522D41F6E009430B9 /* JudgeValidEmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0AF9E422D41F6E009430B9 /* JudgeValidEmail.swift */; };
+		8A19637E22D5C1B200646684 /* SearchPage in Resources */ = {isa = PBXBuildFile; fileRef = 8A19637922D5C1B100646684 /* SearchPage */; };
+		8A19637F22D5C1B200646684 /* Common in Resources */ = {isa = PBXBuildFile; fileRef = 8A19637A22D5C1B100646684 /* Common */; };
+		8A19638022D5C1B200646684 /* ProfilePage in Resources */ = {isa = PBXBuildFile; fileRef = 8A19637B22D5C1B200646684 /* ProfilePage */; };
+		8A19638122D5C1B200646684 /* OrderPage in Resources */ = {isa = PBXBuildFile; fileRef = 8A19637C22D5C1B200646684 /* OrderPage */; };
+		8A19638222D5C1B200646684 /* CartPage in Resources */ = {isa = PBXBuildFile; fileRef = 8A19637D22D5C1B200646684 /* CartPage */; };
 		8A2622FA22CB3E3E00C39943 /* Chp.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A2622F922CB3E3E00C39943 /* Chp.png */; };
 		8A55B27F22C8CE85007E77FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A55B27E22C8CE85007E77FD /* AppDelegate.swift */; };
 		8A55B28122C8CE85007E77FD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A55B28022C8CE85007E77FD /* SceneDelegate.swift */; };
@@ -18,17 +23,11 @@
 		8A55B28622C8CE85007E77FD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A55B28422C8CE85007E77FD /* Main.storyboard */; };
 		8A55B28822C8CE8A007E77FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A55B28722C8CE8A007E77FD /* Assets.xcassets */; };
 		8A55B28B22C8CE8A007E77FD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A55B28922C8CE8A007E77FD /* LaunchScreen.storyboard */; };
-		8A6DD6F222CAE3FA00BD7904 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6DD6F122CAE3FA00BD7904 /* TabBarController.swift */; };
 		8A6DD6FC22CAF55500BD7904 /* PinYinConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6DD6FB22CAF55500BD7904 /* PinYinConverter.swift */; };
-		8A723DA722D46590008FD0C9 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A723DA622D46590008FD0C9 /* SearchViewController.swift */; };
-		8A723DA922D4659E008FD0C9 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A723DA822D4659E008FD0C9 /* CartViewController.swift */; };
-		8A723DAB22D465A9008FD0C9 /* OrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A723DAA22D465A9008FD0C9 /* OrdersViewController.swift */; };
 		8A723DAD22D465B5008FD0C9 /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A723DAC22D465B5008FD0C9 /* MyProfileViewController.swift */; };
 		8A723DB022D4704F008FD0C9 /* EyUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A723DAF22D4704F008FD0C9 /* EyUser.swift */; };
 		8A723DB222D4721E008FD0C9 /* ProfileContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A723DB122D4721E008FD0C9 /* ProfileContentViewController.swift */; };
 		8A723DB422D47954008FD0C9 /* LogoutNow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A723DB322D47954008FD0C9 /* LogoutNow.swift */; };
-		8AC9E7D922C9A31400F80460 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC9E7D822C9A31400F80460 /* LoginVC.swift */; };
-		8AC9E7DB22C9A34700F80460 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC9E7DA22C9A34700F80460 /* RegisterVC.swift */; };
 		8AC9E7DD22C9A37500F80460 /* BookQueryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC9E7DC22C9A37500F80460 /* BookQueryVC.swift */; };
 		8AC9E7DF22C9A39700F80460 /* CartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC9E7DE22C9A39700F80460 /* CartVC.swift */; };
 		8AC9E7E122C9A3AE00F80460 /* PurchasedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC9E7E022C9A3AE00F80460 /* PurchasedVC.swift */; };
@@ -52,6 +51,11 @@
 		8A06394922D3316F00699037 /* EyulingoUri.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EyulingoUri.swift; sourceTree = "<group>"; };
 		8A06394A22D3316F00699037 /* BookieUri.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookieUri.swift; sourceTree = "<group>"; };
 		8A0AF9E422D41F6E009430B9 /* JudgeValidEmail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JudgeValidEmail.swift; sourceTree = "<group>"; };
+		8A19637922D5C1B100646684 /* SearchPage */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SearchPage; sourceTree = "<group>"; };
+		8A19637A22D5C1B100646684 /* Common */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Common; sourceTree = "<group>"; };
+		8A19637B22D5C1B200646684 /* ProfilePage */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ProfilePage; sourceTree = "<group>"; };
+		8A19637C22D5C1B200646684 /* OrderPage */ = {isa = PBXFileReference; lastKnownFileType = folder; path = OrderPage; sourceTree = "<group>"; };
+		8A19637D22D5C1B200646684 /* CartPage */ = {isa = PBXFileReference; lastKnownFileType = folder; path = CartPage; sourceTree = "<group>"; };
 		8A2622F922CB3E3E00C39943 /* Chp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Chp.png; sourceTree = "<group>"; };
 		8A55B27B22C8CE85007E77FD /* Eyulingo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eyulingo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A55B27E22C8CE85007E77FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -61,17 +65,11 @@
 		8A55B28722C8CE8A007E77FD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8A55B28A22C8CE8A007E77FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8A55B28C22C8CE8A007E77FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8A6DD6F122CAE3FA00BD7904 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		8A6DD6FB22CAF55500BD7904 /* PinYinConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinYinConverter.swift; sourceTree = "<group>"; };
-		8A723DA622D46590008FD0C9 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
-		8A723DA822D4659E008FD0C9 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
-		8A723DAA22D465A9008FD0C9 /* OrdersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersViewController.swift; sourceTree = "<group>"; };
 		8A723DAC22D465B5008FD0C9 /* MyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
 		8A723DAF22D4704F008FD0C9 /* EyUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyUser.swift; sourceTree = "<group>"; };
 		8A723DB122D4721E008FD0C9 /* ProfileContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileContentViewController.swift; sourceTree = "<group>"; };
 		8A723DB322D47954008FD0C9 /* LogoutNow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutNow.swift; sourceTree = "<group>"; };
-		8AC9E7D822C9A31400F80460 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
-		8AC9E7DA22C9A34700F80460 /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
 		8AC9E7DC22C9A37500F80460 /* BookQueryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookQueryVC.swift; sourceTree = "<group>"; };
 		8AC9E7DE22C9A39700F80460 /* CartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartVC.swift; sourceTree = "<group>"; };
 		8AC9E7E022C9A3AE00F80460 /* PurchasedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchasedVC.swift; sourceTree = "<group>"; };
@@ -196,12 +194,11 @@
 		8AC9E7D722C9A2E500F80460 /* VC */ = {
 			isa = PBXGroup;
 			children = (
-				8AC9E7D822C9A31400F80460 /* LoginVC.swift */,
-				8AC9E7DA22C9A34700F80460 /* RegisterVC.swift */,
-				8A6DD6F122CAE3FA00BD7904 /* TabBarController.swift */,
-				8A723DA622D46590008FD0C9 /* SearchViewController.swift */,
-				8A723DA822D4659E008FD0C9 /* CartViewController.swift */,
-				8A723DAA22D465A9008FD0C9 /* OrdersViewController.swift */,
+				8A19637D22D5C1B200646684 /* CartPage */,
+				8A19637A22D5C1B100646684 /* Common */,
+				8A19637C22D5C1B200646684 /* OrderPage */,
+				8A19637B22D5C1B200646684 /* ProfilePage */,
+				8A19637922D5C1B100646684 /* SearchPage */,
 				8A723DAC22D465B5008FD0C9 /* MyProfileViewController.swift */,
 				8A723DB122D4721E008FD0C9 /* ProfileContentViewController.swift */,
 			);
@@ -296,8 +293,13 @@
 			files = (
 				8A2622FA22CB3E3E00C39943 /* Chp.png in Resources */,
 				8A55B28B22C8CE8A007E77FD /* LaunchScreen.storyboard in Resources */,
+				8A19638222D5C1B200646684 /* CartPage in Resources */,
+				8A19638122D5C1B200646684 /* OrderPage in Resources */,
 				8A55B28822C8CE8A007E77FD /* Assets.xcassets in Resources */,
+				8A19637E22D5C1B200646684 /* SearchPage in Resources */,
 				8A55B28622C8CE85007E77FD /* Main.storyboard in Resources */,
+				8A19637F22D5C1B200646684 /* Common in Resources */,
+				8A19638022D5C1B200646684 /* ProfilePage in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,13 +355,11 @@
 				8A06394B22D3316F00699037 /* EyulingoUri.swift in Sources */,
 				8A55B28322C8CE85007E77FD /* ViewController.swift in Sources */,
 				8AC9E7F722C9B0D000F80460 /* Cart.swift in Sources */,
-				8A723DAB22D465A9008FD0C9 /* OrdersViewController.swift in Sources */,
 				8A55B27F22C8CE85007E77FD /* AppDelegate.swift in Sources */,
 				8A06394C22D3316F00699037 /* BookieUri.swift in Sources */,
 				8AC9E7EE22C9A7F400F80460 /* Book.swift in Sources */,
 				8AC9E7DF22C9A39700F80460 /* CartVC.swift in Sources */,
 				8AC9E7E922C9A42300F80460 /* AdminOrderVC.swift in Sources */,
-				8A723DA722D46590008FD0C9 /* SearchViewController.swift in Sources */,
 				8A723DB222D4721E008FD0C9 /* ProfileContentViewController.swift in Sources */,
 				8AC9E7FD22C9C1A300F80460 /* AdminBill.swift in Sources */,
 				8AC9E7DD22C9A37500F80460 /* BookQueryVC.swift in Sources */,
@@ -367,20 +367,16 @@
 				8AC9E7E522C9A3F700F80460 /* AdminBookVC.swift in Sources */,
 				8AC9E7EB22C9A43C00F80460 /* AdminAddBookVC.swift in Sources */,
 				8A723DAD22D465B5008FD0C9 /* MyProfileViewController.swift in Sources */,
-				8AC9E7D922C9A31400F80460 /* LoginVC.swift in Sources */,
 				8A06394622D32FDC00699037 /* DateAndTimeParser.swift in Sources */,
 				8A723DB022D4704F008FD0C9 /* EyUser.swift in Sources */,
 				8A55B28122C8CE85007E77FD /* SceneDelegate.swift in Sources */,
 				8AC9E7E722C9A40C00F80460 /* AdminUserVC.swift in Sources */,
 				8AC9E7F522C9AF4A00F80460 /* PurchaseVC.swift in Sources */,
-				8AC9E7DB22C9A34700F80460 /* RegisterVC.swift in Sources */,
 				8A723DB422D47954008FD0C9 /* LogoutNow.swift in Sources */,
 				8AC9E7E322C9A3CD00F80460 /* BookDetailVC.swift in Sources */,
-				8A6DD6F222CAE3FA00BD7904 /* TabBarController.swift in Sources */,
 				8A6DD6FC22CAF55500BD7904 /* PinYinConverter.swift in Sources */,
 				8AC9E7F322C9ACC900F80460 /* Bill.swift in Sources */,
 				8A0AF9E522D41F6E009430B9 /* JudgeValidEmail.swift in Sources */,
-				8A723DA922D4659E008FD0C9 /* CartViewController.swift in Sources */,
 				8AC9E7FB22C9B57E00F80460 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
