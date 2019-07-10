@@ -24,7 +24,9 @@
 		8A55B28822C8CE8A007E77FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A55B28722C8CE8A007E77FD /* Assets.xcassets */; };
 		8A55B28B22C8CE8A007E77FD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A55B28922C8CE8A007E77FD /* LaunchScreen.storyboard */; };
 		8A6DD6FC22CAF55500BD7904 /* PinYinConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6DD6FB22CAF55500BD7904 /* PinYinConverter.swift */; };
+		8A723DAD22D465B5008FD0C9 /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A723DAC22D465B5008FD0C9 /* MyProfileViewController.swift */; };
 		8A723DB022D4704F008FD0C9 /* EyUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A723DAF22D4704F008FD0C9 /* EyUser.swift */; };
+		8A723DB222D4721E008FD0C9 /* ProfileContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A723DB122D4721E008FD0C9 /* ProfileContentViewController.swift */; };
 		8A723DB422D47954008FD0C9 /* LogoutNow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A723DB322D47954008FD0C9 /* LogoutNow.swift */; };
 		8AC9E7DD22C9A37500F80460 /* BookQueryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC9E7DC22C9A37500F80460 /* BookQueryVC.swift */; };
 		8AC9E7DF22C9A39700F80460 /* CartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC9E7DE22C9A39700F80460 /* CartVC.swift */; };
@@ -40,11 +42,6 @@
 		8AC9E7F722C9B0D000F80460 /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC9E7F622C9B0D000F80460 /* Cart.swift */; };
 		8AC9E7FB22C9B57E00F80460 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC9E7FA22C9B57E00F80460 /* User.swift */; };
 		8AC9E7FD22C9C1A300F80460 /* AdminBill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC9E7FC22C9C1A300F80460 /* AdminBill.swift */; };
-		8AE40BC122D5C30C00E9CE4B /* CartPage in Sources */ = {isa = PBXBuildFile; fileRef = 8A19637D22D5C1B200646684 /* CartPage */; };
-		8AE40BC222D5C30C00E9CE4B /* Common in Sources */ = {isa = PBXBuildFile; fileRef = 8A19637A22D5C1B100646684 /* Common */; };
-		8AE40BC322D5C30C00E9CE4B /* OrderPage in Sources */ = {isa = PBXBuildFile; fileRef = 8A19637C22D5C1B200646684 /* OrderPage */; };
-		8AE40BC422D5C30C00E9CE4B /* ProfilePage in Sources */ = {isa = PBXBuildFile; fileRef = 8A19637B22D5C1B200646684 /* ProfilePage */; };
-		8AE40BC522D5C30C00E9CE4B /* SearchPage in Sources */ = {isa = PBXBuildFile; fileRef = 8A19637922D5C1B100646684 /* SearchPage */; };
 		DC61DCF8126E5BD7AFD2A3DE /* Pods_Eyulingo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A888A1ACE66F92325BE30679 /* Pods_Eyulingo.framework */; };
 /* End PBXBuildFile section */
 
@@ -69,7 +66,9 @@
 		8A55B28A22C8CE8A007E77FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8A55B28C22C8CE8A007E77FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8A6DD6FB22CAF55500BD7904 /* PinYinConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinYinConverter.swift; sourceTree = "<group>"; };
+		8A723DAC22D465B5008FD0C9 /* MyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
 		8A723DAF22D4704F008FD0C9 /* EyUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyUser.swift; sourceTree = "<group>"; };
+		8A723DB122D4721E008FD0C9 /* ProfileContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileContentViewController.swift; sourceTree = "<group>"; };
 		8A723DB322D47954008FD0C9 /* LogoutNow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutNow.swift; sourceTree = "<group>"; };
 		8AC9E7DC22C9A37500F80460 /* BookQueryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookQueryVC.swift; sourceTree = "<group>"; };
 		8AC9E7DE22C9A39700F80460 /* CartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartVC.swift; sourceTree = "<group>"; };
@@ -200,6 +199,8 @@
 				8A19637C22D5C1B200646684 /* OrderPage */,
 				8A19637B22D5C1B200646684 /* ProfilePage */,
 				8A19637922D5C1B100646684 /* SearchPage */,
+				8A723DAC22D465B5008FD0C9 /* MyProfileViewController.swift */,
+				8A723DB122D4721E008FD0C9 /* ProfileContentViewController.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -351,11 +352,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8AE40BC122D5C30C00E9CE4B /* CartPage in Sources */,
-				8AE40BC222D5C30C00E9CE4B /* Common in Sources */,
-				8AE40BC322D5C30C00E9CE4B /* OrderPage in Sources */,
-				8AE40BC422D5C30C00E9CE4B /* ProfilePage in Sources */,
-				8AE40BC522D5C30C00E9CE4B /* SearchPage in Sources */,
 				8A06394B22D3316F00699037 /* EyulingoUri.swift in Sources */,
 				8A55B28322C8CE85007E77FD /* ViewController.swift in Sources */,
 				8AC9E7F722C9B0D000F80460 /* Cart.swift in Sources */,
@@ -364,11 +360,13 @@
 				8AC9E7EE22C9A7F400F80460 /* Book.swift in Sources */,
 				8AC9E7DF22C9A39700F80460 /* CartVC.swift in Sources */,
 				8AC9E7E922C9A42300F80460 /* AdminOrderVC.swift in Sources */,
+				8A723DB222D4721E008FD0C9 /* ProfileContentViewController.swift in Sources */,
 				8AC9E7FD22C9C1A300F80460 /* AdminBill.swift in Sources */,
 				8AC9E7DD22C9A37500F80460 /* BookQueryVC.swift in Sources */,
 				8AC9E7E122C9A3AE00F80460 /* PurchasedVC.swift in Sources */,
 				8AC9E7E522C9A3F700F80460 /* AdminBookVC.swift in Sources */,
 				8AC9E7EB22C9A43C00F80460 /* AdminAddBookVC.swift in Sources */,
+				8A723DAD22D465B5008FD0C9 /* MyProfileViewController.swift in Sources */,
 				8A06394622D32FDC00699037 /* DateAndTimeParser.swift in Sources */,
 				8A723DB022D4704F008FD0C9 /* EyUser.swift in Sources */,
 				8A55B28122C8CE85007E77FD /* SceneDelegate.swift in Sources */,

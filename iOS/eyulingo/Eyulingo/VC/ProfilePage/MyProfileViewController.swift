@@ -14,7 +14,8 @@ class MyProfileViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-
+<<<<<<< Updated upstream:iOS/eyulingo/Eyulingo/VC/MyProfileViewController.swift
+=======
         loadUserProfile()
     }
     
@@ -265,6 +266,7 @@ class MyProfileViewController: UIViewController {
                 }
                 self.makeAlert("获取个人资料失败", "服务器报告了一个 “\(errorCode)” 错误。", completion: { })
             })
+>>>>>>> Stashed changes:iOS/eyulingo/Eyulingo/VC/ProfilePage/MyProfileViewController.swift
     }
     
 

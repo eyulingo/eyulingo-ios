@@ -143,7 +143,7 @@ Project Eyulingo. 一切权利保留。</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="109" y="172"/>
+            <point key="canvasLocation" x="73" y="120"/>
         </scene>
         <!--购物车-->
         <scene sceneID="srz-dk-yXs">
@@ -1000,6 +1000,7 @@ Project Eyulingo. 一切权利保留。</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gam-3x-mOL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
+
             <point key="canvasLocation" x="109" y="1668"/>
         </scene>
         <!--Change Password View Controller-->
@@ -1210,6 +1211,7 @@ Project Eyulingo. 一切权利保留。</string>
                                                         <state key="normal" title="验证"/>
                                                         <connections>
                                                             <action selector="getCheckCode:" destination="Orr-8O-H5n" eventType="touchUpInside" id="WuI-tT-qSj"/>
+                                                            <action selector="getCheckCode:" destination="1if-Vv-8i7" eventType="touchUpInside" id="xPF-Fw-pIM"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -1239,12 +1241,14 @@ Project Eyulingo. 一切权利保留。</string>
                                                         <state key="normal" image="arrow.clockwise" catalog="system"/>
                                                         <connections>
                                                             <action selector="resetButtonTapped:" destination="Orr-8O-H5n" eventType="touchUpInside" id="IqY-aR-ou4"/>
+                                                            <action selector="resetButtonTapped:" destination="1if-Vv-8i7" eventType="touchUpInside" id="adk-er-r7o"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dD0-iS-orV">
                                                         <rect key="frame" x="39.666666666666657" y="0.0" width="20" height="22"/>
                                                         <state key="normal" image="arrow.right.circle" catalog="system"/>
                                                         <connections>
+                                                            <action selector="registerButtonTapped:" destination="1if-Vv-8i7" eventType="touchUpInside" id="Okh-K9-wmi"/>
                                                             <action selector="submitButtonTapped:" destination="Orr-8O-H5n" eventType="touchUpInside" id="EZ5-uA-r6h"/>
                                                         </connections>
                                                     </button>
