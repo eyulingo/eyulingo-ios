@@ -37,6 +37,11 @@ class MyProfileViewController: UIViewController, profileChangesDelegate {
                 contentVC?.delegate = self
             }
         }
+        
+        if segue.identifier == "ChangeEmailSegue" {
+            let emailViewController = segue.destination as! ChangeEmailViewController
+            emailViewController.originEmailAddress = currentUser?.userEmail
+        }
         super.prepare(for: segue, sender: sender)
     }
     
@@ -166,11 +171,11 @@ class MyProfileViewController: UIViewController, profileChangesDelegate {
     }
     
     func updateEmail() {
-        
+        self.performSegue(withIdentifier: "ChangeEmailSegue", sender: self)
     }
     
     func updatePassword() {
-        
+        self.performSegue(withIdentifier: "ChangePasswordSegue", sender: self)
     }
     
     func editReceiveAddress() {

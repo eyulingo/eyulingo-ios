@@ -39,9 +39,52 @@ class ProfileContentViewController: UITableViewController {
         
         if indexPath.section == 0 {
             if indexPath.row == 0 {
-                self.delegate?.updateAvatar()
+                
+                let alertController = UIAlertController(title: "想进行什么操作？",
+                                                        message: "您可以修改自己的头像。",
+                                                        preferredStyle: .actionSheet)
+                let cancelAction = UIAlertAction(title: "取消",
+                                                 style: .cancel,
+                                                 handler: nil)
+                
+                let changeAvatarAction = UIAlertAction(title: "修改头像",
+                                                       style: .default,
+                                                       handler: { _ in
+                                                        self.delegate?.updateAvatar()
+                                                        
+                })
+                alertController.addAction(cancelAction)
+                alertController.addAction(changeAvatarAction)
+                if let popoverController = alertController.popoverPresentationController {
+                    popoverController.sourceView = self.view
+                    popoverController.sourceRect = tableView.cellForRow(at: indexPath)!.frame
+                }
+                
+                self.present(alertController, animated: true, completion: nil)
             } else if indexPath.row == 3 {
-                self.delegate?.updateEmail()
+                
+                let alertController = UIAlertController(title: "想进行什么操作？",
+                                                        message: "您可以修改绑定的电子邮箱。",
+                                                        preferredStyle: .actionSheet)
+                let cancelAction = UIAlertAction(title: "取消",
+                                                 style: .cancel,
+                                                 handler: nil)
+                
+                let changeAvatarAction = UIAlertAction(title: "修改电子邮箱",
+                                                       style: .default,
+                                                       handler: { _ in
+                                                        self.delegate?.updateEmail()
+                                                        
+                })
+                alertController.addAction(cancelAction)
+                alertController.addAction(changeAvatarAction)
+                if let popoverController = alertController.popoverPresentationController {
+                    popoverController.sourceView = self.view
+                    popoverController.sourceRect = tableView.cellForRow(at: indexPath)!.frame
+                }
+                
+                self.present(alertController, animated: true, completion: nil)
+                
             } else if indexPath.row == 4 {
                 self.delegate?.updatePassword()
             }
