@@ -8,5 +8,4 @@ xcode_scheme: EyulingoUnitTests
 # xcode_scheme: EyulingoUITests
 xcode_destination: platform=iOS Simulator,OS=10.1,name=iPad Pro (9.7-inch)
 
-install: 
-script: xcodebuild test -workspace ./iOS/eyulingo/Eyulingo.xcworkspace -scheme EyulingoUnitTests -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
+script: xcodebuild -workspace ./iOS/eyulingo/Eyulingo.xcworkspace -scheme EyulingoUnitTests -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
