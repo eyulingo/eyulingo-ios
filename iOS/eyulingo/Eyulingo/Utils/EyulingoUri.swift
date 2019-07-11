@@ -55,16 +55,25 @@ class Eyulingo_UserUri {
     static let addressGetUri = baseUri + "/myaddress"
     
     // parameters:
-    // receive_no - 收货人
+    // receive_name - 收货人
     // receive_phone - 收货电话
     // receive_address - 收货地址
     static let addAddressPostUri = baseUri + "/addaddress"
     
     // parameters:
-    // receive_no - 收货人
+    // receive_name - 收货人
     // receive_phone - 收货电话
     // receive_address - 收货地址
     static let removeAddressPostUri = baseUri + "/removeaddress"
+    
+    // parameters:
+    // old_receive_name - 原收货人
+    // old_receive_phone - 原收货电话
+    // old_receive_address - 原收货地址
+    // new_receive_name - 新收货人
+    // new_receive_phone - 新收货电话
+    // new_receive_address - 新收货地址
+    static let changeAddressPostUri = baseUri + "/changeaddress"
     
     // parameters:
     // q - 关键字

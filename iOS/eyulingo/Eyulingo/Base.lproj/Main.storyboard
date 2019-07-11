@@ -401,10 +401,30 @@ Project Eyulingo. 一切权利保留。</string>
                         <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zzD-TH-ICO">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="C7h-fk-O3u">
+                                    <rect key="frame" x="0.0" y="0.0" width="174" height="588"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R2G-xi-C1Z">
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="arb-DY-z6B">
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            </view>
+                                            <vibrancyEffect>
+                                                <blurEffect style="light"/>
+                                            </vibrancyEffect>
+                                        </visualEffectView>
+                                    </subviews>
+                                </view>
+                                <blurEffect style="regular"/>
+                            </visualEffectView>
                             <navigationBar contentMode="scaleToFill" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="myk-3u-1Ju">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="115.33333333333333"/>
                                 <items>
                                     <navigationItem title="注册" id="vS8-D0-JnM">
+                                        <barButtonItem key="backBarButtonItem" title="登录" id="TDU-mg-eyX"/>
                                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="stop" id="VPW-9n-z1G">
                                             <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <connections>
@@ -550,13 +570,16 @@ Project Eyulingo. 一切权利保留。</string>
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="zzD-TH-ICO" firstAttribute="trailing" secondItem="86U-FE-eID" secondAttribute="trailing" id="2et-eL-Vql"/>
                             <constraint firstAttribute="trailing" secondItem="myk-3u-1Ju" secondAttribute="trailing" id="2jy-PG-dRr"/>
                             <constraint firstItem="myk-3u-1Ju" firstAttribute="leading" secondItem="xUp-z7-UZk" secondAttribute="leading" id="2uI-HP-xGQ"/>
+                            <constraint firstItem="zzD-TH-ICO" firstAttribute="top" secondItem="86U-FE-eID" secondAttribute="top" id="MSy-lI-RK0"/>
+                            <constraint firstItem="zzD-TH-ICO" firstAttribute="leading" secondItem="86U-FE-eID" secondAttribute="leading" id="cDA-EJ-qbT"/>
                             <constraint firstItem="myk-3u-1Ju" firstAttribute="top" secondItem="xUp-z7-UZk" secondAttribute="top" id="efK-xn-EKb"/>
                             <constraint firstItem="NCi-KV-F3c" firstAttribute="centerY" secondItem="xUp-z7-UZk" secondAttribute="centerY" id="mFh-O5-zY6"/>
                             <constraint firstItem="NCi-KV-F3c" firstAttribute="centerX" secondItem="xUp-z7-UZk" secondAttribute="centerX" id="rGr-Wc-x0s"/>
+                            <constraint firstItem="zzD-TH-ICO" firstAttribute="bottom" secondItem="86U-FE-eID" secondAttribute="bottom" id="sz5-VV-JQM"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="86U-FE-eID"/>
                     </view>
@@ -573,7 +596,7 @@ Project Eyulingo. 一切权利保留。</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jeS-rf-jtp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="109" y="-580"/>
+            <point key="canvasLocation" x="108.69565217391305" y="-580.43478260869574"/>
         </scene>
         <!--已购项目-->
         <scene sceneID="lDG-Ju-rGt">
@@ -641,7 +664,7 @@ Project Eyulingo. 一切权利保留。</string>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g5F-EB-fNz">
                                 <rect key="frame" x="0.0" y="44" width="414" height="643"/>
                                 <connections>
-                                    <segue destination="m6u-2e-RMr" kind="embed" identifier="tableContainerSegue" id="7lw-Df-O99"/>
+                                    <segue destination="m6u-2e-RMr" kind="embed" identifier="tableContainerSegue" id="7r8-u9-EZI"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -850,7 +873,7 @@ Project Eyulingo. 一切权利保留。</string>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Tp5-DY-VTi">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Tp5-DY-VTi">
                                                     <rect key="frame" x="230" y="0.0" width="144" height="144"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="144" id="27T-XS-viH"/>
@@ -1018,6 +1041,27 @@ Project Eyulingo. 一切权利保留。</string>
                         <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gxk-Ub-quD">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ItZ-mj-M8p">
+                                    <rect key="frame" x="0.0" y="0.0" width="174" height="588"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RT4-pG-6Ww">
+                                            <rect key="frame" x="0.0" y="0.0" width="0.0" height="76"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="kV5-km-NIc">
+                                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="76"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            </view>
+                                            <vibrancyEffect>
+                                                <blurEffect style="light"/>
+                                            </vibrancyEffect>
+                                        </visualEffectView>
+                                    </subviews>
+                                </view>
+                                <blurEffect style="regular"/>
+                            </visualEffectView>
                             <navigationBar contentMode="scaleToFill" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZSd-qx-LHB">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="115.33333333333333"/>
                                 <items>
@@ -1131,12 +1175,16 @@ Project Eyulingo. 一切权利保留。</string>
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="ZSd-qx-LHB" firstAttribute="leading" secondItem="MlG-ad-Ky7" secondAttribute="leading" id="BTh-aw-aDU"/>
+                            <constraint firstItem="gxk-Ub-quD" firstAttribute="top" secondItem="anb-ab-AVD" secondAttribute="top" id="KRs-FE-7vi"/>
                             <constraint firstItem="YqX-pY-2Na" firstAttribute="centerY" secondItem="MlG-ad-Ky7" secondAttribute="centerY" id="SBI-R1-xzS"/>
+                            <constraint firstItem="gxk-Ub-quD" firstAttribute="leading" secondItem="anb-ab-AVD" secondAttribute="leading" id="Ue8-lc-PBq"/>
+                            <constraint firstItem="gxk-Ub-quD" firstAttribute="trailing" secondItem="anb-ab-AVD" secondAttribute="trailing" id="lg2-B6-Mq8"/>
                             <constraint firstItem="ZSd-qx-LHB" firstAttribute="top" secondItem="MlG-ad-Ky7" secondAttribute="top" id="oND-eJ-xfJ"/>
                             <constraint firstItem="YqX-pY-2Na" firstAttribute="centerX" secondItem="MlG-ad-Ky7" secondAttribute="centerX" id="qEl-9B-bxs"/>
+                            <constraint firstItem="gxk-Ub-quD" firstAttribute="bottom" secondItem="anb-ab-AVD" secondAttribute="bottom" id="ujV-dO-OPF"/>
                             <constraint firstAttribute="trailing" secondItem="ZSd-qx-LHB" secondAttribute="trailing" id="zfx-Ds-qAM"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="anb-ab-AVD"/>
@@ -1152,7 +1200,131 @@ Project Eyulingo. 一切权利保留。</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cek-jA-wEu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1590" y="1670"/>
+            <point key="canvasLocation" x="1234.7826086956522" y="1707.8804347826087"/>
+        </scene>
+        <!--Address Manage View Controller-->
+        <scene sceneID="VGU-tu-ReQ">
+            <objects>
+                <viewController storyboardIdentifier="AddressManageVC" id="cwS-eG-FmT" customClass="AddressManageViewController" customModule="Eyulingo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3aA-cX-E6s">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="84H-lF-DQh">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="DFl-2f-U5O">
+                                    <rect key="frame" x="0.0" y="0.0" width="174" height="608"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="psc-BJ-0Hi">
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="dpO-vl-4Xq">
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            </view>
+                                            <vibrancyEffect>
+                                                <blurEffect style="light"/>
+                                            </vibrancyEffect>
+                                        </visualEffectView>
+                                    </subviews>
+                                </view>
+                                <blurEffect style="regular"/>
+                            </visualEffectView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f8w-cm-4js">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <items>
+                                    <navigationItem title="常用收货地址" id="NP3-9m-fo7">
+                                        <barButtonItem key="backBarButtonItem" title="我的 Eyulingo" id="w3R-kf-lwa"/>
+                                        <barButtonItem key="leftBarButtonItem" style="plain" id="wEQ-Yl-t7p">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ANY-tO-bLo">
+                                                <rect key="frame" x="0.0" y="0.0" width="18" height="22"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" image="plus" catalog="system"/>
+                                                <connections>
+                                                    <action selector="addNewAddress:" destination="cwS-eG-FmT" eventType="touchUpInside" id="Zzs-mK-Xeo"/>
+                                                </connections>
+                                            </button>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="stop" id="V1j-fr-fbb">
+                                            <connections>
+                                                <action selector="dismissMe:" destination="cwS-eG-FmT" id="lWD-ZR-Xch"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="66" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="L48-OX-Del">
+                                <rect key="frame" x="0.0" y="44" width="414" height="692"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexTrackingBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AddressLabelCell" textLabel="1Am-iY-2RK" detailTextLabel="Zfb-AL-dS2" rowHeight="60" style="IBUITableViewCellStyleSubtitle" id="xeu-2R-LRx">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="60"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xeu-2R-LRx" id="hDA-AO-NsI">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1Am-iY-2RK">
+                                                    <rect key="frame" x="20" y="11" width="38" height="24"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Zfb-AL-dS2">
+                                                    <rect key="frame" x="19.999999999999996" y="35" width="32.666666666666657" height="14.333333333333336"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="cwS-eG-FmT" id="Cie-Dg-oJP"/>
+                                    <outlet property="delegate" destination="cwS-eG-FmT" id="EZN-pj-Chr"/>
+                                </connections>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="无内容" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xQj-e7-BC3">
+                                <rect key="frame" x="170.66666666666666" y="354.33333333333331" width="73" height="27.666666666666686"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" cocoaTouchSystemColor="secondaryLabelColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="L48-OX-Del" firstAttribute="leading" secondItem="f8w-cm-4js" secondAttribute="leading" id="7K8-Zk-Ibz"/>
+                            <constraint firstItem="f8w-cm-4js" firstAttribute="centerX" secondItem="3aA-cX-E6s" secondAttribute="centerX" id="88I-9R-779"/>
+                            <constraint firstItem="f8w-cm-4js" firstAttribute="leading" secondItem="xJX-qp-RkO" secondAttribute="leading" id="Ekx-i1-2Kk"/>
+                            <constraint firstItem="84H-lF-DQh" firstAttribute="bottom" secondItem="xJX-qp-RkO" secondAttribute="bottom" id="GTo-J3-Evu"/>
+                            <constraint firstItem="xQj-e7-BC3" firstAttribute="centerY" secondItem="3aA-cX-E6s" secondAttribute="centerY" id="OPT-ON-Yi5"/>
+                            <constraint firstItem="xQj-e7-BC3" firstAttribute="centerX" secondItem="3aA-cX-E6s" secondAttribute="centerX" id="WYJ-kw-l8v"/>
+                            <constraint firstItem="f8w-cm-4js" firstAttribute="top" secondItem="xJX-qp-RkO" secondAttribute="top" id="eTd-26-1dn"/>
+                            <constraint firstItem="L48-OX-Del" firstAttribute="bottom" secondItem="xJX-qp-RkO" secondAttribute="bottom" id="f72-Xt-hbO"/>
+                            <constraint firstItem="84H-lF-DQh" firstAttribute="leading" secondItem="xJX-qp-RkO" secondAttribute="leading" id="jPy-pH-K3A"/>
+                            <constraint firstItem="84H-lF-DQh" firstAttribute="top" secondItem="xJX-qp-RkO" secondAttribute="top" id="lg3-QW-9et"/>
+                            <constraint firstItem="L48-OX-Del" firstAttribute="trailing" secondItem="f8w-cm-4js" secondAttribute="trailing" id="pKW-Pw-gwO"/>
+                            <constraint firstItem="L48-OX-Del" firstAttribute="top" secondItem="f8w-cm-4js" secondAttribute="bottom" id="tdf-5W-Zxj"/>
+                            <constraint firstItem="84H-lF-DQh" firstAttribute="trailing" secondItem="xJX-qp-RkO" secondAttribute="trailing" id="uIq-vW-o3k"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="xJX-qp-RkO"/>
+                    </view>
+                    <connections>
+                        <outlet property="addressTableView" destination="L48-OX-Del" id="7dS-o8-YfP"/>
+                        <outlet property="noContentLabel" destination="xQj-e7-BC3" id="kpt-1w-Kvd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Uxh-5V-7W9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1869.5652173913045" y="1707.8804347826087"/>
         </scene>
         <!--Change Password View Controller-->
         <scene sceneID="XZZ-MR-MBd">
@@ -1162,6 +1334,27 @@ Project Eyulingo. 一切权利保留。</string>
                         <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2nr-IR-ddb">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="f0K-pj-IUz">
+                                    <rect key="frame" x="0.0" y="0.0" width="174" height="637"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bCF-1V-NZo">
+                                            <rect key="frame" x="0.0" y="0.0" width="0.0" height="351"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="bOG-Ew-M4g">
+                                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="351"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            </view>
+                                            <vibrancyEffect>
+                                                <blurEffect style="light"/>
+                                            </vibrancyEffect>
+                                        </visualEffectView>
+                                    </subviews>
+                                </view>
+                                <blurEffect style="regular"/>
+                            </visualEffectView>
                             <navigationBar contentMode="scaleToFill" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fmh-jW-Z4X">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="115.33333333333333"/>
                                 <items>
@@ -1285,12 +1478,16 @@ Project Eyulingo. 一切权利保留。</string>
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="PPF-7Z-vDJ" firstAttribute="centerX" secondItem="vLt-9g-k7w" secondAttribute="centerX" id="AZd-ZE-DS2"/>
                             <constraint firstItem="Fmh-jW-Z4X" firstAttribute="top" secondItem="vLt-9g-k7w" secondAttribute="top" id="EBh-un-fwy"/>
+                            <constraint firstItem="2nr-IR-ddb" firstAttribute="trailing" secondItem="1i0-cG-xve" secondAttribute="trailing" id="UA8-fm-fGT"/>
                             <constraint firstItem="Fmh-jW-Z4X" firstAttribute="leading" secondItem="vLt-9g-k7w" secondAttribute="leading" id="c7e-qS-aGI"/>
                             <constraint firstAttribute="trailing" secondItem="Fmh-jW-Z4X" secondAttribute="trailing" id="j7t-73-qpk"/>
+                            <constraint firstItem="1i0-cG-xve" firstAttribute="bottom" secondItem="2nr-IR-ddb" secondAttribute="bottom" id="l28-QU-Szm"/>
+                            <constraint firstItem="2nr-IR-ddb" firstAttribute="top" secondItem="1i0-cG-xve" secondAttribute="top" id="mWv-Mg-QA5"/>
+                            <constraint firstItem="2nr-IR-ddb" firstAttribute="leading" secondItem="1i0-cG-xve" secondAttribute="leading" id="tFr-zk-3vs"/>
                             <constraint firstItem="PPF-7Z-vDJ" firstAttribute="centerY" secondItem="vLt-9g-k7w" secondAttribute="centerY" id="wjd-0h-IV1"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1i0-cG-xve"/>
@@ -1306,7 +1503,7 @@ Project Eyulingo. 一切权利保留。</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wis-zI-fwf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="894" y="1670"/>
+            <point key="canvasLocation" x="595.6521739130435" y="1707.8804347826087"/>
         </scene>
         <!--Forget Password View Controller-->
         <scene sceneID="0H8-V1-2Pr">
@@ -1316,6 +1513,25 @@ Project Eyulingo. 一切权利保留。</string>
                         <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s8B-RO-9Mh">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="H5d-nz-Hcf">
+                                    <rect key="frame" x="0.0" y="0.0" width="174" height="588"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OhR-Wd-cn1">
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="fiO-Za-1WV">
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            </view>
+                                            <vibrancyEffect>
+                                                <blurEffect style="light"/>
+                                            </vibrancyEffect>
+                                        </visualEffectView>
+                                    </subviews>
+                                </view>
+                                <blurEffect style="regular"/>
+                            </visualEffectView>
                             <navigationBar contentMode="scaleToFill" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JnM-f1-yFo">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="115.33333333333333"/>
                                 <items>
@@ -1448,13 +1664,17 @@ Project Eyulingo. 一切权利保留。</string>
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="JnM-f1-yFo" firstAttribute="leading" secondItem="xlT-yK-YYV" secondAttribute="leading" id="1ll-i6-RD5"/>
                             <constraint firstAttribute="trailing" secondItem="JnM-f1-yFo" secondAttribute="trailing" id="72F-rd-Yh9"/>
+                            <constraint firstItem="s8B-RO-9Mh" firstAttribute="leading" secondItem="ahp-we-wBd" secondAttribute="leading" id="7H8-1u-uF5"/>
+                            <constraint firstItem="s8B-RO-9Mh" firstAttribute="top" secondItem="ahp-we-wBd" secondAttribute="top" id="GiX-eh-pfh"/>
                             <constraint firstItem="JnM-f1-yFo" firstAttribute="top" secondItem="xlT-yK-YYV" secondAttribute="top" id="XVW-tt-9IG"/>
                             <constraint firstItem="ZpF-it-QcT" firstAttribute="centerX" secondItem="xlT-yK-YYV" secondAttribute="centerX" id="bdW-Br-yDs"/>
+                            <constraint firstItem="s8B-RO-9Mh" firstAttribute="bottom" secondItem="ahp-we-wBd" secondAttribute="bottom" id="nTO-K8-YDL"/>
                             <constraint firstItem="ZpF-it-QcT" firstAttribute="centerY" secondItem="xlT-yK-YYV" secondAttribute="centerY" id="slK-kU-qsI"/>
+                            <constraint firstItem="s8B-RO-9Mh" firstAttribute="trailing" secondItem="ahp-we-wBd" secondAttribute="trailing" id="xYm-3Y-Tt1"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ahp-we-wBd"/>
                     </view>
@@ -1470,7 +1690,7 @@ Project Eyulingo. 一切权利保留。</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7hW-bR-Mk4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="852" y="-580"/>
+            <point key="canvasLocation" x="850.72463768115949" y="-580.43478260869574"/>
         </scene>
     </scenes>
     <resources>
@@ -1480,6 +1700,7 @@ Project Eyulingo. 一切权利保留。</string>
         <image name="escape" catalog="system" width="64" height="62"/>
         <image name="magnifyingglass" catalog="system" width="64" height="60"/>
         <image name="person.circle" catalog="system" width="64" height="62"/>
+        <image name="plus" catalog="system" width="64" height="58"/>
         <image name="slider.horizontal.3" catalog="system" width="64" height="50"/>
         <image name="trash.slash" catalog="system" width="64" height="64"/>
         <image name="yensign.square" catalog="system" width="64" height="56"/>

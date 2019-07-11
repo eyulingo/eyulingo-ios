@@ -27,6 +27,7 @@ class MyProfileViewController: UIViewController, profileChangesDelegate, profile
         // Do any additional setup after loading the view.
         loadUserProfile()
     }
+
     
     override func viewWillAppear(_ animated: Bool) {
         UINavigationBar.appearance().tintColor = .systemBlue
@@ -94,7 +95,8 @@ class MyProfileViewController: UIViewController, profileChangesDelegate, profile
             
             if let photo = items.singlePhoto {
                 
-                guard let data = photo.image.jpegData(compressionQuality: 0.8) else {
+
+                guard let data = photo.image.compressImage(size: 200) else {
 //                    loadingAlert.dismiss(animated: true, completion: nil)
                     return
                 }
@@ -199,7 +201,11 @@ class MyProfileViewController: UIViewController, profileChangesDelegate, profile
     }
     
     func editReceiveAddress() {
+//        self.performSegue(withIdentifier: "ManageAddressSegue", sender: self)
         
+        let destinationStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let destinationViewController = destinationStoryboard.instantiateViewController(withIdentifier: "AddressManageVC") as! AddressManageViewController
+        self.present(destinationViewController, animated: true, completion: nil)
     }
     
     func contactSupport() {
