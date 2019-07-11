@@ -16,7 +16,7 @@ extension UIImage {
 
      - returns: NSData
      */
-    func compressImage(size: Int) -> NSData? {
+    func compressImage(size: Int) -> Data? {
         var imageData = jpegData(compressionQuality: 0.99)
         let maxFileSize = size * 1024
 
@@ -24,7 +24,7 @@ extension UIImage {
         if imageData!.count > maxFileSize {
             imageData = jpegData(compressionQuality: CGFloat(maxFileSize / imageData!.count))
         }
-        return imageData as NSData?
+        return imageData
     }
 
     /**
@@ -35,7 +35,7 @@ extension UIImage {
 
      - returns: NSData
      */
-    func compressImageWithASmallStep(size: Int) -> NSData? {
+    func compressImageWithASmallStep(size: Int) -> Data? {
         var compression: CGFloat = 0.9
         let maxCompression: CGFloat = 0.1
         let maxFileSize = size * 1024
@@ -47,7 +47,7 @@ extension UIImage {
             imageData = jpegData(compressionQuality: compression)
         }
 
-        return imageData as NSData?
+        return imageData
     }
 
     /**
@@ -57,13 +57,13 @@ extension UIImage {
 
      - returns: NSData
      */
-    func compressImageWithQuality(compressionQuality: CGFloat) -> NSData? {
+    func compressImageWithQuality(compressionQuality: CGFloat) -> Data? {
         var quality: CGFloat = 0.0
         if compressionQuality > 0.99 {
             quality = 0.99
         } else {
             quality = compressionQuality
         }
-        return jpegData(compressionQuality: quality)! as NSData
+        return jpegData(compressionQuality: quality)
     }
 }

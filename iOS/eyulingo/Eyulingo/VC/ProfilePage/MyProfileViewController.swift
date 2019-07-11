@@ -94,7 +94,8 @@ class MyProfileViewController: UIViewController, profileChangesDelegate, profile
             
             if let photo = items.singlePhoto {
                 
-                guard let data = photo.image.jpegData(compressionQuality: 0.8) else {
+
+                guard let data = photo.image.compressImage(size: 200) else {
 //                    loadingAlert.dismiss(animated: true, completion: nil)
                     return
                 }

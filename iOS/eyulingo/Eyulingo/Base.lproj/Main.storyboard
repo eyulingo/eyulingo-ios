@@ -851,7 +851,7 @@ Project Eyulingo. 一切权利保留。</string>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Tp5-DY-VTi">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Tp5-DY-VTi">
                                                     <rect key="frame" x="230" y="0.0" width="144" height="144"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="144" id="27T-XS-viH"/>
