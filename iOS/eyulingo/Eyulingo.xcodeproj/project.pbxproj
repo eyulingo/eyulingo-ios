@@ -11,6 +11,7 @@
 		8A06394B22D3316F00699037 /* EyulingoUri.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A06394922D3316F00699037 /* EyulingoUri.swift */; };
 		8A06394C22D3316F00699037 /* BookieUri.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A06394A22D3316F00699037 /* BookieUri.swift */; };
 		8A0AF9E522D41F6E009430B9 /* JudgeValidEmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0AF9E422D41F6E009430B9 /* JudgeValidEmail.swift */; };
+		8A0EA45522D6BE1500EFE92C /* EyulingoUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0EA45422D6BE1500EFE92C /* EyulingoUnitTests.swift */; };
 		8A2622FA22CB3E3E00C39943 /* Chp.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A2622F922CB3E3E00C39943 /* Chp.png */; };
 		8A55B27F22C8CE85007E77FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A55B27E22C8CE85007E77FD /* AppDelegate.swift */; };
 		8A55B28122C8CE85007E77FD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A55B28022C8CE85007E77FD /* SceneDelegate.swift */; };
@@ -49,12 +50,25 @@
 		DC61DCF8126E5BD7AFD2A3DE /* Pods_Eyulingo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A888A1ACE66F92325BE30679 /* Pods_Eyulingo.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		8A0EA45722D6BE1500EFE92C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8A55B27322C8CE85007E77FD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8A55B27A22C8CE85007E77FD;
+			remoteInfo = Eyulingo;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		45982A63EC1B9CEFF959ADD9 /* Pods-Eyulingo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eyulingo.debug.xcconfig"; path = "Target Support Files/Pods-Eyulingo/Pods-Eyulingo.debug.xcconfig"; sourceTree = "<group>"; };
 		8A06394522D32FDC00699037 /* DateAndTimeParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateAndTimeParser.swift; sourceTree = "<group>"; };
 		8A06394922D3316F00699037 /* EyulingoUri.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EyulingoUri.swift; sourceTree = "<group>"; };
 		8A06394A22D3316F00699037 /* BookieUri.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookieUri.swift; sourceTree = "<group>"; };
 		8A0AF9E422D41F6E009430B9 /* JudgeValidEmail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JudgeValidEmail.swift; sourceTree = "<group>"; };
+		8A0EA45222D6BE1500EFE92C /* EyulingoUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EyulingoUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A0EA45422D6BE1500EFE92C /* EyulingoUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyulingoUnitTests.swift; sourceTree = "<group>"; };
+		8A0EA45622D6BE1500EFE92C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8A2622F922CB3E3E00C39943 /* Chp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Chp.png; sourceTree = "<group>"; };
 		8A55B27B22C8CE85007E77FD /* Eyulingo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eyulingo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A55B27E22C8CE85007E77FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -99,6 +113,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		8A0EA44F22D6BE1500EFE92C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8A55B27822C8CE85007E77FD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -145,6 +166,15 @@
 			path = "[deprecated] VC";
 			sourceTree = "<group>";
 		};
+		8A0EA45322D6BE1500EFE92C /* EyulingoUnitTests */ = {
+			isa = PBXGroup;
+			children = (
+				8A0EA45422D6BE1500EFE92C /* EyulingoUnitTests.swift */,
+				8A0EA45622D6BE1500EFE92C /* Info.plist */,
+			);
+			path = EyulingoUnitTests;
+			sourceTree = "<group>";
+		};
 		8A2622F822CB3E3100C39943 /* Image */ = {
 			isa = PBXGroup;
 			children = (
@@ -158,6 +188,7 @@
 			children = (
 				8A2622F822CB3E3100C39943 /* Image */,
 				8A55B27D22C8CE85007E77FD /* Eyulingo */,
+				8A0EA45322D6BE1500EFE92C /* EyulingoUnitTests */,
 				8A55B27C22C8CE85007E77FD /* Products */,
 				217D389985AAA164A5BFF890 /* Pods */,
 				4252CC02B76CE81154847519 /* Frameworks */,
@@ -168,6 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				8A55B27B22C8CE85007E77FD /* Eyulingo.app */,
+				8A0EA45222D6BE1500EFE92C /* EyulingoUnitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -285,6 +317,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		8A0EA45122D6BE1500EFE92C /* EyulingoUnitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8A0EA45B22D6BE1500EFE92C /* Build configuration list for PBXNativeTarget "EyulingoUnitTests" */;
+			buildPhases = (
+				8A0EA44E22D6BE1500EFE92C /* Sources */,
+				8A0EA44F22D6BE1500EFE92C /* Frameworks */,
+				8A0EA45022D6BE1500EFE92C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8A0EA45822D6BE1500EFE92C /* PBXTargetDependency */,
+			);
+			name = EyulingoUnitTests;
+			productName = EyulingoUnitTests;
+			productReference = 8A0EA45222D6BE1500EFE92C /* EyulingoUnitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		8A55B27A22C8CE85007E77FD /* Eyulingo */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8A55B28F22C8CE8A007E77FD /* Build configuration list for PBXNativeTarget "Eyulingo" */;
@@ -314,6 +364,10 @@
 				LastUpgradeCheck = 1100;
 				ORGANIZATIONNAME = yuetsin;
 				TargetAttributes = {
+					8A0EA45122D6BE1500EFE92C = {
+						CreatedOnToolsVersion = 11.0;
+						TestTargetID = 8A55B27A22C8CE85007E77FD;
+					};
 					8A55B27A22C8CE85007E77FD = {
 						CreatedOnToolsVersion = 11.0;
 						LastSwiftMigration = 1100;
@@ -334,11 +388,19 @@
 			projectRoot = "";
 			targets = (
 				8A55B27A22C8CE85007E77FD /* Eyulingo */,
+				8A0EA45122D6BE1500EFE92C /* EyulingoUnitTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		8A0EA45022D6BE1500EFE92C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8A55B27922C8CE85007E77FD /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -395,6 +457,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		8A0EA44E22D6BE1500EFE92C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A0EA45522D6BE1500EFE92C /* EyulingoUnitTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8A55B27722C8CE85007E77FD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -439,6 +509,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		8A0EA45822D6BE1500EFE92C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8A55B27A22C8CE85007E77FD /* Eyulingo */;
+			targetProxy = 8A0EA45722D6BE1500EFE92C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		8A55B28422C8CE85007E77FD /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -459,6 +537,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		8A0EA45922D6BE1500EFE92C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 24XARD42BP;
+				INFOPLIST_FILE = EyulingoUnitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.eyulingo.EyulingoUnitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Eyulingo.app/Eyulingo";
+			};
+			name = Debug;
+		};
+		8A0EA45A22D6BE1500EFE92C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 24XARD42BP;
+				INFOPLIST_FILE = EyulingoUnitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.eyulingo.EyulingoUnitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Eyulingo.app/Eyulingo";
+			};
+			name = Release;
+		};
 		8A55B28D22C8CE8A007E77FD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -621,6 +739,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		8A0EA45B22D6BE1500EFE92C /* Build configuration list for PBXNativeTarget "EyulingoUnitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8A0EA45922D6BE1500EFE92C /* Debug */,
+				8A0EA45A22D6BE1500EFE92C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		8A55B27622C8CE85007E77FD /* Build configuration list for PBXProject "Eyulingo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

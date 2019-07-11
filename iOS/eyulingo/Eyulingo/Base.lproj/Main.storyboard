@@ -573,7 +573,7 @@ Project Eyulingo. 一切权利保留。</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jeS-rf-jtp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-387" y="-579"/>
+            <point key="canvasLocation" x="109" y="-580"/>
         </scene>
         <!--已购项目-->
         <scene sceneID="lDG-Ju-rGt">
@@ -851,7 +851,7 @@ Project Eyulingo. 一切权利保留。</string>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Tp5-DY-VTi">
-                                                    <rect key="frame" x="230" y="-0.33333333333333215" width="144" height="145"/>
+                                                    <rect key="frame" x="230" y="0.0" width="144" height="144"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="144" id="27T-XS-viH"/>
                                                     </constraints>
@@ -1470,7 +1470,7 @@ Project Eyulingo. 一切权利保留。</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7hW-bR-Mk4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="400" y="-580"/>
+            <point key="canvasLocation" x="852" y="-580"/>
         </scene>
     </scenes>
     <resources>
