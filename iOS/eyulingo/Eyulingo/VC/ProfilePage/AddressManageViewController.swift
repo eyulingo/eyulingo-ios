@@ -130,7 +130,7 @@ class AddressManageViewController: UIViewController, UITableViewDataSource, UITa
         }
 
         // 删除
-        let deleteAction: UITableViewRowAction = UITableViewRowAction(style: UITableViewRowAction.Style.default, title: "移除") { _, _ in
+        let deleteAction: UITableViewRowAction = UITableViewRowAction(style: UITableViewRowAction.Style.destructive, title: "移除") { _, _ in
 
             let alert = UIAlertController(title: "确认操作", message: "确定要删除这条收货地址吗？", preferredStyle: .alert)
 

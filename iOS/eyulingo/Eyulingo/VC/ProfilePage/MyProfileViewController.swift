@@ -27,6 +27,7 @@ class MyProfileViewController: UIViewController, profileChangesDelegate, profile
         // Do any additional setup after loading the view.
         loadUserProfile()
     }
+
     
     override func viewWillAppear(_ animated: Bool) {
         UINavigationBar.appearance().tintColor = .systemBlue
