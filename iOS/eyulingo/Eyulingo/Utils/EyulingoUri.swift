@@ -9,7 +9,9 @@
 import Foundation
 
 class Eyulingo_UserUri {
-    fileprivate static let baseUri = "http://47.103.15.32:8080"
+    
+    static let baseUri = "http://47.103.15.32:8080"
+    
     // parameters:
     // username - username
     // password - password (废话)

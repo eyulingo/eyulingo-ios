@@ -94,7 +94,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="20" id="pPU-QG-fJc"/>
                                                         </constraints>
-                                                        <state key="normal" image="arrow.right.circle" catalog="system"/>
+                                                        <state key="normal" title="登录按钮" image="arrow.right.circle" catalog="system"/>
                                                         <connections>
                                                             <action selector="loginButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="auI-X1-Csz"/>
                                                         </connections>
