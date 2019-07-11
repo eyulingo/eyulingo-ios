@@ -405,6 +405,7 @@ Project Eyulingo. 一切权利保留。</string>
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="115.33333333333333"/>
                                 <items>
                                     <navigationItem title="注册" id="vS8-D0-JnM">
+                                        <barButtonItem key="backBarButtonItem" title="登录" id="TDU-mg-eyX"/>
                                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="stop" id="VPW-9n-z1G">
                                             <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <connections>
@@ -641,7 +642,7 @@ Project Eyulingo. 一切权利保留。</string>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g5F-EB-fNz">
                                 <rect key="frame" x="0.0" y="44" width="414" height="643"/>
                                 <connections>
-                                    <segue destination="m6u-2e-RMr" kind="embed" identifier="tableContainerSegue" id="7lw-Df-O99"/>
+                                    <segue destination="m6u-2e-RMr" kind="embed" identifier="tableContainerSegue" id="7r8-u9-EZI"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -1152,7 +1153,102 @@ Project Eyulingo. 一切权利保留。</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cek-jA-wEu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1590" y="1670"/>
+            <point key="canvasLocation" x="1236" y="1708"/>
+        </scene>
+        <!--Address Manage View Controller-->
+        <scene sceneID="VGU-tu-ReQ">
+            <objects>
+                <viewController storyboardIdentifier="AddressManageVC" id="cwS-eG-FmT" customClass="AddressManageViewController" customModule="Eyulingo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3aA-cX-E6s">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f8w-cm-4js">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                <items>
+                                    <navigationItem title="常用收货地址" id="NP3-9m-fo7">
+                                        <barButtonItem key="backBarButtonItem" title="我的 Eyulingo" id="w3R-kf-lwa"/>
+                                        <barButtonItem key="leftBarButtonItem" style="plain" id="wEQ-Yl-t7p">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ANY-tO-bLo">
+                                                <rect key="frame" x="0.0" y="0.0" width="18" height="22"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" image="plus" catalog="system"/>
+                                                <connections>
+                                                    <action selector="addNewAddress:" destination="cwS-eG-FmT" eventType="touchUpInside" id="Zzs-mK-Xeo"/>
+                                                </connections>
+                                            </button>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="stop" id="V1j-fr-fbb">
+                                            <connections>
+                                                <action selector="dismissMe:" destination="cwS-eG-FmT" id="lWD-ZR-Xch"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="L48-OX-Del">
+                                <rect key="frame" x="0.0" y="44" width="414" height="692"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AddressLabelCell" textLabel="1Am-iY-2RK" detailTextLabel="Zfb-AL-dS2" rowHeight="60" style="IBUITableViewCellStyleSubtitle" id="xeu-2R-LRx">
+                                        <rect key="frame" x="0.0" y="55.333332061767578" width="414" height="60"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xeu-2R-LRx" id="hDA-AO-NsI">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1Am-iY-2RK">
+                                                    <rect key="frame" x="20" y="14" width="25" height="14.333333333333336"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Zfb-AL-dS2">
+                                                    <rect key="frame" x="19.999999999999996" y="30.333333333333332" width="32.666666666666657" height="14.333333333333332"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="cwS-eG-FmT" id="Cie-Dg-oJP"/>
+                                    <outlet property="delegate" destination="cwS-eG-FmT" id="EZN-pj-Chr"/>
+                                </connections>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="无内容" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xQj-e7-BC3">
+                                <rect key="frame" x="170.66666666666666" y="354.33333333333331" width="73" height="27.666666666666686"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" cocoaTouchSystemColor="secondaryLabelColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="L48-OX-Del" firstAttribute="leading" secondItem="f8w-cm-4js" secondAttribute="leading" id="7K8-Zk-Ibz"/>
+                            <constraint firstItem="f8w-cm-4js" firstAttribute="centerX" secondItem="3aA-cX-E6s" secondAttribute="centerX" id="88I-9R-779"/>
+                            <constraint firstItem="f8w-cm-4js" firstAttribute="leading" secondItem="xJX-qp-RkO" secondAttribute="leading" id="Ekx-i1-2Kk"/>
+                            <constraint firstItem="xQj-e7-BC3" firstAttribute="centerY" secondItem="3aA-cX-E6s" secondAttribute="centerY" id="OPT-ON-Yi5"/>
+                            <constraint firstItem="xQj-e7-BC3" firstAttribute="centerX" secondItem="3aA-cX-E6s" secondAttribute="centerX" id="WYJ-kw-l8v"/>
+                            <constraint firstItem="f8w-cm-4js" firstAttribute="top" secondItem="xJX-qp-RkO" secondAttribute="top" id="eTd-26-1dn"/>
+                            <constraint firstItem="L48-OX-Del" firstAttribute="bottom" secondItem="xJX-qp-RkO" secondAttribute="bottom" id="f72-Xt-hbO"/>
+                            <constraint firstItem="L48-OX-Del" firstAttribute="trailing" secondItem="f8w-cm-4js" secondAttribute="trailing" id="pKW-Pw-gwO"/>
+                            <constraint firstItem="L48-OX-Del" firstAttribute="top" secondItem="f8w-cm-4js" secondAttribute="bottom" id="tdf-5W-Zxj"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="xJX-qp-RkO"/>
+                    </view>
+                    <connections>
+                        <outlet property="addressTableView" destination="L48-OX-Del" id="7dS-o8-YfP"/>
+                        <outlet property="noContentLabel" destination="xQj-e7-BC3" id="kpt-1w-Kvd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Uxh-5V-7W9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1869.5652173913045" y="1707.8804347826087"/>
         </scene>
         <!--Change Password View Controller-->
         <scene sceneID="XZZ-MR-MBd">
@@ -1306,7 +1402,7 @@ Project Eyulingo. 一切权利保留。</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wis-zI-fwf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="894" y="1670"/>
+            <point key="canvasLocation" x="596" y="1708"/>
         </scene>
         <!--Forget Password View Controller-->
         <scene sceneID="0H8-V1-2Pr">
@@ -1480,6 +1576,7 @@ Project Eyulingo. 一切权利保留。</string>
         <image name="escape" catalog="system" width="64" height="62"/>
         <image name="magnifyingglass" catalog="system" width="64" height="60"/>
         <image name="person.circle" catalog="system" width="64" height="62"/>
+        <image name="plus" catalog="system" width="64" height="58"/>
         <image name="slider.horizontal.3" catalog="system" width="64" height="50"/>
         <image name="trash.slash" catalog="system" width="64" height="64"/>
         <image name="yensign.square" catalog="system" width="64" height="56"/>

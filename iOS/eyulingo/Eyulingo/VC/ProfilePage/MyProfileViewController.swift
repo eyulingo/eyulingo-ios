@@ -199,7 +199,11 @@ class MyProfileViewController: UIViewController, profileChangesDelegate, profile
     }
     
     func editReceiveAddress() {
+//        self.performSegue(withIdentifier: "ManageAddressSegue", sender: self)
         
+        let destinationStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let destinationViewController = destinationStoryboard.instantiateViewController(withIdentifier: "AddressManageVC") as! AddressManageViewController
+        self.present(destinationViewController, animated: true, completion: nil)
     }
     
     func contactSupport() {

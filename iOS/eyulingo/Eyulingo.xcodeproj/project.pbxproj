@@ -11,6 +11,12 @@
 		8A06394B22D3316F00699037 /* EyulingoUri.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A06394922D3316F00699037 /* EyulingoUri.swift */; };
 		8A06394C22D3316F00699037 /* BookieUri.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A06394A22D3316F00699037 /* BookieUri.swift */; };
 		8A0AF9E522D41F6E009430B9 /* JudgeValidEmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0AF9E422D41F6E009430B9 /* JudgeValidEmail.swift */; };
+		8A0C377E22D71D4500358F52 /* AddressManageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0C377D22D71D4500358F52 /* AddressManageViewController.swift */; };
+		8A0C378022D71E2700358F52 /* ReceiveAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0C377F22D71E2700358F52 /* ReceiveAddress.swift */; };
+		8A0C378222D7250D00358F52 /* UIImageCompression in Resources */ = {isa = PBXBuildFile; fileRef = 8A0C378122D7250D00358F52 /* UIImageCompression */; };
+		8A0C378322D7250D00358F52 /* UIImageCompression in Resources */ = {isa = PBXBuildFile; fileRef = 8A0C378122D7250D00358F52 /* UIImageCompression */; };
+		8A0C378422D7250D00358F52 /* UIImageCompression in Resources */ = {isa = PBXBuildFile; fileRef = 8A0C378122D7250D00358F52 /* UIImageCompression */; };
+		8A0C378622D7252400358F52 /* UIImageCompression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0C378522D7252400358F52 /* UIImageCompression.swift */; };
 		8A0EA45522D6BE1500EFE92C /* EyulingoUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0EA45422D6BE1500EFE92C /* EyulingoUnitTests.swift */; };
 		8A0EA46322D6BFE500EFE92C /* EyulingoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0EA46222D6BFE500EFE92C /* EyulingoUITests.swift */; };
 		8A2622FA22CB3E3E00C39943 /* Chp.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A2622F922CB3E3E00C39943 /* Chp.png */; };
@@ -74,6 +80,10 @@
 		8A06394922D3316F00699037 /* EyulingoUri.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EyulingoUri.swift; sourceTree = "<group>"; };
 		8A06394A22D3316F00699037 /* BookieUri.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookieUri.swift; sourceTree = "<group>"; };
 		8A0AF9E422D41F6E009430B9 /* JudgeValidEmail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JudgeValidEmail.swift; sourceTree = "<group>"; };
+		8A0C377D22D71D4500358F52 /* AddressManageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressManageViewController.swift; sourceTree = "<group>"; };
+		8A0C377F22D71E2700358F52 /* ReceiveAddress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiveAddress.swift; sourceTree = "<group>"; };
+		8A0C378122D7250D00358F52 /* UIImageCompression */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = UIImageCompression; sourceTree = SOURCE_ROOT; };
+		8A0C378522D7252400358F52 /* UIImageCompression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UIImageCompression.swift; path = UIImageCompression/UIImageCompression.swift; sourceTree = SOURCE_ROOT; };
 		8A0EA45222D6BE1500EFE92C /* EyulingoUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EyulingoUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A0EA45422D6BE1500EFE92C /* EyulingoUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyulingoUnitTests.swift; sourceTree = "<group>"; };
 		8A0EA45622D6BE1500EFE92C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -213,6 +223,7 @@
 		8A55B27222C8CE85007E77FD = {
 			isa = PBXGroup;
 			children = (
+				8A0C378122D7250D00358F52 /* UIImageCompression */,
 				8A2622F822CB3E3100C39943 /* Image */,
 				8A55B27D22C8CE85007E77FD /* Eyulingo */,
 				8A0EA45322D6BE1500EFE92C /* EyulingoUnitTests */,
@@ -256,6 +267,7 @@
 			isa = PBXGroup;
 			children = (
 				8A723DAF22D4704F008FD0C9 /* EyUser.swift */,
+				8A0C377F22D71E2700358F52 /* ReceiveAddress.swift */,
 			);
 			path = Struct;
 			sourceTree = "<group>";
@@ -294,6 +306,7 @@
 				8A723DAA22D465A9008FD0C9 /* OrdersViewController.swift */,
 				8A723DAC22D465B5008FD0C9 /* MyProfileViewController.swift */,
 				8A723DB122D4721E008FD0C9 /* ProfileContentViewController.swift */,
+				8A0C377D22D71D4500358F52 /* AddressManageViewController.swift */,
 			);
 			path = ProfilePage;
 			sourceTree = "<group>";
@@ -333,6 +346,7 @@
 		8AC9E7EF22C9A87F00F80460 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				8A0C378522D7252400358F52 /* UIImageCompression.swift */,
 				8A06394A22D3316F00699037 /* BookieUri.swift */,
 				8A06394922D3316F00699037 /* EyulingoUri.swift */,
 				8A06394522D32FDC00699037 /* DateAndTimeParser.swift */,
@@ -450,6 +464,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A0C378322D7250D00358F52 /* UIImageCompression in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -457,6 +472,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A0C378422D7250D00358F52 /* UIImageCompression in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -468,6 +484,7 @@
 				8A55B28B22C8CE8A007E77FD /* LaunchScreen.storyboard in Resources */,
 				8A55B28822C8CE8A007E77FD /* Assets.xcassets in Resources */,
 				8A55B28622C8CE85007E77FD /* Main.storyboard in Resources */,
+				8A0C378222D7250D00358F52 /* UIImageCompression in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -552,12 +569,15 @@
 				8AC9E7DD22C9A37500F80460 /* BookQueryVC.swift in Sources */,
 				8AC9E7E122C9A3AE00F80460 /* PurchasedVC.swift in Sources */,
 				8AC9E7E522C9A3F700F80460 /* AdminBookVC.swift in Sources */,
+				8A0C378022D71E2700358F52 /* ReceiveAddress.swift in Sources */,
 				8AC9E7EB22C9A43C00F80460 /* AdminAddBookVC.swift in Sources */,
 				8A723DAD22D465B5008FD0C9 /* MyProfileViewController.swift in Sources */,
 				8AC9E7D922C9A31400F80460 /* LoginVC.swift in Sources */,
 				8A06394622D32FDC00699037 /* DateAndTimeParser.swift in Sources */,
 				8A723DB022D4704F008FD0C9 /* EyUser.swift in Sources */,
+				8A0C378622D7252400358F52 /* UIImageCompression.swift in Sources */,
 				8A55B28122C8CE85007E77FD /* SceneDelegate.swift in Sources */,
+				8A0C377E22D71D4500358F52 /* AddressManageViewController.swift in Sources */,
 				8AC9E7E722C9A40C00F80460 /* AdminUserVC.swift in Sources */,
 				8AA7BC8F22D5C9560098F292 /* ChangeEmailViewController.swift in Sources */,
 				8AC9E7F522C9AF4A00F80460 /* PurchaseVC.swift in Sources */,
