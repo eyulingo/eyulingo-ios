@@ -1,9 +1,9 @@
 osx_image: xcode11
 language: swift
 
-podfile: iOS/eyulingo/Podfile
+podfile: ./iOS/eyulingo/Podfile
 
-xcode_project: iOS/eyulingo/Eyulingo.xcodeproj
+xcode_project: ./iOS/eyulingo/Eyulingo.xcodeproj
 xcode_scheme: EyulingoUnitTests
 # xcode_scheme: EyulingoUITests
 xcode_destination: platform=iOS Simulator,OS=10.1,name=iPad Pro (9.7-inch)
