@@ -11,7 +11,7 @@ import Alamofire
 import SwiftyJSON
 import Alamofire_SwiftyJSON
 
-class LoginVC: UIViewController, UITextFieldDelegate {
+class LoginVC: STLVideoViewController, UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
