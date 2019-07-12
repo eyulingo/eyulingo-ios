@@ -410,6 +410,7 @@ Project Eyulingo. 一切权利保留。</string>
                                         <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R2G-xi-C1Z">
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="arb-DY-z6B">
+                                                <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             </view>
                                             <vibrancyEffect>
@@ -418,7 +419,7 @@ Project Eyulingo. 一切权利保留。</string>
                                         </visualEffectView>
                                     </subviews>
                                 </view>
-                                <blurEffect style="regular"/>
+                                <blurEffect style="prominent"/>
                             </visualEffectView>
                             <navigationBar contentMode="scaleToFill" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="myk-3u-1Ju">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="115.33333333333333"/>
@@ -1048,10 +1049,8 @@ Project Eyulingo. 一切权利保留。</string>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RT4-pG-6Ww">
-                                            <rect key="frame" x="0.0" y="0.0" width="0.0" height="76"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="kV5-km-NIc">
-                                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="76"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             </view>
                                             <vibrancyEffect>
@@ -1060,7 +1059,7 @@ Project Eyulingo. 一切权利保留。</string>
                                         </visualEffectView>
                                     </subviews>
                                 </view>
-                                <blurEffect style="regular"/>
+                                <blurEffect style="prominent"/>
                             </visualEffectView>
                             <navigationBar contentMode="scaleToFill" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZSd-qx-LHB">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="115.33333333333333"/>
@@ -1219,6 +1218,7 @@ Project Eyulingo. 一切权利保留。</string>
                                         <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="psc-BJ-0Hi">
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="dpO-vl-4Xq">
+                                                <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             </view>
                                             <vibrancyEffect>
@@ -1227,7 +1227,7 @@ Project Eyulingo. 一切权利保留。</string>
                                         </visualEffectView>
                                     </subviews>
                                 </view>
-                                <blurEffect style="regular"/>
+                                <blurEffect style="prominent"/>
                             </visualEffectView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f8w-cm-4js">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
@@ -1260,7 +1260,7 @@ Project Eyulingo. 一切权利保留。</string>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexTrackingBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AddressLabelCell" textLabel="1Am-iY-2RK" detailTextLabel="Zfb-AL-dS2" rowHeight="60" style="IBUITableViewCellStyleSubtitle" id="xeu-2R-LRx">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="blue" indentationWidth="10" reuseIdentifier="AddressLabelCell" textLabel="1Am-iY-2RK" detailTextLabel="Zfb-AL-dS2" rowHeight="60" style="IBUITableViewCellStyleSubtitle" id="xeu-2R-LRx">
                                         <rect key="frame" x="0.0" y="28" width="414" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xeu-2R-LRx" id="hDA-AO-NsI">
@@ -1341,10 +1341,10 @@ Project Eyulingo. 一切权利保留。</string>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bCF-1V-NZo">
-                                            <rect key="frame" x="0.0" y="0.0" width="0.0" height="351"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="0.0" height="272"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="bOG-Ew-M4g">
-                                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="351"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="272"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             </view>
                                             <vibrancyEffect>
@@ -1353,7 +1353,7 @@ Project Eyulingo. 一切权利保留。</string>
                                         </visualEffectView>
                                     </subviews>
                                 </view>
-                                <blurEffect style="regular"/>
+                                <blurEffect style="prominent"/>
                             </visualEffectView>
                             <navigationBar contentMode="scaleToFill" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fmh-jW-Z4X">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="115.33333333333333"/>
@@ -1522,6 +1522,7 @@ Project Eyulingo. 一切权利保留。</string>
                                         <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OhR-Wd-cn1">
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="fiO-Za-1WV">
+                                                <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             </view>
                                             <vibrancyEffect>
@@ -1530,7 +1531,7 @@ Project Eyulingo. 一切权利保留。</string>
                                         </visualEffectView>
                                     </subviews>
                                 </view>
-                                <blurEffect style="regular"/>
+                                <blurEffect style="prominent"/>
                             </visualEffectView>
                             <navigationBar contentMode="scaleToFill" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JnM-f1-yFo">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="115.33333333333333"/>

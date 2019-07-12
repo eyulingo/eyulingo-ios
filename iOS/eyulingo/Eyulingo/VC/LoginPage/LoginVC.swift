@@ -27,6 +27,7 @@ class LoginVC: UIViewController, UITextFieldDelegate {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        passwordField.text = ""
         UINavigationBar.appearance().tintColor = .systemBlue
     }
     

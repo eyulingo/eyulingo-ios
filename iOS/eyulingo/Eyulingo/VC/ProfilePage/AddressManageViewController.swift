@@ -128,6 +128,8 @@ class AddressManageViewController: UIViewController, UITableViewDataSource, UITa
             }))
             self.present(alert, animated: true, completion: nil)
         }
+        
+        editAction.backgroundColor = .systemBlue
 
         // 删除
         let deleteAction: UITableViewRowAction = UITableViewRowAction(style: UITableViewRowAction.Style.destructive, title: "移除") { _, _ in
@@ -246,6 +248,7 @@ class AddressManageViewController: UIViewController, UITableViewDataSource, UITa
             textField.text = ""
             textField.placeholder = "收件人姓名"
         }
+        
 
         alert.addTextField { textField in
             textField.text = ""
