@@ -1051,6 +1051,7 @@ Project Eyulingo. 一切权利保留。</string>
                                         <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RT4-pG-6Ww">
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="kV5-km-NIc">
+                                                <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             </view>
                                             <vibrancyEffect>
@@ -1062,9 +1063,9 @@ Project Eyulingo. 一切权利保留。</string>
                                 <blurEffect style="prominent"/>
                             </visualEffectView>
                             <navigationBar contentMode="scaleToFill" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZSd-qx-LHB">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="115.33333333333333"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                                 <items>
-                                    <navigationItem title="修改邮箱" id="szv-aa-6hS">
+                                    <navigationItem title="修改邮箱" largeTitleDisplayMode="never" id="szv-aa-6hS">
                                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="stop" id="0oV-AL-6ww">
                                             <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <connections>
@@ -1233,7 +1234,7 @@ Project Eyulingo. 一切权利保留。</string>
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <items>
-                                    <navigationItem title="常用收货地址" id="NP3-9m-fo7">
+                                    <navigationItem title="常用收货地址" largeTitleDisplayMode="never" id="NP3-9m-fo7">
                                         <barButtonItem key="backBarButtonItem" title="我的 Eyulingo" id="w3R-kf-lwa"/>
                                         <barButtonItem key="leftBarButtonItem" style="plain" id="wEQ-Yl-t7p">
                                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ANY-tO-bLo">
@@ -1256,7 +1257,6 @@ Project Eyulingo. 一切权利保留。</string>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="66" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="L48-OX-Del">
                                 <rect key="frame" x="0.0" y="44" width="414" height="692"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexTrackingBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -1341,10 +1341,10 @@ Project Eyulingo. 一切权利保留。</string>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bCF-1V-NZo">
-                                            <rect key="frame" x="0.0" y="0.0" width="0.0" height="272"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="0.0" height="193"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="bOG-Ew-M4g">
-                                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="272"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="193"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             </view>
                                             <vibrancyEffect>
@@ -1356,9 +1356,9 @@ Project Eyulingo. 一切权利保留。</string>
                                 <blurEffect style="prominent"/>
                             </visualEffectView>
                             <navigationBar contentMode="scaleToFill" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fmh-jW-Z4X">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="115.33333333333333"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                                 <items>
-                                    <navigationItem title="修改密码" id="7Mv-k9-oMz">
+                                    <navigationItem title="修改密码" largeTitleDisplayMode="never" id="7Mv-k9-oMz">
                                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="stop" id="7ih-ul-ZVC">
                                             <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <connections>
