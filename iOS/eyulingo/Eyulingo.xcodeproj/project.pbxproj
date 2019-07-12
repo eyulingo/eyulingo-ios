@@ -11,16 +11,13 @@
 		8A06394B22D3316F00699037 /* EyulingoUri.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A06394922D3316F00699037 /* EyulingoUri.swift */; };
 		8A06394C22D3316F00699037 /* BookieUri.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A06394A22D3316F00699037 /* BookieUri.swift */; };
 		8A0AF9E522D41F6E009430B9 /* JudgeValidEmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0AF9E422D41F6E009430B9 /* JudgeValidEmail.swift */; };
-		8A0BC65A22D88C6C0099E79A /* STLVideoFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A0BC64A22D88A6B0099E79A /* STLVideoFunctions.m */; };
-		8A0BC65B22D88C6C0099E79A /* STLVideoViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = 8A0BC64B22D88A6B0099E79A /* STLVideoViewController.h */; };
-		8A0BC65C22D88C6C0099E79A /* STLVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A0BC64C22D88A6B0099E79A /* STLVideoViewController.m */; };
-		8A0BC65D22D88C700099E79A /* STLVideoFunctions.h in Sources */ = {isa = PBXBuildFile; fileRef = 8A0BC64922D88A6B0099E79A /* STLVideoFunctions.h */; };
 		8A0C377E22D71D4500358F52 /* AddressManageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0C377D22D71D4500358F52 /* AddressManageViewController.swift */; };
 		8A0C378022D71E2700358F52 /* ReceiveAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0C377F22D71E2700358F52 /* ReceiveAddress.swift */; };
 		8A0C378222D7250D00358F52 /* UIImageCompression in Resources */ = {isa = PBXBuildFile; fileRef = 8A0C378122D7250D00358F52 /* UIImageCompression */; };
 		8A0C378322D7250D00358F52 /* UIImageCompression in Resources */ = {isa = PBXBuildFile; fileRef = 8A0C378122D7250D00358F52 /* UIImageCompression */; };
 		8A0C378422D7250D00358F52 /* UIImageCompression in Resources */ = {isa = PBXBuildFile; fileRef = 8A0C378122D7250D00358F52 /* UIImageCompression */; };
 		8A0C378622D7252400358F52 /* UIImageCompression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0C378522D7252400358F52 /* UIImageCompression.swift */; };
+		8A0DFDD322D8AA7400145FDC /* DynamicBg.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 8A0BC64622D88A500099E79A /* DynamicBg.mp4 */; };
 		8A0EA45522D6BE1500EFE92C /* EyulingoUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0EA45422D6BE1500EFE92C /* EyulingoUnitTests.swift */; };
 		8A0EA46322D6BFE500EFE92C /* EyulingoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0EA46222D6BFE500EFE92C /* EyulingoUITests.swift */; };
 		8A2622FA22CB3E3E00C39943 /* Chp.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A2622F922CB3E3E00C39943 /* Chp.png */; };
@@ -85,11 +82,6 @@
 		8A06394A22D3316F00699037 /* BookieUri.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookieUri.swift; sourceTree = "<group>"; };
 		8A0AF9E422D41F6E009430B9 /* JudgeValidEmail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JudgeValidEmail.swift; sourceTree = "<group>"; };
 		8A0BC64622D88A500099E79A /* DynamicBg.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = DynamicBg.mp4; path = ../../DynamicBg/DynamicBg.mp4; sourceTree = "<group>"; };
-		8A0BC64822D88A6B0099E79A /* C415F3F13BBD50B1-info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "C415F3F13BBD50B1-info.plist"; sourceTree = "<group>"; };
-		8A0BC64922D88A6B0099E79A /* STLVideoFunctions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STLVideoFunctions.h; sourceTree = "<group>"; };
-		8A0BC64A22D88A6B0099E79A /* STLVideoFunctions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STLVideoFunctions.m; sourceTree = "<group>"; };
-		8A0BC64B22D88A6B0099E79A /* STLVideoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STLVideoViewController.h; sourceTree = "<group>"; };
-		8A0BC64C22D88A6B0099E79A /* STLVideoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STLVideoViewController.m; sourceTree = "<group>"; };
 		8A0BC65322D88B6D0099E79A /* Eyulingo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Eyulingo-Bridging-Header.h"; sourceTree = "<group>"; };
 		8A0BC65422D88B6D0099E79A /* EyulingoUnitTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EyulingoUnitTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		8A0BC65522D88B6D0099E79A /* EyulingoUITests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EyulingoUITests-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -207,19 +199,6 @@
 			path = "[deprecated] VC";
 			sourceTree = "<group>";
 		};
-		8A0BC64722D88A6B0099E79A /* STLBGVideo */ = {
-			isa = PBXGroup;
-			children = (
-				8A0BC64822D88A6B0099E79A /* C415F3F13BBD50B1-info.plist */,
-				8A0BC64922D88A6B0099E79A /* STLVideoFunctions.h */,
-				8A0BC64A22D88A6B0099E79A /* STLVideoFunctions.m */,
-				8A0BC64B22D88A6B0099E79A /* STLVideoViewController.h */,
-				8A0BC64C22D88A6B0099E79A /* STLVideoViewController.m */,
-			);
-			name = STLBGVideo;
-			path = UIImageCompression/STLBGVideo;
-			sourceTree = "<group>";
-		};
 		8A0EA45322D6BE1500EFE92C /* EyulingoUnitTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -253,7 +232,6 @@
 				8A0BC65422D88B6D0099E79A /* EyulingoUnitTests-Bridging-Header.h */,
 				8A0BC65522D88B6D0099E79A /* EyulingoUITests-Bridging-Header.h */,
 				8A0BC64622D88A500099E79A /* DynamicBg.mp4 */,
-				8A0BC64722D88A6B0099E79A /* STLBGVideo */,
 				8A0C378122D7250D00358F52 /* UIImageCompression */,
 				8A2622F822CB3E3100C39943 /* Image */,
 				8A55B27D22C8CE85007E77FD /* Eyulingo */,
@@ -513,6 +491,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A0DFDD322D8AA7400145FDC /* DynamicBg.mp4 in Resources */,
 				8A2622FA22CB3E3E00C39943 /* Chp.png in Resources */,
 				8A55B28B22C8CE8A007E77FD /* LaunchScreen.storyboard in Resources */,
 				8A55B28822C8CE8A007E77FD /* Assets.xcassets in Resources */,
@@ -586,10 +565,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8A0BC65D22D88C700099E79A /* STLVideoFunctions.h in Sources */,
-				8A0BC65A22D88C6C0099E79A /* STLVideoFunctions.m in Sources */,
-				8A0BC65B22D88C6C0099E79A /* STLVideoViewController.h in Sources */,
-				8A0BC65C22D88C6C0099E79A /* STLVideoViewController.m in Sources */,
 				8AA7BC8E22D5C9560098F292 /* ChangePasswordViewController.swift in Sources */,
 				8A06394B22D3316F00699037 /* EyulingoUri.swift in Sources */,
 				8A55B28322C8CE85007E77FD /* ViewController.swift in Sources */,

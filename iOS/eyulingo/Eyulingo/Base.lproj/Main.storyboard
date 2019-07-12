@@ -17,6 +17,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xwT-q4-iSa">
+                                <rect key="frame" x="0.0" y="-20" width="414" height="756"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ngM-VN-ScJ">
+                                    <rect key="frame" x="0.0" y="0.0" width="174" height="628"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6ao-L4-1TI">
+                                            <rect key="frame" x="0.0" y="0.0" width="0.0" height="20"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Y6p-sl-h7l">
+                                                <rect key="frame" x="0.0" y="0.0" width="1000" height="1020"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            </view>
+                                            <vibrancyEffect>
+                                                <blurEffect style="light"/>
+                                            </vibrancyEffect>
+                                        </visualEffectView>
+                                    </subviews>
+                                </view>
+                                <blurEffect style="prominent"/>
+                            </visualEffectView>
                             <navigationBar contentMode="scaleToFill" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cPn-Ox-KRc">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="103.33333333333333"/>
                                 <items>
@@ -130,16 +151,20 @@ Project Eyulingo. 一切权利保留。</string>
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="xwT-q4-iSa" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="9ox-Es-bbd"/>
                             <constraint firstItem="cPn-Ox-KRc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="JDo-DA-SLC"/>
                             <constraint firstItem="LOS-Gi-gBt" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="MRj-rg-WhN"/>
                             <constraint firstAttribute="trailing" secondItem="cPn-Ox-KRc" secondAttribute="trailing" id="cf3-e9-uxr"/>
+                            <constraint firstItem="xwT-q4-iSa" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="-20" id="esq-Tg-EEo"/>
                             <constraint firstItem="cPn-Ox-KRc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="lvm-hg-fxu"/>
+                            <constraint firstItem="xwT-q4-iSa" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="v0q-RP-mbl"/>
                             <constraint firstItem="LOS-Gi-gBt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="w41-GG-OQ6"/>
+                            <constraint firstItem="xwT-q4-iSa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ybx-Ca-aQZ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <connections>
                         <outlet property="loginButton" destination="Tgh-Wd-P6d" id="qU8-mH-Wg8"/>
                         <outlet property="passwordField" destination="Pq2-JE-F7s" id="SZ7-bM-ztp"/>
@@ -151,7 +176,7 @@ Project Eyulingo. 一切权利保留。</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="73" y="120"/>
+            <point key="canvasLocation" x="72.463768115942031" y="119.83695652173914"/>
         </scene>
         <!--购物车-->
         <scene sceneID="srz-dk-yXs">
