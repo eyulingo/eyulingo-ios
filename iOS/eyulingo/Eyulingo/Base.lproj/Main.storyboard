@@ -17,16 +17,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xwT-q4-iSa">
-                                <rect key="frame" x="0.0" y="-20" width="414" height="756"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ngM-VN-ScJ">
-                                    <rect key="frame" x="0.0" y="0.0" width="174" height="628"/>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Ye-bR-2DJ">
+                                <rect key="frame" x="0.0" y="-44" width="414" height="824"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="twt-hW-af1">
+                                    <rect key="frame" x="0.0" y="0.0" width="348" height="0.0"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6ao-L4-1TI">
+                                        <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kZz-EC-cZ3">
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Y6p-sl-h7l">
-                                                <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ADg-QS-TYR">
+                                                <rect key="frame" x="0.0" y="0.0" width="348" height="0.0"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             </view>
                                             <vibrancyEffect>
@@ -37,38 +37,40 @@
                                 </view>
                                 <blurEffect style="prominent"/>
                             </visualEffectView>
-                            <navigationBar contentMode="scaleToFill" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cPn-Ox-KRc">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="103.33333333333333"/>
-                                <items>
-                                    <navigationItem title="登录" id="DhO-JF-WjR">
-                                        <barButtonItem key="rightBarButtonItem" style="plain" id="Vv9-gl-hpc">
-                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="fD6-LU-Meb">
-                                                <rect key="frame" x="0.0" y="0.0" width="92" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="注册"/>
-                                                <connections>
-                                                    <action selector="registerButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2ce-mH-3bL"/>
-                                                </connections>
-                                            </button>
-                                            <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <connections>
-                                                <segue destination="1if-Vv-8i7" kind="show" identifier="goToRegisterSegue" id="XzT-z0-fBX"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="LOS-Gi-gBt">
-                                <rect key="frame" x="68" y="235.66666666666663" width="278.33333333333331" height="265"/>
+                                <rect key="frame" x="68" y="235.66666666666666" width="278.33333333333331" height="264.66666666666674"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="输入凭据" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="32A-Z8-1fy">
-                                        <rect key="frame" x="64.333333333333329" y="0.0" width="149.33333333333337" height="44.333333333333336"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="37"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mr2-W9-JtK">
+                                        <rect key="frame" x="19" y="0.0" width="240" height="44"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="OA5-PD-8jQ">
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="登录 Eyulingo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="32A-Z8-1fy">
+                                                    <rect key="frame" x="0.0" y="0.0" width="230" height="45"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="230" id="DGD-ah-soI"/>
+                                                        <constraint firstAttribute="height" constant="45" id="qdC-Gc-bzC"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="37"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="32A-Z8-1fy" firstAttribute="leading" secondItem="OA5-PD-8jQ" secondAttribute="leading" id="JKY-iw-Btr"/>
+                                                <constraint firstItem="32A-Z8-1fy" firstAttribute="top" secondItem="OA5-PD-8jQ" secondAttribute="top" id="V3F-p5-6aZ"/>
+                                            </constraints>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="240" id="sls-WD-tPO"/>
+                                            <constraint firstAttribute="height" constant="44" id="yoU-UM-Iv9"/>
+                                        </constraints>
+                                        <vibrancyEffect>
+                                            <blurEffect style="prominent"/>
+                                        </vibrancyEffect>
+                                    </visualEffectView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="eCS-qL-RSa">
-                                        <rect key="frame" x="0.0" y="68.333333333333343" width="278.33333333333331" height="90"/>
+                                        <rect key="frame" x="0.0" y="68.000000000000028" width="278.33333333333331" height="90"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="eZA-RX-Tpj">
                                                 <rect key="frame" x="1.3333333333333428" y="0.0" width="275.66666666666663" height="34"/>
@@ -131,17 +133,17 @@
                                         </constraints>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vpf-j4-jtp">
-                                        <rect key="frame" x="100.66666666666666" y="182.33333333333334" width="77" height="30"/>
+                                        <rect key="frame" x="100.66666666666666" y="182.00000000000003" width="77" height="30"/>
                                         <state key="normal" title="忘了密码？"/>
                                         <connections>
                                             <action selector="forgetPasswordTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ssE-V3-mSy"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SeI-di-Qxv">
-                                        <rect key="frame" x="47.000000000000014" y="236.33333333333334" width="184.33333333333337" height="28.666666666666657"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SeI-di-Qxv">
+                                        <rect key="frame" x="39" y="236.00000000000003" width="200" height="28.666666666666657"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="28.666666666666657" id="N9h-BD-gUR"/>
-                                            <constraint firstAttribute="width" constant="184.33000000000001" id="cnK-F4-iuy"/>
+                                            <constraint firstAttribute="width" constant="200" id="cnK-F4-iuy"/>
                                         </constraints>
                                         <string key="text">Copyright © 2019
 Project Eyulingo. 一切权利保留。</string>
@@ -151,17 +153,38 @@ Project Eyulingo. 一切权利保留。</string>
                                     </label>
                                 </subviews>
                             </stackView>
+                            <navigationBar contentMode="scaleToFill" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cPn-Ox-KRc">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="96"/>
+                                <items>
+                                    <navigationItem id="DhO-JF-WjR">
+                                        <barButtonItem key="rightBarButtonItem" style="plain" id="Vv9-gl-hpc">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="fD6-LU-Meb">
+                                                <rect key="frame" x="0.0" y="0.0" width="92" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="注册"/>
+                                                <connections>
+                                                    <action selector="registerButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2ce-mH-3bL"/>
+                                                </connections>
+                                            </button>
+                                            <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <connections>
+                                                <segue destination="1if-Vv-8i7" kind="show" identifier="goToRegisterSegue" id="XzT-z0-fBX"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="xwT-q4-iSa" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="9ox-Es-bbd"/>
+                            <constraint firstItem="9Ye-bR-2DJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="-44" id="Iqo-G4-e5Y"/>
                             <constraint firstItem="cPn-Ox-KRc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="JDo-DA-SLC"/>
-                            <constraint firstItem="LOS-Gi-gBt" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="MRj-rg-WhN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9Ye-bR-2DJ" secondAttribute="trailing" id="Lu6-47-RId"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="9Ye-bR-2DJ" secondAttribute="bottom" constant="-44" id="YqU-s0-8ed"/>
+                            <constraint firstItem="LOS-Gi-gBt" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="aJ6-9M-Jl5"/>
                             <constraint firstAttribute="trailing" secondItem="cPn-Ox-KRc" secondAttribute="trailing" id="cf3-e9-uxr"/>
-                            <constraint firstItem="xwT-q4-iSa" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="-20" id="esq-Tg-EEo"/>
                             <constraint firstItem="cPn-Ox-KRc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="lvm-hg-fxu"/>
-                            <constraint firstItem="xwT-q4-iSa" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="v0q-RP-mbl"/>
-                            <constraint firstItem="LOS-Gi-gBt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="w41-GG-OQ6"/>
-                            <constraint firstItem="xwT-q4-iSa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ybx-Ca-aQZ"/>
+                            <constraint firstItem="LOS-Gi-gBt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vMa-fv-vIK"/>
+                            <constraint firstItem="9Ye-bR-2DJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="zHA-jm-aEc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -1372,10 +1395,10 @@ Project Eyulingo. 一切权利保留。</string>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bCF-1V-NZo">
-                                            <rect key="frame" x="0.0" y="0.0" width="0.0" height="193"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="0.0" height="35"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="bOG-Ew-M4g">
-                                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="193"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="35"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             </view>
                                             <vibrancyEffect>
