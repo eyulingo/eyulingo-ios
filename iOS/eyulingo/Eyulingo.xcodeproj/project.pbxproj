@@ -17,6 +17,7 @@
 		8A0C378322D7250D00358F52 /* UIImageCompression in Resources */ = {isa = PBXBuildFile; fileRef = 8A0C378122D7250D00358F52 /* UIImageCompression */; };
 		8A0C378422D7250D00358F52 /* UIImageCompression in Resources */ = {isa = PBXBuildFile; fileRef = 8A0C378122D7250D00358F52 /* UIImageCompression */; };
 		8A0C378622D7252400358F52 /* UIImageCompression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0C378522D7252400358F52 /* UIImageCompression.swift */; };
+		8A0DFDD322D8AA7400145FDC /* DynamicBg.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 8A0BC64622D88A500099E79A /* DynamicBg.mp4 */; };
 		8A0EA45522D6BE1500EFE92C /* EyulingoUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0EA45422D6BE1500EFE92C /* EyulingoUnitTests.swift */; };
 		8A0EA46322D6BFE500EFE92C /* EyulingoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0EA46222D6BFE500EFE92C /* EyulingoUITests.swift */; };
 		8A2622FA22CB3E3E00C39943 /* Chp.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A2622F922CB3E3E00C39943 /* Chp.png */; };
@@ -80,6 +81,10 @@
 		8A06394922D3316F00699037 /* EyulingoUri.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EyulingoUri.swift; sourceTree = "<group>"; };
 		8A06394A22D3316F00699037 /* BookieUri.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookieUri.swift; sourceTree = "<group>"; };
 		8A0AF9E422D41F6E009430B9 /* JudgeValidEmail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JudgeValidEmail.swift; sourceTree = "<group>"; };
+		8A0BC64622D88A500099E79A /* DynamicBg.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = DynamicBg.mp4; path = ../../DynamicBg/DynamicBg.mp4; sourceTree = "<group>"; };
+		8A0BC65322D88B6D0099E79A /* Eyulingo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Eyulingo-Bridging-Header.h"; sourceTree = "<group>"; };
+		8A0BC65422D88B6D0099E79A /* EyulingoUnitTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EyulingoUnitTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		8A0BC65522D88B6D0099E79A /* EyulingoUITests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EyulingoUITests-Bridging-Header.h"; sourceTree = "<group>"; };
 		8A0C377D22D71D4500358F52 /* AddressManageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressManageViewController.swift; sourceTree = "<group>"; };
 		8A0C377F22D71E2700358F52 /* ReceiveAddress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiveAddress.swift; sourceTree = "<group>"; };
 		8A0C378122D7250D00358F52 /* UIImageCompression */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = UIImageCompression; sourceTree = SOURCE_ROOT; };
@@ -223,6 +228,10 @@
 		8A55B27222C8CE85007E77FD = {
 			isa = PBXGroup;
 			children = (
+				8A0BC65322D88B6D0099E79A /* Eyulingo-Bridging-Header.h */,
+				8A0BC65422D88B6D0099E79A /* EyulingoUnitTests-Bridging-Header.h */,
+				8A0BC65522D88B6D0099E79A /* EyulingoUITests-Bridging-Header.h */,
+				8A0BC64622D88A500099E79A /* DynamicBg.mp4 */,
 				8A0C378122D7250D00358F52 /* UIImageCompression */,
 				8A2622F822CB3E3100C39943 /* Image */,
 				8A55B27D22C8CE85007E77FD /* Eyulingo */,
@@ -427,10 +436,12 @@
 				TargetAttributes = {
 					8A0EA45122D6BE1500EFE92C = {
 						CreatedOnToolsVersion = 11.0;
+						LastSwiftMigration = 1100;
 						TestTargetID = 8A55B27A22C8CE85007E77FD;
 					};
 					8A0EA45F22D6BFE500EFE92C = {
 						CreatedOnToolsVersion = 11.0;
+						LastSwiftMigration = 1100;
 						TestTargetID = 8A55B27A22C8CE85007E77FD;
 					};
 					8A55B27A22C8CE85007E77FD = {
@@ -480,6 +491,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A0DFDD322D8AA7400145FDC /* DynamicBg.mp4 in Resources */,
 				8A2622FA22CB3E3E00C39943 /* Chp.png in Resources */,
 				8A55B28B22C8CE8A007E77FD /* LaunchScreen.storyboard in Resources */,
 				8A55B28822C8CE8A007E77FD /* Assets.xcassets in Resources */,
@@ -633,6 +645,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 24XARD42BP;
 				INFOPLIST_FILE = EyulingoUnitTests/Info.plist;
@@ -643,6 +656,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.eyulingo.EyulingoUnitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "EyulingoUnitTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Eyulingo.app/Eyulingo";
@@ -653,6 +668,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 24XARD42BP;
 				INFOPLIST_FILE = EyulingoUnitTests/Info.plist;
@@ -663,6 +679,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.eyulingo.EyulingoUnitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "EyulingoUnitTests-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Eyulingo.app/Eyulingo";
@@ -672,6 +689,7 @@
 		8A0EA46822D6BFE500EFE92C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 24XARD42BP;
 				INFOPLIST_FILE = EyulingoUITests/Info.plist;
@@ -682,6 +700,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.eyulingo.EyulingoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "EyulingoUITests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = Eyulingo;
@@ -691,6 +711,7 @@
 		8A0EA46922D6BFE500EFE92C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 24XARD42BP;
 				INFOPLIST_FILE = EyulingoUITests/Info.plist;
@@ -701,6 +722,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.eyulingo.EyulingoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "EyulingoUITests-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = Eyulingo;
@@ -837,7 +859,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.eyulingo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Eyulingo-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -860,7 +882,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.eyulingo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Eyulingo-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

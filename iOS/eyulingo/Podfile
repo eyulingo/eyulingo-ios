@@ -1,4 +1,3 @@
-source 'https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git'
 # Uncomment the next line to define a global platform for your project
 platform :ios, '9.0'
 
@@ -11,5 +10,6 @@ target 'Eyulingo' do
   pod 'Alamofire-SwiftyJSON'
   pod 'SwiftyJSON'
   pod 'YPImagePicker'
+  pod 'VideoSplashKit'
   pod 'IQKeyboardManager'
 end
