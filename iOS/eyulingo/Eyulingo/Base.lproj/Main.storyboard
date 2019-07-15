@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14835.7" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <device id="retina5_5" orientation="portrait" appearance="dark"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14790.5"/>
@@ -555,13 +555,13 @@ Project Eyulingo. 一切权利保留。</string>
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.80000000000000004" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="VWd-dt-FOT">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ykv-YW-4Dr">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="textColor" xcode11CocoaTouchSystemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8cS-cp-LMn">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                 <items>
@@ -615,27 +615,27 @@ Project Eyulingo. 一切权利保留。</string>
                                     </subviews>
                                 </view>
                                 <vibrancyEffect>
-                                    <blurEffect style="regular"/>
+                                    <blurEffect style="prominent"/>
                                 </vibrancyEffect>
                             </visualEffectView>
                         </subviews>
                         <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="q1A-yk-2Wa" firstAttribute="top" secondItem="8cS-cp-LMn" secondAttribute="bottom" id="2SJ-eD-Dhk"/>
+                            <constraint firstItem="Ykv-YW-4Dr" firstAttribute="top" secondItem="1kx-GC-zao" secondAttribute="top" id="3Tr-zX-OEd"/>
                             <constraint firstItem="uw2-Vt-0Vb" firstAttribute="trailing" secondItem="1kx-GC-zao" secondAttribute="trailing" id="3b6-Zy-Bcm"/>
-                            <constraint firstItem="v8d-Xv-K0w" firstAttribute="leading" secondItem="1kx-GC-zao" secondAttribute="leading" id="5Iy-bd-u4t"/>
-                            <constraint firstItem="VWd-dt-FOT" firstAttribute="trailing" secondItem="1kx-GC-zao" secondAttribute="trailing" id="83R-8R-4dF"/>
+                            <constraint firstItem="Ykv-YW-4Dr" firstAttribute="trailing" secondItem="1kx-GC-zao" secondAttribute="trailing" id="7xl-cE-3Fc"/>
+                            <constraint firstItem="v8d-Xv-K0w" firstAttribute="leading" secondItem="1kx-GC-zao" secondAttribute="leading" id="8cJ-Ih-xNd"/>
                             <constraint firstItem="8cS-cp-LMn" firstAttribute="leading" secondItem="1kx-GC-zao" secondAttribute="leading" id="9gS-Sh-cQv"/>
-                            <constraint firstAttribute="bottom" secondItem="VWd-dt-FOT" secondAttribute="bottom" id="E8E-Vf-Tah"/>
+                            <constraint firstItem="v8d-Xv-K0w" firstAttribute="trailing" secondItem="1kx-GC-zao" secondAttribute="trailing" id="CCq-NR-tI9"/>
+                            <constraint firstAttribute="bottom" secondItem="v8d-Xv-K0w" secondAttribute="bottom" id="CxZ-We-An5"/>
                             <constraint firstAttribute="bottom" secondItem="q1A-yk-2Wa" secondAttribute="bottom" id="Ocs-cg-ept"/>
-                            <constraint firstItem="v8d-Xv-K0w" firstAttribute="top" secondItem="8cS-cp-LMn" secondAttribute="bottom" id="PFk-Qu-cRC"/>
-                            <constraint firstItem="VWd-dt-FOT" firstAttribute="leading" secondItem="1kx-GC-zao" secondAttribute="leading" id="Xcv-aN-YMj"/>
-                            <constraint firstItem="VWd-dt-FOT" firstAttribute="top" secondItem="1kx-GC-zao" secondAttribute="top" id="fPc-PS-eNy"/>
                             <constraint firstItem="8cS-cp-LMn" firstAttribute="centerX" secondItem="A7d-ov-WHQ" secondAttribute="centerX" id="ftX-Id-U1X"/>
-                            <constraint firstAttribute="bottom" secondItem="v8d-Xv-K0w" secondAttribute="bottom" id="ovY-a3-PVB"/>
+                            <constraint firstItem="v8d-Xv-K0w" firstAttribute="top" secondItem="8cS-cp-LMn" secondAttribute="bottom" id="fui-wi-Mf0"/>
+                            <constraint firstItem="Ykv-YW-4Dr" firstAttribute="leading" secondItem="1kx-GC-zao" secondAttribute="leading" id="mnW-bD-D9A"/>
                             <constraint firstItem="q1A-yk-2Wa" firstAttribute="leading" secondItem="1kx-GC-zao" secondAttribute="leading" id="qpY-aO-upV"/>
                             <constraint firstItem="8cS-cp-LMn" firstAttribute="top" secondItem="1kx-GC-zao" secondAttribute="top" id="sxN-uW-F9B"/>
-                            <constraint firstItem="v8d-Xv-K0w" firstAttribute="trailing" secondItem="1kx-GC-zao" secondAttribute="trailing" id="tKx-1s-THQ"/>
+                            <constraint firstAttribute="bottom" secondItem="Ykv-YW-4Dr" secondAttribute="bottom" id="wf9-nx-zcC"/>
                             <constraint firstItem="q1A-yk-2Wa" firstAttribute="trailing" secondItem="1kx-GC-zao" secondAttribute="trailing" id="x8a-T3-G8g"/>
                             <constraint firstItem="uw2-Vt-0Vb" firstAttribute="top" secondItem="8cS-cp-LMn" secondAttribute="bottom" id="xbo-3f-gbK"/>
                             <constraint firstItem="uw2-Vt-0Vb" firstAttribute="leading" secondItem="1kx-GC-zao" secondAttribute="leading" id="yCu-tM-NHb"/>

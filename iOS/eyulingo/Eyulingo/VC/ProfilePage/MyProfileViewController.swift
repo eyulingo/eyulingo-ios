@@ -14,7 +14,7 @@ import Alamofire_SwiftyJSON
 
 class MyProfileViewController: UIViewController, profileChangesDelegate, profileRefreshDelegate, backgroundImageReloadDelegate {
     func fadeOutBg(duration: Double = 1.5) {
-        self.backgroundImageView.alpha = 0.8
+        self.backgroundImageView.alpha = 0.6
         UIView.animate(withDuration: duration, delay: 0.0, options: .curveEaseOut, animations: {
             self.backgroundImageView.alpha = 0.0
         }, completion: { _ in
@@ -27,9 +27,9 @@ class MyProfileViewController: UIViewController, profileChangesDelegate, profile
         self.backgroundImageView.alpha = 0.0
         self.backgroundImageView.image = image
         UIView.animate(withDuration: duration, delay: 0.0, options: .curveEaseOut, animations: {
-            self.backgroundImageView.alpha = 0.8
+            self.backgroundImageView.alpha = 0.6
         }, completion: { _ in
-            self.backgroundImageView.alpha = 0.8
+            self.backgroundImageView.alpha = 0.6
         })
     }
     
