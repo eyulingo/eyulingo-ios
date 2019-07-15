@@ -43,6 +43,7 @@
                                     <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mr2-W9-JtK">
                                         <rect key="frame" x="19" y="0.0" width="240" height="44"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="OA5-PD-8jQ">
+                                            <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="登录 Eyulingo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="32A-Z8-1fy">
@@ -485,16 +486,33 @@ Project Eyulingo. 一切权利保留。</string>
                                 </items>
                             </navigationBar>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="NCi-KV-F3c">
-                                <rect key="frame" x="89" y="146.66666666666663" width="236" height="423"/>
+                                <rect key="frame" x="87" y="143.66666666666666" width="240" height="428.66666666666674"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="输入注册信息" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fho-Wl-eBW">
-                                        <rect key="frame" x="6.3333333333333286" y="0.0" width="223.66666666666669" height="44.333333333333336"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="37"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mOv-S6-yaS">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="50"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="GOp-tj-x0r">
+                                            <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="输入注册信息" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fho-Wl-eBW">
+                                                    <rect key="frame" x="8" y="1.9999999999999716" width="224" height="45"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="37"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="240" id="ZRv-GA-exv"/>
+                                            <constraint firstAttribute="height" constant="50" id="mT5-ZY-67i"/>
+                                        </constraints>
+                                        <vibrancyEffect>
+                                            <blurEffect style="prominent"/>
+                                        </vibrancyEffect>
+                                    </visualEffectView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="3jS-pl-FiT">
-                                        <rect key="frame" x="0.0" y="68.333333333333343" width="236" height="302"/>
+                                        <rect key="frame" x="2" y="74" width="236" height="302"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="I0h-0o-tDS">
                                                 <rect key="frame" x="0.0" y="0.0" width="236" height="34"/>
@@ -515,7 +533,7 @@ Project Eyulingo. 一切权利保留。</string>
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="sXe-rz-H6K">
-                                                <rect key="frame" x="0.0" y="56" width="236" height="34"/>
+                                                <rect key="frame" x="0.0" y="56.000000000000028" width="236" height="34"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="电子邮件" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="RRV-Ti-Yw4">
                                                         <rect key="frame" x="0.0" y="0.0" width="183" height="34"/>
@@ -540,7 +558,7 @@ Project Eyulingo. 一切权利保留。</string>
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="Jup-aH-mDA">
-                                                <rect key="frame" x="0.0" y="112" width="236" height="34"/>
+                                                <rect key="frame" x="0.0" y="112.00000000000003" width="236" height="34"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="验证码" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="iPb-qp-0fI">
                                                         <rect key="frame" x="0.0" y="0.0" width="236" height="34"/>
@@ -558,7 +576,7 @@ Project Eyulingo. 一切权利保留。</string>
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="jRF-uw-ixR">
-                                                <rect key="frame" x="0.0" y="168" width="236" height="34"/>
+                                                <rect key="frame" x="0.0" y="168.00000000000003" width="236" height="34"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="密码" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="NZW-KE-UNL">
                                                         <rect key="frame" x="0.0" y="0.0" width="236" height="34"/>
@@ -576,7 +594,7 @@ Project Eyulingo. 一切权利保留。</string>
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="2aE-Q2-VNl">
-                                                <rect key="frame" x="0.0" y="224" width="236" height="34"/>
+                                                <rect key="frame" x="0.0" y="224.00000000000003" width="236" height="33.999999999999972"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="确认密码" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ql0-yt-O0o">
                                                         <rect key="frame" x="0.0" y="0.0" width="236" height="34"/>
@@ -615,7 +633,7 @@ Project Eyulingo. 一切权利保留。</string>
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zE9-4c-VaN">
-                                        <rect key="frame" x="26" y="394.33333333333337" width="184.33333333333334" height="28.666666666666686"/>
+                                        <rect key="frame" x="28" y="400" width="184.33333333333334" height="28.666666666666686"/>
                                         <string key="text">Copyright © 2019
 Project Eyulingo. 一切权利保留。</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -716,6 +734,17 @@ Project Eyulingo. 一切权利保留。</string>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="v8d-Xv-K0w">
+                                <rect key="frame" x="0.0" y="44" width="414" height="692"/>
+                            </imageView>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uw2-Vt-0Vb">
+                                <rect key="frame" x="0.0" y="44" width="414" height="692"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="5d2-py-tA4">
+                                    <rect key="frame" x="0.0" y="0.0" width="174" height="564"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <blurEffect style="regular"/>
+                            </visualEffectView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g5F-EB-fNz">
                                 <rect key="frame" x="0.0" y="44" width="414" height="643"/>
                                 <connections>
@@ -725,18 +754,27 @@ Project Eyulingo. 一切权利保留。</string>
                         </subviews>
                         <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="uw2-Vt-0Vb" firstAttribute="trailing" secondItem="1kx-GC-zao" secondAttribute="trailing" id="3b6-Zy-Bcm"/>
+                            <constraint firstItem="v8d-Xv-K0w" firstAttribute="leading" secondItem="1kx-GC-zao" secondAttribute="leading" id="5Iy-bd-u4t"/>
                             <constraint firstItem="g5F-EB-fNz" firstAttribute="top" secondItem="8cS-cp-LMn" secondAttribute="bottom" id="871-Nx-8du"/>
                             <constraint firstItem="8cS-cp-LMn" firstAttribute="leading" secondItem="1kx-GC-zao" secondAttribute="leading" id="9gS-Sh-cQv"/>
                             <constraint firstItem="8cS-cp-LMn" firstAttribute="leading" secondItem="g5F-EB-fNz" secondAttribute="leading" id="Faq-w4-Ejp"/>
+                            <constraint firstItem="v8d-Xv-K0w" firstAttribute="top" secondItem="8cS-cp-LMn" secondAttribute="bottom" id="PFk-Qu-cRC"/>
                             <constraint firstItem="g5F-EB-fNz" firstAttribute="bottom" secondItem="1kx-GC-zao" secondAttribute="bottom" id="RRG-UH-26s"/>
                             <constraint firstItem="8cS-cp-LMn" firstAttribute="trailing" secondItem="g5F-EB-fNz" secondAttribute="trailing" id="bbx-Ug-eTF"/>
                             <constraint firstItem="8cS-cp-LMn" firstAttribute="centerX" secondItem="A7d-ov-WHQ" secondAttribute="centerX" id="ftX-Id-U1X"/>
+                            <constraint firstAttribute="bottom" secondItem="v8d-Xv-K0w" secondAttribute="bottom" id="ovY-a3-PVB"/>
                             <constraint firstItem="8cS-cp-LMn" firstAttribute="top" secondItem="1kx-GC-zao" secondAttribute="top" id="sxN-uW-F9B"/>
+                            <constraint firstItem="v8d-Xv-K0w" firstAttribute="trailing" secondItem="1kx-GC-zao" secondAttribute="trailing" id="tKx-1s-THQ"/>
+                            <constraint firstItem="uw2-Vt-0Vb" firstAttribute="top" secondItem="8cS-cp-LMn" secondAttribute="bottom" id="xbo-3f-gbK"/>
+                            <constraint firstItem="uw2-Vt-0Vb" firstAttribute="leading" secondItem="1kx-GC-zao" secondAttribute="leading" id="yCu-tM-NHb"/>
+                            <constraint firstAttribute="bottom" secondItem="uw2-Vt-0Vb" secondAttribute="bottom" id="z2n-GD-IyW"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1kx-GC-zao"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="我" image="person.circle" catalog="system" id="juf-yG-SwN"/>
                     <connections>
+                        <outlet property="backgroundImageView" destination="v8d-Xv-K0w" id="rzF-7e-mNO"/>
                         <segue destination="B4R-Q3-KL1" kind="presentation" identifier="ChangePasswordSegue" id="SZ8-J7-hSr"/>
                         <segue destination="flU-nA-ytg" kind="presentation" identifier="ChangeEmailSegue" id="p2S-1x-UFd"/>
                     </connections>
@@ -908,28 +946,31 @@ Project Eyulingo. 一切权利保留。</string>
         <scene sceneID="rLy-bH-sPf">
             <objects>
                 <tableViewController id="m6u-2e-RMr" customClass="ProfileContentViewController" customModule="Eyulingo" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="65V-7v-R6P">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="65V-7v-R6P">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="643"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="separatorColor" cocoaTouchSystemColor="quaternaryLabelColor"/>
+                        <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <sections>
                             <tableViewSection headerTitle="个人资料" id="gcI-Mt-Psy">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="c50-d3-NhV" rowHeight="144" style="IBUITableViewCellStyleDefault" id="uhn-yS-wuT">
-                                        <rect key="frame" x="20" y="55.333332061767578" width="374" height="144"/>
+                                        <rect key="frame" x="0.0" y="55.333332061767578" width="414" height="144"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uhn-yS-wuT" id="2pF-0v-B9Y">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="144"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="144"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="头像" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="c50-d3-NhV">
-                                                    <rect key="frame" x="20" y="0.0" width="334" height="144"/>
+                                                    <rect key="frame" x="20" y="0.0" width="374" height="144"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Tp5-DY-VTi">
-                                                    <rect key="frame" x="230" y="0.0" width="144" height="144"/>
+                                                    <rect key="frame" x="270" y="0.0" width="144" height="144"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="144" id="27T-XS-viH"/>
                                                     </constraints>
@@ -941,12 +982,13 @@ Project Eyulingo. 一切权利保留。</string>
                                                 <constraint firstAttribute="trailing" secondItem="Tp5-DY-VTi" secondAttribute="trailing" id="rJx-qZ-H05"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="Wf9-b7-XW3" detailTextLabel="QGO-mf-p0I" style="IBUITableViewCellStyleValue1" id="XFI-Im-emS">
-                                        <rect key="frame" x="20" y="199.33333206176758" width="374" height="44"/>
+                                        <rect key="frame" x="0.0" y="199.33333206176758" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XFI-Im-emS" id="Eo6-gp-Jfr">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Eyulingo ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Wf9-b7-XW3">
@@ -957,7 +999,7 @@ Project Eyulingo. 一切权利保留。</string>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="  " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="QGO-mf-p0I">
-                                                    <rect key="frame" x="347" y="15" width="7" height="14.333333333333336"/>
+                                                    <rect key="frame" x="387" y="15" width="7" height="14.333333333333336"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
                                                     <color key="textColor" cocoaTouchSystemColor="secondaryLabelColor"/>
@@ -965,12 +1007,13 @@ Project Eyulingo. 一切权利保留。</string>
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="EoY-gj-b8r" detailTextLabel="lmd-vC-TsC" style="IBUITableViewCellStyleValue1" id="tzT-xB-9dM">
-                                        <rect key="frame" x="20" y="243.33333206176758" width="374" height="44"/>
+                                        <rect key="frame" x="0.0" y="243.33333206176758" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tzT-xB-9dM" id="m4T-vS-ADM">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="昵称" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="EoY-gj-b8r">
@@ -981,7 +1024,7 @@ Project Eyulingo. 一切权利保留。</string>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="  " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lmd-vC-TsC">
-                                                    <rect key="frame" x="347" y="15" width="7" height="14.333333333333336"/>
+                                                    <rect key="frame" x="387" y="15" width="7" height="14.333333333333336"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
                                                     <color key="textColor" cocoaTouchSystemColor="secondaryLabelColor"/>
@@ -989,12 +1032,13 @@ Project Eyulingo. 一切权利保留。</string>
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="JVr-SE-OEJ" detailTextLabel="PZe-qr-AR8" style="IBUITableViewCellStyleValue1" id="Ui9-zR-n44">
-                                        <rect key="frame" x="20" y="287.33333206176758" width="374" height="44"/>
+                                        <rect key="frame" x="0.0" y="287.33333206176758" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ui9-zR-n44" id="EIw-Sf-5R7">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="电子邮箱" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JVr-SE-OEJ">
@@ -1005,7 +1049,7 @@ Project Eyulingo. 一切权利保留。</string>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="  " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PZe-qr-AR8">
-                                                    <rect key="frame" x="347" y="15" width="7" height="14.333333333333336"/>
+                                                    <rect key="frame" x="387" y="15" width="7" height="14.333333333333336"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
                                                     <nil key="textColor"/>
@@ -1013,16 +1057,17 @@ Project Eyulingo. 一切权利保留。</string>
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="Hxa-Ir-eWp" style="IBUITableViewCellStyleDefault" id="Dyr-ak-5Ep">
-                                        <rect key="frame" x="20" y="331.33333206176758" width="374" height="44"/>
+                                        <rect key="frame" x="0.0" y="331.33333206176758" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Dyr-ak-5Ep" id="TZd-jd-5ZR">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="修改密码" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Hxa-Ir-eWp">
-                                                    <rect key="frame" x="20" y="0.0" width="334" height="44"/>
+                                                    <rect key="frame" x="20" y="0.0" width="374" height="44"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
                                                     <color key="textColor" cocoaTouchSystemColor="linkColor"/>
@@ -1030,20 +1075,21 @@ Project Eyulingo. 一切权利保留。</string>
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
                             <tableViewSection headerTitle="杂项" id="zrV-fB-WZ0">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="T5R-X9-LGl" style="IBUITableViewCellStyleDefault" id="4zd-dg-B7t">
-                                        <rect key="frame" x="20" y="431.33333206176758" width="374" height="44"/>
+                                        <rect key="frame" x="0.0" y="431.33333206176758" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4zd-dg-B7t" id="QtT-1P-pSP">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="编辑默认收货地址" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="T5R-X9-LGl">
-                                                    <rect key="frame" x="20" y="0.0" width="334" height="44"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="默认收货地址" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="T5R-X9-LGl">
+                                                    <rect key="frame" x="20" y="0.0" width="374" height="44"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
                                                     <color key="textColor" cocoaTouchSystemColor="linkColor"/>
@@ -1051,16 +1097,17 @@ Project Eyulingo. 一切权利保留。</string>
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="NhX-wB-VuJ" style="IBUITableViewCellStyleDefault" id="D37-rv-0sS">
-                                        <rect key="frame" x="20" y="475.33333206176758" width="374" height="44"/>
+                                        <rect key="frame" x="0.0" y="475.33333206176758" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="D37-rv-0sS" id="ela-oi-lnR">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="联系客服" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NhX-wB-VuJ">
-                                                    <rect key="frame" x="20" y="0.0" width="334" height="44"/>
+                                                    <rect key="frame" x="20" y="0.0" width="374" height="44"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
                                                     <color key="textColor" cocoaTouchSystemColor="linkColor"/>
@@ -1068,6 +1115,7 @@ Project Eyulingo. 一切权利保留。</string>
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -1346,21 +1394,36 @@ Project Eyulingo. 一切权利保留。</string>
                                     <outlet property="delegate" destination="cwS-eG-FmT" id="EZN-pj-Chr"/>
                                 </connections>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="无内容" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xQj-e7-BC3">
-                                <rect key="frame" x="170.66666666666666" y="354.33333333333331" width="73" height="27.666666666666686"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <color key="textColor" cocoaTouchSystemColor="secondaryLabelColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Deq-dQ-Jw5">
+                                <rect key="frame" x="87" y="313" width="240" height="128"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="2tE-xf-9Jp">
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="无内容" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xQj-e7-BC3">
+                                            <rect key="frame" x="83" y="50" width="73" height="27.666666666666686"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                            <color key="textColor" cocoaTouchSystemColor="secondaryLabelColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="U1s-9x-Y9R"/>
+                                    <constraint firstAttribute="height" constant="128" id="jSU-CY-17y"/>
+                                </constraints>
+                                <vibrancyEffect>
+                                    <blurEffect style="regular"/>
+                                </vibrancyEffect>
+                            </visualEffectView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="Deq-dQ-Jw5" firstAttribute="centerY" secondItem="3aA-cX-E6s" secondAttribute="centerY" constant="9" id="33U-Iw-hub"/>
                             <constraint firstItem="L48-OX-Del" firstAttribute="leading" secondItem="f8w-cm-4js" secondAttribute="leading" id="7K8-Zk-Ibz"/>
                             <constraint firstItem="f8w-cm-4js" firstAttribute="centerX" secondItem="3aA-cX-E6s" secondAttribute="centerX" id="88I-9R-779"/>
                             <constraint firstItem="f8w-cm-4js" firstAttribute="leading" secondItem="xJX-qp-RkO" secondAttribute="leading" id="Ekx-i1-2Kk"/>
                             <constraint firstItem="84H-lF-DQh" firstAttribute="bottom" secondItem="xJX-qp-RkO" secondAttribute="bottom" id="GTo-J3-Evu"/>
-                            <constraint firstItem="xQj-e7-BC3" firstAttribute="centerY" secondItem="3aA-cX-E6s" secondAttribute="centerY" id="OPT-ON-Yi5"/>
-                            <constraint firstItem="xQj-e7-BC3" firstAttribute="centerX" secondItem="3aA-cX-E6s" secondAttribute="centerX" id="WYJ-kw-l8v"/>
                             <constraint firstItem="f8w-cm-4js" firstAttribute="top" secondItem="xJX-qp-RkO" secondAttribute="top" id="eTd-26-1dn"/>
                             <constraint firstItem="L48-OX-Del" firstAttribute="bottom" secondItem="xJX-qp-RkO" secondAttribute="bottom" id="f72-Xt-hbO"/>
                             <constraint firstItem="84H-lF-DQh" firstAttribute="leading" secondItem="xJX-qp-RkO" secondAttribute="leading" id="jPy-pH-K3A"/>
@@ -1368,6 +1431,7 @@ Project Eyulingo. 一切权利保留。</string>
                             <constraint firstItem="L48-OX-Del" firstAttribute="trailing" secondItem="f8w-cm-4js" secondAttribute="trailing" id="pKW-Pw-gwO"/>
                             <constraint firstItem="L48-OX-Del" firstAttribute="top" secondItem="f8w-cm-4js" secondAttribute="bottom" id="tdf-5W-Zxj"/>
                             <constraint firstItem="84H-lF-DQh" firstAttribute="trailing" secondItem="xJX-qp-RkO" secondAttribute="trailing" id="uIq-vW-o3k"/>
+                            <constraint firstItem="Deq-dQ-Jw5" firstAttribute="centerX" secondItem="3aA-cX-E6s" secondAttribute="centerX" id="zoQ-Yj-jQ6"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xJX-qp-RkO"/>
                     </view>
@@ -1388,24 +1452,11 @@ Project Eyulingo. 一切权利保留。</string>
                         <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2nr-IR-ddb">
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nEO-U3-9gf">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="f0K-pj-IUz">
-                                    <rect key="frame" x="0.0" y="0.0" width="174" height="637"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Ayw-oN-tz0">
+                                    <rect key="frame" x="0.0" y="0.0" width="174" height="588"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    <subviews>
-                                        <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bCF-1V-NZo">
-                                            <rect key="frame" x="0.0" y="0.0" width="0.0" height="35"/>
-                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="bOG-Ew-M4g">
-                                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="35"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                            </view>
-                                            <vibrancyEffect>
-                                                <blurEffect style="light"/>
-                                            </vibrancyEffect>
-                                        </visualEffectView>
-                                    </subviews>
                                 </view>
                                 <blurEffect style="prominent"/>
                             </visualEffectView>
@@ -1534,15 +1585,15 @@ Project Eyulingo. 一切权利保留。</string>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="nEO-U3-9gf" firstAttribute="leading" secondItem="1i0-cG-xve" secondAttribute="leading" id="3d0-uS-edA"/>
+                            <constraint firstItem="nEO-U3-9gf" firstAttribute="top" secondItem="1i0-cG-xve" secondAttribute="top" id="4He-Ti-d6w"/>
+                            <constraint firstItem="nEO-U3-9gf" firstAttribute="trailing" secondItem="1i0-cG-xve" secondAttribute="trailing" id="6Go-Dw-wKr"/>
                             <constraint firstItem="PPF-7Z-vDJ" firstAttribute="centerX" secondItem="vLt-9g-k7w" secondAttribute="centerX" id="AZd-ZE-DS2"/>
                             <constraint firstItem="Fmh-jW-Z4X" firstAttribute="top" secondItem="vLt-9g-k7w" secondAttribute="top" id="EBh-un-fwy"/>
-                            <constraint firstItem="2nr-IR-ddb" firstAttribute="trailing" secondItem="1i0-cG-xve" secondAttribute="trailing" id="UA8-fm-fGT"/>
                             <constraint firstItem="Fmh-jW-Z4X" firstAttribute="leading" secondItem="vLt-9g-k7w" secondAttribute="leading" id="c7e-qS-aGI"/>
                             <constraint firstAttribute="trailing" secondItem="Fmh-jW-Z4X" secondAttribute="trailing" id="j7t-73-qpk"/>
-                            <constraint firstItem="1i0-cG-xve" firstAttribute="bottom" secondItem="2nr-IR-ddb" secondAttribute="bottom" id="l28-QU-Szm"/>
-                            <constraint firstItem="2nr-IR-ddb" firstAttribute="top" secondItem="1i0-cG-xve" secondAttribute="top" id="mWv-Mg-QA5"/>
-                            <constraint firstItem="2nr-IR-ddb" firstAttribute="leading" secondItem="1i0-cG-xve" secondAttribute="leading" id="tFr-zk-3vs"/>
                             <constraint firstItem="PPF-7Z-vDJ" firstAttribute="centerY" secondItem="vLt-9g-k7w" secondAttribute="centerY" id="wjd-0h-IV1"/>
+                            <constraint firstItem="nEO-U3-9gf" firstAttribute="bottom" secondItem="1i0-cG-xve" secondAttribute="bottom" id="zMj-Ao-rqc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1i0-cG-xve"/>
                     </view>
@@ -1601,16 +1652,33 @@ Project Eyulingo. 一切权利保留。</string>
                                 </items>
                             </navigationBar>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="ZpF-it-QcT">
-                                <rect key="frame" x="89" y="174.66666666666663" width="236" height="367"/>
+                                <rect key="frame" x="87" y="171.66666666666666" width="240" height="372.66666666666674"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="提供信息" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pBF-kZ-UvD">
-                                        <rect key="frame" x="43.333333333333343" y="0.0" width="149.33333333333334" height="44.333333333333336"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="37"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="amQ-HV-UTn">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="50"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="zbe-hH-ClX">
+                                            <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="提供信息" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pBF-kZ-UvD">
+                                                    <rect key="frame" x="45" y="1.9999999999999716" width="150" height="45"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="37"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="240" id="YoP-mt-5fH"/>
+                                            <constraint firstAttribute="height" constant="50" id="hCs-Ge-5aM"/>
+                                        </constraints>
+                                        <vibrancyEffect>
+                                            <blurEffect style="prominent"/>
+                                        </vibrancyEffect>
+                                    </visualEffectView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="Lqn-zI-8jF">
-                                        <rect key="frame" x="0.0" y="68.333333333333343" width="236" height="246.00000000000003"/>
+                                        <rect key="frame" x="2" y="74" width="236" height="246"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="vqe-CZ-sA5">
                                                 <rect key="frame" x="0.0" y="0.0" width="236" height="34"/>
@@ -1638,7 +1706,7 @@ Project Eyulingo. 一切权利保留。</string>
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="zDl-cB-ofj">
-                                                <rect key="frame" x="0.0" y="56" width="236" height="34"/>
+                                                <rect key="frame" x="0.0" y="56.000000000000028" width="236" height="34"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="验证码" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ayN-9O-7Pm">
                                                         <rect key="frame" x="0.0" y="0.0" width="236" height="34"/>
@@ -1656,7 +1724,7 @@ Project Eyulingo. 一切权利保留。</string>
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="Tdp-jB-fVE">
-                                                <rect key="frame" x="0.0" y="112" width="236" height="34"/>
+                                                <rect key="frame" x="0.0" y="112.00000000000003" width="236" height="34"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="新密码" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="cwu-Sd-5Gw">
                                                         <rect key="frame" x="0.0" y="0.0" width="236" height="34"/>
@@ -1674,7 +1742,7 @@ Project Eyulingo. 一切权利保留。</string>
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="TQf-l2-SRO">
-                                                <rect key="frame" x="0.0" y="168" width="236" height="34"/>
+                                                <rect key="frame" x="0.0" y="168.00000000000003" width="236" height="34"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="确认新密码" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="HAy-hB-cp1">
                                                         <rect key="frame" x="0.0" y="0.0" width="236" height="34"/>
@@ -1692,7 +1760,7 @@ Project Eyulingo. 一切权利保留。</string>
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="vLA-IW-5Ks">
-                                                <rect key="frame" x="88.333333333333343" y="224" width="59.666666666666657" height="22"/>
+                                                <rect key="frame" x="88.333333333333343" y="224.00000000000003" width="59.666666666666657" height="22"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E6s-gR-KaW">
                                                         <rect key="frame" x="0.0" y="0.0" width="17.666666666666668" height="22"/>
@@ -1713,7 +1781,7 @@ Project Eyulingo. 一切权利保留。</string>
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ts5-4V-3QU">
-                                        <rect key="frame" x="26" y="338.33333333333337" width="184.33333333333334" height="28.666666666666686"/>
+                                        <rect key="frame" x="28" y="344" width="184.33333333333334" height="28.666666666666686"/>
                                         <string key="text">Copyright © 2019
 Project Eyulingo. 一切权利保留。</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>

@@ -12,6 +12,8 @@ class ProfileContentViewController: UITableViewController {
     
     var delegate: profileChangesDelegate?
     
+    var bgDelegate: backgroundImageReloadDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -28,11 +30,43 @@ class ProfileContentViewController: UITableViewController {
                         userName: String,
                         email: String) {
         
-        avatarImageField.image = avatar
+        if avatar != nil {
+            showImage(image: avatar!)
+        } else {
+            hideImage()
+        }
         idTextField.text = "#\(userId)"
         nickNameTextField.text = userName
         emailTextField.text = email
     }
+    
+    func hideImage(duration: Double = 0.25) {
+        
+        self.avatarImageField.alpha = 1.0
+        UIView.animate(withDuration: duration, delay: 0.0, options: .curveEaseOut, animations: {
+            self.avatarImageField.alpha = 0.0
+        }, completion: { _ in
+            self.avatarImageField.image = nil
+            self.avatarImageField.alpha = 0.0
+        })
+        
+        self.bgDelegate?.fadeOutBg(duration: 1.0)
+        
+    }
+    
+    func showImage(image: UIImage, duration: Double = 0.25) {
+        self.avatarImageField.alpha = 0.0
+        self.avatarImageField.image = image
+        UIView.animate(withDuration: duration, delay: 0.0, options: .curveEaseOut, animations: {
+            self.avatarImageField.alpha = 1.0
+        }, completion: { _ in
+            self.avatarImageField.alpha = 1.0
+        })
+        
+        self.bgDelegate?.fadeInBg(image: image, duration: 1.0)
+    }
+    
+    
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.tableView.deselectRow(at: indexPath, animated: true)

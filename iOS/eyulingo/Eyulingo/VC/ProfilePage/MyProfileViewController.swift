@@ -12,7 +12,27 @@ import SwiftyJSON
 import YPImagePicker
 import Alamofire_SwiftyJSON
 
-class MyProfileViewController: UIViewController, profileChangesDelegate, profileRefreshDelegate {
+class MyProfileViewController: UIViewController, profileChangesDelegate, profileRefreshDelegate, backgroundImageReloadDelegate {
+    func fadeOutBg(duration: Double = 0.5) {
+        self.backgroundImageView.alpha = 0.5
+        UIView.animate(withDuration: duration, delay: 0.0, options: .curveEaseOut, animations: {
+            self.backgroundImageView.alpha = 0.0
+        }, completion: { _ in
+            self.backgroundImageView.image = nil
+            self.backgroundImageView.alpha = 0.0
+        })
+    }
+    
+    func fadeInBg(image: UIImage, duration: Double = 0.5) {
+        self.backgroundImageView.alpha = 0.0
+        self.backgroundImageView.image = image
+        UIView.animate(withDuration: duration, delay: 0.0, options: .curveEaseOut, animations: {
+            self.backgroundImageView.alpha = 0.5
+        }, completion: { _ in
+            self.backgroundImageView.alpha = 0.5
+        })
+    }
+    
     
     func refreshProfile() {
         loadUserProfile()
@@ -28,6 +48,7 @@ class MyProfileViewController: UIViewController, profileChangesDelegate, profile
         loadUserProfile()
     }
 
+    @IBOutlet weak var backgroundImageView: UIImageView!
     
     override func viewWillAppear(_ animated: Bool) {
         UINavigationBar.appearance().tintColor = .systemBlue
@@ -38,6 +59,7 @@ class MyProfileViewController: UIViewController, profileChangesDelegate, profile
             if segue.identifier == "tableContainerSegue" {
                 contentVC = segue.destination as? ProfileContentViewController
                 contentVC?.delegate = self
+                contentVC?.bgDelegate = self
             }
         }
         
@@ -157,7 +179,8 @@ class MyProfileViewController: UIViewController, profileChangesDelegate, profile
                                                     loadingAlert.dismiss(animated: true, completion: {
                                                         picker.dismiss(animated: true, completion: {
                                                             self.makeAlert("成功", "成功更新头像。", completion: {
-                                                            self.contentVC?.avatarImageField.image = photo.image
+                                                            
+                                                            self.loadUserProfile()
                                                             })
                                                         })
                                                     })
@@ -316,4 +339,10 @@ class MyProfileViewController: UIViewController, profileChangesDelegate, profile
 
 protocol profileRefreshDelegate {
     func refreshProfile() -> ()
+}
+
+
+protocol backgroundImageReloadDelegate {
+    func fadeOutBg(duration: Double) -> ()
+    func fadeInBg(image: UIImage, duration: Double) -> ()
 }
