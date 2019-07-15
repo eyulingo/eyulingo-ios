@@ -155,7 +155,7 @@ Project Eyulingo. 一切权利保留。</string>
                                 </subviews>
                             </stackView>
                             <navigationBar contentMode="scaleToFill" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cPn-Ox-KRc">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="103.33333333333333"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="96"/>
                                 <items>
                                     <navigationItem id="DhO-JF-WjR">
                                         <barButtonItem key="rightBarButtonItem" style="plain" id="Vv9-gl-hpc">
@@ -1564,42 +1564,71 @@ Project Eyulingo. 一切权利保留。</string>
         <!--检索商品-->
         <scene sceneID="bBb-cU-mlY">
             <objects>
-                <collectionViewController id="SxD-4b-qIU" customClass="CollectionViewController" customModule="collectionViewWithSearchBar" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="NZi-lh-3GH">
+                <collectionViewController id="SxD-4b-qIU" customClass="CollectionViewController" customModule="Eyulingo" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" id="NZi-lh-3GH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.33333334329999997" green="0.33333334329999997" blue="0.33333334329999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="HEF-rN-Kor">
-                            <size key="itemSize" width="194" height="210"/>
+                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="12" minimumInteritemSpacing="12" id="qZy-iF-u9G">
+                            <size key="itemSize" width="185" height="275"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="50" maxX="0.0" maxY="0.0"/>
+                            <inset key="sectionInset" minX="10" minY="45" maxX="10" maxY="5"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="nAL-Xg-VPd" customClass="CollectionViewCell">
-                                <rect key="frame" x="0.0" y="50" width="194" height="210"/>
+                                <rect key="frame" x="10" y="45" width="185" height="275"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="194" height="210"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="185" height="275"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="child name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7fb-fD-krg">
-                                            <rect key="frame" x="16" y="16" width="170" height="178"/>
-                                            <color key="backgroundColor" red="0.66666668650000005" green="0.66666668650000005" blue="0.66666668650000005" alpha="0.22" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <rect key="frame" x="91.666666666666686" y="247.00000000000003" width="83.333333333333314" height="20.333333333333343"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Chp.png" translatesAutoresizingMaskIntoConstraints="NO" id="2c1-UM-xZk">
+                                            <rect key="frame" x="0.0" y="0.0" width="185" height="239"/>
+                                        </imageView>
+                                        <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="78N-as-fJT">
+                                            <rect key="frame" x="0.0" y="205" width="200" height="34"/>
+                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="yhA-f2-8I1">
+                                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="3"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            </view>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="34" id="9Ed-F9-HUm"/>
+                                                <constraint firstAttribute="width" constant="200" id="SKc-LD-TOA"/>
+                                            </constraints>
+                                            <blurEffect style="regular"/>
+                                        </visualEffectView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="美罗华（利妥昔单抗注射液）" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4nb-pZ-I4W">
+                                            <rect key="frame" x="10" y="211" width="165" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                 </view>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="secondarySystemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="7fb-fD-krg" firstAttribute="centerY" secondItem="nAL-Xg-VPd" secondAttribute="centerY" id="2Ko-dH-QeI"/>
-                                    <constraint firstItem="7fb-fD-krg" firstAttribute="centerX" secondItem="nAL-Xg-VPd" secondAttribute="centerX" constant="4" id="3Eb-AD-rTh"/>
-                                    <constraint firstItem="7fb-fD-krg" firstAttribute="leading" secondItem="nAL-Xg-VPd" secondAttribute="leadingMargin" constant="8" id="aEx-iJ-L4a"/>
-                                    <constraint firstItem="7fb-fD-krg" firstAttribute="top" secondItem="nAL-Xg-VPd" secondAttribute="topMargin" constant="8" id="irh-uP-GB2"/>
+                                    <constraint firstItem="2c1-UM-xZk" firstAttribute="leading" secondItem="nAL-Xg-VPd" secondAttribute="leading" id="2Yk-Gf-4Oy"/>
+                                    <constraint firstItem="2c1-UM-xZk" firstAttribute="top" secondItem="nAL-Xg-VPd" secondAttribute="top" id="F8I-t6-zD5"/>
+                                    <constraint firstItem="7fb-fD-krg" firstAttribute="top" secondItem="4nb-pZ-I4W" secondAttribute="bottom" constant="15" id="Iyz-Fo-55c"/>
+                                    <constraint firstItem="2c1-UM-xZk" firstAttribute="top" secondItem="nAL-Xg-VPd" secondAttribute="top" id="Llo-GB-KHp"/>
+                                    <constraint firstAttribute="bottom" secondItem="4nb-pZ-I4W" secondAttribute="bottom" constant="43" id="SmJ-1H-BGN"/>
+                                    <constraint firstItem="4nb-pZ-I4W" firstAttribute="leading" secondItem="nAL-Xg-VPd" secondAttribute="leadingMargin" constant="2" id="TEQ-XJ-4yL"/>
+                                    <constraint firstItem="4nb-pZ-I4W" firstAttribute="top" secondItem="2c1-UM-xZk" secondAttribute="bottom" constant="-28" id="V8s-ak-gEe"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="4nb-pZ-I4W" secondAttribute="trailing" constant="2" id="WhD-ex-k8K"/>
+                                    <constraint firstItem="2c1-UM-xZk" firstAttribute="bottom" secondItem="78N-as-fJT" secondAttribute="bottom" id="ZtB-j0-YZG"/>
+                                    <constraint firstItem="7fb-fD-krg" firstAttribute="top" secondItem="78N-as-fJT" secondAttribute="bottom" constant="8" id="c68-js-MtI"/>
+                                    <constraint firstAttribute="trailing" secondItem="2c1-UM-xZk" secondAttribute="trailing" id="j1y-90-90o"/>
+                                    <constraint firstItem="78N-as-fJT" firstAttribute="leading" secondItem="nAL-Xg-VPd" secondAttribute="leading" id="pur-kU-3jT"/>
+                                    <constraint firstAttribute="trailing" secondItem="78N-as-fJT" secondAttribute="trailing" id="s2E-gd-1VN"/>
+                                    <constraint firstItem="4nb-pZ-I4W" firstAttribute="trailing" secondItem="7fb-fD-krg" secondAttribute="trailing" id="wYl-Pk-vog"/>
                                 </constraints>
-                                <size key="customSize" width="194" height="210"/>
+                                <size key="customSize" width="185" height="275"/>
                                 <connections>
                                     <outlet property="textField" destination="7fb-fD-krg" id="zte-ES-Fax"/>
                                 </connections>
@@ -1637,6 +1666,7 @@ Project Eyulingo. 一切权利保留。</string>
         </scene>
     </scenes>
     <resources>
+        <image name="Chp.png" width="144" height="148"/>
         <image name="arrow.clockwise" catalog="system" width="56" height="64"/>
         <image name="arrow.right.circle" catalog="system" width="64" height="62"/>
         <image name="cart" catalog="system" width="64" height="52"/>
