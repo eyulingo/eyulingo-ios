@@ -16,6 +16,7 @@ class CollectionViewController: UICollectionViewController, UISearchBarDelegate 
     var searchBar: UISearchBar?
     var refreshControl: UIRefreshControl?
     let reuseIdentifier: String = "Cell"
+    
 
     override func viewDidLoad() {
         dataSource = ["Modesto", "Rebecka", "Andria", "Sergio", "Robby", "Jacob", "Lavera", "Theola", "Adella", "Garry", "Lawanda", "Christiana", "Billy", "Claretta", "Gina", "Edna", "Antoinette", "Shantae", "Jeniffer", "Fred", "Phylis", "Raymon", "Brenna", "Gulfs", "Ethan", "Kimbery", "Sunday", "Darrin", "Ruby", "Babette", "Latrisha", "Dewey", "Della", "Dylan", "Francina", "Boyd", "Willette", "Mitsuko", "Evan", "Dagmar", "Cecille", "Doug",
@@ -81,8 +82,9 @@ class CollectionViewController: UICollectionViewController, UISearchBarDelegate 
     func collectionView(collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        let cellLeg = (collectionView.frame.size.width / 2) - 5
-        return CGSize(width: cellLeg, height: cellLeg)
+        let cellLeg = (collectionView.frame.size.width / 2) - 2
+        
+        return CGSize(width: cellLeg, height: CGFloat(cellLeg) * 2.0)
     }
 
     // MARK: Search
@@ -155,7 +157,7 @@ class CollectionViewController: UICollectionViewController, UISearchBarDelegate 
             searchBar!.tintColor = UIColor.white
             searchBar!.barTintColor = UIColor.white
             searchBar!.delegate = self
-            searchBar!.placeholder = "search here"
+            searchBar!.placeholder = "输入商品名称或标签……"
 
             addObservers()
         }
