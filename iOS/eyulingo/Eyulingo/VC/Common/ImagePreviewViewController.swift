@@ -26,20 +26,30 @@ class ImagePreviewViewController: UIViewController {
         
         imageField.isUserInteractionEnabled = true
         imageField.isMultipleTouchEnabled = true
+        
+        promptTextField.text = (promptText ?? "原图")
+        promptTextField.sizeToFit()
+    }
+    
+    func imageWithView(view: UIView) -> UIImage {
+        UIGraphicsBeginImageContextWithOptions(view.bounds.size, false, 0.0)
+        view.layer.render(in: UIGraphicsGetCurrentContext()!)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return image!
     }
     
     override func viewWillAppear(_ animated: Bool) {
         self.imageField.image = mainImage
-        self.indicationTextField.text = promptText
         super.viewWillAppear(animated)
     }
     var mainImage: UIImage?
     var promptText: String?
     
     @IBOutlet weak var navBar: UINavigationBar!
-    @IBOutlet weak var indicationTextField: UITextField!
     
     @IBOutlet weak var imageField: UIImageView!
+    @IBOutlet weak var promptTextField: UITextField!
     
     @IBAction func saveToAlbum(_ sender: UIBarButtonItem) {
         if mainImage != nil {

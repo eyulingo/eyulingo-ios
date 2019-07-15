@@ -241,35 +241,6 @@ Project Eyulingo. 一切权利保留。</string>
             </objects>
             <point key="canvasLocation" x="1763.7681159420292" y="119.83695652173914"/>
         </scene>
-        <!--搜索-->
-        <scene sceneID="KVH-Tj-53a">
-            <objects>
-                <viewController storyboardIdentifier="BookQueryVC" id="GCm-Cf-Z26" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="zbL-gj-MT7">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4u1-zw-msA">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
-                                <items>
-                                    <navigationItem title="搜索" id="lPG-ri-4EI"/>
-                                </items>
-                            </navigationBar>
-                        </subviews>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="4u1-zw-msA" firstAttribute="centerX" secondItem="zbL-gj-MT7" secondAttribute="centerX" id="5FH-uZ-0Xj"/>
-                            <constraint firstItem="4u1-zw-msA" firstAttribute="leading" secondItem="3qd-1t-vVE" secondAttribute="leading" id="PWS-sT-oEf"/>
-                            <constraint firstItem="4u1-zw-msA" firstAttribute="top" secondItem="3qd-1t-vVE" secondAttribute="top" id="Xdg-xW-Chu"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="3qd-1t-vVE"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="搜索" image="magnifyingglass" catalog="system" id="4E7-Ta-zAT"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Gy8-Fn-aLA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1763.7681159420292" y="-554.46428571428567"/>
-        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="jwg-9u-FSc">
             <objects>
@@ -280,7 +251,7 @@ Project Eyulingo. 一切权利保留。</string>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="GCm-Cf-Z26" kind="relationship" relationship="viewControllers" id="bX9-3v-tw7"/>
+                        <segue destination="dHO-xA-dqC" kind="relationship" relationship="viewControllers" id="pye-Ey-3jY"/>
                         <segue destination="3V5-if-tkX" kind="relationship" relationship="viewControllers" id="KnR-3X-hIm"/>
                         <segue destination="lDf-IJ-1pn" kind="relationship" relationship="viewControllers" id="9oF-6B-wnd"/>
                         <segue destination="IiF-5N-S8a" kind="relationship" relationship="viewControllers" id="ovX-eB-i3w"/>
@@ -555,13 +526,6 @@ Project Eyulingo. 一切权利保留。</string>
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ykv-YW-4Dr">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8cS-cp-LMn">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                 <items>
@@ -599,44 +563,27 @@ Project Eyulingo. 一切权利保留。</string>
                                 </view>
                                 <blurEffect style="prominent"/>
                             </visualEffectView>
-                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q1A-yk-2Wa">
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g5F-EB-fNz">
                                 <rect key="frame" x="0.0" y="44" width="414" height="692"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="kdh-C9-4bZ">
-                                    <rect key="frame" x="0.0" y="0.0" width="174" height="564"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    <subviews>
-                                        <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g5F-EB-fNz">
-                                            <rect key="frame" x="0.0" y="24" width="414" height="643"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <connections>
-                                                <segue destination="m6u-2e-RMr" kind="embed" identifier="tableContainerSegue" id="7r8-u9-EZI"/>
-                                            </connections>
-                                        </containerView>
-                                    </subviews>
-                                </view>
-                                <vibrancyEffect>
-                                    <blurEffect style="prominent"/>
-                                </vibrancyEffect>
-                            </visualEffectView>
+                                <connections>
+                                    <segue destination="m6u-2e-RMr" kind="embed" identifier="tableContainerSegue" id="7r8-u9-EZI"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="q1A-yk-2Wa" firstAttribute="top" secondItem="8cS-cp-LMn" secondAttribute="bottom" id="2SJ-eD-Dhk"/>
-                            <constraint firstItem="Ykv-YW-4Dr" firstAttribute="top" secondItem="1kx-GC-zao" secondAttribute="top" id="3Tr-zX-OEd"/>
                             <constraint firstItem="uw2-Vt-0Vb" firstAttribute="trailing" secondItem="1kx-GC-zao" secondAttribute="trailing" id="3b6-Zy-Bcm"/>
-                            <constraint firstItem="Ykv-YW-4Dr" firstAttribute="trailing" secondItem="1kx-GC-zao" secondAttribute="trailing" id="7xl-cE-3Fc"/>
                             <constraint firstItem="v8d-Xv-K0w" firstAttribute="leading" secondItem="1kx-GC-zao" secondAttribute="leading" id="8cJ-Ih-xNd"/>
+                            <constraint firstAttribute="bottom" secondItem="g5F-EB-fNz" secondAttribute="bottom" id="8qN-pq-PgE"/>
                             <constraint firstItem="8cS-cp-LMn" firstAttribute="leading" secondItem="1kx-GC-zao" secondAttribute="leading" id="9gS-Sh-cQv"/>
                             <constraint firstItem="v8d-Xv-K0w" firstAttribute="trailing" secondItem="1kx-GC-zao" secondAttribute="trailing" id="CCq-NR-tI9"/>
                             <constraint firstAttribute="bottom" secondItem="v8d-Xv-K0w" secondAttribute="bottom" id="CxZ-We-An5"/>
-                            <constraint firstAttribute="bottom" secondItem="q1A-yk-2Wa" secondAttribute="bottom" id="Ocs-cg-ept"/>
+                            <constraint firstItem="g5F-EB-fNz" firstAttribute="leading" secondItem="1kx-GC-zao" secondAttribute="leading" id="FGZ-cw-vfl"/>
+                            <constraint firstItem="g5F-EB-fNz" firstAttribute="trailing" secondItem="1kx-GC-zao" secondAttribute="trailing" id="MDH-0t-Or7"/>
                             <constraint firstItem="8cS-cp-LMn" firstAttribute="centerX" secondItem="A7d-ov-WHQ" secondAttribute="centerX" id="ftX-Id-U1X"/>
                             <constraint firstItem="v8d-Xv-K0w" firstAttribute="top" secondItem="8cS-cp-LMn" secondAttribute="bottom" id="fui-wi-Mf0"/>
-                            <constraint firstItem="Ykv-YW-4Dr" firstAttribute="leading" secondItem="1kx-GC-zao" secondAttribute="leading" id="mnW-bD-D9A"/>
-                            <constraint firstItem="q1A-yk-2Wa" firstAttribute="leading" secondItem="1kx-GC-zao" secondAttribute="leading" id="qpY-aO-upV"/>
+                            <constraint firstItem="g5F-EB-fNz" firstAttribute="top" secondItem="8cS-cp-LMn" secondAttribute="bottom" id="oxY-v9-UBY"/>
                             <constraint firstItem="8cS-cp-LMn" firstAttribute="top" secondItem="1kx-GC-zao" secondAttribute="top" id="sxN-uW-F9B"/>
-                            <constraint firstAttribute="bottom" secondItem="Ykv-YW-4Dr" secondAttribute="bottom" id="wf9-nx-zcC"/>
-                            <constraint firstItem="q1A-yk-2Wa" firstAttribute="trailing" secondItem="1kx-GC-zao" secondAttribute="trailing" id="x8a-T3-G8g"/>
                             <constraint firstItem="uw2-Vt-0Vb" firstAttribute="top" secondItem="8cS-cp-LMn" secondAttribute="bottom" id="xbo-3f-gbK"/>
                             <constraint firstItem="uw2-Vt-0Vb" firstAttribute="leading" secondItem="1kx-GC-zao" secondAttribute="leading" id="yCu-tM-NHb"/>
                             <constraint firstAttribute="bottom" secondItem="uw2-Vt-0Vb" secondAttribute="bottom" id="z2n-GD-IyW"/>
@@ -674,34 +621,6 @@ Project Eyulingo. 一切权利保留。</string>
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
-                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IA7-tl-pp2">
-                                <rect key="frame" x="0.0" y="44" width="414" height="75"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="4pL-ul-AE0">
-                                    <rect key="frame" x="0.0" y="0.0" width="174" height="0.0"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    <subviews>
-                                        <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="提示性文字" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gmX-ZE-kuc">
-                                            <rect key="frame" x="37" y="20" width="100" height="34"/>
-                                            <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="34" id="BAt-yb-5Dx"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits"/>
-                                        </textField>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="gmX-ZE-kuc" firstAttribute="centerX" secondItem="4pL-ul-AE0" secondAttribute="centerX" id="3NH-dh-fK0"/>
-                                        <constraint firstItem="gmX-ZE-kuc" firstAttribute="top" secondItem="4pL-ul-AE0" secondAttribute="top" constant="20" id="u4s-Yi-vfw"/>
-                                    </constraints>
-                                </view>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="75" id="hpz-pg-TM5"/>
-                                </constraints>
-                                <vibrancyEffect>
-                                    <blurEffect style="regular"/>
-                                </vibrancyEffect>
-                            </visualEffectView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xqk-di-BOj">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                 <constraints>
@@ -722,6 +641,13 @@ Project Eyulingo. 一切权利保留。</string>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="提示性文字" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gmX-ZE-kuc">
+                                <rect key="frame" x="157" y="682" width="100" height="34"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" cocoaTouchSystemColor="secondaryLabelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -729,15 +655,14 @@ Project Eyulingo. 一切权利保留。</string>
                             <constraint firstItem="xqk-di-BOj" firstAttribute="trailing" secondItem="bVC-H5-wLJ" secondAttribute="trailing" id="6Lu-D6-mq0"/>
                             <constraint firstItem="m7G-Vy-h9I" firstAttribute="leading" secondItem="bVC-H5-wLJ" secondAttribute="leading" id="AeB-yH-7mC"/>
                             <constraint firstAttribute="bottom" secondItem="3aa-Sj-rdm" secondAttribute="bottom" id="Btk-bj-kj6"/>
+                            <constraint firstItem="bVC-H5-wLJ" firstAttribute="bottom" secondItem="gmX-ZE-kuc" secondAttribute="bottom" constant="20" id="Gk4-y4-9rm"/>
                             <constraint firstItem="m7G-Vy-h9I" firstAttribute="trailing" secondItem="bVC-H5-wLJ" secondAttribute="trailing" id="M6H-0d-8Dm"/>
-                            <constraint firstItem="IA7-tl-pp2" firstAttribute="top" secondItem="xqk-di-BOj" secondAttribute="bottom" id="N1K-eN-J7u"/>
                             <constraint firstItem="m7G-Vy-h9I" firstAttribute="top" secondItem="bVC-H5-wLJ" secondAttribute="top" id="Nrp-OD-Fk9"/>
                             <constraint firstItem="xqk-di-BOj" firstAttribute="top" secondItem="bVC-H5-wLJ" secondAttribute="top" id="V6M-Tz-XMH"/>
-                            <constraint firstItem="IA7-tl-pp2" firstAttribute="leading" secondItem="bVC-H5-wLJ" secondAttribute="leading" id="XP5-Xx-SKQ"/>
+                            <constraint firstItem="gmX-ZE-kuc" firstAttribute="centerX" secondItem="UJT-tO-ofn" secondAttribute="centerX" id="VSJ-Ch-1IC"/>
                             <constraint firstItem="xqk-di-BOj" firstAttribute="top" secondItem="bVC-H5-wLJ" secondAttribute="top" id="dk6-zj-NoK"/>
                             <constraint firstItem="xqk-di-BOj" firstAttribute="leading" secondItem="bVC-H5-wLJ" secondAttribute="leading" id="fMf-da-Agl"/>
                             <constraint firstItem="3aa-Sj-rdm" firstAttribute="top" secondItem="bVC-H5-wLJ" secondAttribute="top" id="hXf-be-oxz"/>
-                            <constraint firstItem="IA7-tl-pp2" firstAttribute="trailing" secondItem="bVC-H5-wLJ" secondAttribute="trailing" id="lIe-p6-jCd"/>
                             <constraint firstItem="m7G-Vy-h9I" firstAttribute="bottom" secondItem="bVC-H5-wLJ" secondAttribute="bottom" id="n5G-PR-yQ8"/>
                             <constraint firstItem="3aa-Sj-rdm" firstAttribute="trailing" secondItem="bVC-H5-wLJ" secondAttribute="trailing" id="nMR-06-SvY"/>
                             <constraint firstItem="3aa-Sj-rdm" firstAttribute="leading" secondItem="bVC-H5-wLJ" secondAttribute="leading" id="t2h-dx-b2h"/>
@@ -750,8 +675,8 @@ Project Eyulingo. 一切权利保留。</string>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="imageField" destination="m7G-Vy-h9I" id="kbJ-jU-AuT"/>
-                        <outlet property="indicationTextField" destination="gmX-ZE-kuc" id="o3R-hU-5Kd"/>
                         <outlet property="navBar" destination="xqk-di-BOj" id="9VX-tv-wM1"/>
+                        <outlet property="promptTextField" destination="gmX-ZE-kuc" id="rg3-eI-Hua"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5md-fl-kGd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -763,7 +688,7 @@ Project Eyulingo. 一切权利保留。</string>
             <objects>
                 <tableViewController id="m6u-2e-RMr" customClass="ProfileContentViewController" customModule="Eyulingo" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="65V-7v-R6P">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="643"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="692"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="separatorColor" cocoaTouchSystemColor="quaternaryLabelColor"/>
@@ -1477,8 +1402,8 @@ Project Eyulingo. 一切权利保留。</string>
                                             <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="提供信息" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pBF-kZ-UvD">
-                                                    <rect key="frame" x="45" y="1.9999999999999716" width="150" height="45"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="提供必要信息" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pBF-kZ-UvD">
+                                                    <rect key="frame" x="8" y="1.9999999999999716" width="224" height="45"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="37"/>
                                                     <nil key="textColor"/>
@@ -1635,6 +1560,80 @@ Project Eyulingo. 一切权利保留。</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7hW-bR-Mk4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="850.72463768115949" y="-580.43478260869574"/>
+        </scene>
+        <!--检索商品-->
+        <scene sceneID="bBb-cU-mlY">
+            <objects>
+                <collectionViewController id="SxD-4b-qIU" customClass="CollectionViewController" customModule="collectionViewWithSearchBar" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="NZi-lh-3GH">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.33333334329999997" green="0.33333334329999997" blue="0.33333334329999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="HEF-rN-Kor">
+                            <size key="itemSize" width="194" height="210"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="50" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="nAL-Xg-VPd" customClass="CollectionViewCell">
+                                <rect key="frame" x="0.0" y="50" width="194" height="210"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="194" height="210"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="child name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7fb-fD-krg">
+                                            <rect key="frame" x="16" y="16" width="170" height="178"/>
+                                            <color key="backgroundColor" red="0.66666668650000005" green="0.66666668650000005" blue="0.66666668650000005" alpha="0.22" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </view>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="7fb-fD-krg" firstAttribute="centerY" secondItem="nAL-Xg-VPd" secondAttribute="centerY" id="2Ko-dH-QeI"/>
+                                    <constraint firstItem="7fb-fD-krg" firstAttribute="centerX" secondItem="nAL-Xg-VPd" secondAttribute="centerX" constant="4" id="3Eb-AD-rTh"/>
+                                    <constraint firstItem="7fb-fD-krg" firstAttribute="leading" secondItem="nAL-Xg-VPd" secondAttribute="leadingMargin" constant="8" id="aEx-iJ-L4a"/>
+                                    <constraint firstItem="7fb-fD-krg" firstAttribute="top" secondItem="nAL-Xg-VPd" secondAttribute="topMargin" constant="8" id="irh-uP-GB2"/>
+                                </constraints>
+                                <size key="customSize" width="194" height="210"/>
+                                <connections>
+                                    <outlet property="textField" destination="7fb-fD-krg" id="zte-ES-Fax"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="SxD-4b-qIU" id="N76-A5-yGt"/>
+                            <outlet property="delegate" destination="SxD-4b-qIU" id="eUW-Qh-8eT"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" title="检索商品" id="hvx-xu-6ri"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NnM-hc-snl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2526.0869565217395" y="-580.43478260869574"/>
+        </scene>
+        <!--检索-->
+        <scene sceneID="Qxm-cg-90R">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dHO-xA-dqC" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="检索" image="magnifyingglass" catalog="system" id="hcX-bJ-jEt"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="1VH-OP-dOV">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="SxD-4b-qIU" kind="relationship" relationship="rootViewController" id="PdS-eb-uio"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dgu-g1-1GH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1764" y="-580"/>
         </scene>
     </scenes>
     <resources>

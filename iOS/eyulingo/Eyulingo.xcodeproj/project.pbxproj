@@ -18,6 +18,15 @@
 		8A0C378322D7250D00358F52 /* UIImageCompression in Resources */ = {isa = PBXBuildFile; fileRef = 8A0C378122D7250D00358F52 /* UIImageCompression */; };
 		8A0C378422D7250D00358F52 /* UIImageCompression in Resources */ = {isa = PBXBuildFile; fileRef = 8A0C378122D7250D00358F52 /* UIImageCompression */; };
 		8A0C378622D7252400358F52 /* UIImageCompression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0C378522D7252400358F52 /* UIImageCompression.swift */; };
+		8A0D9EEA22DC6A04007D5072 /* collectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A0D9EE822DC6A03007D5072 /* collectionViewController.m */; };
+		8A0D9EEB22DC6A04007D5072 /* collectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A0D9EE822DC6A03007D5072 /* collectionViewController.m */; };
+		8A0D9EEC22DC6A04007D5072 /* collectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A0D9EE822DC6A03007D5072 /* collectionViewController.m */; };
+		8A0D9EED22DC6A04007D5072 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0D9EE922DC6A03007D5072 /* CollectionViewController.swift */; };
+		8A0D9EEE22DC6A04007D5072 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0D9EE922DC6A03007D5072 /* CollectionViewController.swift */; };
+		8A0D9EEF22DC6A04007D5072 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0D9EE922DC6A03007D5072 /* CollectionViewController.swift */; };
+		8A0D9EF722DC6C61007D5072 /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A0D9EF622DC6C61007D5072 /* CollectionViewCell.m */; };
+		8A0D9EF822DC6C61007D5072 /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A0D9EF622DC6C61007D5072 /* CollectionViewCell.m */; };
+		8A0D9EF922DC6C61007D5072 /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A0D9EF622DC6C61007D5072 /* CollectionViewCell.m */; };
 		8A0DFDD322D8AA7400145FDC /* DynamicBg.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 8A0BC64622D88A500099E79A /* DynamicBg.mp4 */; };
 		8A0EA45522D6BE1500EFE92C /* EyulingoUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0EA45422D6BE1500EFE92C /* EyulingoUnitTests.swift */; };
 		8A0EA46322D6BFE500EFE92C /* EyulingoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0EA46222D6BFE500EFE92C /* EyulingoUITests.swift */; };
@@ -92,6 +101,11 @@
 		8A0C377F22D71E2700358F52 /* ReceiveAddress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiveAddress.swift; sourceTree = "<group>"; };
 		8A0C378122D7250D00358F52 /* UIImageCompression */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = UIImageCompression; sourceTree = SOURCE_ROOT; };
 		8A0C378522D7252400358F52 /* UIImageCompression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UIImageCompression.swift; path = UIImageCompression/UIImageCompression.swift; sourceTree = SOURCE_ROOT; };
+		8A0D9EE722DC6A03007D5072 /* collectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = collectionViewController.h; path = ../CollectionView/collectionViewController.h; sourceTree = "<group>"; };
+		8A0D9EE822DC6A03007D5072 /* collectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = collectionViewController.m; path = ../CollectionView/collectionViewController.m; sourceTree = "<group>"; };
+		8A0D9EE922DC6A03007D5072 /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CollectionViewController.swift; path = ../CollectionView/CollectionViewController.swift; sourceTree = "<group>"; };
+		8A0D9EF522DC6C60007D5072 /* CollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CollectionViewCell.h; path = CollectionView/CollectionViewCell.h; sourceTree = SOURCE_ROOT; };
+		8A0D9EF622DC6C61007D5072 /* CollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CollectionViewCell.m; path = CollectionView/CollectionViewCell.m; sourceTree = SOURCE_ROOT; };
 		8A0EA45222D6BE1500EFE92C /* EyulingoUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EyulingoUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A0EA45422D6BE1500EFE92C /* EyulingoUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyulingoUnitTests.swift; sourceTree = "<group>"; };
 		8A0EA45622D6BE1500EFE92C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -203,6 +217,18 @@
 			path = "[deprecated] VC";
 			sourceTree = "<group>";
 		};
+		8A0D9EF022DC6A07007D5072 /* CollectionViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8A0D9EE722DC6A03007D5072 /* collectionViewController.h */,
+				8A0D9EE822DC6A03007D5072 /* collectionViewController.m */,
+				8A0D9EF522DC6C60007D5072 /* CollectionViewCell.h */,
+				8A0D9EF622DC6C61007D5072 /* CollectionViewCell.m */,
+				8A0D9EE922DC6A03007D5072 /* CollectionViewController.swift */,
+			);
+			path = CollectionViewController;
+			sourceTree = "<group>";
+		};
 		8A0EA45322D6BE1500EFE92C /* EyulingoUnitTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -232,6 +258,7 @@
 		8A55B27222C8CE85007E77FD = {
 			isa = PBXGroup;
 			children = (
+				8A0D9EF022DC6A07007D5072 /* CollectionViewController */,
 				8A0BC65322D88B6D0099E79A /* Eyulingo-Bridging-Header.h */,
 				8A0BC65422D88B6D0099E79A /* EyulingoUnitTests-Bridging-Header.h */,
 				8A0BC65522D88B6D0099E79A /* EyulingoUITests-Bridging-Header.h */,
@@ -555,6 +582,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A0D9EEE22DC6A04007D5072 /* CollectionViewController.swift in Sources */,
+				8A0D9EF822DC6C61007D5072 /* CollectionViewCell.m in Sources */,
+				8A0D9EEB22DC6A04007D5072 /* collectionViewController.m in Sources */,
 				8A0EA45522D6BE1500EFE92C /* EyulingoUnitTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -563,6 +593,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A0D9EEF22DC6A04007D5072 /* CollectionViewController.swift in Sources */,
+				8A0D9EF922DC6C61007D5072 /* CollectionViewCell.m in Sources */,
+				8A0D9EEC22DC6A04007D5072 /* collectionViewController.m in Sources */,
 				8A0EA46322D6BFE500EFE92C /* EyulingoUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -589,6 +622,7 @@
 				8AC9E7E122C9A3AE00F80460 /* PurchasedVC.swift in Sources */,
 				8AC9E7E522C9A3F700F80460 /* AdminBookVC.swift in Sources */,
 				8A0C378022D71E2700358F52 /* ReceiveAddress.swift in Sources */,
+				8A0D9EED22DC6A04007D5072 /* CollectionViewController.swift in Sources */,
 				8AC9E7EB22C9A43C00F80460 /* AdminAddBookVC.swift in Sources */,
 				8A723DAD22D465B5008FD0C9 /* MyProfileViewController.swift in Sources */,
 				8AC9E7D922C9A31400F80460 /* LoginVC.swift in Sources */,
@@ -601,6 +635,7 @@
 				8AA7BC8F22D5C9560098F292 /* ChangeEmailViewController.swift in Sources */,
 				8AC9E7F522C9AF4A00F80460 /* PurchaseVC.swift in Sources */,
 				8AC9E7DB22C9A34700F80460 /* RegisterVC.swift in Sources */,
+				8A0D9EEA22DC6A04007D5072 /* collectionViewController.m in Sources */,
 				8A723DB422D47954008FD0C9 /* LogoutNow.swift in Sources */,
 				8AC9E7E322C9A3CD00F80460 /* BookDetailVC.swift in Sources */,
 				8A6DD6F222CAE3FA00BD7904 /* TabBarController.swift in Sources */,
@@ -610,6 +645,7 @@
 				8A71175D22D5D268002F9202 /* ForgetPasswordViewController.swift in Sources */,
 				8A723DA922D4659E008FD0C9 /* CartViewController.swift in Sources */,
 				8A09F12A22DC137100CD3B16 /* ImagePreviewViewController.swift in Sources */,
+				8A0D9EF722DC6C61007D5072 /* CollectionViewCell.m in Sources */,
 				8AC9E7FB22C9B57E00F80460 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

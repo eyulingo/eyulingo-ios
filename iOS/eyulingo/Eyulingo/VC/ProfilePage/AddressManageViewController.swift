@@ -204,9 +204,12 @@ class AddressManageViewController: UIViewController, UITableViewDataSource, UITa
         addressTableView.reloadData()
 
         if receiveAddresses.count == 0 {
+            
             noContentLabel.isHidden = false
+            addressTableView.isHidden = true
         } else {
             noContentLabel.isHidden = true
+            addressTableView.isHidden = false
         }
     }
 

@@ -31,7 +31,9 @@ class ProfileContentViewController: UITableViewController {
         if avatar != nil {
             showImage(image: avatar!)
         } else {
-            hideImage()
+            if avatarImageField.image != nil {
+                hideImage()
+            }
         }
         idTextField.text = "#\(userId)"
         nickNameTextField.text = userName
