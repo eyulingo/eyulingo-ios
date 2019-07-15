@@ -10,6 +10,7 @@
 		8A06394622D32FDC00699037 /* DateAndTimeParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A06394522D32FDC00699037 /* DateAndTimeParser.swift */; };
 		8A06394B22D3316F00699037 /* EyulingoUri.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A06394922D3316F00699037 /* EyulingoUri.swift */; };
 		8A06394C22D3316F00699037 /* BookieUri.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A06394A22D3316F00699037 /* BookieUri.swift */; };
+		8A09F12A22DC137100CD3B16 /* ImagePreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A09F12922DC137100CD3B16 /* ImagePreviewViewController.swift */; };
 		8A0AF9E522D41F6E009430B9 /* JudgeValidEmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0AF9E422D41F6E009430B9 /* JudgeValidEmail.swift */; };
 		8A0C377E22D71D4500358F52 /* AddressManageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0C377D22D71D4500358F52 /* AddressManageViewController.swift */; };
 		8A0C378022D71E2700358F52 /* ReceiveAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0C377F22D71E2700358F52 /* ReceiveAddress.swift */; };
@@ -55,6 +56,7 @@
 		8AC9E7F722C9B0D000F80460 /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC9E7F622C9B0D000F80460 /* Cart.swift */; };
 		8AC9E7FB22C9B57E00F80460 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC9E7FA22C9B57E00F80460 /* User.swift */; };
 		8AC9E7FD22C9C1A300F80460 /* AdminBill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC9E7FC22C9C1A300F80460 /* AdminBill.swift */; };
+		8AE902ED22DC2402008728F3 /* RWZoomableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE902EC22DC2402008728F3 /* RWZoomableImageView.swift */; };
 		DC61DCF8126E5BD7AFD2A3DE /* Pods_Eyulingo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A888A1ACE66F92325BE30679 /* Pods_Eyulingo.framework */; };
 /* End PBXBuildFile section */
 
@@ -80,6 +82,7 @@
 		8A06394522D32FDC00699037 /* DateAndTimeParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateAndTimeParser.swift; sourceTree = "<group>"; };
 		8A06394922D3316F00699037 /* EyulingoUri.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EyulingoUri.swift; sourceTree = "<group>"; };
 		8A06394A22D3316F00699037 /* BookieUri.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookieUri.swift; sourceTree = "<group>"; };
+		8A09F12922DC137100CD3B16 /* ImagePreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePreviewViewController.swift; sourceTree = "<group>"; };
 		8A0AF9E422D41F6E009430B9 /* JudgeValidEmail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JudgeValidEmail.swift; sourceTree = "<group>"; };
 		8A0BC64622D88A500099E79A /* DynamicBg.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = DynamicBg.mp4; path = ../../DynamicBg/DynamicBg.mp4; sourceTree = "<group>"; };
 		8A0BC65322D88B6D0099E79A /* Eyulingo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Eyulingo-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -132,6 +135,7 @@
 		8AC9E7F622C9B0D000F80460 /* Cart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
 		8AC9E7FA22C9B57E00F80460 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		8AC9E7FC22C9C1A300F80460 /* AdminBill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminBill.swift; sourceTree = "<group>"; };
+		8AE902EC22DC2402008728F3 /* RWZoomableImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RWZoomableImageView.swift; path = RWZoomableImageView/RWZoomableImageView/RWZoomableImageView.swift; sourceTree = "<group>"; };
 		8E1CF065298118660176F71E /* Pods-Bookie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bookie.release.xcconfig"; path = "Target Support Files/Pods-Bookie/Pods-Bookie.release.xcconfig"; sourceTree = "<group>"; };
 		94D3261F6663964F27DA5208 /* Pods-Bookie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bookie.debug.xcconfig"; path = "Target Support Files/Pods-Bookie/Pods-Bookie.debug.xcconfig"; sourceTree = "<group>"; };
 		A888A1ACE66F92325BE30679 /* Pods_Eyulingo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Eyulingo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -232,6 +236,7 @@
 				8A0BC65422D88B6D0099E79A /* EyulingoUnitTests-Bridging-Header.h */,
 				8A0BC65522D88B6D0099E79A /* EyulingoUITests-Bridging-Header.h */,
 				8A0BC64622D88A500099E79A /* DynamicBg.mp4 */,
+				8AE902EC22DC2402008728F3 /* RWZoomableImageView.swift */,
 				8A0C378122D7250D00358F52 /* UIImageCompression */,
 				8A2622F822CB3E3100C39943 /* Image */,
 				8A55B27D22C8CE85007E77FD /* Eyulingo */,
@@ -285,6 +290,7 @@
 			isa = PBXGroup;
 			children = (
 				8A6DD6F122CAE3FA00BD7904 /* TabBarController.swift */,
+				8A09F12922DC137100CD3B16 /* ImagePreviewViewController.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -577,6 +583,7 @@
 				8AC9E7E922C9A42300F80460 /* AdminOrderVC.swift in Sources */,
 				8A723DA722D46590008FD0C9 /* SearchViewController.swift in Sources */,
 				8A723DB222D4721E008FD0C9 /* ProfileContentViewController.swift in Sources */,
+				8AE902ED22DC2402008728F3 /* RWZoomableImageView.swift in Sources */,
 				8AC9E7FD22C9C1A300F80460 /* AdminBill.swift in Sources */,
 				8AC9E7DD22C9A37500F80460 /* BookQueryVC.swift in Sources */,
 				8AC9E7E122C9A3AE00F80460 /* PurchasedVC.swift in Sources */,
@@ -602,6 +609,7 @@
 				8A0AF9E522D41F6E009430B9 /* JudgeValidEmail.swift in Sources */,
 				8A71175D22D5D268002F9202 /* ForgetPasswordViewController.swift in Sources */,
 				8A723DA922D4659E008FD0C9 /* CartViewController.swift in Sources */,
+				8A09F12A22DC137100CD3B16 /* ImagePreviewViewController.swift in Sources */,
 				8AC9E7FB22C9B57E00F80460 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

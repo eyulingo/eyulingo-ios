@@ -13,8 +13,8 @@ import YPImagePicker
 import Alamofire_SwiftyJSON
 
 class MyProfileViewController: UIViewController, profileChangesDelegate, profileRefreshDelegate, backgroundImageReloadDelegate {
-    func fadeOutBg(duration: Double = 0.5) {
-        self.backgroundImageView.alpha = 0.5
+    func fadeOutBg(duration: Double = 1.5) {
+        self.backgroundImageView.alpha = 0.8
         UIView.animate(withDuration: duration, delay: 0.0, options: .curveEaseOut, animations: {
             self.backgroundImageView.alpha = 0.0
         }, completion: { _ in
@@ -23,13 +23,13 @@ class MyProfileViewController: UIViewController, profileChangesDelegate, profile
         })
     }
     
-    func fadeInBg(image: UIImage, duration: Double = 0.5) {
+    func fadeInBg(image: UIImage, duration: Double = 1.5) {
         self.backgroundImageView.alpha = 0.0
         self.backgroundImageView.image = image
         UIView.animate(withDuration: duration, delay: 0.0, options: .curveEaseOut, animations: {
-            self.backgroundImageView.alpha = 0.5
+            self.backgroundImageView.alpha = 0.8
         }, completion: { _ in
-            self.backgroundImageView.alpha = 0.5
+            self.backgroundImageView.alpha = 0.8
         })
     }
     
@@ -44,9 +44,25 @@ class MyProfileViewController: UIViewController, profileChangesDelegate, profile
     override func viewDidLoad() {
         super.viewDidLoad()
         definesPresentationContext = true
+        
+        
         // Do any additional setup after loading the view.
         loadUserProfile()
     }
+    
+//    override func viewDidAppear(_ animated: Bool) {
+//        if #available(iOS 13.0, *) {
+//            overrideUserInterfaceStyle = .dark
+//            (self.parent as! UITabBarController).overrideUserInterfaceStyle = .dark
+//        }
+//    }
+//
+//    override func viewDidDisappear(_ animated: Bool) {
+//        if #available(iOS 13.0, *) {
+//            overrideUserInterfaceStyle = .unspecified
+//            (self.parent as! UITabBarController).overrideUserInterfaceStyle = .unspecified
+//        }
+//    }
 
     @IBOutlet weak var backgroundImageView: UIImageView!
     

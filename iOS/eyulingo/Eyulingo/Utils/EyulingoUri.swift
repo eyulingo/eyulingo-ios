@@ -18,7 +18,7 @@ class Eyulingo_UserUri {
     static let loginPostUri = baseUri + "/login"
     
     // parameters: <none>
-    static let logOutPostUri = baseUri + "/login?logout"
+    static let logOutPostUri = baseUri + "/logout"
     
     // parameters:
     // email - 电子邮箱

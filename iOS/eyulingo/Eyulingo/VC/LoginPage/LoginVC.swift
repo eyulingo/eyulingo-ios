@@ -100,6 +100,7 @@ class LoginVC: VideoSplashViewController, UITextFieldDelegate {
     }
     
     @IBAction func loginButtonTapped(_ sender: UIButton) {
+        passwordField.resignFirstResponder()
         let postParams: Parameters = [
             "username": userNameField.text!,
             "password": passwordField.text!
