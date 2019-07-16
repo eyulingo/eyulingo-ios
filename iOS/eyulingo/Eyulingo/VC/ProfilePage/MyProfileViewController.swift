@@ -111,7 +111,6 @@ class MyProfileViewController: UIViewController, profileChangesDelegate, profile
         
         var config = YPImagePickerConfiguration()
         config.onlySquareImagesFromCamera = false
-        config.onlySquareImagesFromLibrary = true
         config.library.onlySquare = true
         config.library.maxNumberOfItems = 1
         config.library.minNumberOfItems = 1
