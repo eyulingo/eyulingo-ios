@@ -217,7 +217,7 @@ Project Eyulingo. 一切权利保留。</string>
                                     <navigationItem title="购物车" id="HvY-Os-bwR">
                                         <barButtonItem key="rightBarButtonItem" style="plain" id="Nnn-lC-Si8">
                                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Uey-4s-fxy">
-                                                <rect key="frame" x="0.0" y="0.0" width="25" height="22"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" image="trash.slash" catalog="system"/>
                                             </button>
@@ -1575,36 +1575,61 @@ Project Eyulingo. 一切权利保留。</string>
                                     <navigationItem title="检索商品" id="K6i-qd-reW"/>
                                 </items>
                             </navigationBar>
-                            <searchBar contentMode="redraw" searchBarStyle="minimal" showsSearchResultsButton="YES" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MZw-If-OfF" customClass="ModernSearchBar" customModule="ModernSearchBar">
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="MZw-If-OfF" customClass="ModernSearchBar" customModule="ModernSearchBar">
                                 <rect key="frame" x="0.0" y="44" width="414" height="56"/>
                                 <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <scopeButtonTitles>
-                                    <string>商品</string>
                                     <string>店铺</string>
                                 </scopeButtonTitles>
                             </searchBar>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Msj-lZ-q7G">
+                                <rect key="frame" x="0.0" y="100" width="414" height="587"/>
+                                <connections>
+                                    <segue destination="sGY-to-aAQ" kind="embed" id="6fg-c9-2KV"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="Msj-lZ-q7G" firstAttribute="bottom" secondItem="YVm-6w-EfE" secondAttribute="bottom" id="1NN-Xu-vT8"/>
                             <constraint firstItem="MZw-If-OfF" firstAttribute="leading" secondItem="KBj-7K-wQM" secondAttribute="leading" id="4rh-vN-xvK"/>
                             <constraint firstItem="MZw-If-OfF" firstAttribute="trailing" secondItem="KBj-7K-wQM" secondAttribute="trailing" id="7W0-t8-ZB0"/>
+                            <constraint firstItem="Msj-lZ-q7G" firstAttribute="leading" secondItem="YVm-6w-EfE" secondAttribute="leading" id="BCT-sF-Pma"/>
+                            <constraint firstItem="Msj-lZ-q7G" firstAttribute="trailing" secondItem="YVm-6w-EfE" secondAttribute="trailing" id="GlQ-jF-s8w"/>
                             <constraint firstItem="KBj-7K-wQM" firstAttribute="leading" secondItem="YVm-6w-EfE" secondAttribute="leading" id="LD5-0Z-NZz"/>
                             <constraint firstItem="KBj-7K-wQM" firstAttribute="top" secondItem="YVm-6w-EfE" secondAttribute="top" id="Vk5-5y-x1g"/>
                             <constraint firstItem="KBj-7K-wQM" firstAttribute="centerX" secondItem="ntR-hK-cLx" secondAttribute="centerX" id="ZBW-A9-ZO2"/>
                             <constraint firstItem="MZw-If-OfF" firstAttribute="top" secondItem="KBj-7K-wQM" secondAttribute="bottom" id="ebc-fb-tzg"/>
+                            <constraint firstItem="Msj-lZ-q7G" firstAttribute="top" secondItem="MZw-If-OfF" secondAttribute="bottom" id="pBp-NR-w3i"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="YVm-6w-EfE"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="检索" image="magnifyingglass.circle" catalog="system" id="0RV-gV-EOR"/>
                     <navigationItem key="navigationItem" title="Title" id="gfG-lv-2pZ"/>
                     <connections>
+                        <outlet property="containerView" destination="Msj-lZ-q7G" id="ThW-Ha-Kpx"/>
                         <outlet property="searchBar" destination="MZw-If-OfF" id="xYk-Qh-oFo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cir-va-Ovy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1676.8115942028987" y="-580.43478260869574"/>
+        </scene>
+        <!--Result View Controller-->
+        <scene sceneID="a8t-Td-hx0">
+            <objects>
+                <viewController id="sGY-to-aAQ" customClass="ResultViewController" customModule="Eyulingo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BMO-Of-SA1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="587"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="iyQ-UW-Gcw"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BIy-JT-uKn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2436" y="-582"/>
         </scene>
     </scenes>
     <resources>

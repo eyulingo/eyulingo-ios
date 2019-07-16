@@ -5,11 +5,30 @@
 //  Created by 法好 on 2019/7/16.
 //  Copyright © 2019 yuetsin. All rights reserved.
 //
-
+import Parchment
 import Alamofire
 import Foundation
 
-struct EyGoods {
+struct EyGoods: PagingItem, Hashable, Comparable {
+    static func < (lhs: EyGoods, rhs: EyGoods) -> Bool {
+        if lhs.goodsId == nil {
+            return true
+        }
+        if rhs.goodsId == nil {
+            return false
+        }
+        return lhs.goodsId! < rhs.goodsId!
+    }
+    
+    static func == (lhs: EyGoods, rhs: EyGoods) -> Bool {
+        return lhs.goodsId == rhs.goodsId
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(goodsId ?? -42)
+        hasher.combine(storeId ?? -42)
+    }
+    
     var goodsId: Int?
     var goodsName: String?
     var coverId: String?

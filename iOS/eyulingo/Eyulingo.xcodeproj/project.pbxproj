@@ -31,7 +31,6 @@
 		8A6DD6F222CAE3FA00BD7904 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6DD6F122CAE3FA00BD7904 /* TabBarController.swift */; };
 		8A6DD6FC22CAF55500BD7904 /* PinYinConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6DD6FB22CAF55500BD7904 /* PinYinConverter.swift */; };
 		8A71175D22D5D268002F9202 /* ForgetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A71175C22D5D268002F9202 /* ForgetPasswordViewController.swift */; };
-		8A723DA722D46590008FD0C9 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A723DA622D46590008FD0C9 /* SearchViewController.swift */; };
 		8A723DA922D4659E008FD0C9 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A723DA822D4659E008FD0C9 /* CartViewController.swift */; };
 		8A723DAB22D465A9008FD0C9 /* OrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A723DAA22D465A9008FD0C9 /* OrdersViewController.swift */; };
 		8A723DAD22D465B5008FD0C9 /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A723DAC22D465B5008FD0C9 /* MyProfileViewController.swift */; };
@@ -56,6 +55,11 @@
 		8AC9E7F722C9B0D000F80460 /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC9E7F622C9B0D000F80460 /* Cart.swift */; };
 		8AC9E7FB22C9B57E00F80460 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC9E7FA22C9B57E00F80460 /* User.swift */; };
 		8AC9E7FD22C9C1A300F80460 /* AdminBill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC9E7FC22C9C1A300F80460 /* AdminBill.swift */; };
+		8AD0F5CF22DDAE1B00126E24 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD0F5C822DDAE1A00126E24 /* SearchViewController.swift */; };
+		8AD0F5DD22DDBCD600126E24 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD0F5DA22DDBCD500126E24 /* DetailViewController.swift */; };
+		8AD0F5DE22DDBCD600126E24 /* UIView+constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD0F5DB22DDBCD500126E24 /* UIView+constraints.swift */; };
+		8AD0F5E022DDBD3500126E24 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD0F5DF22DDBD3500126E24 /* ResultViewController.swift */; };
+		8AD0F5E222DDBDEA00126E24 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AD0F5E122DDBDEA00126E24 /* DetailViewController.xib */; };
 		8ADB40F822DD5A9A009C3538 /* EyGoods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADB40F722DD5A9A009C3538 /* EyGoods.swift */; };
 		8ADB40FA22DD5AAF009C3538 /* EyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADB40F922DD5AAF009C3538 /* EyStore.swift */; };
 		8ADB40FC22DD5B96009C3538 /* EyComments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADB40FB22DD5B96009C3538 /* EyComments.swift */; };
@@ -114,7 +118,6 @@
 		8A6DD6F122CAE3FA00BD7904 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		8A6DD6FB22CAF55500BD7904 /* PinYinConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinYinConverter.swift; sourceTree = "<group>"; };
 		8A71175C22D5D268002F9202 /* ForgetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordViewController.swift; sourceTree = "<group>"; };
-		8A723DA622D46590008FD0C9 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		8A723DA822D4659E008FD0C9 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 		8A723DAA22D465A9008FD0C9 /* OrdersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersViewController.swift; sourceTree = "<group>"; };
 		8A723DAC22D465B5008FD0C9 /* MyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
@@ -139,6 +142,11 @@
 		8AC9E7F622C9B0D000F80460 /* Cart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
 		8AC9E7FA22C9B57E00F80460 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		8AC9E7FC22C9C1A300F80460 /* AdminBill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminBill.swift; sourceTree = "<group>"; };
+		8AD0F5C822DDAE1A00126E24 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		8AD0F5DA22DDBCD500126E24 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		8AD0F5DB22DDBCD500126E24 /* UIView+constraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+constraints.swift"; sourceTree = "<group>"; };
+		8AD0F5DF22DDBD3500126E24 /* ResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		8AD0F5E122DDBDEA00126E24 /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		8ADB40F722DD5A9A009C3538 /* EyGoods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyGoods.swift; sourceTree = "<group>"; };
 		8ADB40F922DD5AAF009C3538 /* EyStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyStore.swift; sourceTree = "<group>"; };
 		8ADB40FB22DD5B96009C3538 /* EyComments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyComments.swift; sourceTree = "<group>"; };
@@ -320,7 +328,11 @@
 		8AC867DE22D5C8CA008E9CDA /* SearchPage */ = {
 			isa = PBXGroup;
 			children = (
-				8A723DA622D46590008FD0C9 /* SearchViewController.swift */,
+				8AD0F5DF22DDBD3500126E24 /* ResultViewController.swift */,
+				8AD0F5DA22DDBCD500126E24 /* DetailViewController.swift */,
+				8AD0F5DB22DDBCD500126E24 /* UIView+constraints.swift */,
+				8AD0F5C822DDAE1A00126E24 /* SearchViewController.swift */,
+				8AD0F5E122DDBDEA00126E24 /* DetailViewController.xib */,
 			);
 			path = SearchPage;
 			sourceTree = "<group>";
@@ -511,6 +523,7 @@
 			files = (
 				8A0DFDD322D8AA7400145FDC /* DynamicBg.mp4 in Resources */,
 				8A2622FA22CB3E3E00C39943 /* Chp.png in Resources */,
+				8AD0F5E222DDBDEA00126E24 /* DetailViewController.xib in Resources */,
 				8A55B28B22C8CE8A007E77FD /* LaunchScreen.storyboard in Resources */,
 				8A55B28822C8CE8A007E77FD /* Assets.xcassets in Resources */,
 				8A55B28622C8CE85007E77FD /* Main.storyboard in Resources */,
@@ -583,6 +596,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8AD0F5E022DDBD3500126E24 /* ResultViewController.swift in Sources */,
 				8AA7BC8E22D5C9560098F292 /* ChangePasswordViewController.swift in Sources */,
 				8A06394B22D3316F00699037 /* EyulingoUri.swift in Sources */,
 				8A55B28322C8CE85007E77FD /* ViewController.swift in Sources */,
@@ -595,7 +609,6 @@
 				8AC9E7DF22C9A39700F80460 /* CartVC.swift in Sources */,
 				8ADB40FA22DD5AAF009C3538 /* EyStore.swift in Sources */,
 				8AC9E7E922C9A42300F80460 /* AdminOrderVC.swift in Sources */,
-				8A723DA722D46590008FD0C9 /* SearchViewController.swift in Sources */,
 				8A723DB222D4721E008FD0C9 /* ProfileContentViewController.swift in Sources */,
 				8AE902ED22DC2402008728F3 /* RWZoomableImageView.swift in Sources */,
 				8AC9E7FD22C9C1A300F80460 /* AdminBill.swift in Sources */,
@@ -607,6 +620,7 @@
 				8AC9E7EB22C9A43C00F80460 /* AdminAddBookVC.swift in Sources */,
 				8A723DAD22D465B5008FD0C9 /* MyProfileViewController.swift in Sources */,
 				8AC9E7D922C9A31400F80460 /* LoginVC.swift in Sources */,
+				8AD0F5DD22DDBCD600126E24 /* DetailViewController.swift in Sources */,
 				8A06394622D32FDC00699037 /* DateAndTimeParser.swift in Sources */,
 				8A723DB022D4704F008FD0C9 /* EyUser.swift in Sources */,
 				8A0C378622D7252400358F52 /* UIImageCompression.swift in Sources */,
@@ -614,6 +628,7 @@
 				8A0C377E22D71D4500358F52 /* AddressManageViewController.swift in Sources */,
 				8AC9E7E722C9A40C00F80460 /* AdminUserVC.swift in Sources */,
 				8AA7BC8F22D5C9560098F292 /* ChangeEmailViewController.swift in Sources */,
+				8AD0F5CF22DDAE1B00126E24 /* SearchViewController.swift in Sources */,
 				8AC9E7F522C9AF4A00F80460 /* PurchaseVC.swift in Sources */,
 				8AC9E7DB22C9A34700F80460 /* RegisterVC.swift in Sources */,
 				8A723DB422D47954008FD0C9 /* LogoutNow.swift in Sources */,
@@ -626,6 +641,7 @@
 				8A723DA922D4659E008FD0C9 /* CartViewController.swift in Sources */,
 				8A09F12A22DC137100CD3B16 /* ImagePreviewViewController.swift in Sources */,
 				8ADB40FE22DD5CFF009C3538 /* EyCommentLevel.swift in Sources */,
+				8AD0F5DE22DDBCD600126E24 /* UIView+constraints.swift in Sources */,
 				8AC9E7FB22C9B57E00F80460 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

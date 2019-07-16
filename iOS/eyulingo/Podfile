@@ -13,4 +13,5 @@ target 'Eyulingo' do
   pod 'IQKeyboardManager'
   pod 'ModernSearchBar'
   pod 'Highlighter'
+  pod 'Parchment'
 end
