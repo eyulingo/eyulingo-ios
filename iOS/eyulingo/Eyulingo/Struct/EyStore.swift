@@ -6,10 +6,9 @@
 //  Copyright © 2019 yuetsin. All rights reserved.
 //
 
-import Parchment
 import Foundation
 
-struct EyStore: PagingItem, Hashable, Comparable {
+struct EyStore: Hashable, Comparable {
     
     static func < (lhs: EyStore, rhs: EyStore) -> Bool {
         if lhs.storeId == nil {

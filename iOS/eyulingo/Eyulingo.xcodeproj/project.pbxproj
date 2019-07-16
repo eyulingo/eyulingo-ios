@@ -22,6 +22,7 @@
 		8A0EA45522D6BE1500EFE92C /* EyulingoUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0EA45422D6BE1500EFE92C /* EyulingoUnitTests.swift */; };
 		8A0EA46322D6BFE500EFE92C /* EyulingoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0EA46222D6BFE500EFE92C /* EyulingoUITests.swift */; };
 		8A2622FA22CB3E3E00C39943 /* Chp.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A2622F922CB3E3E00C39943 /* Chp.png */; };
+		8A5050FA22DDCE12003B123B /* GoodsResultTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5050F922DDCE12003B123B /* GoodsResultTableCell.swift */; };
 		8A55B27F22C8CE85007E77FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A55B27E22C8CE85007E77FD /* AppDelegate.swift */; };
 		8A55B28122C8CE85007E77FD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A55B28022C8CE85007E77FD /* SceneDelegate.swift */; };
 		8A55B28322C8CE85007E77FD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A55B28222C8CE85007E77FD /* ViewController.swift */; };
@@ -56,10 +57,6 @@
 		8AC9E7FB22C9B57E00F80460 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC9E7FA22C9B57E00F80460 /* User.swift */; };
 		8AC9E7FD22C9C1A300F80460 /* AdminBill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC9E7FC22C9C1A300F80460 /* AdminBill.swift */; };
 		8AD0F5CF22DDAE1B00126E24 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD0F5C822DDAE1A00126E24 /* SearchViewController.swift */; };
-		8AD0F5DD22DDBCD600126E24 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD0F5DA22DDBCD500126E24 /* DetailViewController.swift */; };
-		8AD0F5DE22DDBCD600126E24 /* UIView+constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD0F5DB22DDBCD500126E24 /* UIView+constraints.swift */; };
-		8AD0F5E022DDBD3500126E24 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD0F5DF22DDBD3500126E24 /* ResultViewController.swift */; };
-		8AD0F5E222DDBDEA00126E24 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AD0F5E122DDBDEA00126E24 /* DetailViewController.xib */; };
 		8ADB40F822DD5A9A009C3538 /* EyGoods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADB40F722DD5A9A009C3538 /* EyGoods.swift */; };
 		8ADB40FA22DD5AAF009C3538 /* EyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADB40F922DD5AAF009C3538 /* EyStore.swift */; };
 		8ADB40FC22DD5B96009C3538 /* EyComments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADB40FB22DD5B96009C3538 /* EyComments.swift */; };
@@ -107,6 +104,7 @@
 		8A0EA46222D6BFE500EFE92C /* EyulingoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyulingoUITests.swift; sourceTree = "<group>"; };
 		8A0EA46422D6BFE500EFE92C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8A2622F922CB3E3E00C39943 /* Chp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Chp.png; sourceTree = "<group>"; };
+		8A5050F922DDCE12003B123B /* GoodsResultTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodsResultTableCell.swift; sourceTree = "<group>"; };
 		8A55B27B22C8CE85007E77FD /* Eyulingo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eyulingo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A55B27E22C8CE85007E77FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8A55B28022C8CE85007E77FD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -143,10 +141,6 @@
 		8AC9E7FA22C9B57E00F80460 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		8AC9E7FC22C9C1A300F80460 /* AdminBill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminBill.swift; sourceTree = "<group>"; };
 		8AD0F5C822DDAE1A00126E24 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
-		8AD0F5DA22DDBCD500126E24 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		8AD0F5DB22DDBCD500126E24 /* UIView+constraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+constraints.swift"; sourceTree = "<group>"; };
-		8AD0F5DF22DDBD3500126E24 /* ResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
-		8AD0F5E122DDBDEA00126E24 /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		8ADB40F722DD5A9A009C3538 /* EyGoods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyGoods.swift; sourceTree = "<group>"; };
 		8ADB40F922DD5AAF009C3538 /* EyStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyStore.swift; sourceTree = "<group>"; };
 		8ADB40FB22DD5B96009C3538 /* EyComments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyComments.swift; sourceTree = "<group>"; };
@@ -328,11 +322,8 @@
 		8AC867DE22D5C8CA008E9CDA /* SearchPage */ = {
 			isa = PBXGroup;
 			children = (
-				8AD0F5DF22DDBD3500126E24 /* ResultViewController.swift */,
-				8AD0F5DA22DDBCD500126E24 /* DetailViewController.swift */,
-				8AD0F5DB22DDBCD500126E24 /* UIView+constraints.swift */,
 				8AD0F5C822DDAE1A00126E24 /* SearchViewController.swift */,
-				8AD0F5E122DDBDEA00126E24 /* DetailViewController.xib */,
+				8A5050F922DDCE12003B123B /* GoodsResultTableCell.swift */,
 			);
 			path = SearchPage;
 			sourceTree = "<group>";
@@ -523,7 +514,6 @@
 			files = (
 				8A0DFDD322D8AA7400145FDC /* DynamicBg.mp4 in Resources */,
 				8A2622FA22CB3E3E00C39943 /* Chp.png in Resources */,
-				8AD0F5E222DDBDEA00126E24 /* DetailViewController.xib in Resources */,
 				8A55B28B22C8CE8A007E77FD /* LaunchScreen.storyboard in Resources */,
 				8A55B28822C8CE8A007E77FD /* Assets.xcassets in Resources */,
 				8A55B28622C8CE85007E77FD /* Main.storyboard in Resources */,
@@ -596,7 +586,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8AD0F5E022DDBD3500126E24 /* ResultViewController.swift in Sources */,
 				8AA7BC8E22D5C9560098F292 /* ChangePasswordViewController.swift in Sources */,
 				8A06394B22D3316F00699037 /* EyulingoUri.swift in Sources */,
 				8A55B28322C8CE85007E77FD /* ViewController.swift in Sources */,
@@ -620,7 +609,6 @@
 				8AC9E7EB22C9A43C00F80460 /* AdminAddBookVC.swift in Sources */,
 				8A723DAD22D465B5008FD0C9 /* MyProfileViewController.swift in Sources */,
 				8AC9E7D922C9A31400F80460 /* LoginVC.swift in Sources */,
-				8AD0F5DD22DDBCD600126E24 /* DetailViewController.swift in Sources */,
 				8A06394622D32FDC00699037 /* DateAndTimeParser.swift in Sources */,
 				8A723DB022D4704F008FD0C9 /* EyUser.swift in Sources */,
 				8A0C378622D7252400358F52 /* UIImageCompression.swift in Sources */,
@@ -635,13 +623,13 @@
 				8AC9E7E322C9A3CD00F80460 /* BookDetailVC.swift in Sources */,
 				8A6DD6F222CAE3FA00BD7904 /* TabBarController.swift in Sources */,
 				8A6DD6FC22CAF55500BD7904 /* PinYinConverter.swift in Sources */,
+				8A5050FA22DDCE12003B123B /* GoodsResultTableCell.swift in Sources */,
 				8AC9E7F322C9ACC900F80460 /* Bill.swift in Sources */,
 				8A0AF9E522D41F6E009430B9 /* JudgeValidEmail.swift in Sources */,
 				8A71175D22D5D268002F9202 /* ForgetPasswordViewController.swift in Sources */,
 				8A723DA922D4659E008FD0C9 /* CartViewController.swift in Sources */,
 				8A09F12A22DC137100CD3B16 /* ImagePreviewViewController.swift in Sources */,
 				8ADB40FE22DD5CFF009C3538 /* EyCommentLevel.swift in Sources */,
-				8AD0F5DE22DDBCD600126E24 /* UIView+constraints.swift in Sources */,
 				8AC9E7FB22C9B57E00F80460 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

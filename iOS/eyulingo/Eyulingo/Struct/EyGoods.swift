@@ -5,11 +5,11 @@
 //  Created by 法好 on 2019/7/16.
 //  Copyright © 2019 yuetsin. All rights reserved.
 //
-import Parchment
+
 import Alamofire
 import Foundation
 
-struct EyGoods: PagingItem, Hashable, Comparable {
+struct EyGoods: Hashable, Comparable {
     static func < (lhs: EyGoods, rhs: EyGoods) -> Bool {
         if lhs.goodsId == nil {
             return true

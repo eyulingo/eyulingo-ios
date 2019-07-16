@@ -12,6 +12,4 @@ target 'Eyulingo' do
   pod 'VideoSplashKit'
   pod 'IQKeyboardManager'
   pod 'ModernSearchBar'
-  pod 'Highlighter'
-  pod 'Parchment'
 end

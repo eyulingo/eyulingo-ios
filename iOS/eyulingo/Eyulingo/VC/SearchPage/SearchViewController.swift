@@ -8,7 +8,6 @@
 
 import UIKit
 import ModernSearchBar
-import Parchment
 
 class SearchViewController: UIViewController, ModernSearchBarDelegate {
     
@@ -17,22 +16,28 @@ class SearchViewController: UIViewController, ModernSearchBarDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.searchBar.delegateModernSearchBar = self
+        searchBar.delegateModernSearchBar = self
         
         let suggestionList = ["Onions", "Canary", "Chile", "Salary", "Minority", "Parliament"]
-        self.searchBar.setDatas(datas: suggestionList)
-        self.searchBar.suggestionsView_searchIcon_isRound = false
+        searchBar.setDatas(datas: suggestionList)
+        searchBar.suggestionsView_searchIcon_isRound = false
     }
 
     
     ///Called if you use String suggestion list
     func onClickItemSuggestionsView(item: String) {
         print("User touched this item: " + item)
-        self.searchBar.text = item
+        searchBar.text = item
+        searchBar.resignFirstResponder()
+        callRefresh(searchBar.text!)
     }
     
     ///Called when user touched shadowView
     func onClickShadowView(shadowView: UIView) {
         print("User touched shadowView")
+    }
+    
+    func callRefresh(_ keyword: String) {
+        
     }
 }
