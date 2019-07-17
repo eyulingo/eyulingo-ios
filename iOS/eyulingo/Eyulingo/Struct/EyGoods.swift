@@ -34,12 +34,14 @@ struct EyGoods: Hashable, Comparable {
     var coverId: String?
     var description: String?
     var storeId: Int?
-    var storeName: Int?
+    var storeName: String?
     var storage: Int?
     var price: Decimal?
     var couponPrice: Decimal?
     var tags: [String] = []
     var comments: [EyComments] = []
+    
+    var imageCache: UIImage?
     
     func getCoverAsync(handler: @escaping (UIImage) -> ()) {
         if coverId == nil {

@@ -1575,7 +1575,7 @@ Project Eyulingo. 一切权利保留。</string>
                                     <navigationItem title="检索商品" id="K6i-qd-reW"/>
                                 </items>
                             </navigationBar>
-                            <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="MZw-If-OfF" customClass="ModernSearchBar" customModule="ModernSearchBar">
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="MZw-If-OfF" customClass="ModernSearchBar" customModule="Eyulingo" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="44" width="414" height="56"/>
                                 <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -1586,9 +1586,20 @@ Project Eyulingo. 一切权利保留。</string>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Msj-lZ-q7G">
                                 <rect key="frame" x="0.0" y="100" width="414" height="587"/>
                                 <connections>
-                                    <segue destination="64m-nx-cJD" kind="embed" id="cIZ-Of-epL"/>
+                                    <segue destination="64m-nx-cJD" kind="embed" identifier="searchResultSegue" id="cIZ-Of-epL"/>
                                 </connections>
                             </containerView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="J6O-fl-VCU">
+                                <rect key="frame" x="188.66666666666666" y="349.66666666666669" width="37" height="37"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="color" xcode11CocoaTouchSystemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="无内容" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IoK-Zn-ffO">
+                                <rect key="frame" x="162.66666666666666" y="350.66666666666669" width="89" height="35"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="29"/>
+                                <color key="textColor" cocoaTouchSystemColor="tertiaryLabelColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -1596,10 +1607,14 @@ Project Eyulingo. 一切权利保留。</string>
                             <constraint firstItem="MZw-If-OfF" firstAttribute="leading" secondItem="KBj-7K-wQM" secondAttribute="leading" id="4rh-vN-xvK"/>
                             <constraint firstItem="MZw-If-OfF" firstAttribute="trailing" secondItem="KBj-7K-wQM" secondAttribute="trailing" id="7W0-t8-ZB0"/>
                             <constraint firstItem="Msj-lZ-q7G" firstAttribute="leading" secondItem="YVm-6w-EfE" secondAttribute="leading" id="BCT-sF-Pma"/>
+                            <constraint firstItem="IoK-Zn-ffO" firstAttribute="centerY" secondItem="ntR-hK-cLx" secondAttribute="centerY" id="C9v-KA-MJK"/>
+                            <constraint firstItem="IoK-Zn-ffO" firstAttribute="centerX" secondItem="ntR-hK-cLx" secondAttribute="centerX" id="CbG-LU-XEh"/>
                             <constraint firstItem="Msj-lZ-q7G" firstAttribute="trailing" secondItem="YVm-6w-EfE" secondAttribute="trailing" id="GlQ-jF-s8w"/>
                             <constraint firstItem="KBj-7K-wQM" firstAttribute="leading" secondItem="YVm-6w-EfE" secondAttribute="leading" id="LD5-0Z-NZz"/>
+                            <constraint firstItem="J6O-fl-VCU" firstAttribute="centerX" secondItem="ntR-hK-cLx" secondAttribute="centerX" id="VaJ-sD-oBk"/>
                             <constraint firstItem="KBj-7K-wQM" firstAttribute="top" secondItem="YVm-6w-EfE" secondAttribute="top" id="Vk5-5y-x1g"/>
                             <constraint firstItem="KBj-7K-wQM" firstAttribute="centerX" secondItem="ntR-hK-cLx" secondAttribute="centerX" id="ZBW-A9-ZO2"/>
+                            <constraint firstItem="J6O-fl-VCU" firstAttribute="centerY" secondItem="ntR-hK-cLx" secondAttribute="centerY" id="cf4-gS-08g"/>
                             <constraint firstItem="MZw-If-OfF" firstAttribute="top" secondItem="KBj-7K-wQM" secondAttribute="bottom" id="ebc-fb-tzg"/>
                             <constraint firstItem="Msj-lZ-q7G" firstAttribute="top" secondItem="MZw-If-OfF" secondAttribute="bottom" id="pBp-NR-w3i"/>
                         </constraints>
@@ -1609,6 +1624,8 @@ Project Eyulingo. 一切权利保留。</string>
                     <navigationItem key="navigationItem" title="Title" id="gfG-lv-2pZ"/>
                     <connections>
                         <outlet property="containerView" destination="Msj-lZ-q7G" id="ThW-Ha-Kpx"/>
+                        <outlet property="loadingIndicator" destination="J6O-fl-VCU" id="rMB-3C-vfD"/>
+                        <outlet property="noContentIndicator" destination="IoK-Zn-ffO" id="6Uc-0Z-bhw"/>
                         <outlet property="searchBar" destination="MZw-If-OfF" id="xYk-Qh-oFo"/>
                     </connections>
                 </viewController>
@@ -1624,20 +1641,20 @@ Project Eyulingo. 一切权利保留。</string>
                         <rect key="frame" x="0.0" y="0.0" width="414" height="587"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="144" id="mab-o7-uAB" customClass="GoodsResultTableCell" customModule="Eyulingo" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ResultGoodsCell" rowHeight="144" id="mab-o7-uAB" customClass="GoodsResultTableCell" customModule="Eyulingo" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="144"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mab-o7-uAB" id="Lh4-wH-doz">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="144"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bm9-3R-eOP">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bm9-3R-eOP">
                                             <rect key="frame" x="0.0" y="0.0" width="144" height="144"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="144" id="zxk-Us-vVQ"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="美罗华" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9eM-yQ-pO8">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="美罗华" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9eM-yQ-pO8">
                                             <rect key="frame" x="156" y="10.666666666666666" width="238" height="25.333333333333336"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                             <nil key="textColor"/>
@@ -1726,10 +1743,13 @@ Project Eyulingo. 一切权利保留。</string>
                         </prototypes>
                         <sections/>
                         <connections>
-                            <outlet property="dataSource" destination="64m-nx-cJD" id="jMc-Nn-yhy"/>
-                            <outlet property="delegate" destination="64m-nx-cJD" id="mT9-tU-HgM"/>
+                            <outlet property="dataSource" destination="64m-nx-cJD" id="C9Z-b6-wMN"/>
+                            <outlet property="delegate" destination="64m-nx-cJD" id="WjO-JL-fZB"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="resultTable" destination="I9y-KC-ykO" id="jA8-SA-xF7"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NhB-G9-wyk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -62,6 +62,22 @@
 		8ADB40FC22DD5B96009C3538 /* EyComments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADB40FB22DD5B96009C3538 /* EyComments.swift */; };
 		8ADB40FE22DD5CFF009C3538 /* EyCommentLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADB40FD22DD5CFF009C3538 /* EyCommentLevel.swift */; };
 		8AE902ED22DC2402008728F3 /* RWZoomableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE902EC22DC2402008728F3 /* RWZoomableImageView.swift */; };
+		8AEC563022DEA49700520C68 /* ResultTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AEC562F22DEA49700520C68 /* ResultTableView.swift */; };
+		8AEC566D22DEAC2D00520C68 /* ModernSearchBarIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AEC566822DEAC2D00520C68 /* ModernSearchBarIcon.swift */; };
+		8AEC566E22DEAC2D00520C68 /* ModernSearchBarIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AEC566822DEAC2D00520C68 /* ModernSearchBarIcon.swift */; };
+		8AEC566F22DEAC2D00520C68 /* ModernSearchBarIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AEC566822DEAC2D00520C68 /* ModernSearchBarIcon.swift */; };
+		8AEC567022DEAC2D00520C68 /* ModernSearchBarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AEC566922DEAC2D00520C68 /* ModernSearchBarModel.swift */; };
+		8AEC567122DEAC2D00520C68 /* ModernSearchBarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AEC566922DEAC2D00520C68 /* ModernSearchBarModel.swift */; };
+		8AEC567222DEAC2D00520C68 /* ModernSearchBarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AEC566922DEAC2D00520C68 /* ModernSearchBarModel.swift */; };
+		8AEC567322DEAC2D00520C68 /* ModernSearchBarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AEC566A22DEAC2D00520C68 /* ModernSearchBarCell.swift */; };
+		8AEC567422DEAC2D00520C68 /* ModernSearchBarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AEC566A22DEAC2D00520C68 /* ModernSearchBarCell.swift */; };
+		8AEC567522DEAC2D00520C68 /* ModernSearchBarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AEC566A22DEAC2D00520C68 /* ModernSearchBarCell.swift */; };
+		8AEC567622DEAC2D00520C68 /* ModernSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AEC566B22DEAC2D00520C68 /* ModernSearchBar.swift */; };
+		8AEC567722DEAC2D00520C68 /* ModernSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AEC566B22DEAC2D00520C68 /* ModernSearchBar.swift */; };
+		8AEC567822DEAC2D00520C68 /* ModernSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AEC566B22DEAC2D00520C68 /* ModernSearchBar.swift */; };
+		8AEC567922DEAC2D00520C68 /* ModernSearchBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AEC566C22DEAC2D00520C68 /* ModernSearchBarDelegate.swift */; };
+		8AEC567A22DEAC2D00520C68 /* ModernSearchBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AEC566C22DEAC2D00520C68 /* ModernSearchBarDelegate.swift */; };
+		8AEC567B22DEAC2D00520C68 /* ModernSearchBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AEC566C22DEAC2D00520C68 /* ModernSearchBarDelegate.swift */; };
 		DC61DCF8126E5BD7AFD2A3DE /* Pods_Eyulingo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A888A1ACE66F92325BE30679 /* Pods_Eyulingo.framework */; };
 /* End PBXBuildFile section */
 
@@ -146,6 +162,12 @@
 		8ADB40FB22DD5B96009C3538 /* EyComments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyComments.swift; sourceTree = "<group>"; };
 		8ADB40FD22DD5CFF009C3538 /* EyCommentLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyCommentLevel.swift; sourceTree = "<group>"; };
 		8AE902EC22DC2402008728F3 /* RWZoomableImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RWZoomableImageView.swift; path = RWZoomableImageView/RWZoomableImageView/RWZoomableImageView.swift; sourceTree = "<group>"; };
+		8AEC562F22DEA49700520C68 /* ResultTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTableView.swift; sourceTree = "<group>"; };
+		8AEC566822DEAC2D00520C68 /* ModernSearchBarIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModernSearchBarIcon.swift; sourceTree = "<group>"; };
+		8AEC566922DEAC2D00520C68 /* ModernSearchBarModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModernSearchBarModel.swift; sourceTree = "<group>"; };
+		8AEC566A22DEAC2D00520C68 /* ModernSearchBarCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModernSearchBarCell.swift; sourceTree = "<group>"; };
+		8AEC566B22DEAC2D00520C68 /* ModernSearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModernSearchBar.swift; sourceTree = "<group>"; };
+		8AEC566C22DEAC2D00520C68 /* ModernSearchBarDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModernSearchBarDelegate.swift; sourceTree = "<group>"; };
 		8E1CF065298118660176F71E /* Pods-Bookie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bookie.release.xcconfig"; path = "Target Support Files/Pods-Bookie/Pods-Bookie.release.xcconfig"; sourceTree = "<group>"; };
 		94D3261F6663964F27DA5208 /* Pods-Bookie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bookie.debug.xcconfig"; path = "Target Support Files/Pods-Bookie/Pods-Bookie.debug.xcconfig"; sourceTree = "<group>"; };
 		A888A1ACE66F92325BE30679 /* Pods_Eyulingo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Eyulingo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -242,6 +264,7 @@
 		8A55B27222C8CE85007E77FD = {
 			isa = PBXGroup;
 			children = (
+				8AEC565422DEABC100520C68 /* ModernSearchBar */,
 				8A0BC65322D88B6D0099E79A /* Eyulingo-Bridging-Header.h */,
 				8A0BC65422D88B6D0099E79A /* EyulingoUnitTests-Bridging-Header.h */,
 				8A0BC65522D88B6D0099E79A /* EyulingoUITests-Bridging-Header.h */,
@@ -324,6 +347,7 @@
 			children = (
 				8AD0F5C822DDAE1A00126E24 /* SearchViewController.swift */,
 				8A5050F922DDCE12003B123B /* GoodsResultTableCell.swift */,
+				8AEC562F22DEA49700520C68 /* ResultTableView.swift */,
 			);
 			path = SearchPage;
 			sourceTree = "<group>";
@@ -385,6 +409,18 @@
 				8A723DB322D47954008FD0C9 /* LogoutNow.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		8AEC565422DEABC100520C68 /* ModernSearchBar */ = {
+			isa = PBXGroup;
+			children = (
+				8AEC566B22DEAC2D00520C68 /* ModernSearchBar.swift */,
+				8AEC566A22DEAC2D00520C68 /* ModernSearchBarCell.swift */,
+				8AEC566C22DEAC2D00520C68 /* ModernSearchBarDelegate.swift */,
+				8AEC566822DEAC2D00520C68 /* ModernSearchBarIcon.swift */,
+				8AEC566922DEAC2D00520C68 /* ModernSearchBarModel.swift */,
+			);
+			path = ModernSearchBar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -570,7 +606,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8AEC567422DEAC2D00520C68 /* ModernSearchBarCell.swift in Sources */,
+				8AEC567A22DEAC2D00520C68 /* ModernSearchBarDelegate.swift in Sources */,
+				8AEC567122DEAC2D00520C68 /* ModernSearchBarModel.swift in Sources */,
+				8AEC567722DEAC2D00520C68 /* ModernSearchBar.swift in Sources */,
 				8A0EA45522D6BE1500EFE92C /* EyulingoUnitTests.swift in Sources */,
+				8AEC566E22DEAC2D00520C68 /* ModernSearchBarIcon.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -578,7 +619,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8AEC567522DEAC2D00520C68 /* ModernSearchBarCell.swift in Sources */,
+				8AEC567B22DEAC2D00520C68 /* ModernSearchBarDelegate.swift in Sources */,
+				8AEC567222DEAC2D00520C68 /* ModernSearchBarModel.swift in Sources */,
+				8AEC567822DEAC2D00520C68 /* ModernSearchBar.swift in Sources */,
 				8A0EA46322D6BFE500EFE92C /* EyulingoUITests.swift in Sources */,
+				8AEC566F22DEAC2D00520C68 /* ModernSearchBarIcon.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -592,6 +638,7 @@
 				8AC9E7F722C9B0D000F80460 /* Cart.swift in Sources */,
 				8A723DAB22D465A9008FD0C9 /* OrdersViewController.swift in Sources */,
 				8ADB40FC22DD5B96009C3538 /* EyComments.swift in Sources */,
+				8AEC567022DEAC2D00520C68 /* ModernSearchBarModel.swift in Sources */,
 				8A55B27F22C8CE85007E77FD /* AppDelegate.swift in Sources */,
 				8A06394C22D3316F00699037 /* BookieUri.swift in Sources */,
 				8AC9E7EE22C9A7F400F80460 /* Book.swift in Sources */,
@@ -600,6 +647,7 @@
 				8AC9E7E922C9A42300F80460 /* AdminOrderVC.swift in Sources */,
 				8A723DB222D4721E008FD0C9 /* ProfileContentViewController.swift in Sources */,
 				8AE902ED22DC2402008728F3 /* RWZoomableImageView.swift in Sources */,
+				8AEC567322DEAC2D00520C68 /* ModernSearchBarCell.swift in Sources */,
 				8AC9E7FD22C9C1A300F80460 /* AdminBill.swift in Sources */,
 				8AC9E7DD22C9A37500F80460 /* BookQueryVC.swift in Sources */,
 				8AC9E7E122C9A3AE00F80460 /* PurchasedVC.swift in Sources */,
@@ -615,7 +663,9 @@
 				8A55B28122C8CE85007E77FD /* SceneDelegate.swift in Sources */,
 				8A0C377E22D71D4500358F52 /* AddressManageViewController.swift in Sources */,
 				8AC9E7E722C9A40C00F80460 /* AdminUserVC.swift in Sources */,
+				8AEC567922DEAC2D00520C68 /* ModernSearchBarDelegate.swift in Sources */,
 				8AA7BC8F22D5C9560098F292 /* ChangeEmailViewController.swift in Sources */,
+				8AEC563022DEA49700520C68 /* ResultTableView.swift in Sources */,
 				8AD0F5CF22DDAE1B00126E24 /* SearchViewController.swift in Sources */,
 				8AC9E7F522C9AF4A00F80460 /* PurchaseVC.swift in Sources */,
 				8AC9E7DB22C9A34700F80460 /* RegisterVC.swift in Sources */,
@@ -625,8 +675,10 @@
 				8A6DD6FC22CAF55500BD7904 /* PinYinConverter.swift in Sources */,
 				8A5050FA22DDCE12003B123B /* GoodsResultTableCell.swift in Sources */,
 				8AC9E7F322C9ACC900F80460 /* Bill.swift in Sources */,
+				8AEC567622DEAC2D00520C68 /* ModernSearchBar.swift in Sources */,
 				8A0AF9E522D41F6E009430B9 /* JudgeValidEmail.swift in Sources */,
 				8A71175D22D5D268002F9202 /* ForgetPasswordViewController.swift in Sources */,
+				8AEC566D22DEAC2D00520C68 /* ModernSearchBarIcon.swift in Sources */,
 				8A723DA922D4659E008FD0C9 /* CartViewController.swift in Sources */,
 				8A09F12A22DC137100CD3B16 /* ImagePreviewViewController.swift in Sources */,
 				8ADB40FE22DD5CFF009C3538 /* EyCommentLevel.swift in Sources */,
