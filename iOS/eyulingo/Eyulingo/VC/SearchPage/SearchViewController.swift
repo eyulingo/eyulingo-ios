@@ -31,7 +31,39 @@ class SearchViewController: UIViewController, ModernSearchBarDelegate, SearchDel
     }
     
     func performSuggestion(_ query: String) {
+        if query.replacingOccurrences(of: " ", with: "").count == 0 {
+            updateSuggestionList(words: [])
+        }
         NSLog("Should asks for suggestion \(query)")
+        
+        let getParams: Parameters = [
+            "q": query
+        ]
+        Alamofire.request(Eyulingo_UserUri.suggestionGetUri,
+                          method: .get,
+                          parameters: getParams)
+        .responseSwiftyJSON(completionHandler: { responseJSON in
+            if responseJSON.error == nil {
+                let jsonResp = responseJSON.value
+                if jsonResp != nil {
+                    if jsonResp!["status"].stringValue == "ok" {
+                        var suggestions: [String] = []
+                        for goodsItem in jsonResp!["values"].arrayValue {
+                            let suggest = goodsItem.string
+                            if suggest != nil {
+                                suggestions.append(suggest!)
+                                if suggestions.count > 5 {
+                                    break
+                                }
+                            }
+                        }
+                        self.updateSuggestionList(words: suggestions)
+                        return
+                    }
+                }
+            }
+            self.updateSuggestionList(words: [])
+        })
     }
     
     var resultGoods: [EyGoods] = []

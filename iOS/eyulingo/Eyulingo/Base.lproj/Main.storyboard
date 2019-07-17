@@ -1760,7 +1760,7 @@ Project Eyulingo. 一切权利保留。</string>
             <objects>
                 <tableViewController id="FkX-I3-bGp" customClass="GoodsDetailTableViewController" customModule="Eyulingo" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="jjd-o2-PhP">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="297.66666666666669"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="342"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <sections>
@@ -2012,13 +2012,10 @@ Project Eyulingo. 一切权利保留。</string>
                                 </items>
                             </navigationBar>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NGx-Mu-sS5">
-                                <rect key="frame" x="0.0" y="44" width="414" height="386.33333333333331"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="NGx-Mu-sS5" secondAttribute="height" multiplier="374:349" id="ByK-HP-9yR"/>
-                                </constraints>
+                                <rect key="frame" x="0.0" y="44" width="414" height="342"/>
                             </imageView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kfJ-gZ-NZ2">
-                                <rect key="frame" x="0.0" y="438.33333333333326" width="414" height="297.66666666666674"/>
+                                <rect key="frame" x="0.0" y="394" width="414" height="342"/>
                                 <connections>
                                     <segue destination="FkX-I3-bGp" kind="embed" identifier="GoodsDetailSegue" id="I2g-eH-qGw"/>
                                 </connections>
@@ -2038,6 +2035,7 @@ Project Eyulingo. 一切权利保留。</string>
                             <constraint firstItem="d1r-52-BE0" firstAttribute="bottom" secondItem="kfJ-gZ-NZ2" secondAttribute="bottom" id="WW0-2c-NdF"/>
                             <constraint firstItem="d1r-52-BE0" firstAttribute="trailing" secondItem="NGx-Mu-sS5" secondAttribute="trailing" id="bnz-dZ-xPU"/>
                             <constraint firstItem="GBB-sv-HmT" firstAttribute="top" secondItem="d1r-52-BE0" secondAttribute="top" id="fOQ-w0-Tbd"/>
+                            <constraint firstItem="kfJ-gZ-NZ2" firstAttribute="height" secondItem="NGx-Mu-sS5" secondAttribute="height" id="jpA-jd-6Ca"/>
                             <constraint firstItem="d1r-52-BE0" firstAttribute="trailing" secondItem="kfJ-gZ-NZ2" secondAttribute="trailing" id="kDE-os-9jp"/>
                             <constraint firstItem="kfJ-gZ-NZ2" firstAttribute="top" secondItem="NGx-Mu-sS5" secondAttribute="bottom" constant="8" id="riF-zQ-ETh"/>
                         </constraints>
