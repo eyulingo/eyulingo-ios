@@ -24,6 +24,22 @@ class GoodsDetailViewController: UIViewController {
     }
     var goodsObject: EyGoods?
     
+    func accessLargeImage() {
+        if self.imageViewField.image == nil {
+            return
+        }
+        let destinationStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let destinationViewController = destinationStoryboard.instantiateViewController(withIdentifier: "ImagePreviewVC") as! ImagePreviewViewController
+        
+        destinationViewController.mainImage = self.imageViewField.image
+        destinationViewController.promptText = "“\(self.goodsObject?.goodsName ?? "商品")” 图像" 
+        self.present(destinationViewController, animated: true, completion: nil)
+    }
+    
+    @IBAction func accessLargeImageButtonTapped(_ sender: UIButton) {
+        accessLargeImage()
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if contentVC == nil {
             if segue.identifier == "GoodsDetailSegue" {

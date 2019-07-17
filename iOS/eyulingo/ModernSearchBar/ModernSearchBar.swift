@@ -258,8 +258,10 @@ public class ModernSearchBar: UISearchBar, UISearchBarDelegate, UITableViewDataS
     // --------------------------------
 
     /// Main function that is called when user searching
-    private func searchWhenUserTyping(caracters: String) {
-        self.searchDelegate?.performSuggestion(caracters)
+    func searchWhenUserTyping(caracters: String, notAgain: Bool = false) {
+        if !notAgain {
+            self.searchDelegate?.performSuggestion(caracters)
+        }
         switch choice {
         /// Case normal (List of string)
         case .normal:

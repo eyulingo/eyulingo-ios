@@ -93,6 +93,8 @@ class SearchViewController: UIViewController, ModernSearchBarDelegate, SearchDel
     
     func updateSuggestionList(words: [String]) {
         searchBar.setDatas(datas: words)
+        /// Forcefully raise a refresh, but only once
+        searchBar.searchWhenUserTyping(caracters: searchBar.text ?? "", notAgain: true)
     }
     
     func updateResultList(_ query: String) {
@@ -179,6 +181,7 @@ class SearchViewController: UIViewController, ModernSearchBarDelegate, SearchDel
     func onClickItemSuggestionsView(item: String) {
         print("User touched this item: " + item)
         searchBar.text = item
+        searchBar.showsCancelButton = false
         searchBar.resignFirstResponder()
         callRefresh(searchBar.text!)
     }
@@ -189,6 +192,6 @@ class SearchViewController: UIViewController, ModernSearchBarDelegate, SearchDel
     }
     
     func callRefresh(_ keyword: String) {
-        
+        updateResultList(keyword)
     }
 }

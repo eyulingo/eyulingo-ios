@@ -155,7 +155,7 @@ Project Eyulingo. 一切权利保留。</string>
                                 </subviews>
                             </stackView>
                             <navigationBar contentMode="scaleToFill" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cPn-Ox-KRc">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="103.33333333333333"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="96"/>
                                 <items>
                                     <navigationItem id="DhO-JF-WjR">
                                         <barButtonItem key="rightBarButtonItem" style="plain" id="Vv9-gl-hpc">
@@ -176,6 +176,7 @@ Project Eyulingo. 一切权利保留。</string>
                                 </items>
                             </navigationBar>
                         </subviews>
+                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="9Ye-bR-2DJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="-44" id="Iqo-G4-e5Y"/>
                             <constraint firstItem="cPn-Ox-KRc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="JDo-DA-SLC"/>
@@ -615,7 +616,7 @@ Project Eyulingo. 一切权利保留。</string>
                                     <rect key="frame" x="0.0" y="0.0" width="174" height="608"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 </view>
-                                <blurEffect style="light"/>
+                                <blurEffect style="prominent"/>
                             </visualEffectView>
                             <imageView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="m7G-Vy-h9I" customClass="RWZoomableImageView" customModule="Eyulingo" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
@@ -2020,6 +2021,12 @@ Project Eyulingo. 一切权利保留。</string>
                                     <segue destination="FkX-I3-bGp" kind="embed" identifier="GoodsDetailSegue" id="I2g-eH-qGw"/>
                                 </connections>
                             </containerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Ou-Rz-VnO">
+                                <rect key="frame" x="0.0" y="44" width="414" height="342"/>
+                                <connections>
+                                    <action selector="accessLargeImageButtonTapped:" destination="9UF-e4-Qdo" eventType="touchUpInside" id="q0z-c3-SVN"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -2031,13 +2038,17 @@ Project Eyulingo. 一切权利保留。</string>
                             <constraint firstItem="W8D-28-osW" firstAttribute="leading" secondItem="GBB-sv-HmT" secondAttribute="leading" id="OKq-HH-u1w"/>
                             <constraint firstItem="W8D-28-osW" firstAttribute="trailing" secondItem="GBB-sv-HmT" secondAttribute="trailing" id="OaO-MT-TgQ"/>
                             <constraint firstItem="GBB-sv-HmT" firstAttribute="leading" secondItem="d1r-52-BE0" secondAttribute="leading" id="Sba-7P-7MR"/>
+                            <constraint firstItem="kfJ-gZ-NZ2" firstAttribute="top" secondItem="0Ou-Rz-VnO" secondAttribute="bottom" constant="8" id="T6I-5d-OZO"/>
                             <constraint firstItem="NGx-Mu-sS5" firstAttribute="top" secondItem="W8D-28-osW" secondAttribute="bottom" id="TfY-wv-kYN"/>
                             <constraint firstItem="d1r-52-BE0" firstAttribute="bottom" secondItem="kfJ-gZ-NZ2" secondAttribute="bottom" id="WW0-2c-NdF"/>
                             <constraint firstItem="d1r-52-BE0" firstAttribute="trailing" secondItem="NGx-Mu-sS5" secondAttribute="trailing" id="bnz-dZ-xPU"/>
                             <constraint firstItem="GBB-sv-HmT" firstAttribute="top" secondItem="d1r-52-BE0" secondAttribute="top" id="fOQ-w0-Tbd"/>
+                            <constraint firstItem="0Ou-Rz-VnO" firstAttribute="leading" secondItem="d1r-52-BE0" secondAttribute="leading" id="he5-hv-gnf"/>
                             <constraint firstItem="kfJ-gZ-NZ2" firstAttribute="height" secondItem="NGx-Mu-sS5" secondAttribute="height" id="jpA-jd-6Ca"/>
                             <constraint firstItem="d1r-52-BE0" firstAttribute="trailing" secondItem="kfJ-gZ-NZ2" secondAttribute="trailing" id="kDE-os-9jp"/>
                             <constraint firstItem="kfJ-gZ-NZ2" firstAttribute="top" secondItem="NGx-Mu-sS5" secondAttribute="bottom" constant="8" id="riF-zQ-ETh"/>
+                            <constraint firstItem="0Ou-Rz-VnO" firstAttribute="top" secondItem="W8D-28-osW" secondAttribute="bottom" id="uHd-Vg-tF5"/>
+                            <constraint firstItem="0Ou-Rz-VnO" firstAttribute="trailing" secondItem="d1r-52-BE0" secondAttribute="trailing" id="wdV-CL-y2G"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="d1r-52-BE0"/>
                     </view>
@@ -2047,7 +2058,7 @@ Project Eyulingo. 一切权利保留。</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DQs-XJ-AAI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2583" y="120"/>
+            <point key="canvasLocation" x="2582.608695652174" y="119.83695652173914"/>
         </scene>
     </scenes>
     <resources>
