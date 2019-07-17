@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double ModernSearchBarVersionNumber;
-FOUNDATION_EXPORT const unsigned char ModernSearchBarVersionString[];
+FOUNDATION_EXPORT double HighlighterVersionNumber;
+FOUNDATION_EXPORT const unsigned char HighlighterVersionString[];
 

@@ -97,6 +97,7 @@ class SearchViewController: UIViewController, ModernSearchBarDelegate, SearchDel
                                                             comments: []))
                         }
                         self.flushData()
+                        self.contentVC?.keyWord = self.searchBar.text
                         return
                     } else {
                         errorStr = jsonResp!["status"].stringValue

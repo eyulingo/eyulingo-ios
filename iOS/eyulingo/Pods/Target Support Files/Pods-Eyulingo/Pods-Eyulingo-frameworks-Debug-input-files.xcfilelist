@@ -1,6 +1,7 @@
 ${PODS_ROOT}/Target Support Files/Pods-Eyulingo/Pods-Eyulingo-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
 ${BUILT_PRODUCTS_DIR}/Alamofire-SwiftyJSON/Alamofire_SwiftyJSON.framework
+${BUILT_PRODUCTS_DIR}/Highlighter/Highlighter.framework
 ${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework
 ${BUILT_PRODUCTS_DIR}/PryntTrimmerView/PryntTrimmerView.framework
 ${BUILT_PRODUCTS_DIR}/SteviaLayout/Stevia.framework
