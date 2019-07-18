@@ -536,7 +536,7 @@ Project Eyulingo. 一切权利保留。</string>
                                     <rect key="frame" x="0.0" y="0.0" width="174" height="564"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 </view>
-                                <blurEffect style="prominent"/>
+                                <blurEffect style="regular"/>
                             </visualEffectView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HtY-s1-zeJ">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
@@ -906,7 +906,7 @@ Project Eyulingo. 一切权利保留。</string>
                                 <blurEffect style="prominent"/>
                             </visualEffectView>
                             <imageView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="m7G-Vy-h9I" customClass="RWZoomableImageView" customModule="Eyulingo" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="674"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xqk-di-BOj">
@@ -930,7 +930,7 @@ Project Eyulingo. 一切权利保留。</string>
                                 </items>
                             </navigationBar>
                             <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="提示性文字" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gmX-ZE-kuc">
-                                <rect key="frame" x="157" y="682" width="100" height="34"/>
+                                <rect key="frame" x="157" y="688" width="100" height="34"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="textColor" cocoaTouchSystemColor="secondaryLabelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -943,15 +943,16 @@ Project Eyulingo. 一切权利保留。</string>
                             <constraint firstItem="xqk-di-BOj" firstAttribute="trailing" secondItem="bVC-H5-wLJ" secondAttribute="trailing" id="6Lu-D6-mq0"/>
                             <constraint firstItem="m7G-Vy-h9I" firstAttribute="leading" secondItem="bVC-H5-wLJ" secondAttribute="leading" id="AeB-yH-7mC"/>
                             <constraint firstAttribute="bottom" secondItem="3aa-Sj-rdm" secondAttribute="bottom" id="Btk-bj-kj6"/>
-                            <constraint firstItem="bVC-H5-wLJ" firstAttribute="bottom" secondItem="gmX-ZE-kuc" secondAttribute="bottom" constant="20" id="Gk4-y4-9rm"/>
                             <constraint firstItem="m7G-Vy-h9I" firstAttribute="trailing" secondItem="bVC-H5-wLJ" secondAttribute="trailing" id="M6H-0d-8Dm"/>
                             <constraint firstItem="m7G-Vy-h9I" firstAttribute="top" secondItem="bVC-H5-wLJ" secondAttribute="top" id="Nrp-OD-Fk9"/>
                             <constraint firstItem="xqk-di-BOj" firstAttribute="top" secondItem="bVC-H5-wLJ" secondAttribute="top" id="V6M-Tz-XMH"/>
-                            <constraint firstItem="gmX-ZE-kuc" firstAttribute="centerX" secondItem="UJT-tO-ofn" secondAttribute="centerX" id="VSJ-Ch-1IC"/>
+                            <constraint firstItem="gmX-ZE-kuc" firstAttribute="top" secondItem="m7G-Vy-h9I" secondAttribute="bottom" constant="14" id="Yfv-kD-lUu"/>
                             <constraint firstItem="xqk-di-BOj" firstAttribute="top" secondItem="bVC-H5-wLJ" secondAttribute="top" id="dk6-zj-NoK"/>
                             <constraint firstItem="xqk-di-BOj" firstAttribute="leading" secondItem="bVC-H5-wLJ" secondAttribute="leading" id="fMf-da-Agl"/>
                             <constraint firstItem="3aa-Sj-rdm" firstAttribute="top" secondItem="bVC-H5-wLJ" secondAttribute="top" id="hXf-be-oxz"/>
-                            <constraint firstItem="m7G-Vy-h9I" firstAttribute="bottom" secondItem="bVC-H5-wLJ" secondAttribute="bottom" id="n5G-PR-yQ8"/>
+                            <constraint firstItem="gmX-ZE-kuc" firstAttribute="centerX" secondItem="UJT-tO-ofn" secondAttribute="centerX" id="iyd-3v-LIb"/>
+                            <constraint firstItem="m7G-Vy-h9I" firstAttribute="bottom" secondItem="bVC-H5-wLJ" secondAttribute="bottom" constant="-62" id="n5G-PR-yQ8"/>
+                            <constraint firstItem="bVC-H5-wLJ" firstAttribute="bottom" secondItem="gmX-ZE-kuc" secondAttribute="bottom" constant="14" id="nJ3-8x-L8Q"/>
                             <constraint firstItem="3aa-Sj-rdm" firstAttribute="trailing" secondItem="bVC-H5-wLJ" secondAttribute="trailing" id="nMR-06-SvY"/>
                             <constraint firstItem="3aa-Sj-rdm" firstAttribute="leading" secondItem="bVC-H5-wLJ" secondAttribute="leading" id="t2h-dx-b2h"/>
                             <constraint firstItem="xqk-di-BOj" firstAttribute="leading" secondItem="bVC-H5-wLJ" secondAttribute="leading" id="zTO-4m-ojS"/>
@@ -2054,7 +2055,7 @@ Project Eyulingo. 一切权利保留。</string>
                         <sections>
                             <tableViewSection headerTitle="商品详情" id="pnL-Do-aQx">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="noW-Ud-Zbx" detailTextLabel="cMw-zZ-gd5" style="IBUITableViewCellStyleValue1" id="f3p-gi-aWb">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="noW-Ud-Zbx" detailTextLabel="cMw-zZ-gd5" style="IBUITableViewCellStyleValue1" id="f3p-gi-aWb">
                                         <rect key="frame" x="0.0" y="55.333332061767578" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="f3p-gi-aWb" id="tZB-iL-DBF">

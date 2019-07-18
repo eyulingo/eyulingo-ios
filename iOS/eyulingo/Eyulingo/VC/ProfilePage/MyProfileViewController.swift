@@ -13,23 +13,25 @@ import YPImagePicker
 import Alamofire_SwiftyJSON
 
 class MyProfileViewController: UIViewController, profileChangesDelegate, profileRefreshDelegate, backgroundImageReloadDelegate {
-    func fadeOutBg(duration: Double = 1.5) {
+    func fadeOutBg(duration: Double = 1.5, completion: (() -> ())?) {
         self.backgroundImageView.alpha = 0.6
         UIView.animate(withDuration: duration, delay: 0.0, options: .curveEaseOut, animations: {
             self.backgroundImageView.alpha = 0.0
         }, completion: { _ in
             self.backgroundImageView.image = nil
             self.backgroundImageView.alpha = 0.0
+            completion?()
         })
     }
     
-    func fadeInBg(image: UIImage, duration: Double = 1.5) {
+    func fadeInBg(image: UIImage, duration: Double = 1.5, completion: (() -> ())?) {
         self.backgroundImageView.alpha = 0.0
         self.backgroundImageView.image = image
         UIView.animate(withDuration: duration, delay: 0.0, options: .curveEaseOut, animations: {
             self.backgroundImageView.alpha = 0.6
         }, completion: { _ in
             self.backgroundImageView.alpha = 0.6
+            completion?()
         })
     }
     
@@ -110,8 +112,9 @@ class MyProfileViewController: UIViewController, profileChangesDelegate, profile
         }
         
         var config = YPImagePickerConfiguration()
-        config.onlySquareImagesFromCamera = false
+        config.onlySquareImagesFromCamera = true
         config.library.onlySquare = true
+        config.showsCrop = .rectangle(ratio: 1.0)
         config.library.maxNumberOfItems = 1
         config.library.minNumberOfItems = 1
         config.hidesStatusBar = false
@@ -358,6 +361,6 @@ protocol profileRefreshDelegate {
 
 
 protocol backgroundImageReloadDelegate {
-    func fadeOutBg(duration: Double) -> ()
-    func fadeInBg(image: UIImage, duration: Double) -> ()
+    func fadeOutBg(duration: Double, completion: (() -> ())?) -> ()
+    func fadeInBg(image: UIImage, duration: Double, completion: (() -> ())?) -> ()
 }

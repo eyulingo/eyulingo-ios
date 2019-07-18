@@ -29,7 +29,12 @@ class ProfileContentViewController: UITableViewController {
                         userName: String,
                         email: String) {
         if avatar != nil {
-            showImage(image: avatar!)
+            hideImage(duration: 0.25, completion: {
+                self.showImage(image: avatar!)
+            })
+            bgDelegate?.fadeOutBg(duration: 0.5, completion: {
+                self.bgDelegate?.fadeInBg(image: avatar!, duration: 1.0, completion: nil)
+            })
         } else {
             if avatarImageField.image != nil {
                 hideImage()
@@ -40,16 +45,16 @@ class ProfileContentViewController: UITableViewController {
         emailTextField.text = email
     }
 
-    func hideImage(duration: Double = 0.25) {
+    func hideImage(duration: Double = 0.25, completion: (() -> ())? = nil) {
         avatarImageField.alpha = 1.0
         UIView.animate(withDuration: duration, delay: 0.0, options: .curveEaseOut, animations: {
             self.avatarImageField.alpha = 0.0
         }, completion: { _ in
             self.avatarImageField.image = nil
             self.avatarImageField.alpha = 0.0
+            completion?()
         })
-
-        bgDelegate?.fadeOutBg(duration: 1.0)
+//        bgDelegate?.fadeOutBg(duration: 0.5)
     }
 
     func showImage(image: UIImage, duration: Double = 0.25) {
@@ -60,8 +65,7 @@ class ProfileContentViewController: UITableViewController {
         }, completion: { _ in
             self.avatarImageField.alpha = 1.0
         })
-
-        bgDelegate?.fadeInBg(image: image, duration: 1.0)
+//        bgDelegate?.fadeInBg(image: image, duration: 1.0)
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -79,6 +83,7 @@ class ProfileContentViewController: UITableViewController {
                 let changeAvatarAction = UIAlertAction(title: "修改头像",
                                                        style: .default,
                                                        handler: { _ in
+                                                        
                                                            self.delegate?.updateAvatar()
 
                 })

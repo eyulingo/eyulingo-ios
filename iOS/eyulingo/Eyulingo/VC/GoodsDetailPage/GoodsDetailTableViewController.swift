@@ -84,12 +84,40 @@ class GoodsDetailTableViewController: UITableViewController {
     // Tap on table Row
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        if indexPath.row == 1 {
-            visitStore(goodsObject!.storeId!)
+        if indexPath.row == 0 {
+            if let cell = tableView.cellForRow(at: indexPath) {
+                cell.becomeFirstResponder()
+                let copyItem = UIMenuItem(title: "拷贝", action: #selector(copyGoodsName))
+                let menuController = UIMenuController.shared
+                menuController.menuItems = [copyItem]
+                menuController.setTargetRect(cell.frame, in: cell.superview!)
+                menuController.setMenuVisible(true, animated: true)
+            }
+        } else if indexPath.row == 1 {
+            if let cell = tableView.cellForRow(at: indexPath) {
+                cell.becomeFirstResponder()
+                let visitItem = UIMenuItem(title: "造访", action: #selector(visitStore))
+                let copyItem = UIMenuItem(title: "拷贝", action: #selector(copyStoreName))
+                let menuController = UIMenuController.shared
+                menuController.menuItems = [visitItem, copyItem]
+                menuController.setTargetRect(cell.frame, in: cell.superview!)
+                menuController.setMenuVisible(true, animated: true)
+            }
         }
     }
     
-    func visitStore(_ storeId: Int) {
+    @objc func copyStoreName() {
+        let pasteboard = UIPasteboard.general
+        pasteboard.string = goodsObject?.storeName
+    }
+    
+    @objc func copyGoodsName() {
+        let pasteboard = UIPasteboard.general
+        pasteboard.string = goodsObject?.goodsName
+    }
+    
+    @objc func visitStore() {
+        let storeId = goodsObject?.storeId!
         if storeId == openedByStoreId {
             delegate?.dismissMe()
             return
@@ -157,4 +185,10 @@ class GoodsDetailTableViewController: UITableViewController {
 
 protocol DismissMyselfDelegate {
     func dismissMe() -> ()
+}
+
+extension UITableViewCell {
+    override open var canBecomeFirstResponder: Bool {
+        return true
+    }
 }
