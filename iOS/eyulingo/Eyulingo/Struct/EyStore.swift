@@ -6,7 +6,8 @@
 //  Copyright © 2019 yuetsin. All rights reserved.
 //
 
-import Foundation
+import UIKit
+import Alamofire
 
 struct EyStore: Hashable, Comparable {
     
@@ -31,6 +32,51 @@ struct EyStore: Hashable, Comparable {
     var storeId: Int?
     var coverId: String?
     var storeName: String?
+    var storePhone: String?
+    var storeAddress: String?
     var storeGoods: [EyGoods]?
     var storeComments: [EyComments]?
+    
+    var distAvatarId: String?
+    var distName: String?
+//    var distPhone: String?
+//    var distAddress: String?
+    
+    func getStoreCoverAsync(handler: @escaping (UIImage) -> ()) {
+        if coverId == nil {
+            return
+        }
+        let params: Parameters = [
+            "fileId": coverId!
+        ]
+        Alamofire.request(Eyulingo_UserUri.imageGetUri, method: .get, parameters: params)
+            .responseData(completionHandler: { responseData in
+                if responseData.data == nil {
+                    return
+                }
+                let image = UIImage(data: responseData.data!)
+                if image != nil {
+                    handler(image!)
+                }
+            })
+    }
+    
+    func getDistAvatarAsync(handler: @escaping (UIImage) -> ()) {
+        if distAvatarId == nil {
+            return
+        }
+        let params: Parameters = [
+            "fileId": distAvatarId!
+        ]
+        Alamofire.request(Eyulingo_UserUri.imageGetUri, method: .get, parameters: params)
+            .responseData(completionHandler: { responseData in
+                if responseData.data == nil {
+                    return
+                }
+                let image = UIImage(data: responseData.data!)
+                if image != nil {
+                    handler(image!)
+                }
+            })
+    }
 }

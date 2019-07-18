@@ -6,8 +6,8 @@
 //  Copyright © 2019 yuetsin. All rights reserved.
 //
 
+import UIKit
 import Alamofire
-import Foundation
 
 struct EyGoods: Hashable, Comparable {
     static func < (lhs: EyGoods, rhs: EyGoods) -> Bool {

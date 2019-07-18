@@ -51,6 +51,14 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         cell.storageTextField.text = "库存 \(goodsObject.storage ?? 0) 件"
         cell.storeTextField.text = goodsObject.storeName ?? "店铺未知"
         
+        if keyWord != nil {
+            if #available(iOS 13.0, *) {
+                cell.highlight(text: keyWord!, normal: nil, highlight: [NSAttributedString.Key.backgroundColor: UIColor.systemFill])
+            } else {
+                cell.highlight(text: keyWord!, normal: nil, highlight: [NSAttributedString.Key.backgroundColor: UIColor.darkGray])
+            }
+        }
+        
         if goodsObject.imageCache != nil {
             cell.imageViewField.image = goodsObject.imageCache
             return cell
@@ -59,6 +67,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         if cell.imageViewField.image == nil {
             goodsObject.getCoverAsync(handler: { image in
                 if cell.goodsNameField.text != goodsObject.goodsName {
+                    self.resultGoods[indexPath.row].imageCache = image
                     return
                 }
                 cell.fadeIn(image: image, handler: nil)
@@ -68,6 +77,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
             cell.fadeOut(handler: {
                 goodsObject.getCoverAsync(handler: { image in
                     if cell.goodsNameField.text != goodsObject.goodsName {
+                        self.resultGoods[indexPath.row].imageCache = image
                         return
                     }
                     cell.fadeIn(image: image, handler: nil)
@@ -75,14 +85,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 })
             })
         }
-        
-        if keyWord != nil {
-            if #available(iOS 13.0, *) {
-                cell.highlight(text: keyWord!, normal: nil, highlight: [NSAttributedString.Key.backgroundColor: UIColor.systemFill])
-            } else {
-                cell.highlight(text: keyWord!, normal: nil, highlight: [NSAttributedString.Key.backgroundColor: UIColor.darkGray])
-            }
-        }
+
         return cell
     }
     

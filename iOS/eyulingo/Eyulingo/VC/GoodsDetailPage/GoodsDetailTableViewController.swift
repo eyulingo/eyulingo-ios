@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import Alamofire
+import Alamofire_SwiftyJSON
+import SwiftyJSON
 
 class GoodsDetailTableViewController: UITableViewController {
 
@@ -79,7 +82,68 @@ class GoodsDetailTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         if indexPath.row == 1 {
-            // go to store
+            visitStore(goodsObject!.storeId!)
         }
+    }
+    
+    func visitStore(_ storeId: Int) {
+        var errorStr = "general error"
+        let getParams: Parameters = [
+            "id": storeId
+        ]
+        Alamofire.request(Eyulingo_UserUri.storeDetailGetUri,
+                          method: .get, parameters: getParams)
+            .responseSwiftyJSON(completionHandler: { responseJSON in
+                if responseJSON.error == nil {
+                    let jsonResp = responseJSON.value
+                    if jsonResp != nil {
+                        if jsonResp!["status"].stringValue == "ok" {
+                            var storeObject = EyStore(storeId: jsonResp!["id"].intValue,
+                                                      coverId: jsonResp!["image_id"].stringValue,
+                                                      storeName: jsonResp!["name"].stringValue,
+                                                      storePhone: jsonResp!["phone_nu"].stringValue,
+                                                      storeAddress: jsonResp!["address"].stringValue,
+                                                      storeGoods: [],
+                                                      storeComments: [],
+                                                      distAvatarId: jsonResp!["provider_avatar"].stringValue,
+                                                      distName: jsonResp!["provider"].stringValue)
+                            for goodsItem in jsonResp!["values"].arrayValue {
+                                let goodObject = EyGoods(goodsId: goodsItem["id"].intValue,
+                                                         goodsName: goodsItem["name"].stringValue,
+                                                         coverId: goodsItem["image_id"].stringValue,
+                                                         description: goodsItem["description"].stringValue,
+                                                         storeId: storeObject.storeId,
+                                                         storeName: storeObject.storeName,
+                                                         storage: goodsItem["storage"].intValue,
+                                                         price: Decimal(string: goodsItem["price"].stringValue),
+                                                         couponPrice: Decimal(string: goodsItem["coupon_price"].stringValue),
+                                                         tags: [],
+                                                         comments: [],
+                                                         imageCache: nil)
+                                storeObject.storeGoods?.append(goodObject)
+                            }
+                            
+                            for _ in jsonResp!["comments"].arrayValue {
+                                // read comments
+                            }
+                            
+                            let destinationStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                            let destinationViewController = destinationStoryboard.instantiateViewController(withIdentifier: "StoreDetailVC") as! StoreDetailViewController
+                            
+                            destinationViewController.storeObject = storeObject
+                            
+                            self.present(destinationViewController, animated: true, completion: nil)
+                            return
+                        } else {
+                            errorStr = jsonResp!["status"].stringValue
+                        }
+                    } else {
+                        errorStr = "bad response"
+                    }
+                } else {
+                    errorStr = "no response"
+                }
+            })
+        NSLog("request ended with " + errorStr)
     }
 }

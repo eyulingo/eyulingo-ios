@@ -23,7 +23,10 @@
 		8A0EA46322D6BFE500EFE92C /* EyulingoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0EA46222D6BFE500EFE92C /* EyulingoUITests.swift */; };
 		8A11801122DEE67700275AA3 /* GoodsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A11801022DEE67700275AA3 /* GoodsDetailViewController.swift */; };
 		8A11801322DEEF3F00275AA3 /* GoodsDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A11801222DEEF3F00275AA3 /* GoodsDetailTableViewController.swift */; };
+		8A17F31C22E00CC70000EC44 /* GoodsInStoreCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A17F31B22E00CC70000EC44 /* GoodsInStoreCell.xib */; };
 		8A2622FA22CB3E3E00C39943 /* Chp.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A2622F922CB3E3E00C39943 /* Chp.png */; };
+		8A2B704422DFFC0500452499 /* StoreDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A2B704322DFFC0500452499 /* StoreDetailViewController.swift */; };
+		8A2B704622DFFC1D00452499 /* StoreDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A2B704522DFFC1D00452499 /* StoreDetailTableViewController.swift */; };
 		8A5050FA22DDCE12003B123B /* GoodsResultTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5050F922DDCE12003B123B /* GoodsResultTableCell.swift */; };
 		8A55B27F22C8CE85007E77FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A55B27E22C8CE85007E77FD /* AppDelegate.swift */; };
 		8A55B28122C8CE85007E77FD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A55B28022C8CE85007E77FD /* SceneDelegate.swift */; };
@@ -123,7 +126,10 @@
 		8A0EA46422D6BFE500EFE92C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8A11801022DEE67700275AA3 /* GoodsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodsDetailViewController.swift; sourceTree = "<group>"; };
 		8A11801222DEEF3F00275AA3 /* GoodsDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodsDetailTableViewController.swift; sourceTree = "<group>"; };
+		8A17F31B22E00CC70000EC44 /* GoodsInStoreCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GoodsInStoreCell.xib; sourceTree = "<group>"; };
 		8A2622F922CB3E3E00C39943 /* Chp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Chp.png; sourceTree = "<group>"; };
+		8A2B704322DFFC0500452499 /* StoreDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreDetailViewController.swift; sourceTree = "<group>"; };
+		8A2B704522DFFC1D00452499 /* StoreDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreDetailTableViewController.swift; sourceTree = "<group>"; };
 		8A5050F922DDCE12003B123B /* GoodsResultTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodsResultTableCell.swift; sourceTree = "<group>"; };
 		8A55B27B22C8CE85007E77FD /* Eyulingo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eyulingo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A55B27E22C8CE85007E77FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -274,6 +280,16 @@
 			path = Image;
 			sourceTree = "<group>";
 		};
+		8A2B704222DFFBF400452499 /* StoreDetailPage */ = {
+			isa = PBXGroup;
+			children = (
+				8A2B704322DFFC0500452499 /* StoreDetailViewController.swift */,
+				8A2B704522DFFC1D00452499 /* StoreDetailTableViewController.swift */,
+				8A17F31B22E00CC70000EC44 /* GoodsInStoreCell.xib */,
+			);
+			path = StoreDetailPage;
+			sourceTree = "<group>";
+		};
 		8A55B27222C8CE85007E77FD = {
 			isa = PBXGroup;
 			children = (
@@ -389,6 +405,7 @@
 		8AC9E7D722C9A2E500F80460 /* VC */ = {
 			isa = PBXGroup;
 			children = (
+				8A2B704222DFFBF400452499 /* StoreDetailPage */,
 				8A11800F22DEE65F00275AA3 /* GoodsDetailPage */,
 				8AC867E022D5C8DC008E9CDA /* CartPage */,
 				8AC867DF22D5C8D3008E9CDA /* ProfilePage */,
@@ -563,6 +580,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A0DFDD322D8AA7400145FDC /* DynamicBg.mp4 in Resources */,
+				8A17F31C22E00CC70000EC44 /* GoodsInStoreCell.xib in Resources */,
 				8A2622FA22CB3E3E00C39943 /* Chp.png in Resources */,
 				8A55B28B22C8CE8A007E77FD /* LaunchScreen.storyboard in Resources */,
 				8A55B28822C8CE8A007E77FD /* Assets.xcassets in Resources */,
@@ -661,6 +679,7 @@
 				8A11801122DEE67700275AA3 /* GoodsDetailViewController.swift in Sources */,
 				8AC9E7E922C9A42300F80460 /* AdminOrderVC.swift in Sources */,
 				8A723DB222D4721E008FD0C9 /* ProfileContentViewController.swift in Sources */,
+				8A2B704422DFFC0500452499 /* StoreDetailViewController.swift in Sources */,
 				8AE902ED22DC2402008728F3 /* RWZoomableImageView.swift in Sources */,
 				8AEC567322DEAC2D00520C68 /* ModernSearchBarCell.swift in Sources */,
 				8AC9E7FD22C9C1A300F80460 /* AdminBill.swift in Sources */,
@@ -696,6 +715,7 @@
 				8A11801322DEEF3F00275AA3 /* GoodsDetailTableViewController.swift in Sources */,
 				8AEC566D22DEAC2D00520C68 /* ModernSearchBarIcon.swift in Sources */,
 				8A723DA922D4659E008FD0C9 /* CartViewController.swift in Sources */,
+				8A2B704622DFFC1D00452499 /* StoreDetailTableViewController.swift in Sources */,
 				8A09F12A22DC137100CD3B16 /* ImagePreviewViewController.swift in Sources */,
 				8ADB40FE22DD5CFF009C3538 /* EyCommentLevel.swift in Sources */,
 				8AC9E7FB22C9B57E00F80460 /* User.swift in Sources */,
