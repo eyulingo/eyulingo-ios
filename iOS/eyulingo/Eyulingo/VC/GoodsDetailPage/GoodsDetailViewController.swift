@@ -8,7 +8,13 @@
 
 import UIKit
 
-class GoodsDetailViewController: UIViewController {
+class GoodsDetailViewController: UIViewController, DismissMyselfDelegate {
+    
+    func dismissMe() {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    var openedByStoreId: Int?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +51,8 @@ class GoodsDetailViewController: UIViewController {
             if segue.identifier == "GoodsDetailSegue" {
                 contentVC = segue.destination as? GoodsDetailTableViewController
                 contentVC?.goodsObject = goodsObject
+                contentVC?.delegate = self
+                contentVC?.openedByStoreId = openedByStoreId
             }
         }
     }

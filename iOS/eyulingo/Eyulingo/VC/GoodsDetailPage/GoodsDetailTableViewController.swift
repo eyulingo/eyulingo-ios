@@ -12,6 +12,8 @@ import Alamofire_SwiftyJSON
 import SwiftyJSON
 
 class GoodsDetailTableViewController: UITableViewController {
+    
+    var openedByStoreId: Int?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,6 +52,7 @@ class GoodsDetailTableViewController: UITableViewController {
     
     var goodsObject: EyGoods?
     var quantity: Int = 1
+    var delegate: DismissMyselfDelegate?
     /*
      // MARK: - Navigation
      
@@ -87,6 +90,10 @@ class GoodsDetailTableViewController: UITableViewController {
     }
     
     func visitStore(_ storeId: Int) {
+        if storeId == openedByStoreId {
+            delegate?.dismissMe()
+            return
+        }
         var errorStr = "general error"
         let getParams: Parameters = [
             "id": storeId
@@ -146,4 +153,8 @@ class GoodsDetailTableViewController: UITableViewController {
             })
         NSLog("request ended with " + errorStr)
     }
+}
+
+protocol DismissMyselfDelegate {
+    func dismissMe() -> ()
 }

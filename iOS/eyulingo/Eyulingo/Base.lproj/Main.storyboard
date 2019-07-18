@@ -155,7 +155,7 @@ Project Eyulingo. 一切权利保留。</string>
                                 </subviews>
                             </stackView>
                             <navigationBar contentMode="scaleToFill" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cPn-Ox-KRc">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="96"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="103.33333333333333"/>
                                 <items>
                                     <navigationItem id="DhO-JF-WjR">
                                         <barButtonItem key="rightBarButtonItem" style="plain" id="Vv9-gl-hpc">
@@ -541,7 +541,13 @@ Project Eyulingo. 一切权利保留。</string>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HtY-s1-zeJ">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                 <items>
-                                    <navigationItem title="商店详情" id="6l8-lS-cS7"/>
+                                    <navigationItem title="商店详情" id="6l8-lS-cS7">
+                                        <barButtonItem key="rightBarButtonItem" systemItem="stop" id="tgQ-Aq-C8s">
+                                            <connections>
+                                                <action selector="dismissMe:" destination="YYE-vW-KwG" id="iia-0q-MYo"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
                                 </items>
                             </navigationBar>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wR5-4V-STT">

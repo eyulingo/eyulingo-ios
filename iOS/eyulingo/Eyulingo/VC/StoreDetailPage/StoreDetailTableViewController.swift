@@ -175,7 +175,7 @@ class StoreDetailTableViewController: UITableViewController {
                     let jsonResp = responseJSON.value
                     if jsonResp != nil {
                         if jsonResp!["status"].stringValue == "ok" {
-                            var goodObj = EyGoods(goodsId: jsonResp!["id"].intValue,
+                            let goodObj = EyGoods(goodsId: jsonResp!["id"].intValue,
                                                   goodsName: jsonResp!["name"].stringValue,
                                                   coverId: jsonResp!["image_id"].stringValue,
                                                   description: jsonResp!["description"].stringValue,
@@ -195,6 +195,7 @@ class StoreDetailTableViewController: UITableViewController {
                             let destinationViewController = destinationStoryboard.instantiateViewController(withIdentifier: "GoodsDetailVC") as! GoodsDetailViewController
                             
                             destinationViewController.goodsObject = goodObj
+                            destinationViewController.openedByStoreId = self.storeObject?.storeId
                             
                             self.present(destinationViewController, animated: true, completion: nil)
                             return
