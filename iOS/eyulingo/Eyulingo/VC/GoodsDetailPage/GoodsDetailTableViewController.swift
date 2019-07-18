@@ -167,7 +167,7 @@ class GoodsDetailTableViewController: UITableViewController {
         }
         var errorStr = "general error"
         let getParams: Parameters = [
-            "id": storeId
+            "id": storeId!
         ]
         Alamofire.request(Eyulingo_UserUri.storeDetailGetUri,
                           method: .get, parameters: getParams)
@@ -209,7 +209,7 @@ class GoodsDetailTableViewController: UITableViewController {
                             let destinationViewController = destinationStoryboard.instantiateViewController(withIdentifier: "StoreDetailVC") as! StoreDetailViewController
                             
                             destinationViewController.storeObject = storeObject
-                            
+                            destinationViewController.openedByGoodsId = self.goodsObject?.goodsId
                             self.present(destinationViewController, animated: true, completion: nil)
                             return
                         } else {

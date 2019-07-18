@@ -23,6 +23,7 @@ class StoreDetailTableViewController: UITableViewController {
     @IBOutlet weak var distNameField: UILabel!
     
     var storeObject: EyStore?
+    var openedByGoodsId: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -194,6 +195,10 @@ class StoreDetailTableViewController: UITableViewController {
     }
     
     func openGoodsDetail(_ goodsId: Int, imgCache: UIImage? = nil) {
+        if goodsId == openedByGoodsId {
+            self.dismiss(animated: true, completion: nil)
+            return
+        }
         var errorStr = "general error"
         let getParams: Parameters = [
             "id": goodsId

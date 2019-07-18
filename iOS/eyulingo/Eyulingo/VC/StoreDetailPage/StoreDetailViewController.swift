@@ -14,6 +14,8 @@ class StoreDetailViewController: UIViewController {
     var storeObject: EyStore?
     var contentVC: StoreDetailTableViewController?
     
+    var openedByGoodsId: Int?
+    
     @IBAction func dismissMe(_ sender: UIBarButtonItem) {
         self.dismiss(animated: true, completion: nil)
     }
@@ -32,6 +34,7 @@ class StoreDetailViewController: UIViewController {
             if segue.identifier == "StoreDetailSegue" {
                 contentVC = segue.destination as? StoreDetailTableViewController
                 contentVC?.storeObject = storeObject
+                contentVC?.openedByGoodsId = openedByGoodsId
             }
         }
     }
@@ -60,3 +63,4 @@ class StoreDetailViewController: UIViewController {
     */
 
 }
+

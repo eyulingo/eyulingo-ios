@@ -16,13 +16,12 @@ class GoodsInCartTableCell: UITableViewCell {
     
     @IBOutlet weak var imageViewField: UIImageView!
     @IBOutlet weak var goodsNameField: UILabel!
-    @IBOutlet weak var descriptionTextField: UILabel!
-    @IBOutlet weak var priceTextField: UILabel!
-    @IBOutlet weak var storageTextField: UILabel!
-    @IBOutlet weak var storeTextField: UILabel!
-    @IBAction func GoToStoreButtonTapped(_ sender: UIButton) {
-        self.delegate?.goToStore(goodsObject?.storeId)
-    }
+    @IBOutlet weak var priceField: UILabel!
+    @IBOutlet weak var amountField: UILabel!
+    @IBOutlet weak var stepper: UIStepper!
+    @IBOutlet weak var storeField: UILabel!
+    @IBOutlet weak var storageField: UILabel!
+    @IBOutlet weak var inadequatePromptField: UILabel!
     
     func fadeOut(duration: Double = 0.25, handler: (() -> ())?) {
         imageViewField.alpha = 1.0

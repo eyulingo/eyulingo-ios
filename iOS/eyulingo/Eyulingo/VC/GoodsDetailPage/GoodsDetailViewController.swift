@@ -14,7 +14,13 @@ class GoodsDetailViewController: UIViewController, DismissMyselfDelegate {
         self.dismiss(animated: true, completion: nil)
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        // if the delegate isn't null (raised by cart), tell him to refresh it
+        refreshCartDelegate?.refreshCart()
+    }
+
     var openedByStoreId: Int?
+    var refreshCartDelegate: CartRefreshDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,4 +77,8 @@ class GoodsDetailViewController: UIViewController, DismissMyselfDelegate {
             handler?()
         })
     }
+}
+
+protocol CartRefreshDelegate {
+    func refreshCart() -> ()
 }
