@@ -7,11 +7,75 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
+import Alamofire_SwiftyJSON
 import Highlighter
 
 
 
-class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, goToStoreDelegate {
+    func goToStore(_ storeId: Int?) {
+        var errorStr = "general error"
+        let getParams: Parameters = [
+            "id": storeId!
+        ]
+        Alamofire.request(Eyulingo_UserUri.storeDetailGetUri,
+                          method: .get, parameters: getParams)
+            .responseSwiftyJSON(completionHandler: { responseJSON in
+                if responseJSON.error == nil {
+                    let jsonResp = responseJSON.value
+                    if jsonResp != nil {
+                        if jsonResp!["status"].stringValue == "ok" {
+                            var storeObject = EyStore(storeId: jsonResp!["id"].intValue,
+                                                      coverId: jsonResp!["image_id"].stringValue,
+                                                      storeName: jsonResp!["name"].stringValue,
+                                                      storePhone: jsonResp!["phone_nu"].stringValue,
+                                                      storeAddress: jsonResp!["address"].stringValue,
+                                                      storeGoods: [],
+                                                      storeComments: [],
+                                                      distAvatarId: jsonResp!["provider_avatar"].stringValue,
+                                                      distName: jsonResp!["provider"].stringValue)
+                            for goodsItem in jsonResp!["values"].arrayValue {
+                                let goodObject = EyGoods(goodsId: goodsItem["id"].intValue,
+                                                         goodsName: goodsItem["name"].stringValue,
+                                                         coverId: goodsItem["image_id"].stringValue,
+                                                         description: goodsItem["description"].stringValue,
+                                                         storeId: storeObject.storeId,
+                                                         storeName: storeObject.storeName,
+                                                         storage: goodsItem["storage"].intValue,
+                                                         price: Decimal(string: goodsItem["price"].stringValue),
+                                                         couponPrice: Decimal(string: goodsItem["coupon_price"].stringValue),
+                                                         tags: [],
+                                                         comments: [],
+                                                         imageCache: nil)
+                                storeObject.storeGoods?.append(goodObject)
+                            }
+                            
+                            for _ in jsonResp!["comments"].arrayValue {
+                                // read comments
+                            }
+                            
+                            let destinationStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                            let destinationViewController = destinationStoryboard.instantiateViewController(withIdentifier: "StoreDetailVC") as! StoreDetailViewController
+                            
+                            destinationViewController.storeObject = storeObject
+                            
+                            self.present(destinationViewController, animated: true, completion: nil)
+                            return
+                        } else {
+                            errorStr = jsonResp!["status"].stringValue
+                        }
+                    } else {
+                        errorStr = "bad response"
+                    }
+                } else {
+                    errorStr = "no response"
+                }
+            })
+        NSLog("request ended with " + errorStr)
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,6 +114,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         cell.priceTextField.text = "¥" + (goodsObject.price?.formattedAmount ?? "未知")
         cell.storageTextField.text = "库存 \(goodsObject.storage ?? 0) 件"
         cell.storeTextField.text = goodsObject.storeName ?? "店铺未知"
+        cell.delegate = self
         
         if keyWord != nil {
             if #available(iOS 13.0, *) {

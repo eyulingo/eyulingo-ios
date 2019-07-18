@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 import Alamofire
 import Alamofire_SwiftyJSON
 import SwiftyJSON
@@ -153,6 +154,16 @@ class StoreDetailTableViewController: UITableViewController {
             } else if indexPath.row == 2 {
                 guard let number = URL(string: "tel://" + self.storePhoneField.text!) else { return }
                 UIApplication.shared.open(number)
+            } else if indexPath.row == 3 {
+                if let cell = tableView.cellForRow(at: indexPath) {
+                    cell.becomeFirstResponder()
+                    let copyItem = UIMenuItem(title: "拷贝", action: #selector(copyAddress))
+
+                    let menuController = UIMenuController.shared
+                    menuController.menuItems = [copyItem]
+                    menuController.setTargetRect(cell.frame, in: cell.superview!)
+                    menuController.setMenuVisible(true, animated: true)
+                }
             }
         } else if indexPath.section == 1 {
             if indexPath.row == 0 {
@@ -175,6 +186,11 @@ class StoreDetailTableViewController: UITableViewController {
     @objc func copyStoreName() {
         let pasteboard = UIPasteboard.general
         pasteboard.string = storeObject?.storeName
+    }
+    
+    @objc func copyAddress() {
+        let pasteboard = UIPasteboard.general
+        pasteboard.string = storeObject?.storeAddress
     }
     
     func openGoodsDetail(_ goodsId: Int, imgCache: UIImage? = nil) {

@@ -181,7 +181,8 @@ class SearchViewController: UIViewController, ModernSearchBarDelegate, SearchDel
     func onClickItemSuggestionsView(item: String) {
         print("User touched this item: " + item)
         searchBar.text = item
-        searchBar.showsCancelButton = false
+        searchBar.setShowsCancelButton(false, animated: true)
+//        searchBar.showsCancelButton = false
         searchBar.resignFirstResponder()
         callRefresh(searchBar.text!)
     }

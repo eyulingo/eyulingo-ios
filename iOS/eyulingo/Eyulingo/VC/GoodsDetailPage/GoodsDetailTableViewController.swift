@@ -10,24 +10,32 @@ import UIKit
 import Alamofire
 import Alamofire_SwiftyJSON
 import SwiftyJSON
+import Loaf
 
 class GoodsDetailTableViewController: UITableViewController {
     
     var openedByStoreId: Int?
 
+    func makeAlert(_ title: String, _ message: String, completion: @escaping () -> ()) {
+        let controller = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "嗯", style: .default, handler: nil)
+        controller.addAction(okAction)
+        self.present(controller, animated: true, completion: completion)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         
         stepper.stepValue = 1.0
-        stepper.minimumValue = 1.0
+        stepper.minimumValue = 0.0
         if goodsObject != nil {
-            stepper.maximumValue = max(Double(goodsObject!.storage!), 1.0)
+            stepper.maximumValue = Double(goodsObject!.storage!)
         } else {
             stepper.maximumValue = 1000.0
         }
-        stepper.value = 1.0
+        stepper.value = min(1.0, stepper.maximumValue)
         
         goodsName.text = goodsObject?.goodsName
         storeName.text = goodsObject?.storeName
@@ -40,6 +48,7 @@ class GoodsDetailTableViewController: UITableViewController {
     
     @IBAction func stepperChanged(_ sender: UIStepper) {
         amountField.text = "\(Int(sender.value)) 件"
+        quantity = Int(sender.value)
     }
     
     @IBOutlet weak var goodsName: UILabel!
@@ -51,7 +60,7 @@ class GoodsDetailTableViewController: UITableViewController {
     @IBOutlet weak var amountField: UILabel!
     
     var goodsObject: EyGoods?
-    var quantity: Int = 1
+    var quantity: Int = 0
     var delegate: DismissMyselfDelegate?
     /*
      // MARK: - Navigation
@@ -63,7 +72,41 @@ class GoodsDetailTableViewController: UITableViewController {
      }
      */
     @IBAction func addToCartButtonTapped(_ sender: UIButton) {
+        if quantity == 0 {
+            return
+        }
+        if goodsObject == nil {
+            return
+        }
         
+        let postParams: Parameters = [
+            "id": goodsObject!.goodsId!,
+            "amount": quantity
+        ]
+        Alamofire.request(Eyulingo_UserUri.addToCartPostUri,
+                          method: .post,
+                          parameters: postParams,
+                          encoding: JSONEncoding.default)
+            .responseSwiftyJSON(completionHandler: { responseJSON in
+                var errCode = "general error"
+                if responseJSON.error == nil {
+                    let jsonResp = responseJSON.value
+                    if jsonResp != nil {
+                        if jsonResp!["status"].stringValue == "ok" {
+                            Loaf("成功将 \(self.quantity) 件 “\(self.goodsObject?.goodsName ?? "商品")” 加入购物车。", state: .success, sender: self).show()
+                            return
+                        } else {
+                            errCode = jsonResp!["status"].stringValue
+                        }
+                    } else {
+                        errCode = "bad response"
+                    }
+                } else {
+                    errCode = "no response"
+                }
+                
+                Loaf("加入购物车失败。" + "服务器报告了一个 “\(errCode)” 错误。", state: .error, sender: self).show()
+            })
     }
     
     @IBAction func purchaseButtonTapped(_ sender: UIButton) {

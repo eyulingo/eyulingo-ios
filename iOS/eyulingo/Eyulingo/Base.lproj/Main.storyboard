@@ -517,7 +517,7 @@ Project Eyulingo. 一切权利保留。</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kFR-QX-f8i" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1763.7681159420292" y="825.00000000000011"/>
+            <point key="canvasLocation" x="894" y="950"/>
         </scene>
         <!--Store Detail View Controller-->
         <scene sceneID="4Vo-3N-csk">
@@ -583,7 +583,7 @@ Project Eyulingo. 一切权利保留。</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="APC-pk-AM7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2521.739130434783" y="849.45652173913049"/>
+            <point key="canvasLocation" x="3370" y="120"/>
         </scene>
         <!--Store Detail Table View Controller-->
         <scene sceneID="ppx-au-1jn">
@@ -738,7 +738,7 @@ Project Eyulingo. 一切权利保留。</string>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="mcW-Em-44j" detailTextLabel="nNf-Th-4Ca" style="IBUITableViewCellStyleValue1" id="yxc-GR-yKO">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" textLabel="mcW-Em-44j" detailTextLabel="nNf-Th-4Ca" style="IBUITableViewCellStyleValue1" id="yxc-GR-yKO">
                                         <rect key="frame" x="0.0" y="497.33333206176758" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yxc-GR-yKO" id="ZwF-mc-iFm">
@@ -804,7 +804,7 @@ Project Eyulingo. 一切权利保留。</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pdk-KK-NoD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3305.7971014492755" y="831.52173913043487"/>
+            <point key="canvasLocation" x="4135" y="102"/>
         </scene>
         <!--我-->
         <scene sceneID="fB3-Xk-OT0">
@@ -887,7 +887,7 @@ Project Eyulingo. 一切权利保留。</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BPN-x2-Cbg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="918.84057971014499" y="928.53260869565224"/>
+            <point key="canvasLocation" x="72" y="950"/>
         </scene>
         <!--Image Preview View Controller-->
         <scene sceneID="yVm-xj-mEK">
@@ -970,7 +970,7 @@ Project Eyulingo. 一切权利保留。</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5md-fl-kGd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-933.33333333333337" y="1689.9456521739132"/>
+            <point key="canvasLocation" x="2583" y="120"/>
         </scene>
         <!--Profile Content View Controller-->
         <scene sceneID="rLy-bH-sPf">
@@ -1164,7 +1164,7 @@ Project Eyulingo. 一切权利保留。</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gam-3x-mOL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-52" y="1670"/>
+            <point key="canvasLocation" x="-51" y="1690"/>
         </scene>
         <!--Change Email View Controller-->
         <scene sceneID="Zty-ia-B93">
@@ -1920,7 +1920,7 @@ Project Eyulingo. 一切权利保留。</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cir-va-Ovy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1676.8115942028987" y="-580.43478260869574"/>
+            <point key="canvasLocation" x="1764" y="-580"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="bdb-VK-uxY">
@@ -1957,16 +1957,6 @@ Project Eyulingo. 一切权利保留。</string>
                                                 <constraint firstAttribute="height" constant="20.329999999999998" id="idd-VD-JOh"/>
                                             </constraints>
                                         </imageView>
-                                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nKp-4y-KwT">
-                                            <rect key="frame" x="156" y="115" width="75" height="20"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="20" id="tfI-O5-UO3"/>
-                                            </constraints>
-                                            <state key="normal" title="---"/>
-                                            <connections>
-                                                <action selector="GoToStoreButtonTapped:" destination="mab-o7-uAB" eventType="touchUpInside" id="0zT-sf-Pws"/>
-                                            </connections>
-                                        </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabel" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Tf-J7-bWS">
                                             <rect key="frame" x="156" y="36" width="238" height="38"/>
                                             <constraints>
@@ -1994,6 +1984,16 @@ Project Eyulingo. 一切权利保留。</string>
                                             <color key="textColor" cocoaTouchSystemColor="tertiaryLabelColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nKp-4y-KwT">
+                                            <rect key="frame" x="156" y="115" width="75" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="20" id="tfI-O5-UO3"/>
+                                            </constraints>
+                                            <state key="normal" title="---"/>
+                                            <connections>
+                                                <action selector="GoToStoreButtonTapped:" destination="mab-o7-uAB" eventType="touchUpInside" id="0zT-sf-Pws"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="pAy-XA-Hez" firstAttribute="leading" secondItem="bm9-3R-eOP" secondAttribute="trailing" constant="12" id="5ep-yV-19m"/>
@@ -2042,7 +2042,7 @@ Project Eyulingo. 一切权利保留。</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NhB-G9-wyk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2582.608695652174" y="-580.0271739130435"/>
+            <point key="canvasLocation" x="2583" y="-641"/>
         </scene>
         <!--Goods Detail Table View Controller-->
         <scene sceneID="ZMk-ON-arK">
@@ -2270,7 +2270,7 @@ Project Eyulingo. 一切权利保留。</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BlP-UE-ebT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3369.5652173913045" y="299.59239130434787"/>
+            <point key="canvasLocation" x="4135" y="-739"/>
         </scene>
         <!--Goods Detail View Controller-->
         <scene sceneID="2Xy-8D-E9j">
@@ -2346,7 +2346,7 @@ Project Eyulingo. 一切权利保留。</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DQs-XJ-AAI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2582.608695652174" y="119.83695652173914"/>
+            <point key="canvasLocation" x="3370" y="-580"/>
         </scene>
     </scenes>
     <resources>

@@ -140,7 +140,8 @@ public class ModernSearchBar: UISearchBar, UISearchBarDelegate, UITableViewDataS
     public func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         if suggestionsView == nil { configureViews() }
         delegateModernSearchBar?.searchBarTextDidEndEditing?(searchBar)
-        showsCancelButton = true
+//        showsCancelButton = true
+        setShowsCancelButton(true, animated: true)
     }
 
     public func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
@@ -153,14 +154,15 @@ public class ModernSearchBar: UISearchBar, UISearchBarDelegate, UITableViewDataS
         delegateModernSearchBar?.searchBarSearchButtonClicked?(searchBar)
         endEditing(true)
         searchDelegate?.performSearch(text)
-        showsCancelButton = false
+//        showsCancelButton = false
+        setShowsCancelButton(false, animated: true)
     }
 
     public func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         closeSuggestionsView()
         delegateModernSearchBar?.searchBarCancelButtonClicked?(searchBar)
         endEditing(true)
-        showsCancelButton = false
+        setShowsCancelButton(false, animated: true)
     }
 
     public func searchBarShouldEndEditing(_ searchBar: UISearchBar) -> Bool {
