@@ -99,7 +99,7 @@ class GoodsDetailTableViewController: UITableViewController {
                 let visitItem = UIMenuItem(title: "造访", action: #selector(visitStore))
                 let copyItem = UIMenuItem(title: "拷贝", action: #selector(copyStoreName))
                 let menuController = UIMenuController.shared
-                menuController.menuItems = [visitItem, copyItem]
+                menuController.menuItems = [copyItem, visitItem]
                 menuController.setTargetRect(cell.frame, in: cell.superview!)
                 menuController.setMenuVisible(true, animated: true)
             }

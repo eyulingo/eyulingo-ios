@@ -141,6 +141,15 @@ class StoreDetailTableViewController: UITableViewController {
                 destinationViewController.mainImage = storeCoverImageField.image
                 destinationViewController.promptText = "“\(self.storeObject?.storeName ?? "商店")” 图像"
                 self.present(destinationViewController, animated: true, completion: nil)
+            } else if indexPath.row == 1 {
+                if let cell = tableView.cellForRow(at: indexPath) {
+                    cell.becomeFirstResponder()
+                    let copyItem = UIMenuItem(title: "拷贝", action: #selector(copyStoreName))
+                    let menuController = UIMenuController.shared
+                    menuController.menuItems = [copyItem]
+                    menuController.setTargetRect(cell.frame, in: cell.superview!)
+                    menuController.setMenuVisible(true, animated: true)
+                }
             } else if indexPath.row == 2 {
                 guard let number = URL(string: "tel://" + self.storePhoneField.text!) else { return }
                 UIApplication.shared.open(number)
@@ -161,6 +170,11 @@ class StoreDetailTableViewController: UITableViewController {
             openGoodsDetail((storeObject?.storeGoods?[indexPath.row].goodsId)!,
                             imgCache: (tableView.cellForRow(at: indexPath) as! GoodsResultTableCell).imageViewField.image)
         }
+    }
+    
+    @objc func copyStoreName() {
+        let pasteboard = UIPasteboard.general
+        pasteboard.string = storeObject?.storeName
     }
     
     func openGoodsDetail(_ goodsId: Int, imgCache: UIImage? = nil) {
