@@ -156,7 +156,7 @@ Project Eyulingo. 一切权利保留。</string>
                                 </subviews>
                             </stackView>
                             <navigationBar contentMode="scaleToFill" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cPn-Ox-KRc">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="96"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="103.33333333333333"/>
                                 <items>
                                     <navigationItem id="DhO-JF-WjR">
                                         <barButtonItem key="rightBarButtonItem" style="plain" id="Vv9-gl-hpc">
@@ -683,6 +683,16 @@ Project Eyulingo. 一切权利保留。</string>
                                 </view>
                                 <blurEffect style="regular"/>
                             </visualEffectView>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W4f-PX-B5o">
+                                <rect key="frame" x="0.0" y="44" width="414" height="692"/>
+                                <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="692" id="liB-lm-TB2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HtY-s1-zeJ">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                 <items>
@@ -704,9 +714,11 @@ Project Eyulingo. 一切权利保留。</string>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="W4f-PX-B5o" firstAttribute="trailing" secondItem="WmQ-ix-Iuw" secondAttribute="trailing" id="1hR-qW-LkG"/>
                             <constraint firstItem="wR5-4V-STT" firstAttribute="leading" secondItem="FiE-f1-2hh" secondAttribute="leading" id="62S-tJ-u4t"/>
                             <constraint firstItem="wR5-4V-STT" firstAttribute="trailing" secondItem="FiE-f1-2hh" secondAttribute="trailing" id="Boe-zo-Mmw"/>
                             <constraint firstItem="WmQ-ix-Iuw" firstAttribute="leading" secondItem="FiE-f1-2hh" secondAttribute="leading" id="JkC-vn-Tyw"/>
+                            <constraint firstItem="W4f-PX-B5o" firstAttribute="top" secondItem="WmQ-ix-Iuw" secondAttribute="top" id="K6C-kp-cQf"/>
                             <constraint firstItem="dQ8-ex-8IS" firstAttribute="leading" secondItem="FiE-f1-2hh" secondAttribute="leading" id="ML8-SF-e40"/>
                             <constraint firstItem="WmQ-ix-Iuw" firstAttribute="top" secondItem="HtY-s1-zeJ" secondAttribute="bottom" id="MWr-6f-9Yf"/>
                             <constraint firstItem="wR5-4V-STT" firstAttribute="bottom" secondItem="FiE-f1-2hh" secondAttribute="bottom" id="Olp-kH-EEM"/>
@@ -715,6 +727,7 @@ Project Eyulingo. 一切权利保留。</string>
                             <constraint firstItem="WmQ-ix-Iuw" firstAttribute="trailing" secondItem="FiE-f1-2hh" secondAttribute="trailing" id="YqS-l4-kJ4"/>
                             <constraint firstItem="wR5-4V-STT" firstAttribute="top" secondItem="HtY-s1-zeJ" secondAttribute="bottom" id="Zf7-tQ-6qX"/>
                             <constraint firstItem="WmQ-ix-Iuw" firstAttribute="bottom" secondItem="FiE-f1-2hh" secondAttribute="bottom" id="ayY-ff-l85"/>
+                            <constraint firstItem="W4f-PX-B5o" firstAttribute="leading" secondItem="wR5-4V-STT" secondAttribute="leading" id="cn5-QN-H7m"/>
                             <constraint firstItem="HtY-s1-zeJ" firstAttribute="centerX" secondItem="Oap-hf-eU9" secondAttribute="centerX" id="et8-8H-8hH"/>
                             <constraint firstItem="dQ8-ex-8IS" firstAttribute="top" secondItem="HtY-s1-zeJ" secondAttribute="bottom" id="fUm-ed-EQ9"/>
                             <constraint firstItem="dQ8-ex-8IS" firstAttribute="bottom" secondItem="FiE-f1-2hh" secondAttribute="bottom" id="iQN-CF-TKj"/>
@@ -728,7 +741,7 @@ Project Eyulingo. 一切权利保留。</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="APC-pk-AM7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3370" y="120"/>
+            <point key="canvasLocation" x="3369.5652173913045" y="119.83695652173914"/>
         </scene>
         <!--Store Detail Table View Controller-->
         <scene sceneID="ppx-au-1jn">
@@ -2420,6 +2433,106 @@ Project Eyulingo. 一切权利保留。</string>
             </objects>
             <point key="canvasLocation" x="4135" y="-739"/>
         </scene>
+        <!--Purchase View Controller-->
+        <scene sceneID="FFW-7g-rte">
+            <objects>
+                <viewController storyboardIdentifier="PurchaseVC" id="nCk-VG-4Mf" customClass="PurchaseViewController" customModule="Eyulingo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iWi-om-1cC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FO8-iz-ngd">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="SFO-KA-8R1">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="XIf-3i-gka">
+                                            <rect key="frame" x="40" y="285.66666666666669" width="334" height="165"/>
+                                            <subviews>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="收货人姓名" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="KAl-Am-aWZ">
+                                                    <rect key="frame" x="0.0" y="0.0" width="334" height="34"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="联系电话" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="HPO-RG-Iop">
+                                                    <rect key="frame" x="0.0" y="45" width="334" height="34"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="phonePad" textContentType="tel"/>
+                                                </textField>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="收货地址" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="i67-hb-Pf0">
+                                                    <rect key="frame" x="0.0" y="90" width="334" height="34"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MAx-SD-Aiq">
+                                                    <rect key="frame" x="121" y="135" width="92" height="30"/>
+                                                    <state key="normal" title="选择常用地址"/>
+                                                    <connections>
+                                                        <action selector="showPickerViewWithSender:" destination="nCk-VG-4Mf" eventType="touchUpInside" id="oR4-2O-Bne"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="HPO-RG-Iop" secondAttribute="trailing" id="4xD-0O-5Yd"/>
+                                                <constraint firstItem="KAl-Am-aWZ" firstAttribute="leading" secondItem="XIf-3i-gka" secondAttribute="leading" id="7gs-jo-fXx"/>
+                                                <constraint firstItem="HPO-RG-Iop" firstAttribute="top" secondItem="KAl-Am-aWZ" secondAttribute="bottom" constant="11" id="FHl-pa-7R3"/>
+                                                <constraint firstItem="i67-hb-Pf0" firstAttribute="leading" secondItem="XIf-3i-gka" secondAttribute="leading" id="IOh-MX-Kay"/>
+                                                <constraint firstItem="HPO-RG-Iop" firstAttribute="leading" secondItem="XIf-3i-gka" secondAttribute="leading" id="Kfh-k2-LJ9"/>
+                                                <constraint firstItem="MAx-SD-Aiq" firstAttribute="top" secondItem="i67-hb-Pf0" secondAttribute="bottom" constant="11" id="R6l-YF-1zv"/>
+                                                <constraint firstAttribute="trailing" secondItem="KAl-Am-aWZ" secondAttribute="trailing" id="mTQ-cs-uXx"/>
+                                                <constraint firstAttribute="trailing" secondItem="i67-hb-Pf0" secondAttribute="trailing" id="mrQ-3Z-Pb6"/>
+                                                <constraint firstItem="i67-hb-Pf0" firstAttribute="top" secondItem="HPO-RG-Iop" secondAttribute="bottom" constant="11" id="qwA-Rk-6fu"/>
+                                                <constraint firstItem="KAl-Am-aWZ" firstAttribute="top" secondItem="XIf-3i-gka" secondAttribute="top" id="x2N-lX-WiZ"/>
+                                            </constraints>
+                                        </stackView>
+                                        <textField hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HpH-iS-dJf">
+                                            <rect key="frame" x="354" y="8" width="20" height="20"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="20" id="cRm-J6-ApJ"/>
+                                                <constraint firstAttribute="height" constant="20" id="zKe-0L-kEW"/>
+                                            </constraints>
+                                            <color key="textColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                            <connections>
+                                                <action selector="textFieldWithSender:" destination="nCk-VG-4Mf" eventType="editingDidBegin" id="zFt-ZM-6Rf"/>
+                                            </connections>
+                                        </textField>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="XIf-3i-gka" firstAttribute="centerY" secondItem="SFO-KA-8R1" secondAttribute="centerY" id="860-dQ-xln"/>
+                                        <constraint firstAttribute="trailing" secondItem="HpH-iS-dJf" secondAttribute="trailing" constant="40" id="QKb-qP-vIb"/>
+                                        <constraint firstItem="XIf-3i-gka" firstAttribute="leading" secondItem="SFO-KA-8R1" secondAttribute="leading" constant="40" id="ZIM-gl-aAo"/>
+                                        <constraint firstAttribute="trailing" secondItem="XIf-3i-gka" secondAttribute="trailing" constant="40" id="eTg-BM-JpP"/>
+                                        <constraint firstItem="HpH-iS-dJf" firstAttribute="top" secondItem="SFO-KA-8R1" secondAttribute="top" constant="8" id="mac-LE-z3Y"/>
+                                    </constraints>
+                                </view>
+                                <blurEffect style="systemChromeMaterial"/>
+                            </visualEffectView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="FO8-iz-ngd" firstAttribute="leading" secondItem="MKJ-Nk-nA7" secondAttribute="leading" id="4rg-XL-WjW"/>
+                            <constraint firstItem="FO8-iz-ngd" firstAttribute="centerX" secondItem="iWi-om-1cC" secondAttribute="centerX" id="EB5-HM-OEO"/>
+                            <constraint firstItem="FO8-iz-ngd" firstAttribute="top" secondItem="MKJ-Nk-nA7" secondAttribute="top" id="XqW-gB-bcW"/>
+                            <constraint firstItem="FO8-iz-ngd" firstAttribute="bottom" secondItem="MKJ-Nk-nA7" secondAttribute="bottom" id="e6V-1n-7Lv"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="MKJ-Nk-nA7"/>
+                    </view>
+                    <connections>
+                        <outlet property="hiddenTextField" destination="HpH-iS-dJf" id="5S5-Hu-vWf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uwu-ax-V56" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3370" y="814"/>
+        </scene>
         <!--Goods Detail View Controller-->
         <scene sceneID="2Xy-8D-E9j">
             <objects>
@@ -2436,6 +2549,13 @@ Project Eyulingo. 一切权利保留。</string>
                                 </view>
                                 <blurEffect style="regular"/>
                             </visualEffectView>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r4P-WG-eSs">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W8D-28-osW">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                 <items>
@@ -2467,10 +2587,13 @@ Project Eyulingo. 一切权利保留。</string>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="GBB-sv-HmT" firstAttribute="bottom" secondItem="d1r-52-BE0" secondAttribute="bottom" id="2Bx-53-lf1"/>
+                            <constraint firstItem="r4P-WG-eSs" firstAttribute="trailing" secondItem="NGx-Mu-sS5" secondAttribute="trailing" id="2ZC-4A-27b"/>
+                            <constraint firstItem="r4P-WG-eSs" firstAttribute="top" secondItem="d1r-52-BE0" secondAttribute="top" id="6Jn-6J-UIZ"/>
                             <constraint firstItem="kfJ-gZ-NZ2" firstAttribute="leading" secondItem="d1r-52-BE0" secondAttribute="leading" id="9OC-rF-AoR"/>
                             <constraint firstItem="W8D-28-osW" firstAttribute="top" secondItem="GBB-sv-HmT" secondAttribute="top" id="9oF-K8-Suj"/>
                             <constraint firstItem="NGx-Mu-sS5" firstAttribute="leading" secondItem="d1r-52-BE0" secondAttribute="leading" id="GIH-5E-GA8"/>
                             <constraint firstItem="GBB-sv-HmT" firstAttribute="trailing" secondItem="d1r-52-BE0" secondAttribute="trailing" id="Htq-BS-HMx"/>
+                            <constraint firstItem="r4P-WG-eSs" firstAttribute="leading" secondItem="0Ou-Rz-VnO" secondAttribute="leading" id="HvF-uv-aaA"/>
                             <constraint firstItem="W8D-28-osW" firstAttribute="leading" secondItem="GBB-sv-HmT" secondAttribute="leading" id="OKq-HH-u1w"/>
                             <constraint firstItem="W8D-28-osW" firstAttribute="trailing" secondItem="GBB-sv-HmT" secondAttribute="trailing" id="OaO-MT-TgQ"/>
                             <constraint firstItem="GBB-sv-HmT" firstAttribute="leading" secondItem="d1r-52-BE0" secondAttribute="leading" id="Sba-7P-7MR"/>
@@ -2479,6 +2602,7 @@ Project Eyulingo. 一切权利保留。</string>
                             <constraint firstItem="d1r-52-BE0" firstAttribute="bottom" secondItem="kfJ-gZ-NZ2" secondAttribute="bottom" id="WW0-2c-NdF"/>
                             <constraint firstItem="d1r-52-BE0" firstAttribute="trailing" secondItem="NGx-Mu-sS5" secondAttribute="trailing" id="bnz-dZ-xPU"/>
                             <constraint firstItem="GBB-sv-HmT" firstAttribute="top" secondItem="d1r-52-BE0" secondAttribute="top" id="fOQ-w0-Tbd"/>
+                            <constraint firstItem="r4P-WG-eSs" firstAttribute="bottom" secondItem="d1r-52-BE0" secondAttribute="bottom" id="gAy-Kh-vnv"/>
                             <constraint firstItem="0Ou-Rz-VnO" firstAttribute="leading" secondItem="d1r-52-BE0" secondAttribute="leading" id="he5-hv-gnf"/>
                             <constraint firstItem="kfJ-gZ-NZ2" firstAttribute="height" secondItem="NGx-Mu-sS5" secondAttribute="height" id="jpA-jd-6Ca"/>
                             <constraint firstItem="d1r-52-BE0" firstAttribute="trailing" secondItem="kfJ-gZ-NZ2" secondAttribute="trailing" id="kDE-os-9jp"/>
@@ -2494,7 +2618,7 @@ Project Eyulingo. 一切权利保留。</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DQs-XJ-AAI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3370" y="-580"/>
+            <point key="canvasLocation" x="3369.5652173913045" y="-580.43478260869574"/>
         </scene>
     </scenes>
     <resources>

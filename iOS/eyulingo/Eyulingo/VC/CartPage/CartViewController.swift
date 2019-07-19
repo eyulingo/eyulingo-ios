@@ -37,6 +37,7 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
 
     @IBAction func confirmButtonTapped(_ sender: UIBarButtonItem) {
+        purchaseFromCart()
     }
 
     @IBAction func makePurchase(_ sender: UIButton) {
@@ -474,6 +475,11 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
 
     func purchaseFromCart() {
+        let destinationStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                                    let destinationViewController = destinationStoryboard.instantiateViewController(withIdentifier: "PurchaseVC") as! PurchaseViewController
+        
+                                    self.present(destinationViewController, animated: true, completion: nil)
+        /*
         if !cartTableView.isEditing {
             quitEditMode()
             return
@@ -506,5 +512,6 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
 
                 Loaf("加入购物车失败。" + "服务器报告了一个 “\(errCode)” 错误。", state: .error, sender: self).show()
             })
+ */
     }
 }
