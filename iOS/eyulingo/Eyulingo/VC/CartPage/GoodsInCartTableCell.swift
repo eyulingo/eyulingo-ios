@@ -10,9 +10,34 @@ import UIKit
 
 class GoodsInCartTableCell: UITableViewCell {
     
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        stepper.minimumValue = 0.0
+        stepper.maximumValue = Double(storage ?? 100)
+        stepper.value = 1.0
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    @IBAction func stepperTapped(_ sender: UIStepper) {
+        amount = Int(sender.value)
+        if goodsId != nil && amount != 0 {
+            self.amountModifyDelegate?.updateAmount(goodsId: goodsId, quantity: amount, completion: nil)
+            self.amountField.text = "×\(amount)"
+        }
+    }
+    
     var delegate: goToStoreDelegate?
     
+    var amountModifyDelegate: AmountModifyDelegate?
+    
     var goodsObject: EyGoods?
+    
+    var amount: Int = 1
+    var storage: Int?
+    var goodsId: Int?
     
     @IBOutlet weak var imageViewField: UIImageView!
     @IBOutlet weak var goodsNameField: UILabel!
@@ -44,4 +69,8 @@ class GoodsInCartTableCell: UITableViewCell {
             handler?()
         })
     }
+}
+
+protocol AmountModifyDelegate {
+    func updateAmount(goodsId: Int?, quantity: Int, completion: (() -> Void)?) -> ()
 }

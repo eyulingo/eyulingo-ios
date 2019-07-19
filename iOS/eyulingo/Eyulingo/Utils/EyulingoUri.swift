@@ -101,8 +101,13 @@ class Eyulingo_UserUri {
     static let addToCartPostUri = baseUri + "/addtocart"
     
     // parameters:
-    // id- 商品 ID
+    // id - 商品 ID
     static let removeFromCartPostUri = baseUri + "/deletecart"
+    
+    // parameters:
+    // id - 商品 ID
+    // amount - 购买数量
+    static let modifyAmountFromCartPostUri = baseUri + "/editcart"
     
     // parameters: <none>
     static let myCartGetUri = baseUri + "/mycart"

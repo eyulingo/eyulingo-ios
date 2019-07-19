@@ -9,11 +9,11 @@
 import Alamofire
 import Alamofire_SwiftyJSON
 import Loaf
+import Refresher
 import SwiftyJSON
 import UIKit
-import Refresher
 
-class CartViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CartRefreshDelegate {
+class CartViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CartRefreshDelegate, AmountModifyDelegate {
     func refreshCart() {
         constructData()
     }
@@ -31,6 +31,9 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell.amountField.text = "×\(cartObject.amount ?? 0)"
         cell.storeField.text = "库存 \(cartObject.storage ?? 0) 件"
         cell.inadequatePromptField.isHidden = cartObject.amount ?? -1 < cartObject.storage ?? 1
+        cell.amountModifyDelegate = self
+        cell.amount = cartObject.amount ?? 0
+        cell.goodsId = cartObject.goodsId
 
         if cartObject.imageCache != nil {
             cell.imageViewField.image = cartObject.imageCache
@@ -183,7 +186,7 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
         return [deleteAction, detailAction]
     }
 
-    func constructData(completion: (() -> ())? = nil) {
+    func constructData(completion: (() -> Void)? = nil) {
 //        loading = true
         startLoading()
         var errorStr = "general error"
@@ -392,5 +395,45 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
                 }
             })
         NSLog("request ended with " + errorStr)
+    }
+
+    func updateAmount(goodsId: Int?, quantity: Int, completion: (() -> Void)?) {
+        if goodsId == nil {
+            return
+        }
+        if quantity == 0 {
+            return
+        }
+
+        let postParams: Parameters = [
+            "id": goodsId!,
+            "amount": quantity,
+        ]
+        Alamofire.request(Eyulingo_UserUri.addToCartPostUri,
+                          method: .post,
+                          parameters: postParams,
+                          encoding: JSONEncoding.default)
+            .responseSwiftyJSON(completionHandler: { responseJSON in
+                var errCode = "general error"
+                if responseJSON.error == nil {
+                    let jsonResp = responseJSON.value
+                    if jsonResp != nil {
+                        if jsonResp!["status"].stringValue == "ok" {
+                            CartRefreshManager.setModifiedState()
+                            completion?()
+                            return
+                        } else {
+                            errCode = jsonResp!["status"].stringValue
+                        }
+                    } else {
+                        errCode = "bad response"
+                    }
+                } else {
+                    errCode = "no response"
+                }
+
+                Loaf("修改数量失败。" + "服务器报告了一个 “\(errCode)” 错误。", state: .error, sender: self).show()
+                completion?()
+            })
     }
 }
