@@ -18,6 +18,32 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
         constructData()
     }
 
+    @IBOutlet var purchaseButton: UIBarButtonItem!
+    @IBOutlet var confirmButton: UIBarButtonItem!
+    @IBOutlet var cancelButton: UIBarButtonItem!
+    
+    @IBOutlet var navBar: UINavigationBar!
+    func enterEditMode() {
+        navBar.topItem?.setRightBarButtonItems([confirmButton, cancelButton], animated: true)
+    }
+    
+    func quitEditMode() {
+        navBar.topItem?.setRightBarButtonItems([purchaseButton], animated: true)
+    }
+    
+    @IBAction func cancelButtonTapped(_ sender: UIBarButtonItem) {
+        cartTableView.setEditing(false, animated: true)
+        quitEditMode()
+    }
+    
+    @IBAction func confirmButtonTapped(_ sender: UIBarButtonItem) {
+    }
+    
+    @IBAction func makePurchase(_ sender: UIButton) {
+        cartTableView.setEditing(true, animated: true)
+        enterEditMode()
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return goodsInCart[section].1.count
     }
@@ -29,10 +55,12 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell.goodsNameField.text = cartObject.goodsName ?? "商品名称"
         cell.priceField.text = cartObject.price?.formattedAmount ?? "未知"
         cell.amountField.text = "×\(cartObject.amount ?? 0)"
-        cell.storeField.text = "库存 \(cartObject.storage ?? 0) 件"
+        cell.storeField.text = ""
+        cell.storageField.text = "库存 \(cartObject.storage ?? 0) 件"
         cell.inadequatePromptField.isHidden = cartObject.amount ?? -1 < cartObject.storage ?? 1
         cell.amountModifyDelegate = self
         cell.amount = cartObject.amount ?? 0
+        cell.storage = cartObject.storage
         cell.goodsId = cartObject.goodsId
         cell.initCell()
 
@@ -121,6 +149,8 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
                 self.cartTableView.stopPullToRefresh()
             })
         }
+        
+        quitEditMode()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -130,6 +160,11 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if tableView.isEditing {
+            return
+        }
+        
         tableView.deselectRow(at: indexPath, animated: true)
 
         let cartObject = goodsInCart[indexPath.section].1[indexPath.row]

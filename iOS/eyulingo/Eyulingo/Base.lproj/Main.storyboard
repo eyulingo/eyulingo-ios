@@ -217,18 +217,33 @@ Project Eyulingo. 一切权利保留。</string>
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                 <items>
                                     <navigationItem title="购物车" id="HvY-Os-bwR">
-                                        <barButtonItem key="rightBarButtonItem" style="plain" id="Nnn-lC-Si8">
-                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Uey-4s-fxy">
-                                                <rect key="frame" x="362" y="6" width="32" height="32"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" image="trash.slash" catalog="system"/>
-                                            </button>
-                                            <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </barButtonItem>
+                                        <rightBarButtonItems>
+                                            <barButtonItem style="plain" id="Nnn-lC-Si8">
+                                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Uey-4s-fxy">
+                                                    <rect key="frame" x="362" y="6" width="32" height="32"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" image="yensign.circle" catalog="system"/>
+                                                    <connections>
+                                                        <action selector="makePurchase:" destination="3V5-if-tkX" eventType="touchUpInside" id="ViT-z3-7Ey"/>
+                                                    </connections>
+                                                </button>
+                                                <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </barButtonItem>
+                                            <barButtonItem image="checkmark" catalog="system" id="SFD-Nu-cpy">
+                                                <connections>
+                                                    <action selector="confirmButtonTapped:" destination="3V5-if-tkX" id="GQY-6h-4Iz"/>
+                                                </connections>
+                                            </barButtonItem>
+                                            <barButtonItem image="multiply" catalog="system" id="5C2-c7-lTx">
+                                                <connections>
+                                                    <action selector="cancelButtonTapped:" destination="3V5-if-tkX" id="wOY-rk-GNo"/>
+                                                </connections>
+                                            </barButtonItem>
+                                        </rightBarButtonItems>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="144" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="xTS-9X-kZq">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" allowsSelectionDuringEditing="YES" allowsMultipleSelectionDuringEditing="YES" rowHeight="144" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="xTS-9X-kZq">
                                 <rect key="frame" x="0.0" y="44" width="414" height="643"/>
                                 <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
@@ -240,9 +255,9 @@ Project Eyulingo. 一切权利保留。</string>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FHx-11-rgu">
-                                                    <rect key="frame" x="0.0" y="0.0" width="144" height="144"/>
+                                                    <rect key="frame" x="20" y="11" width="122" height="122"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="144" id="Sg3-TD-Lm3"/>
+                                                        <constraint firstAttribute="width" constant="122" id="Sg3-TD-Lm3"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="美罗华" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xpk-05-X27">
@@ -251,69 +266,64 @@ Project Eyulingo. 一切权利保留。</string>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow.upright.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="pRR-PG-2YW">
-                                                    <rect key="frame" x="218" y="114.66666666666667" width="20" height="19.333333333333329"/>
-                                                    <color key="tintColor" cocoaTouchSystemColor="secondaryLabelColor"/>
-                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$83.33" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qkh-Ux-esn">
-                                                    <rect key="frame" x="156" y="77" width="96" height="35"/>
+                                                    <rect key="frame" x="156" y="65" width="96" height="35"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="29"/>
                                                     <color key="textColor" red="1" green="0.43921568630000002" blue="0.30980392159999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LE BLANC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pEj-7r-JyC">
-                                                    <rect key="frame" x="156" y="117" width="62" height="16"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="secondaryLabelColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="剩余 19837 件" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="whR-GP-f9N">
-                                                    <rect key="frame" x="156" y="50" width="72" height="14"/>
+                                                    <rect key="frame" x="156" y="38" width="72" height="14"/>
                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="11"/>
                                                     <color key="textColor" cocoaTouchSystemColor="tertiaryLabelColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="×1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1yD-dK-Yc4">
-                                                    <rect key="frame" x="254" y="87" width="19" height="21"/>
+                                                    <rect key="frame" x="254" y="75" width="19" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="wnw-tX-IWS">
-                                                    <rect key="frame" x="305" y="78" width="94" height="32"/>
+                                                    <rect key="frame" x="300" y="101" width="94" height="32"/>
                                                     <connections>
                                                         <action selector="stepperTapped:" destination="GyK-e2-t4U" eventType="valueChanged" id="uLW-1V-sGv"/>
                                                     </connections>
                                                 </stepper>
                                                 <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="库存不足" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4on-P7-Lad">
-                                                    <rect key="frame" x="336" y="49" width="58" height="17"/>
+                                                    <rect key="frame" x="230" y="35" width="58" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" cocoaTouchSystemColor="systemRedColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LE BLANC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pEj-7r-JyC">
+                                                    <rect key="frame" x="324" y="75" width="62" height="16"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="secondaryLabelColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="qkh-Ux-esn" firstAttribute="leading" secondItem="FHx-11-rgu" secondAttribute="trailing" constant="12" id="0kM-yO-JSR"/>
-                                                <constraint firstItem="FHx-11-rgu" firstAttribute="top" secondItem="ihd-XI-AdJ" secondAttribute="top" id="2I7-R2-TSC"/>
-                                                <constraint firstItem="whR-GP-f9N" firstAttribute="top" secondItem="xpk-05-X27" secondAttribute="bottom" constant="14" id="DgZ-5M-GwW"/>
-                                                <constraint firstItem="xpk-05-X27" firstAttribute="leading" secondItem="FHx-11-rgu" secondAttribute="trailing" constant="12" id="E7Z-n7-wUE"/>
-                                                <constraint firstItem="FHx-11-rgu" firstAttribute="leading" secondItem="ihd-XI-AdJ" secondAttribute="leading" id="EBQ-v0-sct"/>
-                                                <constraint firstItem="1yD-dK-Yc4" firstAttribute="top" secondItem="xpk-05-X27" secondAttribute="bottom" constant="51" id="IRz-Uy-Zg1"/>
+                                                <constraint firstItem="qkh-Ux-esn" firstAttribute="leading" secondItem="FHx-11-rgu" secondAttribute="trailing" constant="14" id="0kM-yO-JSR"/>
+                                                <constraint firstItem="wnw-tX-IWS" firstAttribute="bottom" secondItem="ihd-XI-AdJ" secondAttribute="bottomMargin" id="0m9-kK-gJs"/>
+                                                <constraint firstItem="FHx-11-rgu" firstAttribute="top" secondItem="ihd-XI-AdJ" secondAttribute="top" constant="11" id="2I7-R2-TSC"/>
+                                                <constraint firstItem="wnw-tX-IWS" firstAttribute="trailing" secondItem="ihd-XI-AdJ" secondAttribute="trailingMargin" id="8tk-K8-oHS"/>
+                                                <constraint firstItem="whR-GP-f9N" firstAttribute="top" secondItem="xpk-05-X27" secondAttribute="bottom" constant="2" id="DgZ-5M-GwW"/>
+                                                <constraint firstItem="xpk-05-X27" firstAttribute="leading" secondItem="FHx-11-rgu" secondAttribute="trailing" constant="14" id="E7Z-n7-wUE"/>
+                                                <constraint firstItem="FHx-11-rgu" firstAttribute="leading" secondItem="ihd-XI-AdJ" secondAttribute="leading" constant="20" id="EBQ-v0-sct"/>
+                                                <constraint firstItem="1yD-dK-Yc4" firstAttribute="top" secondItem="xpk-05-X27" secondAttribute="bottom" constant="39" id="IRz-Uy-Zg1"/>
                                                 <constraint firstItem="1yD-dK-Yc4" firstAttribute="leading" secondItem="qkh-Ux-esn" secondAttribute="trailing" constant="2" id="Jov-cU-kyr"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="wnw-tX-IWS" secondAttribute="trailing" constant="-5" id="LIc-G9-mGf"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="pEj-7r-JyC" secondAttribute="bottom" id="LLK-hz-giP"/>
-                                                <constraint firstItem="pRR-PG-2YW" firstAttribute="leading" secondItem="pEj-7r-JyC" secondAttribute="trailing" id="PhS-QK-0XB"/>
-                                                <constraint firstAttribute="bottom" secondItem="FHx-11-rgu" secondAttribute="bottom" id="TWO-Ud-3bP"/>
-                                                <constraint firstItem="4on-P7-Lad" firstAttribute="trailing" secondItem="ihd-XI-AdJ" secondAttribute="trailingMargin" id="VnT-Kq-msL"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="wnw-tX-IWS" secondAttribute="trailing" id="LIc-G9-mGf"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="pEj-7r-JyC" secondAttribute="bottom" constant="42" id="LLK-hz-giP"/>
+                                                <constraint firstAttribute="bottom" secondItem="FHx-11-rgu" secondAttribute="bottom" constant="11" id="TWO-Ud-3bP"/>
                                                 <constraint firstItem="1yD-dK-Yc4" firstAttribute="leading" secondItem="qkh-Ux-esn" secondAttribute="trailing" constant="2" id="X1H-sp-dGj"/>
-                                                <constraint firstAttribute="bottom" secondItem="pRR-PG-2YW" secondAttribute="bottom" constant="10" id="XUv-OI-eQt"/>
                                                 <constraint firstItem="qkh-Ux-esn" firstAttribute="top" secondItem="whR-GP-f9N" secondAttribute="bottom" constant="13" id="bfb-Xm-fIR"/>
-                                                <constraint firstItem="pEj-7r-JyC" firstAttribute="leading" secondItem="FHx-11-rgu" secondAttribute="trailing" constant="12" id="dOr-O4-eNr"/>
-                                                <constraint firstItem="4on-P7-Lad" firstAttribute="top" secondItem="xpk-05-X27" secondAttribute="bottom" constant="13" id="mVj-NR-9G1"/>
+                                                <constraint firstItem="pEj-7r-JyC" firstAttribute="leading" secondItem="FHx-11-rgu" secondAttribute="trailing" constant="182" id="dOr-O4-eNr"/>
+                                                <constraint firstItem="4on-P7-Lad" firstAttribute="leading" secondItem="whR-GP-f9N" secondAttribute="trailing" constant="2" id="nIC-tG-c0b"/>
                                                 <constraint firstItem="xpk-05-X27" firstAttribute="top" secondItem="ihd-XI-AdJ" secondAttribute="top" constant="10" id="ok3-wd-2f2"/>
                                                 <constraint firstAttribute="trailing" secondItem="xpk-05-X27" secondAttribute="trailing" constant="20" id="wAF-Zg-DJr"/>
-                                                <constraint firstItem="wnw-tX-IWS" firstAttribute="top" secondItem="4on-P7-Lad" secondAttribute="bottom" constant="12" id="x6q-Lr-j9Z"/>
-                                                <constraint firstItem="whR-GP-f9N" firstAttribute="leading" secondItem="FHx-11-rgu" secondAttribute="trailing" constant="12" id="xuA-eG-D6d"/>
+                                                <constraint firstItem="4on-P7-Lad" firstAttribute="baseline" secondItem="whR-GP-f9N" secondAttribute="firstBaseline" id="xOo-Y4-21h"/>
+                                                <constraint firstItem="whR-GP-f9N" firstAttribute="leading" secondItem="FHx-11-rgu" secondAttribute="trailing" constant="14" id="xuA-eG-D6d"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -363,9 +373,13 @@ Project Eyulingo. 一切权利保留。</string>
                     </view>
                     <tabBarItem key="tabBarItem" title="购物车" image="cart" catalog="system" id="0C0-B3-5Lt"/>
                     <connections>
+                        <outlet property="cancelButton" destination="5C2-c7-lTx" id="aTK-EI-Qr9"/>
                         <outlet property="cartTableView" destination="xTS-9X-kZq" id="Mbd-nU-Wif"/>
+                        <outlet property="confirmButton" destination="SFD-Nu-cpy" id="SY4-nk-H7g"/>
                         <outlet property="loadingIndicator" destination="CrX-5Y-xp4" id="0kB-dt-zBW"/>
+                        <outlet property="navBar" destination="gsd-ys-tBG" id="TCI-ry-LzY"/>
                         <outlet property="noContentIndicator" destination="fwh-1D-yXr" id="OQm-sg-heN"/>
+                        <outlet property="purchaseButton" destination="Nnn-lC-Si8" id="6hd-yD-NW3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sO8-Xt-mI9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -2488,13 +2502,15 @@ Project Eyulingo. 一切权利保留。</string>
         <image name="arrow.right.circle" catalog="system" width="64" height="62"/>
         <image name="arrow.upright.circle" catalog="system" width="64" height="62"/>
         <image name="cart" catalog="system" width="64" height="52"/>
+        <image name="checkmark" catalog="system" width="64" height="56"/>
         <image name="escape" catalog="system" width="64" height="62"/>
         <image name="magnifyingglass.circle" catalog="system" width="64" height="62"/>
+        <image name="multiply" catalog="system" width="64" height="56"/>
         <image name="person.circle" catalog="system" width="64" height="62"/>
         <image name="plus" catalog="system" width="64" height="58"/>
         <image name="slider.horizontal.3" catalog="system" width="64" height="50"/>
         <image name="square.and.arrow.down.on.square" catalog="system" width="62" height="64"/>
-        <image name="trash.slash" catalog="system" width="64" height="64"/>
+        <image name="yensign.circle" catalog="system" width="64" height="62"/>
         <image name="yensign.square" catalog="system" width="64" height="56"/>
     </resources>
     <color key="tintColor" cocoaTouchSystemColor="systemBlueColor"/>
