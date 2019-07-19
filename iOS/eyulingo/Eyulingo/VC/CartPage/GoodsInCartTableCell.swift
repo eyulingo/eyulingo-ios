@@ -10,16 +10,13 @@ import UIKit
 
 class GoodsInCartTableCell: UITableViewCell {
     
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
+    
+    func initCell() {
         stepper.minimumValue = 0.0
         stepper.maximumValue = Double(storage ?? 100)
         stepper.value = 1.0
     }
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
     
     @IBAction func stepperTapped(_ sender: UIStepper) {
         amount = Int(sender.value)

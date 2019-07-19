@@ -34,6 +34,7 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell.amountModifyDelegate = self
         cell.amount = cartObject.amount ?? 0
         cell.goodsId = cartObject.goodsId
+        cell.initCell()
 
         if cartObject.imageCache != nil {
             cell.imageViewField.image = cartObject.imageCache
