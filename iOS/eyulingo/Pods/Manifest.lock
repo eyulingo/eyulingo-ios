@@ -3,11 +3,11 @@ PODS:
   - Alamofire-SwiftyJSON (3.0.0):
     - Alamofire (~> 4.5)
     - SwiftyJSON (~> 4.0.0)
-  - GearRefreshControl (1.0.1)
   - Highlighter (1.4.0)
   - IQKeyboardManager (6.4.0)
   - Loaf (0.4.0)
   - PryntTrimmerView (3.0.0)
+  - Refresher (0.7.0)
   - SteviaLayout (4.4.4)
   - SwiftyJSON (4.0.0)
   - VideoSplashKit (1.2.1)
@@ -18,10 +18,10 @@ PODS:
 DEPENDENCIES:
   - Alamofire
   - Alamofire-SwiftyJSON
-  - GearRefreshControl (~> 1.0.0)
   - Highlighter
   - IQKeyboardManager
   - Loaf
+  - Refresher
   - SwiftyJSON
   - VideoSplashKit
   - YPImagePicker
@@ -30,11 +30,11 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
     - Alamofire-SwiftyJSON
-    - GearRefreshControl
     - Highlighter
     - IQKeyboardManager
     - Loaf
     - PryntTrimmerView
+    - Refresher
     - SteviaLayout
     - SwiftyJSON
     - VideoSplashKit
@@ -43,16 +43,16 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
   Alamofire-SwiftyJSON: 2b3649d57dc7bb2880fb8b86f8bb969397666916
-  GearRefreshControl: f1d4cf97b6440bbd47d6a8a32fe2aaddd6d1e3cb
   Highlighter: 42eb22960be4d3358c42122b3768ac77b9ae0967
   IQKeyboardManager: fcef267266379c003181fc3592f6bdb8bf4db839
   Loaf: 070a55b75527d541e710f69c0c7642ead3676a96
   PryntTrimmerView: 53ac64053c7ce63cb3e27f54090f52da0734891d
+  Refresher: a72fdd35f0e1854d787eb5eb6853dd3f6d81c1e5
   SteviaLayout: 523469269059f2c6da02820bb2ff28a5fe0780aa
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
   VideoSplashKit: 9d5670948cfb0be15262d973cedbfd3faecddcad
   YPImagePicker: 8039f89ad79281545fa868486f32d9bf5d65ede1
 
-PODFILE CHECKSUM: 6482d639974e08b2568a72c0aa97b36219f0cda2
+PODFILE CHECKSUM: 2c92e7881abc246de5dbf420c70a076011a6d38f
 
-COCOAPODS: 1.7.3
+COCOAPODS: 1.7.4

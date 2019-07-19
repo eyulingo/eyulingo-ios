@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double GearRefreshControlVersionNumber;
-FOUNDATION_EXPORT const unsigned char GearRefreshControlVersionString[];
+FOUNDATION_EXPORT double RefresherVersionNumber;
+FOUNDATION_EXPORT const unsigned char RefresherVersionString[];
 

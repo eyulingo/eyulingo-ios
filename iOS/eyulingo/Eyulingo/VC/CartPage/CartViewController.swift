@@ -11,6 +11,7 @@ import Alamofire_SwiftyJSON
 import Loaf
 import SwiftyJSON
 import UIKit
+import Refresher
 
 class CartViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CartRefreshDelegate {
     func refreshCart() {
@@ -111,6 +112,11 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
 //        stopLoading()
         // Do any additional setup after loading the view.
 //        constructData()
+        cartTableView.addPullToRefreshWithAction {
+            self.constructData(completion: {
+                self.cartTableView.stopPullToRefresh()
+            })
+        }
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -177,7 +183,7 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
         return [deleteAction, detailAction]
     }
 
-    func constructData() {
+    func constructData(completion: (() -> ())? = nil) {
 //        loading = true
         startLoading()
         var errorStr = "general error"
@@ -230,6 +236,7 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
                                     }
 //                                    self.cartTableView.reloadData()
                                 }
+                                completion?()
                                 self.stopLoading()
                             }
                             var toRemove: [IndexPath] = []

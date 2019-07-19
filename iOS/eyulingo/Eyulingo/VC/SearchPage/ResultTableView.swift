@@ -11,10 +11,14 @@ import Alamofire
 import SwiftyJSON
 import Alamofire_SwiftyJSON
 import Highlighter
+import Refresher
 
 
 
 class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, goToStoreDelegate {
+    
+    var delegate: RefreshDelegate?
+    
     func goToStore(_ storeId: Int?) {
         var errorStr = "general error"
         let getParams: Parameters = [
@@ -79,6 +83,16 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        resultTable.addPullToRefreshWithAction {
+            if self.delegate != nil {
+                self.delegate?.callRefresh(handler: {
+                    self.resultTable.stopPullToRefresh()
+                })
+            } else {
+                self.resultTable.stopPullToRefresh()
+            }
+        }
     }
     
     @IBOutlet var resultTable: UITableView!

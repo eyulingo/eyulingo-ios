@@ -6,12 +6,18 @@
 //  Copyright © 2019 yuetsin. All rights reserved.
 //
 
+import Loaf
 import UIKit
 import Alamofire
 import SwiftyJSON
 import Alamofire_SwiftyJSON
 
-class SearchViewController: UIViewController, ModernSearchBarDelegate, SearchDelegate {
+class SearchViewController: UIViewController, ModernSearchBarDelegate, SearchDelegate, RefreshDelegate {
+    
+    func callRefresh(handler: (() -> ())?) {
+        updateResultList(self.searchBar.text ?? "", completion: handler)
+    }
+    
     
     func makeAlert(_ title: String, _ message: String, completion: @escaping () -> Void) {
         let controller = UIAlertController(title: title, message: message, preferredStyle: .alert)
@@ -81,12 +87,14 @@ class SearchViewController: UIViewController, ModernSearchBarDelegate, SearchDel
         searchBar.delegateModernSearchBar = self
         searchBar.searchDelegate = self
         searchBar.suggestionsView_searchIcon_isRound = false
+
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if contentVC == nil {
             if segue.identifier == "searchResultSegue" {
                 contentVC = segue.destination as? DetailViewController
+                contentVC?.delegate = self
             }
         }
     }
@@ -97,7 +105,7 @@ class SearchViewController: UIViewController, ModernSearchBarDelegate, SearchDel
         searchBar.searchWhenUserTyping(caracters: searchBar.text ?? "", notAgain: true)
     }
     
-    func updateResultList(_ query: String) {
+    func updateResultList(_ query: String, completion: (() -> ())? = nil) {
         let getParams: Parameters = [
             "q": query
         ]
@@ -132,6 +140,7 @@ class SearchViewController: UIViewController, ModernSearchBarDelegate, SearchDel
                         }
                         self.flushData()
                         self.contentVC?.keyWord = self.searchBar.text
+                        completion?()
                         return
                     } else {
                         errorStr = jsonResp!["status"].stringValue
@@ -142,14 +151,7 @@ class SearchViewController: UIViewController, ModernSearchBarDelegate, SearchDel
             } else {
                 errorStr = "no response"
             }
-            
-            if errorStr == "account_locked" {
-                self.makeAlert("搜索失败", "您的账户已被冻结。",
-                                   completion: { self.stopLoading() })
-            } else {
-                self.makeAlert("搜索失败", "服务器报告了一个 “\(errorStr)” 错误。",
-                        completion: { self.stopLoading() })
-            }
+            Loaf("搜索失败。" + "服务器报告了一个 “\(errorStr)” 错误。", state: .error, sender: self).show()
         })
     }
     
@@ -195,4 +197,8 @@ class SearchViewController: UIViewController, ModernSearchBarDelegate, SearchDel
     func callRefresh(_ keyword: String) {
         updateResultList(keyword)
     }
+}
+
+protocol RefreshDelegate {
+    func callRefresh(handler: (() -> ())?) -> ()
 }
