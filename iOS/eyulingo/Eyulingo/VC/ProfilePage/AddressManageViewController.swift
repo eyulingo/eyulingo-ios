@@ -8,6 +8,7 @@
 
 import Alamofire
 import Alamofire_SwiftyJSON
+import Loaf
 import SwiftyJSON
 import UIKit
 
@@ -128,7 +129,7 @@ class AddressManageViewController: UIViewController, UITableViewDataSource, UITa
             }))
             self.present(alert, animated: true, completion: nil)
         }
-        
+
         editAction.backgroundColor = .systemBlue
 
         // 删除
@@ -155,7 +156,15 @@ class AddressManageViewController: UIViewController, UITableViewDataSource, UITa
                         let jsonResp = responseJSON.value
                         if jsonResp != nil {
                             if jsonResp!["status"].stringValue == "ok" {
-                                self.loadReceiveAddress()
+                                CATransaction.begin()
+                                tableView.beginUpdates()
+                                CATransaction.setCompletionBlock {
+                                    self.loadReceiveAddress()
+                                }
+                                self.receiveAddresses.remove(at: indexPath.row)
+                                tableView.deleteRows(at: [indexPath], with: .fade)
+                                tableView.endUpdates()
+                                CATransaction.commit()
                                 return
                             } else {
                                 errorCode = jsonResp!["status"].stringValue
@@ -167,7 +176,7 @@ class AddressManageViewController: UIViewController, UITableViewDataSource, UITa
                         errorCode = "no response"
                     }
                     alert?.dismiss(animated: true, completion: {
-                        self.makeAlert("删除失败", "服务器报告了一个 “\(errorCode)” 错误。", completion: {})
+                        Loaf("删除失败，服务器报告了一个 “\(errorCode)” 错误。", state: .error, sender: self).show()
                     })
                 })
             }))
@@ -204,7 +213,6 @@ class AddressManageViewController: UIViewController, UITableViewDataSource, UITa
         addressTableView.reloadData()
 
         if receiveAddresses.count == 0 {
-            
             noContentLabel.isHidden = false
             addressTableView.isHidden = true
         } else {
@@ -240,7 +248,7 @@ class AddressManageViewController: UIViewController, UITableViewDataSource, UITa
                 } else {
                     errorCode = "no response"
                 }
-                self.makeAlert("获取常用地址失败", "服务器报告了一个 “\(errorCode)” 错误。", completion: {})
+                Loaf("加载购物车失败。服务器报告了一个 “\(errorCode)” 错误。", state: .error, sender: self).show()
             })
     }
 
@@ -251,7 +259,6 @@ class AddressManageViewController: UIViewController, UITableViewDataSource, UITa
             textField.text = ""
             textField.placeholder = "收件人姓名"
         }
-        
 
         alert.addTextField { textField in
             textField.text = ""
@@ -316,7 +323,7 @@ class AddressManageViewController: UIViewController, UITableViewDataSource, UITa
         let originUserName = receiveAddresses[indexPath.row].receiver ?? ""
         let originPhone = receiveAddresses[indexPath.row].phoneNo ?? ""
         let originAddress = receiveAddresses[indexPath.row].address ?? ""
-        
+
         tableView.deselectRow(at: indexPath, animated: true)
 
         let alert = UIAlertController(title: "编辑收货地址", message: "请输入新的收货地址。", preferredStyle: .alert)

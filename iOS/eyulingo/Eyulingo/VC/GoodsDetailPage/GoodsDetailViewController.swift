@@ -16,8 +16,9 @@ class GoodsDetailViewController: UIViewController, DismissMyselfDelegate {
     
     override func viewWillDisappear(_ animated: Bool) {
         // if the delegate isn't null (raised by cart), tell him to refresh it
-        if CartRefreshManager.shouldCartRefresh() {
-            refreshCartDelegate?.refreshCart()
+        // shortcut evaluate
+        if refreshCartDelegate != nil && CartRefreshManager.shouldCartRefresh() {
+            refreshCartDelegate!.refreshCart()
         }
     }
 
