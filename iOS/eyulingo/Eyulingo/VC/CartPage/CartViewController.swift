@@ -21,29 +21,30 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet var purchaseButton: UIBarButtonItem!
     @IBOutlet var confirmButton: UIBarButtonItem!
     @IBOutlet var cancelButton: UIBarButtonItem!
-    
+
     @IBOutlet var navBar: UINavigationBar!
     func enterEditMode() {
         navBar.topItem?.setRightBarButtonItems([confirmButton, cancelButton], animated: true)
     }
-    
+
     func quitEditMode() {
         navBar.topItem?.setRightBarButtonItems([purchaseButton], animated: true)
     }
-    
+
     @IBAction func cancelButtonTapped(_ sender: UIBarButtonItem) {
         cartTableView.setEditing(false, animated: true)
         quitEditMode()
     }
-    
+
     @IBAction func confirmButtonTapped(_ sender: UIBarButtonItem) {
+        purchaseFromCart()
     }
-    
+
     @IBAction func makePurchase(_ sender: UIButton) {
         cartTableView.setEditing(true, animated: true)
         enterEditMode()
     }
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return goodsInCart[section].1.count
     }
@@ -149,7 +150,7 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
                 self.cartTableView.stopPullToRefresh()
             })
         }
-        
+
         quitEditMode()
     }
 
@@ -160,11 +161,10 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
         if tableView.isEditing {
             return
         }
-        
+
         tableView.deselectRow(at: indexPath, animated: true)
 
         let cartObject = goodsInCart[indexPath.section].1[indexPath.row]
@@ -472,5 +472,76 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
                 Loaf("修改数量失败。" + "服务器报告了一个 “\(errCode)” 错误。", state: .error, sender: self).show()
                 completion?()
             })
+    }
+
+    func purchaseFromCart() {
+        var receiveAddresses: [ReceiveAddress] = []
+        Alamofire.request(Eyulingo_UserUri.addressGetUri,
+                          method: .get)
+            .responseSwiftyJSON(completionHandler: { responseJSON in
+                var errorCode = ""
+                if responseJSON.error == nil {
+                    let jsonResp = responseJSON.value
+                    if jsonResp != nil {
+                        if jsonResp!["status"].stringValue == "ok" {
+                            for addressItem in jsonResp!["values"].arrayValue {
+                                receiveAddresses.append(ReceiveAddress(receiver: addressItem["receive_name"].stringValue,
+                                                                       phoneNo: addressItem["receive_phone"].stringValue,
+                                                                       address: addressItem["receive_address"].stringValue))
+                            }
+                        } else {
+                            errorCode = jsonResp!["status"].stringValue
+                        }
+                    } else {
+                        errorCode = "bad response"
+                    }
+                } else {
+                    errorCode = "no response"
+                }
+//                if errorCode != "" {
+//                    Loaf("加载常用地址失败。服务器报告了一个 “\(errorCode)” 错误。", state: .error, sender: self).show()
+//                }
+
+                let destinationStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                let destinationViewController = destinationStoryboard.instantiateViewController(withIdentifier: "PurchaseVC") as! PurchaseViewController
+
+                destinationViewController.possibleAddresses = receiveAddresses
+                self.present(destinationViewController, animated: true, completion: nil)
+            })
+
+        /*
+         if !cartTableView.isEditing {
+             quitEditMode()
+             return
+         }
+         let postParams: Parameters = [
+
+         ]
+         Alamofire.request(Eyulingo_UserUri.purchasePostUri,
+                           method: .post,
+                           parameters: postParams,
+                           encoding: JSONEncoding.default)
+             .responseSwiftyJSON(completionHandler: { responseJSON in
+                 var errCode = "general error"
+                 if responseJSON.error == nil {
+                     let jsonResp = responseJSON.value
+                     if jsonResp != nil {
+                         if jsonResp!["status"].stringValue == "ok" {
+                             CartRefreshManager.setModifiedState()
+
+                             return
+                         } else {
+                             errCode = jsonResp!["status"].stringValue
+                         }
+                     } else {
+                         errCode = "bad response"
+                     }
+                 } else {
+                     errCode = "no response"
+                 }
+
+                 Loaf("加入购物车失败。" + "服务器报告了一个 “\(errCode)” 错误。", state: .error, sender: self).show()
+             })
+         */
     }
 }
