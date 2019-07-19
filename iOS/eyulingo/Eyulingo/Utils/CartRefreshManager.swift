@@ -11,7 +11,7 @@ import Foundation
 
 class CartRefreshManager {
     
-    private static let maxDirtyReadLimit: Int = 10
+    private static let maxDirtyReadLimit: Int = 7
     private static var secretCounter: Int = 0
     private static var isModified: Bool = true
     
@@ -28,6 +28,11 @@ class CartRefreshManager {
     
     static func setModifiedState() {
         isModified = true
+        secretCounter = 0
+    }
+    
+    static func pullRefresh() {
+        isModified = false
         secretCounter = 0
     }
 }
