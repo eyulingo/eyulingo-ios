@@ -11,6 +11,7 @@ target 'Eyulingo' do
   pod 'YPImagePicker'
   pod 'Loaf'
   pod 'VideoSplashKit'
+  pod 'GearRefreshControl', '~> 1.0.0'
   pod 'IQKeyboardManager'
   pod 'Highlighter'
 end
