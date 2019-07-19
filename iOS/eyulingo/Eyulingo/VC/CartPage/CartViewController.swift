@@ -121,10 +121,9 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        /*
-         let cartObject = goodsInCart[indexPath.section].1[indexPath.row]
-         openGoodsDetail(cartObject.goodsId!, imgCache: cartObject.imageCache)
-         */
+
+        let cartObject = goodsInCart[indexPath.section].1[indexPath.row]
+        openGoodsDetail(cartObject.goodsId!, imgCache: cartObject.imageCache)
     }
 
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
@@ -136,10 +135,11 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
             return []
         }
 
-        let detailAction: UITableViewRowAction = UITableViewRowAction(style: UITableViewRowAction.Style.normal, title: "详情") { _, _ in
+        let detailAction: UITableViewRowAction = UITableViewRowAction(style: UITableViewRowAction.Style.normal, title: "造访店铺") { _, _ in
             let cartObject = self.goodsInCart[indexPath.section].1[indexPath.row]
-            self.openGoodsDetail(cartObject.goodsId!, imgCache: cartObject.imageCache)
+            self.visitStore(cartObject.storeId!)
         }
+
         detailAction.backgroundColor = .systemBlue
 
         // 删除
@@ -210,7 +210,7 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
                                         if item.0 == cartObject.storeId {
                                             self.cartTableView.beginUpdates()
                                             self.goodsInCart[counter].1.append(cartObject)
-                                            
+
                                             self.cartTableView.insertRows(at: [IndexPath(row: self.goodsInCart[counter].1.count - 1, section: counter)], with: .fade)
                                             self.cartTableView.endUpdates()
                                             flag = false
@@ -222,7 +222,7 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
                                         self.cartTableView.beginUpdates()
                                         self.goodsInCart.append((cartObject.storeId!, [cartObject]))
                                         self.existedStores.append(cartObject.storeName!)
-                                        
+
                                         let section = self.goodsInCart.count - 1
                                         self.cartTableView.insertSections(IndexSet(arrayLiteral: section), with: .fade)
                                         self.cartTableView.insertRows(at: [IndexPath(row: self.goodsInCart[section].1.count - 1, section: section)], with: .automatic)
@@ -311,6 +311,67 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
                             destinationViewController.goodsObject = goodObj
                             destinationViewController.refreshCartDelegate = self
 
+                            self.present(destinationViewController, animated: true, completion: nil)
+                            return
+                        } else {
+                            errorStr = jsonResp!["status"].stringValue
+                        }
+                    } else {
+                        errorStr = "bad response"
+                    }
+                } else {
+                    errorStr = "no response"
+                }
+            })
+        NSLog("request ended with " + errorStr)
+    }
+
+    func visitStore(_ storeId: Int) {
+        var errorStr = "general error"
+        let getParams: Parameters = [
+            "id": storeId,
+        ]
+        Alamofire.request(Eyulingo_UserUri.storeDetailGetUri,
+                          method: .get, parameters: getParams)
+            .responseSwiftyJSON(completionHandler: { responseJSON in
+                if responseJSON.error == nil {
+                    let jsonResp = responseJSON.value
+                    if jsonResp != nil {
+                        if jsonResp!["status"].stringValue == "ok" {
+                            var storeObject = EyStore(storeId: jsonResp!["id"].intValue,
+                                                      coverId: jsonResp!["image_id"].stringValue,
+                                                      storeName: jsonResp!["name"].stringValue,
+                                                      storePhone: jsonResp!["phone_nu"].stringValue,
+                                                      storeAddress: jsonResp!["address"].stringValue,
+                                                      storeGoods: [],
+                                                      storeComments: [],
+                                                      distAvatarId: jsonResp!["provider_avatar"].stringValue,
+                                                      distName: jsonResp!["provider"].stringValue)
+                            for goodsItem in jsonResp!["values"].arrayValue {
+                                let goodObject = EyGoods(goodsId: goodsItem["id"].intValue,
+                                                         goodsName: goodsItem["name"].stringValue,
+                                                         coverId: goodsItem["image_id"].stringValue,
+                                                         description: goodsItem["description"].stringValue,
+                                                         storeId: storeObject.storeId,
+                                                         storeName: storeObject.storeName,
+                                                         storage: goodsItem["storage"].intValue,
+                                                         price: Decimal(string: goodsItem["price"].stringValue),
+                                                         couponPrice: Decimal(string: goodsItem["coupon_price"].stringValue),
+                                                         tags: [],
+                                                         comments: [],
+                                                         imageCache: nil)
+                                storeObject.storeGoods?.append(goodObject)
+                            }
+
+                            for _ in jsonResp!["comments"].arrayValue {
+                                // read comments
+                            }
+
+                            let destinationStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                            let destinationViewController = destinationStoryboard.instantiateViewController(withIdentifier: "StoreDetailVC") as! StoreDetailViewController
+
+                            destinationViewController.storeObject = storeObject
+//                            destinationViewController.openedByGoodsId = self.goodsObject?.goodsId
                             self.present(destinationViewController, animated: true, completion: nil)
                             return
                         } else {

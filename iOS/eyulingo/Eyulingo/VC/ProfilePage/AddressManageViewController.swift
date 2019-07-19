@@ -55,6 +55,7 @@ class AddressManageViewController: UIViewController, UITableViewDataSource, UITa
         loadReceiveAddress()
     }
 
+
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let originUserName = receiveAddresses[indexPath.row].receiver ?? ""
         let originPhone = receiveAddresses[indexPath.row].phoneNo ?? ""
@@ -243,7 +244,7 @@ class AddressManageViewController: UIViewController, UITableViewDataSource, UITa
                                                                                 address: addressItem["receive_address"].stringValue))
                                         self.addressTableView.insertRows(at: [IndexPath(row: self.receiveAddresses.count - 1, section: 0)], with: .automatic)
                                             
-//                                    self.refreshContent()
+                                    self.refreshContent()
                                 }
                                 return
                             } else {
