@@ -152,6 +152,7 @@ class SearchViewController: UIViewController, ModernSearchBarDelegate, SearchDel
                 errorStr = "no response"
             }
             Loaf("搜索失败。" + "服务器报告了一个 “\(errorStr)” 错误。", state: .error, sender: self).show()
+            completion?()
         })
     }
     

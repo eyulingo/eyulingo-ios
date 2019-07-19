@@ -273,6 +273,7 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
                     errorStr = "no response"
                 }
                 Loaf("加载购物车失败。" + "服务器报告了一个 “\(errorStr)” 错误。", state: .error, sender: self).show()
+                completion?()
             })
     }
 
