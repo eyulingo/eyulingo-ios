@@ -25,6 +25,7 @@
 		8A0EA46322D6BFE500EFE92C /* EyulingoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0EA46222D6BFE500EFE92C /* EyulingoUITests.swift */; };
 		8A11801122DEE67700275AA3 /* GoodsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A11801022DEE67700275AA3 /* GoodsDetailViewController.swift */; };
 		8A11801322DEEF3F00275AA3 /* GoodsDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A11801222DEEF3F00275AA3 /* GoodsDetailTableViewController.swift */; };
+		8A11E0C622E1497B0080B10F /* CartRefreshManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A11E0C522E1497B0080B10F /* CartRefreshManager.swift */; };
 		8A17F31C22E00CC70000EC44 /* GoodsInStoreCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A17F31B22E00CC70000EC44 /* GoodsInStoreCell.xib */; };
 		8A2622FA22CB3E3E00C39943 /* Chp.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A2622F922CB3E3E00C39943 /* Chp.png */; };
 		8A2B704422DFFC0500452499 /* StoreDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A2B704322DFFC0500452499 /* StoreDetailViewController.swift */; };
@@ -130,6 +131,7 @@
 		8A0EA46422D6BFE500EFE92C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8A11801022DEE67700275AA3 /* GoodsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodsDetailViewController.swift; sourceTree = "<group>"; };
 		8A11801222DEEF3F00275AA3 /* GoodsDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodsDetailTableViewController.swift; sourceTree = "<group>"; };
+		8A11E0C522E1497B0080B10F /* CartRefreshManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartRefreshManager.swift; sourceTree = "<group>"; };
 		8A17F31B22E00CC70000EC44 /* GoodsInStoreCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GoodsInStoreCell.xib; sourceTree = "<group>"; };
 		8A2622F922CB3E3E00C39943 /* Chp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Chp.png; sourceTree = "<group>"; };
 		8A2B704322DFFC0500452499 /* StoreDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreDetailViewController.swift; sourceTree = "<group>"; };
@@ -444,6 +446,7 @@
 				8A6DD6FB22CAF55500BD7904 /* PinYinConverter.swift */,
 				8A0AF9E422D41F6E009430B9 /* JudgeValidEmail.swift */,
 				8A723DB322D47954008FD0C9 /* LogoutNow.swift */,
+				8A11E0C522E1497B0080B10F /* CartRefreshManager.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -687,6 +690,7 @@
 				8AC9E7E922C9A42300F80460 /* AdminOrderVC.swift in Sources */,
 				8A723DB222D4721E008FD0C9 /* ProfileContentViewController.swift in Sources */,
 				8A2B704422DFFC0500452499 /* StoreDetailViewController.swift in Sources */,
+				8A11E0C622E1497B0080B10F /* CartRefreshManager.swift in Sources */,
 				8AE902ED22DC2402008728F3 /* RWZoomableImageView.swift in Sources */,
 				8AEC567322DEAC2D00520C68 /* ModernSearchBarCell.swift in Sources */,
 				8AC9E7FD22C9C1A300F80460 /* AdminBill.swift in Sources */,

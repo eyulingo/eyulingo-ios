@@ -72,6 +72,7 @@ class GoodsDetailTableViewController: UITableViewController {
      }
      */
     @IBAction func addToCartButtonTapped(_ sender: UIButton) {
+        
         if quantity == 0 {
             return
         }
@@ -93,6 +94,7 @@ class GoodsDetailTableViewController: UITableViewController {
                     let jsonResp = responseJSON.value
                     if jsonResp != nil {
                         if jsonResp!["status"].stringValue == "ok" {
+                            CartRefreshManager.setModifiedState()
                             Loaf("成功将 \(self.quantity) 件 “\(self.goodsObject?.goodsName ?? "商品")” 加入购物车。", state: .success, sender: self).show()
                             return
                         } else {

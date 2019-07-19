@@ -108,7 +108,7 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
 
     override func viewWillAppear(_ animated: Bool) {
-        if !loading {
+        if !loading && CartRefreshManager.shouldCartRefresh() {
             constructData()
         }
     }
