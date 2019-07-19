@@ -16,6 +16,8 @@ class PurchaseViewController: UIViewController, UITextFieldDelegate, UIPickerVie
     
 
     var possibleAddresses: [ReceiveAddress] = []
+    
+    @IBOutlet weak var recentButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,7 +26,18 @@ class PurchaseViewController: UIViewController, UITextFieldDelegate, UIPickerVie
         hiddenTextField.delegate = self
         pickerView.delegate = self
         pickerView.dataSource = self
+        
+        if possibleAddresses.count == 0 {
+            recentButton.isEnabled = false
+        }
+        
+        receiverTextField.delegate = self
+        contactPhoneTextField.delegate = self
+        addressTextField.delegate = self
     }
+    @IBOutlet weak var receiverTextField: UITextField!
+    @IBOutlet weak var contactPhoneTextField: UITextField!
+    @IBOutlet weak var addressTextField: UITextField!
     
     var pickerView: UIPickerView! = UIPickerView()
     @IBOutlet weak var hiddenTextField: UITextField!
@@ -43,16 +56,22 @@ class PurchaseViewController: UIViewController, UITextFieldDelegate, UIPickerVie
 
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         let address: ReceiveAddress = possibleAddresses[row]
-        return "\(address.receiver ?? "收件人")(收) \(address.phoneNo ?? "联系电话") \(address.address ?? "收件地址")"
+        return "\(address.address ?? "收件地址")"
     }
 
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        // Your Function
-        print("Hello", "didSelectRow: ", row)
+//        print("Hello", "didSelectRow: ", row)
+        receiverTextField.text = possibleAddresses[row].receiver
+        contactPhoneTextField.text = possibleAddresses[row].phoneNo
+        addressTextField.text = possibleAddresses[row].address
+        
     }
 
     @IBAction func showPickerView(sender: UIButton) {
-        hiddenTextField.becomeFirstResponder()
+        if possibleAddresses.count > 0 {
+            pickerView(pickerView, didSelectRow: pickerView.selectedRow(inComponent: 0), inComponent: 0)
+            hiddenTextField.becomeFirstResponder()
+        }
     }
 
     func cancelPicker(sender: UIButton) {
@@ -68,17 +87,17 @@ class PurchaseViewController: UIViewController, UITextFieldDelegate, UIPickerVie
         pickerView.tintColor = tintColor
         pickerView.center.x = inputView.center.x
         inputView.addSubview(pickerView) // add date picker to UIView
-        let doneButton = UIButton(frame: CGRect(x: 100/2, y: 0, width: 100, height: 50))
-        doneButton.setTitle("取消", for: UIControl.State.normal)
-        doneButton.setTitle("完成", for: UIControl.State.highlighted)
-        doneButton.setTitleColor(tintColor, for: UIControl.State.normal)
-        doneButton.setTitleColor(tintColor, for: UIControl.State.highlighted)
-        inputView.addSubview(doneButton) // add Button to UIView
-        doneButton.addTarget(self, action: #selector(doneButtonTapped), for: UIControl.Event.touchUpInside) // set button click event
+//        let doneButton = UIButton(frame: CGRect(x: 100/2, y: 0, width: 100, height: 50))
+//        doneButton.setTitle("选定", for: UIControl.State.normal)
+//        doneButton.setTitle("选定", for: UIControl.State.highlighted)
+//        doneButton.setTitleColor(tintColor, for: UIControl.State.normal)
+//        doneButton.setTitleColor(tintColor, for: UIControl.State.highlighted)
+//        inputView.addSubview(doneButton) // add Button to UIView
+//        doneButton.addTarget(self, action: #selector(doneButtonTapped), for: UIControl.Event.touchUpInside) // set button click event
 
-        let cancelButton = UIButton(frame: CGRect(x: (self.view.frame.size.width - 3*(100/2)), y: 0, width: 100, height: 50))
-        cancelButton.setTitle("取消", for: UIControl.State.normal)
-        cancelButton.setTitle("取消", for: UIControl.State.highlighted)
+        let cancelButton = UIButton(frame: CGRect(x: self.view.frame.size.width - 100, y: 0, width: 100, height: 50))
+        cancelButton.setTitle("完成", for: UIControl.State.normal)
+        cancelButton.setTitle("完成", for: UIControl.State.highlighted)
         cancelButton.setTitleColor(tintColor, for: UIControl.State.normal)
         cancelButton.setTitleColor(tintColor, for: UIControl.State.highlighted)
         inputView.addSubview(cancelButton) // add Button to UIView
@@ -87,10 +106,10 @@ class PurchaseViewController: UIViewController, UITextFieldDelegate, UIPickerVie
     }
 
     @objc func doneButtonTapped() {
-        
+        hiddenTextField.resignFirstResponder()
     }
     
     @objc func cancelButtonTapped() {
-        
+        hiddenTextField.resignFirstResponder()
     }
 }

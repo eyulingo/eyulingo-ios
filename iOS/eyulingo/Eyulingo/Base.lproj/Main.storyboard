@@ -2526,7 +2526,11 @@ Project Eyulingo. 一切权利保留。</string>
                         <viewLayoutGuide key="safeArea" id="MKJ-Nk-nA7"/>
                     </view>
                     <connections>
+                        <outlet property="addressTextField" destination="i67-hb-Pf0" id="gVT-OL-KTv"/>
+                        <outlet property="contactPhoneTextField" destination="HPO-RG-Iop" id="idI-Re-tll"/>
                         <outlet property="hiddenTextField" destination="HpH-iS-dJf" id="5S5-Hu-vWf"/>
+                        <outlet property="receiverTextField" destination="KAl-Am-aWZ" id="bzh-eG-4II"/>
+                        <outlet property="recentButton" destination="MAx-SD-Aiq" id="daH-p8-l1A"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uwu-ax-V56" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

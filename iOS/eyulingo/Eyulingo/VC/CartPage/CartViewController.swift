@@ -475,43 +475,73 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
 
     func purchaseFromCart() {
-        let destinationStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                                    let destinationViewController = destinationStoryboard.instantiateViewController(withIdentifier: "PurchaseVC") as! PurchaseViewController
-        
-                                    self.present(destinationViewController, animated: true, completion: nil)
-        /*
-        if !cartTableView.isEditing {
-            quitEditMode()
-            return
-        }
-        let postParams: Parameters = [
-            
-        ]
-        Alamofire.request(Eyulingo_UserUri.purchasePostUri,
-                          method: .post,
-                          parameters: postParams,
-                          encoding: JSONEncoding.default)
+        var receiveAddresses: [ReceiveAddress] = []
+        Alamofire.request(Eyulingo_UserUri.addressGetUri,
+                          method: .get)
             .responseSwiftyJSON(completionHandler: { responseJSON in
-                var errCode = "general error"
+                var errorCode = ""
                 if responseJSON.error == nil {
                     let jsonResp = responseJSON.value
                     if jsonResp != nil {
                         if jsonResp!["status"].stringValue == "ok" {
-                            CartRefreshManager.setModifiedState()
-                            
-                            return
+                            for addressItem in jsonResp!["values"].arrayValue {
+                                receiveAddresses.append(ReceiveAddress(receiver: addressItem["receive_name"].stringValue,
+                                                                       phoneNo: addressItem["receive_phone"].stringValue,
+                                                                       address: addressItem["receive_address"].stringValue))
+                            }
                         } else {
-                            errCode = jsonResp!["status"].stringValue
+                            errorCode = jsonResp!["status"].stringValue
                         }
                     } else {
-                        errCode = "bad response"
+                        errorCode = "bad response"
                     }
                 } else {
-                    errCode = "no response"
+                    errorCode = "no response"
                 }
+//                if errorCode != "" {
+//                    Loaf("加载常用地址失败。服务器报告了一个 “\(errorCode)” 错误。", state: .error, sender: self).show()
+//                }
 
-                Loaf("加入购物车失败。" + "服务器报告了一个 “\(errCode)” 错误。", state: .error, sender: self).show()
+                let destinationStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                let destinationViewController = destinationStoryboard.instantiateViewController(withIdentifier: "PurchaseVC") as! PurchaseViewController
+
+                destinationViewController.possibleAddresses = receiveAddresses
+                self.present(destinationViewController, animated: true, completion: nil)
             })
- */
+
+        /*
+         if !cartTableView.isEditing {
+             quitEditMode()
+             return
+         }
+         let postParams: Parameters = [
+
+         ]
+         Alamofire.request(Eyulingo_UserUri.purchasePostUri,
+                           method: .post,
+                           parameters: postParams,
+                           encoding: JSONEncoding.default)
+             .responseSwiftyJSON(completionHandler: { responseJSON in
+                 var errCode = "general error"
+                 if responseJSON.error == nil {
+                     let jsonResp = responseJSON.value
+                     if jsonResp != nil {
+                         if jsonResp!["status"].stringValue == "ok" {
+                             CartRefreshManager.setModifiedState()
+
+                             return
+                         } else {
+                             errCode = jsonResp!["status"].stringValue
+                         }
+                     } else {
+                         errCode = "bad response"
+                     }
+                 } else {
+                     errCode = "no response"
+                 }
+
+                 Loaf("加入购物车失败。" + "服务器报告了一个 “\(errCode)” 错误。", state: .error, sender: self).show()
+             })
+         */
     }
 }
