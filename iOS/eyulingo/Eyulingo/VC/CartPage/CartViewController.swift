@@ -89,7 +89,13 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
         loading = true
         loadingIndicator.isHidden = false
         noContentIndicator.isHidden = true
-        cartTableView.isHidden = true
+        if goodsInCart.count == 0 {
+            noContentIndicator.isHidden = false
+            cartTableView.isHidden = true
+        } else {
+            noContentIndicator.isHidden = true
+            cartTableView.isHidden = false
+        }
     }
 
     @IBOutlet var noContentIndicator: UILabel!
@@ -123,13 +129,13 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let cartId = goodsInCart[indexPath.section].1[indexPath.row].goodsId
-        
+
         let cartName = goodsInCart[indexPath.section].1[indexPath.row].goodsName
-        
+
         if cartId == nil || cartName == nil {
             return []
         }
-        
+
         let detailAction: UITableViewRowAction = UITableViewRowAction(style: UITableViewRowAction.Style.normal, title: "详情") { _, _ in
             let cartObject = self.goodsInCart[indexPath.section].1[indexPath.row]
             self.openGoodsDetail(cartObject.goodsId!, imgCache: cartObject.imageCache)
@@ -140,7 +146,7 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
         let deleteAction: UITableViewRowAction = UITableViewRowAction(style: UITableViewRowAction.Style.destructive, title: "移除") { _, _ in
 
             let postParams: Parameters = [
-                "id": cartId!
+                "id": cartId!,
             ]
             Alamofire.request(Eyulingo_UserUri.removeFromCartPostUri,
                               method: .post,
@@ -173,10 +179,6 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     func constructData() {
 //        loading = true
-
-        goodsInCart.removeAll()
-        existedStores.removeAll()
-
         startLoading()
         var errorStr = "general error"
 
@@ -187,34 +189,68 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
                     let jsonResp = responseJSON.value
                     if jsonResp != nil {
                         if jsonResp!["status"].stringValue == "ok" {
-                            for cartItem in jsonResp!["values"].arrayValue {
-                                let cartObject = EyCarts(goodsId: cartItem["id"].intValue,
-                                                         goodsName: cartItem["name"].stringValue,
-                                                         coverId: cartItem["image_id"].stringValue,
-                                                         storeId: cartItem["store_id"].intValue,
-                                                         amount: cartItem["amount"].intValue,
-                                                         storeName: cartItem["store"].stringValue,
-                                                         storage: cartItem["storage"].intValue,
-                                                         price: Decimal(string: cartItem["price"].stringValue),
-                                                         imageCache: nil)
+                            let sectionCount = min(self.existedStores.count, self.goodsInCart.count)
+                            CATransaction.begin()
+                            self.cartTableView.beginUpdates()
+                            CATransaction.setCompletionBlock {
+                                for cartItem in jsonResp!["values"].arrayValue {
+                                    let cartObject = EyCarts(goodsId: cartItem["id"].intValue,
+                                                             goodsName: cartItem["name"].stringValue,
+                                                             coverId: cartItem["image_id"].stringValue,
+                                                             storeId: cartItem["store_id"].intValue,
+                                                             amount: cartItem["amount"].intValue,
+                                                             storeName: cartItem["store"].stringValue,
+                                                             storage: cartItem["storage"].intValue,
+                                                             price: Decimal(string: cartItem["price"].stringValue),
+                                                             imageCache: nil)
 
-                                var counter = 0
-                                var flag = true
-                                for item in self.goodsInCart {
-                                    if item.0 == cartObject.storeId {
-                                        self.goodsInCart[counter].1.append(cartObject)
-                                        flag = false
-                                        break
+                                    var counter = 0
+                                    var flag = true
+                                    for item in self.goodsInCart {
+                                        if item.0 == cartObject.storeId {
+                                            self.cartTableView.beginUpdates()
+                                            self.goodsInCart[counter].1.append(cartObject)
+                                            
+                                            self.cartTableView.insertRows(at: [IndexPath(row: self.goodsInCart[counter].1.count - 1, section: counter)], with: .fade)
+                                            self.cartTableView.endUpdates()
+                                            flag = false
+                                            break
+                                        }
+                                        counter += 1
                                     }
-                                    counter += 1
+                                    if flag {
+                                        self.cartTableView.beginUpdates()
+                                        self.goodsInCart.append((cartObject.storeId!, [cartObject]))
+                                        self.existedStores.append(cartObject.storeName!)
+                                        
+                                        let section = self.goodsInCart.count - 1
+                                        self.cartTableView.insertSections(IndexSet(arrayLiteral: section), with: .fade)
+                                        self.cartTableView.insertRows(at: [IndexPath(row: self.goodsInCart[section].1.count - 1, section: section)], with: .automatic)
+                                        self.cartTableView.endUpdates()
+                                    }
+//                                    self.cartTableView.reloadData()
                                 }
-                                if flag {
-                                    self.goodsInCart.append((cartObject.storeId!, [cartObject]))
-                                    self.existedStores.append(cartObject.storeName!)
-                                }
-                                self.cartTableView.reloadData()
+                                self.stopLoading()
                             }
-                            self.stopLoading()
+                            var toRemove: [IndexPath] = []
+                            var i = 0
+                            while i < self.goodsInCart.count {
+                                var j = 0
+                                while j < self.goodsInCart[i].1.count {
+                                    toRemove.append(IndexPath(row: j, section: i))
+                                    j += 1
+                                }
+                                i += 1
+                            }
+
+                            self.goodsInCart.removeAll()
+                            self.existedStores.removeAll()
+
+                            self.cartTableView.deleteRows(at: toRemove, with: .fade)
+                            self.cartTableView.deleteSections(IndexSet(0 ..< sectionCount), with: .fade)
+                            self.cartTableView.endUpdates()
+
+                            CATransaction.commit()
                             return
                         } else {
                             errorStr = jsonResp!["status"].stringValue

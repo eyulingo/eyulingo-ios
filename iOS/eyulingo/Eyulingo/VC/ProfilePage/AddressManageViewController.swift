@@ -124,7 +124,9 @@ class AddressManageViewController: UIViewController, UITableViewDataSource, UITa
                     } else {
                         errorCode = "no response"
                     }
-                    self.makeAlert("修改收货地址失败", "服务器报告了一个 “\(errorCode)” 错误。", completion: {})
+                    
+                    Loaf("修改收货地址失败。" + "服务器报告了一个 “\(errorCode)” 错误。", state: .error, sender: self).show()
+                    
                 })
             }))
             self.present(alert, animated: true, completion: nil)
@@ -210,46 +212,65 @@ class AddressManageViewController: UIViewController, UITableViewDataSource, UITa
     }
 
     func refreshContent() {
-        addressTableView.reloadData()
-
+//        addressTableView.reloadData()
         if receiveAddresses.count == 0 {
             noContentLabel.isHidden = false
-            addressTableView.isHidden = true
+//            addressTableView.isHidden = true
         } else {
             noContentLabel.isHidden = true
-            addressTableView.isHidden = false
+//            addressTableView.isHidden = false
         }
     }
 
     func loadReceiveAddress() {
-        receiveAddresses.removeAll()
         refreshContent()
-        Alamofire.request(Eyulingo_UserUri.addressGetUri,
-                          method: .get)
-            .responseSwiftyJSON(completionHandler: { responseJSON in
-                var errorCode = "general error"
-                if responseJSON.error == nil {
-                    let jsonResp = responseJSON.value
-                    if jsonResp != nil {
-                        if jsonResp!["status"].stringValue == "ok" {
-                            for addressItem in jsonResp!["values"].arrayValue {
-                                self.receiveAddresses.append(ReceiveAddress(receiver: addressItem["receive_name"].stringValue,
-                                                                            phoneNo: addressItem["receive_phone"].stringValue,
-                                                                            address: addressItem["receive_address"].stringValue))
-                                self.refreshContent()
+
+        CATransaction.begin()
+        addressTableView.beginUpdates()
+        CATransaction.setCompletionBlock {
+            Alamofire.request(Eyulingo_UserUri.addressGetUri,
+                              method: .get)
+                .responseSwiftyJSON(completionHandler: { responseJSON in
+                    var errorCode = "general error"
+                    if responseJSON.error == nil {
+                        let jsonResp = responseJSON.value
+                        if jsonResp != nil {
+                            if jsonResp!["status"].stringValue == "ok" {
+                                self.receiveAddresses.removeAll()
+                                for addressItem in jsonResp!["values"].arrayValue {
+                                    self.receiveAddresses.append(ReceiveAddress(receiver: addressItem["receive_name"].stringValue,
+                                                                                phoneNo: addressItem["receive_phone"].stringValue,
+                                                                                address: addressItem["receive_address"].stringValue))
+                                        self.addressTableView.insertRows(at: [IndexPath(row: self.receiveAddresses.count - 1, section: 0)], with: .automatic)
+                                            
+//                                    self.refreshContent()
+                                }
+                                return
+                            } else {
+                                errorCode = jsonResp!["status"].stringValue
                             }
-                            return
                         } else {
-                            errorCode = jsonResp!["status"].stringValue
+                            errorCode = "bad response"
                         }
                     } else {
-                        errorCode = "bad response"
+                        errorCode = "no response"
                     }
-                } else {
-                    errorCode = "no response"
-                }
-                Loaf("加载购物车失败。服务器报告了一个 “\(errorCode)” 错误。", state: .error, sender: self).show()
-            })
+                    Loaf("加载常用地址失败。服务器报告了一个 “\(errorCode)” 错误。", state: .error, sender: self).show()
+                })
+        }
+
+        
+        var toRemove: [IndexPath] = []
+        var j = 0
+        while j < receiveAddresses.count {
+            toRemove.append(IndexPath(row: j, section: 0))
+            j += 1
+        }
+        receiveAddresses.removeAll()
+
+        addressTableView.deleteRows(at: toRemove, with: .automatic)
+        addressTableView.endUpdates()
+        CATransaction.commit()
     }
 
     @IBAction func addNewAddress(_ sender: UIButton) {
@@ -281,7 +302,7 @@ class AddressManageViewController: UIViewController, UITableViewDataSource, UITa
 
             if receiver == "" || receivePhone == "" || receiveAddress == "" {
                 alert?.dismiss(animated: true, completion: {
-                    self.makeAlert("失败", "输入信息不完整。", completion: {})
+                    Loaf("您输入的信息不完整。请检查后重试。", state: .error, sender: self).show()
                 })
                 return
             }
@@ -312,7 +333,7 @@ class AddressManageViewController: UIViewController, UITableViewDataSource, UITa
                 } else {
                     errorCode = "no response"
                 }
-                self.makeAlert("添加收货地址失败", "服务器报告了一个 “\(errorCode)” 错误。", completion: {})
+                Loaf("添加收货地址失败。服务器报告了一个 “\(errorCode)” 错误。", state: .error, sender: self).show()
             })
         }))
         present(alert, animated: true, completion: nil)
@@ -354,7 +375,7 @@ class AddressManageViewController: UIViewController, UITableViewDataSource, UITa
 
             if receiver == "" || receivePhone == "" || receiveAddress == "" {
                 alert?.dismiss(animated: true, completion: {
-                    self.makeAlert("失败", "输入信息不完整。", completion: {})
+                    Loaf("您输入的信息不完整。请检查后重试。", state: .error, sender: self).show()
                 })
                 return
             }
@@ -388,7 +409,7 @@ class AddressManageViewController: UIViewController, UITableViewDataSource, UITa
                 } else {
                     errorCode = "no response"
                 }
-                self.makeAlert("修改收货地址失败", "服务器报告了一个 “\(errorCode)” 错误。", completion: {})
+                Loaf("修改收货地址失败。" + "服务器报告了一个 “\(errorCode)” 错误。", state: .error, sender: self).show()
             })
         }))
         present(alert, animated: true, completion: nil)
