@@ -410,7 +410,7 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
             "id": goodsId!,
             "amount": quantity,
         ]
-        Alamofire.request(Eyulingo_UserUri.addToCartPostUri,
+        Alamofire.request(Eyulingo_UserUri.modifyAmountFromCartPostUri,
                           method: .post,
                           parameters: postParams,
                           encoding: JSONEncoding.default)
