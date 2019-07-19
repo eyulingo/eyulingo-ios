@@ -479,10 +479,9 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
             return
         }
         let postParams: Parameters = [
-            "id": goodsObject!.goodsId!,
-            "amount": quantity,
+            
         ]
-        Alamofire.request(Eyulingo_UserUri.addToCartPostUri,
+        Alamofire.request(Eyulingo_UserUri.purchasePostUri,
                           method: .post,
                           parameters: postParams,
                           encoding: JSONEncoding.default)
@@ -493,7 +492,7 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
                     if jsonResp != nil {
                         if jsonResp!["status"].stringValue == "ok" {
                             CartRefreshManager.setModifiedState()
-                            Loaf("成功将 \(self.quantity) 件 “\(self.goodsObject?.goodsName ?? "商品")” 加入购物车。", state: .success, sender: self).show()
+                            
                             return
                         } else {
                             errCode = jsonResp!["status"].stringValue
