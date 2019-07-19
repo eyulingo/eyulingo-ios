@@ -69,7 +69,7 @@ class Animator: PullToRefreshViewDelegate {
     
     func pullToRefreshAnimationDidStart(_ view: PullToRefreshView) {
         animatorView.activityIndicatorView.startAnimating()
-        animatorView.titleLabel.text = "Loading"
+        animatorView.titleLabel.text = "加载中……"
     }
     
     func pullToRefreshAnimationDidEnd(_ view: PullToRefreshView) {
@@ -84,7 +84,7 @@ class Animator: PullToRefreshViewDelegate {
     func pullToRefresh(_ view: PullToRefreshView, stateDidChange state: PullToRefreshViewState) {
         switch state {
         case .loading:
-            animatorView.titleLabel.text = "正在加载"
+            animatorView.titleLabel.text = "加载中……"
         case .pullToRefresh:
             animatorView.titleLabel.text = "继续下拉以刷新"
         case .releaseToRefresh:

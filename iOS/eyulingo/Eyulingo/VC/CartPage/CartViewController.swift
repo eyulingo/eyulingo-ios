@@ -21,29 +21,29 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet var purchaseButton: UIBarButtonItem!
     @IBOutlet var confirmButton: UIBarButtonItem!
     @IBOutlet var cancelButton: UIBarButtonItem!
-    
+
     @IBOutlet var navBar: UINavigationBar!
     func enterEditMode() {
         navBar.topItem?.setRightBarButtonItems([confirmButton, cancelButton], animated: true)
     }
-    
+
     func quitEditMode() {
         navBar.topItem?.setRightBarButtonItems([purchaseButton], animated: true)
     }
-    
+
     @IBAction func cancelButtonTapped(_ sender: UIBarButtonItem) {
         cartTableView.setEditing(false, animated: true)
         quitEditMode()
     }
-    
+
     @IBAction func confirmButtonTapped(_ sender: UIBarButtonItem) {
     }
-    
+
     @IBAction func makePurchase(_ sender: UIButton) {
         cartTableView.setEditing(true, animated: true)
         enterEditMode()
     }
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return goodsInCart[section].1.count
     }
@@ -149,7 +149,7 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
                 self.cartTableView.stopPullToRefresh()
             })
         }
-        
+
         quitEditMode()
     }
 
@@ -160,11 +160,10 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
         if tableView.isEditing {
             return
         }
-        
+
         tableView.deselectRow(at: indexPath, animated: true)
 
         let cartObject = goodsInCart[indexPath.section].1[indexPath.row]
@@ -471,6 +470,42 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
 
                 Loaf("修改数量失败。" + "服务器报告了一个 “\(errCode)” 错误。", state: .error, sender: self).show()
                 completion?()
+            })
+    }
+
+    func purchaseFromCart() {
+        if !cartTableView.isEditing {
+            quitEditMode()
+            return
+        }
+        let postParams: Parameters = [
+            "id": goodsObject!.goodsId!,
+            "amount": quantity,
+        ]
+        Alamofire.request(Eyulingo_UserUri.addToCartPostUri,
+                          method: .post,
+                          parameters: postParams,
+                          encoding: JSONEncoding.default)
+            .responseSwiftyJSON(completionHandler: { responseJSON in
+                var errCode = "general error"
+                if responseJSON.error == nil {
+                    let jsonResp = responseJSON.value
+                    if jsonResp != nil {
+                        if jsonResp!["status"].stringValue == "ok" {
+                            CartRefreshManager.setModifiedState()
+                            Loaf("成功将 \(self.quantity) 件 “\(self.goodsObject?.goodsName ?? "商品")” 加入购物车。", state: .success, sender: self).show()
+                            return
+                        } else {
+                            errCode = jsonResp!["status"].stringValue
+                        }
+                    } else {
+                        errCode = "bad response"
+                    }
+                } else {
+                    errCode = "no response"
+                }
+
+                Loaf("加入购物车失败。" + "服务器报告了一个 “\(errCode)” 错误。", state: .error, sender: self).show()
             })
     }
 }
