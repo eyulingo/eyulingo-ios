@@ -14,7 +14,7 @@ class GoodsInCartTableCell: UITableViewCell {
     func initCell() {
         stepper.minimumValue = 0.0
         stepper.maximumValue = Double(storage ?? 100)
-        stepper.value = 1.0
+        stepper.value = Double(amount)
     }
     
     
