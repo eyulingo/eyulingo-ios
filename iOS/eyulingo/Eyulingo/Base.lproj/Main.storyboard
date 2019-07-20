@@ -156,7 +156,7 @@ Project Eyulingo. 一切权利保留。</string>
                                 </subviews>
                             </stackView>
                             <navigationBar contentMode="scaleToFill" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cPn-Ox-KRc">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="96"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="103.33333333333333"/>
                                 <items>
                                     <navigationItem id="DhO-JF-WjR">
                                         <barButtonItem key="rightBarButtonItem" style="plain" id="Vv9-gl-hpc">
@@ -292,7 +292,7 @@ Project Eyulingo. 一切权利保留。</string>
                                                         <action selector="stepperTapped:" destination="GyK-e2-t4U" eventType="valueChanged" id="uLW-1V-sGv"/>
                                                     </connections>
                                                 </stepper>
-                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="库存不足" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4on-P7-Lad">
+                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="库存紧张" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4on-P7-Lad">
                                                     <rect key="frame" x="230" y="35" width="58" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" cocoaTouchSystemColor="systemRedColor"/>
@@ -826,7 +826,7 @@ Project Eyulingo. 一切权利保留。</string>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="ste-Zj-eNl" detailTextLabel="qrd-s1-eQb" style="IBUITableViewCellStyleSubtitle" id="WII-Q0-eDU">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="ste-Zj-eNl" detailTextLabel="qrd-s1-eQb" style="IBUITableViewCellStyleSubtitle" id="WII-Q0-eDU">
                                         <rect key="frame" x="0.0" y="287.33333206176758" width="414" height="58"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WII-Q0-eDU" id="x3f-L5-TKD">
@@ -1810,7 +1810,7 @@ Project Eyulingo. 一切权利保留。</string>
                                 <blurEffect style="prominent"/>
                             </visualEffectView>
                             <navigationBar contentMode="scaleToFill" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JnM-f1-yFo">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="108"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="115.33333333333333"/>
                                 <items>
                                     <navigationItem id="PlG-1d-4cY">
                                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="stop" id="dpv-Co-Nh6">
@@ -2335,7 +2335,7 @@ Project Eyulingo. 一切权利保留。</string>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="xZz-Uy-EsI">
-                                                    <rect key="frame" x="206" y="6" width="94" height="32"/>
+                                                    <rect key="frame" x="300" y="6" width="94" height="32"/>
                                                     <connections>
                                                         <action selector="stepperChanged:" destination="FkX-I3-bGp" eventType="valueChanged" id="ETy-W3-jbb"/>
                                                     </connections>
@@ -2372,7 +2372,7 @@ Project Eyulingo. 一切权利保留。</string>
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3O8-0f-VRv">
-                                                    <rect key="frame" x="238" y="7" width="62" height="30"/>
+                                                    <rect key="frame" x="332" y="7" width="62" height="30"/>
                                                     <state key="normal" title="立即购买"/>
                                                     <connections>
                                                         <action selector="purchaseButtonTapped:" destination="FkX-I3-bGp" eventType="touchUpInside" id="4CF-NV-KqV"/>
