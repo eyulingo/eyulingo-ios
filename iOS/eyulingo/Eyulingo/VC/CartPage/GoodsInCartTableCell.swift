@@ -24,6 +24,7 @@ class GoodsInCartTableCell: UITableViewCell {
             self.amountModifyDelegate?.updateAmount(goodsId: goodsId, quantity: amount, completion: nil)
             self.amountField.text = "×\(amount)"
         }
+        checkInadequate()
     }
     
     var delegate: goToStoreDelegate?
@@ -65,6 +66,14 @@ class GoodsInCartTableCell: UITableViewCell {
             self.imageViewField.alpha = 1.0
             handler?()
         })
+    }
+    
+    func checkInadequate() {
+        if amount > (storage ?? 0) - 5 {
+            inadequatePromptField.isHidden = false
+        } else {
+            inadequatePromptField.isHidden = true
+        }
     }
 }
 

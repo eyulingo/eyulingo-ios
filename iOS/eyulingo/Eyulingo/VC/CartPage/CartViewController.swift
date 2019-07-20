@@ -58,17 +58,14 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell.amountField.text = "×\(cartObject.amount ?? 0)"
         cell.storeField.text = ""
         cell.storageField.text = "库存 \(cartObject.storage ?? 0) 件"
-        if cartObject.amount ?? 10 > (cartObject.storage ?? 1) - 5 {
-            cell.inadequatePromptField.isHidden = true
-        } else {
-            cell.inadequatePromptField.isHidden = false
-        }
 
         cell.amountModifyDelegate = self
         cell.amount = cartObject.amount ?? 0
         cell.storage = cartObject.storage
         cell.goodsId = cartObject.goodsId
         cell.initCell()
+        cell.checkInadequate()
+
 
         if cartObject.imageCache != nil {
             cell.imageViewField.image = cartObject.imageCache
