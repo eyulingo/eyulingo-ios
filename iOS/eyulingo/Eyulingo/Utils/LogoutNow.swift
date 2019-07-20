@@ -11,6 +11,7 @@ import Foundation
 
 class LogOutHelper {
     static func logOutNow(_ handler: @escaping () -> ()) {
+        CartRefreshManager.setModifiedState()
         Alamofire.request(Eyulingo_UserUri.logOutPostUri, method: .post).response(completionHandler: { _ in
             handler()
         })
