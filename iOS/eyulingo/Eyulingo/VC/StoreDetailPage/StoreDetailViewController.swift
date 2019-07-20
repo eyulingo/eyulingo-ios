@@ -39,18 +39,17 @@ class StoreDetailViewController: UIViewController {
         }
     }
     
-    func fadeIn(image: UIImage, duration: Double = 0.25, handler: (() -> ())?) {
-        imageViewField.alpha = 0.0
-        imageViewField.image = image
-        UIView.animate(withDuration: duration, delay: 0.0, options: .curveEaseOut, animations: {
-            self.imageViewField.alpha = 1.0
-        }, completion: { _ in
-            self.imageViewField.alpha = 1.0
-            handler?()
-        })
-    }
+//    func fadeIn(image: UIImage, duration: Double = 0.25, handler: (() -> ())?) {
+//        imageViewField.alpha = 0.0
+//        imageViewField.image = image
+//        UIView.animate(withDuration: duration, delay: 0.0, options: .curveEaseOut, animations: {
+//            self.imageViewField.alpha = 1.0
+//        }, completion: { _ in
+//            self.imageViewField.alpha = 1.0
+//            handler?()
+//        })
+//    }
     
-    @IBOutlet weak var imageViewField: UIImageView!
     
     /*
     // MARK: - Navigation
