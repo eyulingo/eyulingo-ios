@@ -1,10 +1,10 @@
-library verilog;
-use verylog.vl_types.all;
-entity eyulingo_ios_dev is
-    todo(
+class ToDoList
+{
+    todo() {
         - [ ] 付款选择常用收货地址洁界面，把 hiddenTextBox 放在按钮附近
-    );
-    completed(
+    }
+
+    completed() {
         - [x] 快速进入／退出 CartPageView 闪退问题
         - [x] 点击购物车项目不能进入商品详情问题
         - [x] 点击表头不能进入商店详情问题
@@ -22,5 +22,5 @@ entity eyulingo_ios_dev is
         - [x] 更新个人资料
         - [x] 修改密码
         - [x] 商品／商店详情
-    )
-end eyulingo_ios_dev;
+    }
+}
