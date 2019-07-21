@@ -146,21 +146,29 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         if cell.imageViewField.image == nil {
             goodsObject.getCoverAsync(handler: { image in
                 if cell.goodsNameField.text != goodsObject.goodsName {
-                    self.resultGoods[indexPath.row].imageCache = image
+                    if self.resultGoods.count > indexPath.row {
+                        self.resultGoods[indexPath.row].imageCache = image
+                    }
                     return
                 }
                 cell.fadeIn(image: image, handler: nil)
-                self.resultGoods[indexPath.row].imageCache = image
+                if self.resultGoods.count > indexPath.row {
+                    self.resultGoods[indexPath.row].imageCache = image
+                }
             })
         } else {
             cell.fadeOut(handler: {
                 goodsObject.getCoverAsync(handler: { image in
                     if cell.goodsNameField.text != goodsObject.goodsName {
-                        self.resultGoods[indexPath.row].imageCache = image
+                        if self.resultGoods.count > indexPath.row {
+                            self.resultGoods[indexPath.row].imageCache = image
+                        }
                         return
                     }
                     cell.fadeIn(image: image, handler: nil)
-                    self.resultGoods[indexPath.row].imageCache = image
+                    if self.resultGoods.count > indexPath.row {
+                        self.resultGoods[indexPath.row].imageCache = image
+                    }
                 })
             })
         }
