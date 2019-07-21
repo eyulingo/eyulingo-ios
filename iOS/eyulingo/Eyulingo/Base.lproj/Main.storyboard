@@ -156,7 +156,7 @@ Project Eyulingo. 一切权利保留。</string>
                                 </subviews>
                             </stackView>
                             <navigationBar contentMode="scaleToFill" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cPn-Ox-KRc">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="103.33333333333333"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="96"/>
                                 <items>
                                     <navigationItem id="DhO-JF-WjR">
                                         <barButtonItem key="rightBarButtonItem" style="plain" id="Vv9-gl-hpc">
@@ -439,7 +439,7 @@ Project Eyulingo. 一切权利保留。</string>
                                 <blurEffect style="prominent"/>
                             </visualEffectView>
                             <navigationBar contentMode="scaleToFill" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="myk-3u-1Ju">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="108"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="115.33333333333333"/>
                                 <items>
                                     <navigationItem id="vS8-D0-JnM">
                                         <barButtonItem key="backBarButtonItem" title="登录" id="TDU-mg-eyX"/>
@@ -2454,6 +2454,17 @@ Project Eyulingo. 一切权利保留。</string>
                                                         <action selector="showPickerViewWithSender:" destination="nCk-VG-4Mf" eventType="touchUpInside" id="oR4-2O-Bne"/>
                                                     </connections>
                                                 </button>
+                                                <textField hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HpH-iS-dJf">
+                                                    <rect key="frame" x="151" y="165" width="32" height="0.0"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="textColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <action selector="textFieldWithSender:" destination="nCk-VG-4Mf" eventType="editingDidBegin" id="zFt-ZM-6Rf"/>
+                                                    </connections>
+                                                </textField>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="HPO-RG-Iop" secondAttribute="trailing" id="4xD-0O-5Yd"/>
@@ -2468,28 +2479,11 @@ Project Eyulingo. 一切权利保留。</string>
                                                 <constraint firstItem="KAl-Am-aWZ" firstAttribute="top" secondItem="XIf-3i-gka" secondAttribute="top" id="x2N-lX-WiZ"/>
                                             </constraints>
                                         </stackView>
-                                        <textField hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HpH-iS-dJf">
-                                            <rect key="frame" x="354" y="8" width="20" height="20"/>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="20" id="cRm-J6-ApJ"/>
-                                                <constraint firstAttribute="height" constant="20" id="zKe-0L-kEW"/>
-                                            </constraints>
-                                            <color key="textColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits"/>
-                                            <connections>
-                                                <action selector="textFieldWithSender:" destination="nCk-VG-4Mf" eventType="editingDidBegin" id="zFt-ZM-6Rf"/>
-                                            </connections>
-                                        </textField>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="XIf-3i-gka" firstAttribute="centerY" secondItem="SFO-KA-8R1" secondAttribute="centerY" id="860-dQ-xln"/>
-                                        <constraint firstAttribute="trailing" secondItem="HpH-iS-dJf" secondAttribute="trailing" constant="40" id="QKb-qP-vIb"/>
                                         <constraint firstItem="XIf-3i-gka" firstAttribute="leading" secondItem="SFO-KA-8R1" secondAttribute="leading" constant="40" id="ZIM-gl-aAo"/>
                                         <constraint firstAttribute="trailing" secondItem="XIf-3i-gka" secondAttribute="trailing" constant="40" id="eTg-BM-JpP"/>
-                                        <constraint firstItem="HpH-iS-dJf" firstAttribute="top" secondItem="SFO-KA-8R1" secondAttribute="top" constant="8" id="mac-LE-z3Y"/>
                                     </constraints>
                                 </view>
                                 <blurEffect style="systemChromeMaterial"/>
@@ -2514,7 +2508,7 @@ Project Eyulingo. 一切权利保留。</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uwu-ax-V56" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3370" y="814"/>
+            <point key="canvasLocation" x="3369.5652173913045" y="813.58695652173924"/>
         </scene>
         <!--Goods Detail View Controller-->
         <scene sceneID="2Xy-8D-E9j">

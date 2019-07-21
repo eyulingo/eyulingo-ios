@@ -75,21 +75,29 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
         if cell.imageViewField.image == nil {
             cartObject.getCoverAsync(handler: { image in
                 if cell.goodsNameField.text != cartObject.goodsName {
-                    self.goodsInCart[indexPath.section].1[indexPath.row].imageCache = image
+                    if self.goodsInCart.count > indexPath.section && self.goodsInCart[indexPath.section].1.count > indexPath.row {
+                        self.goodsInCart[indexPath.section].1[indexPath.row].imageCache = image
+                    }
                     return
                 }
                 cell.fadeIn(image: image, handler: nil)
-                self.goodsInCart[indexPath.section].1[indexPath.row].imageCache = image
+                if self.goodsInCart.count > indexPath.section && self.goodsInCart[indexPath.section].1.count > indexPath.row {
+                    self.goodsInCart[indexPath.section].1[indexPath.row].imageCache = image
+                }
             })
         } else {
             cell.fadeOut(handler: {
                 cartObject.getCoverAsync(handler: { image in
                     if cell.goodsNameField.text != cartObject.goodsName {
+                        if self.goodsInCart.count > indexPath.section && self.goodsInCart[indexPath.section].1.count > indexPath.row {
                         self.goodsInCart[indexPath.section].1[indexPath.row].imageCache = image
+                        }
                         return
                     }
                     cell.fadeIn(image: image, handler: nil)
+                    if self.goodsInCart.count > indexPath.section && self.goodsInCart[indexPath.section].1.count > indexPath.row {
                     self.goodsInCart[indexPath.section].1[indexPath.row].imageCache = image
+                    }
                 })
             })
         }
