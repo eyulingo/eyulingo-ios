@@ -27,6 +27,7 @@ class CommentsViewController: UIViewController, UITableViewDataSource, UITableVi
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         disableStars()
         // Do any additional setup after loading the view.
         loadComments()
@@ -47,8 +48,10 @@ class CommentsViewController: UIViewController, UITableViewDataSource, UITableVi
         commentsBody.removeAll()
         if contentType == CommentType.storeComments && storeId != nil {
             loadStoreComments()
+            titleLabel.text = "针对 “\(storeObject?.storeName ?? "商店 #\(storeId!)")” 的评价"
         } else if contentType == CommentType.goodsComments && goodsId != nil {
             loadGoodsComments()
+            titleLabel.text = "针对 “\(goodsObject?.goodsName ?? "商品 #\(goodsId!)")” 的评价"
         }
     }
     
@@ -157,77 +160,82 @@ class CommentsViewController: UIViewController, UITableViewDataSource, UITableVi
 
     @IBOutlet var commentsTableView: UITableView!
 
+    @available(iOS 13.0, *)
     func updateStarValue(value: Double) {
         if value >= 5.0 {
-            starOne.image = UIImage(named: "star.fill")
-            starTwo.image = UIImage(named: "star.fill")
-            starThree.image = UIImage(named: "star.fill")
-            starFour.image = UIImage(named: "star.fill")
-            starFive.image = UIImage(named: "star.fill")
+            starOne.image = UIImage(systemName: "star.fill")
+            starTwo.image = UIImage(systemName: "star.fill")
+            starThree.image = UIImage(systemName: "star.fill")
+            starFour.image = UIImage(systemName: "star.fill")
+            starFive.image = UIImage(systemName: "star.fill")
         } else if value >= 4.5 {
-            starOne.image = UIImage(named: "star.fill")
-            starTwo.image = UIImage(named: "star.fill")
-            starThree.image = UIImage(named: "star.fill")
-            starFour.image = UIImage(named: "star.fill")
-            starFive.image = UIImage(named: "star.lefthalf.fill")
+            starOne.image = UIImage(systemName: "star.fill")
+            starTwo.image = UIImage(systemName: "star.fill")
+            starThree.image = UIImage(systemName: "star.fill")
+            starFour.image = UIImage(systemName: "star.fill")
+            starFive.image = UIImage(systemName: "star.lefthalf.fill")
         } else if value >= 4.0 {
-            starOne.image = UIImage(named: "star.fill")
-            starTwo.image = UIImage(named: "star.fill")
-            starThree.image = UIImage(named: "star.fill")
-            starFour.image = UIImage(named: "star.fill")
-            starFive.image = UIImage(named: "star")
+            starOne.image = UIImage(systemName: "star.fill")
+            starTwo.image = UIImage(systemName: "star.fill")
+            starThree.image = UIImage(systemName: "star.fill")
+            starFour.image = UIImage(systemName: "star.fill")
+            starFive.image = UIImage(systemName: "star")
         } else if value >= 3.5 {
-            starOne.image = UIImage(named: "star.fill")
-            starTwo.image = UIImage(named: "star.fill")
-            starThree.image = UIImage(named: "star.fill")
-            starFour.image = UIImage(named: "star.lefthalf.fill")
-            starFive.image = UIImage(named: "star")
+            starOne.image = UIImage(systemName: "star.fill")
+            starTwo.image = UIImage(systemName: "star.fill")
+            starThree.image = UIImage(systemName: "star.fill")
+            starFour.image = UIImage(systemName: "star.lefthalf.fill")
+            starFive.image = UIImage(systemName: "star")
         } else if value >= 3.0 {
-            starOne.image = UIImage(named: "star.fill")
-            starTwo.image = UIImage(named: "star.fill")
-            starThree.image = UIImage(named: "star.fill")
-            starFour.image = UIImage(named: "star")
-            starFive.image = UIImage(named: "star")
+            starOne.image = UIImage(systemName: "star.fill")
+            starTwo.image = UIImage(systemName: "star.fill")
+            starThree.image = UIImage(systemName: "star.fill")
+            starFour.image = UIImage(systemName: "star")
+            starFive.image = UIImage(systemName: "star")
         } else if value >= 2.5 {
-            starOne.image = UIImage(named: "star.fill")
-            starTwo.image = UIImage(named: "star.fill")
-            starThree.image = UIImage(named: "star.lefthalf.fill")
-            starFour.image = UIImage(named: "star")
-            starFive.image = UIImage(named: "star")
+            starOne.image = UIImage(systemName: "star.fill")
+            starTwo.image = UIImage(systemName: "star.fill")
+            starThree.image = UIImage(systemName: "star.lefthalf.fill")
+            starFour.image = UIImage(systemName: "star")
+            starFive.image = UIImage(systemName: "star")
         } else if value >= 2.0 {
-            starOne.image = UIImage(named: "star.fill")
-            starTwo.image = UIImage(named: "star.fill")
-            starThree.image = UIImage(named: "star")
-            starFour.image = UIImage(named: "star")
-            starFive.image = UIImage(named: "star")
+            starOne.image = UIImage(systemName: "star.fill")
+            starTwo.image = UIImage(systemName: "star.fill")
+            starThree.image = UIImage(systemName: "star")
+            starFour.image = UIImage(systemName: "star")
+            starFive.image = UIImage(systemName: "star")
         } else if value >= 1.5 {
-            starOne.image = UIImage(named: "star.fill")
-            starTwo.image = UIImage(named: "star.lefthalf.fill")
-            starThree.image = UIImage(named: "star")
-            starFour.image = UIImage(named: "star")
-            starFive.image = UIImage(named: "star")
+            starOne.image = UIImage(systemName: "star.fill")
+            starTwo.image = UIImage(systemName: "star.lefthalf.fill")
+            starThree.image = UIImage(systemName: "star")
+            starFour.image = UIImage(systemName: "star")
+            starFive.image = UIImage(systemName: "star")
         } else {
-            starOne.image = UIImage(named: "star.fill")
-            starTwo.image = UIImage(named: "star")
-            starThree.image = UIImage(named: "star")
-            starFour.image = UIImage(named: "star")
-            starFive.image = UIImage(named: "star")
+            starOne.image = UIImage(systemName: "star.fill")
+            starTwo.image = UIImage(systemName: "star")
+            starThree.image = UIImage(systemName: "star")
+            starFour.image = UIImage(systemName: "star")
+            starFive.image = UIImage(systemName: "star")
         }
     }
 
     func disableStars() {
         scoreLabel.text = "无评分"
         commentPeopleCountLabel.text = "由于评分人数不足，无法显示评分。"
-        starOne.image = UIImage(named: "star.slash")
-        starTwo.image = UIImage(named: "star.slash")
-        starThree.image = UIImage(named: "star.slash")
-        starFour.image = UIImage(named: "star.slash")
-        starFive.image = UIImage(named: "star.slash")
+        if #available(iOS 13.0, *) {
+            starOne.image = UIImage(systemName: "star.slash")
+            starTwo.image = UIImage(systemName: "star.slash")
+            starThree.image = UIImage(systemName: "star.slash")
+            starFour.image = UIImage(systemName: "star.slash")
+            starFive.image = UIImage(systemName: "star.slash")
+        }
     }
     
     func updateStars() {
         if starPeopleNumber == nil || starPeopleNumber == 0 || commentsBody.count == 0 {
-            disableStars()
+            if #available(iOS 13.0, *) {
+                disableStars()
+            }
             return
         }
         commentPeopleCountLabel.text = "\(starPeopleNumber ?? 0) 名用户评分的平均值"
@@ -241,7 +249,9 @@ class CommentsViewController: UIViewController, UITableViewDataSource, UITableVi
             return
         }
         scoreLabel.text = String.init(format: "%.1f 分", averageStar)
-        updateStarValue(value: averageStar)
+        if #available(iOS 13.0, *) {
+            updateStarValue(value: averageStar)
+        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
