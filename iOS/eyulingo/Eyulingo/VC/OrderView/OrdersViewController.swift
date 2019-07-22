@@ -20,12 +20,18 @@ class OrdersViewController: UIViewController, UITableViewDataSource, UITableView
     @IBOutlet var noContentIndicator: UILabel!
     @IBOutlet var loadingIndicator: UIActivityIndicatorView!
 
-    var loading = true
+    var loading = false
 
     func stopLoading() {
         let shouldShowNothing = currentFlag.rawValue >= combinedOrders.count || combinedOrders[currentFlag.rawValue].count == 0
         loading = false
-        loadingIndicator.isHidden = true
+        loadingIndicator.alpha = 1.0
+        UIView.animate(withDuration: 0.25, delay: 0.0, options: .curveEaseOut, animations: {
+            self.loadingIndicator.alpha = 0.0
+        }, completion: { _ in
+            self.loadingIndicator.isHidden = true
+            self.loadingIndicator.alpha = 1.0
+        })
 
         if shouldShowNothing {
             noContentIndicator.isHidden = false
@@ -40,6 +46,7 @@ class OrdersViewController: UIViewController, UITableViewDataSource, UITableView
         let shouldShowNothing = currentFlag.rawValue >= combinedOrders.count || combinedOrders[currentFlag.rawValue].count == 0
         loading = true
         loadingIndicator.isHidden = false
+        loadingIndicator.alpha = 1.0
         noContentIndicator.isHidden = true
         if shouldShowNothing {
             ordersTableView.isHidden = true
@@ -136,6 +143,18 @@ class OrdersViewController: UIViewController, UITableViewDataSource, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+
+//        loadRawData()
+        ordersTableView.addPullToRefreshWithAction {
+            self.loadRawData(completion: {
+                self.ordersTableView.stopPullToRefresh()
+            })
+        }
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
         loadRawData()
     }
 
@@ -163,7 +182,10 @@ class OrdersViewController: UIViewController, UITableViewDataSource, UITableView
         judgeNoContentDisplay()
     }
 
-    func loadRawData() {
+    func loadRawData(completion: (() -> Void)? = nil) {
+        if loading {
+            return
+        }
         combinedOrders = [[], [], [], []]
         startLoading()
         var errorStr = "general error"
@@ -216,6 +238,7 @@ class OrdersViewController: UIViewController, UITableViewDataSource, UITableView
                             }
                             self.stopLoading()
                             self.orderTypePicked(self.orderTypePicker)
+                            completion?()
                             return
                         } else {
                             errorStr = jsonResp!["status"].stringValue
@@ -228,6 +251,7 @@ class OrdersViewController: UIViewController, UITableViewDataSource, UITableView
                 }
                 Loaf("加载订单失败。" + "服务器报告了一个 “\(errorStr)” 错误。", state: .error, sender: self).show()
                 self.stopLoading()
+                completion?()
             })
     }
 
@@ -236,7 +260,7 @@ class OrdersViewController: UIViewController, UITableViewDataSource, UITableView
         let orderObject = combinedOrders[currentFlag.rawValue][indexPath.section]
         if currentFlag == OrderState.unpurchased {
             let alertController = UIAlertController(title: "想进行什么操作？",
-                                                    message: "您刚刚选中了 “\(orderObject.storeName ?? "某")” 商店开具的 \(orderObject.orderId ?? -1) 号订单。",
+                                                    message: "您刚刚选中了 “\(orderObject.storeName ?? "某商店")” 开具的 \(orderObject.orderId ?? -1) 号订单。",
                                                     preferredStyle: .actionSheet)
             let cancelAction = UIAlertAction(title: "取消",
                                              style: .cancel,
