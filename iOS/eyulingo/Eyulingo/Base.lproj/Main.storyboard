@@ -156,7 +156,7 @@ Project Eyulingo. 一切权利保留。</string>
                                 </subviews>
                             </stackView>
                             <navigationBar contentMode="scaleToFill" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cPn-Ox-KRc">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="96"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="103.33333333333333"/>
                                 <items>
                                     <navigationItem id="DhO-JF-WjR">
                                         <barButtonItem key="rightBarButtonItem" style="plain" id="Vv9-gl-hpc">
@@ -407,7 +407,7 @@ Project Eyulingo. 一切权利保留。</string>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rd7-FB-Nua" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="895" y="142"/>
+            <point key="canvasLocation" x="893" y="120"/>
         </scene>
         <!--RegisterVC-->
         <scene sceneID="YtV-Bh-vZU">
@@ -439,7 +439,7 @@ Project Eyulingo. 一切权利保留。</string>
                                 <blurEffect style="prominent"/>
                             </visualEffectView>
                             <navigationBar contentMode="scaleToFill" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="myk-3u-1Ju">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="108"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="115.33333333333333"/>
                                 <items>
                                     <navigationItem id="vS8-D0-JnM">
                                         <barButtonItem key="backBarButtonItem" title="登录" id="TDU-mg-eyX"/>
@@ -641,7 +641,7 @@ Project Eyulingo. 一切权利保留。</string>
         <!--订单-->
         <scene sceneID="lDG-Ju-rGt">
             <objects>
-                <viewController storyboardIdentifier="PurchasedVC" id="lDf-IJ-1pn" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PurchasedVC" id="lDf-IJ-1pn" customClass="OrdersViewController" customModule="Eyulingo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cTa-bq-7Si">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -652,20 +652,91 @@ Project Eyulingo. 一切权利保留。</string>
                                     <navigationItem title="订单" id="jqw-zZ-7jK"/>
                                 </items>
                             </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="Rwz-rC-Q1g">
+                                <rect key="frame" x="20" y="85" width="374" height="651"/>
+                                <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="OrdersCell" textLabel="JSM-zR-Qvc" detailTextLabel="gyz-xh-1c0" style="IBUITableViewCellStyleValue2" id="BXW-vL-qFC">
+                                        <rect key="frame" x="0.0" y="55.333332061767578" width="374" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BXW-vL-qFC" id="Nj6-7T-8ut">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JSM-zR-Qvc">
+                                                    <rect key="frame" x="20" y="15" width="91" height="15.666666666666666"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="secondaryLabelColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gyz-xh-1c0">
+                                                    <rect key="frame" x="117" y="15" width="35" height="15.666666666666666"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="lDf-IJ-1pn" id="YrV-qe-O3F"/>
+                                    <outlet property="delegate" destination="lDf-IJ-1pn" id="K6h-p6-Aqb"/>
+                                </connections>
+                            </tableView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="ktp-fs-yy0">
+                                <rect key="frame" x="188.66666666666666" y="349.66666666666669" width="37" height="37"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="color" xcode11CocoaTouchSystemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="无内容" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hvx-Ef-ifs">
+                                <rect key="frame" x="162.66666666666666" y="350.66666666666669" width="89" height="35"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="29"/>
+                                <color key="textColor" cocoaTouchSystemColor="tertiaryLabelColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="Xj0-Z2-K6v">
+                                <rect key="frame" x="20" y="46" width="374" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="未支付"/>
+                                    <segment title="待发货"/>
+                                    <segment title="运输中"/>
+                                    <segment title="已送达"/>
+                                </segments>
+                                <connections>
+                                    <action selector="orderTypePicked:" destination="lDf-IJ-1pn" eventType="valueChanged" id="WI0-Sb-Ibc"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="ktp-fs-yy0" firstAttribute="centerY" secondItem="cTa-bq-7Si" secondAttribute="centerY" id="Dy1-PJ-Lsh"/>
+                            <constraint firstItem="Rwz-rC-Q1g" firstAttribute="top" secondItem="Xj0-Z2-K6v" secondAttribute="bottom" constant="8" id="JEK-oU-MKj"/>
+                            <constraint firstItem="Xj0-Z2-K6v" firstAttribute="top" secondItem="pY8-VH-V3c" secondAttribute="bottom" constant="2" id="b5h-4H-NvL"/>
                             <constraint firstItem="pY8-VH-V3c" firstAttribute="leading" secondItem="63H-de-fb2" secondAttribute="leading" id="c52-aZ-OBp"/>
+                            <constraint firstItem="Hvx-Ef-ifs" firstAttribute="centerY" secondItem="cTa-bq-7Si" secondAttribute="centerY" id="fiC-gM-Dap"/>
+                            <constraint firstItem="63H-de-fb2" firstAttribute="trailing" secondItem="Rwz-rC-Q1g" secondAttribute="trailing" constant="20" id="gbI-zZ-EH8"/>
+                            <constraint firstItem="Hvx-Ef-ifs" firstAttribute="centerX" secondItem="cTa-bq-7Si" secondAttribute="centerX" id="hDL-gW-uhe"/>
+                            <constraint firstItem="Rwz-rC-Q1g" firstAttribute="leading" secondItem="63H-de-fb2" secondAttribute="leading" constant="20" id="mhe-T8-4gF"/>
+                            <constraint firstAttribute="bottom" secondItem="Rwz-rC-Q1g" secondAttribute="bottom" id="nVE-rA-0Wq"/>
+                            <constraint firstItem="ktp-fs-yy0" firstAttribute="centerX" secondItem="cTa-bq-7Si" secondAttribute="centerX" id="ots-5I-uk7"/>
                             <constraint firstItem="pY8-VH-V3c" firstAttribute="top" secondItem="63H-de-fb2" secondAttribute="top" id="xEV-jj-z3j"/>
                             <constraint firstItem="pY8-VH-V3c" firstAttribute="centerX" secondItem="cTa-bq-7Si" secondAttribute="centerX" id="y4K-MD-g6d"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="63H-de-fb2"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="订单" image="cube.box" catalog="system" id="EvB-iW-HpF"/>
+                    <connections>
+                        <outlet property="orderTypePicker" destination="Xj0-Z2-K6v" id="7ha-zP-V7M"/>
+                        <outlet property="ordersTableView" destination="Rwz-rC-Q1g" id="JjR-IU-x4K"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kFR-QX-f8i" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="894" y="950"/>
+            <point key="canvasLocation" x="892.75362318840587" y="949.72826086956525"/>
         </scene>
         <!--Store Detail View Controller-->
         <scene sceneID="4Vo-3N-csk">
@@ -1810,7 +1881,7 @@ Project Eyulingo. 一切权利保留。</string>
                                 <blurEffect style="prominent"/>
                             </visualEffectView>
                             <navigationBar contentMode="scaleToFill" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JnM-f1-yFo">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="108"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="115.33333333333333"/>
                                 <items>
                                     <navigationItem id="PlG-1d-4cY">
                                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="stop" id="dpv-Co-Nh6">
@@ -2067,14 +2138,14 @@ Project Eyulingo. 一切权利保留。</string>
             <objects>
                 <tableViewController id="64m-nx-cJD" customClass="DetailViewController" customModule="Eyulingo" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" rowHeight="144" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="I9y-KC-ykO">
-                        <rect key="frame" x="0.0" y="0.0" width="394" height="587"/>
+                        <rect key="frame" x="0.0" y="0.0" width="404" height="587"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ResultGoodsCell" rowHeight="144" id="mab-o7-uAB" customClass="GoodsResultTableCell" customModule="Eyulingo" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="394" height="144"/>
+                                <rect key="frame" x="0.0" y="28" width="404" height="144"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mab-o7-uAB" id="Lh4-wH-doz">
-                                    <rect key="frame" x="0.0" y="0.0" width="394" height="144"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="404" height="144"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bm9-3R-eOP">
@@ -2084,7 +2155,7 @@ Project Eyulingo. 一切权利保留。</string>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="美罗华" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9eM-yQ-pO8">
-                                            <rect key="frame" x="156" y="15.666666666666666" width="218" height="20.333333333333336"/>
+                                            <rect key="frame" x="156" y="15.666666666666666" width="228" height="20.333333333333336"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -2098,7 +2169,7 @@ Project Eyulingo. 一切权利保留。</string>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Tf-J7-bWS">
-                                            <rect key="frame" x="156" y="36" width="218" height="38"/>
+                                            <rect key="frame" x="156" y="36" width="228" height="38"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="38" id="W7m-tj-qBw"/>
                                             </constraints>

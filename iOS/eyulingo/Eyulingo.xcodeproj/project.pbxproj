@@ -42,7 +42,6 @@
 		8A6DD6FC22CAF55500BD7904 /* PinYinConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6DD6FB22CAF55500BD7904 /* PinYinConverter.swift */; };
 		8A71175D22D5D268002F9202 /* ForgetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A71175C22D5D268002F9202 /* ForgetPasswordViewController.swift */; };
 		8A723DA922D4659E008FD0C9 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A723DA822D4659E008FD0C9 /* CartViewController.swift */; };
-		8A723DAB22D465A9008FD0C9 /* OrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A723DAA22D465A9008FD0C9 /* OrdersViewController.swift */; };
 		8A723DAD22D465B5008FD0C9 /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A723DAC22D465B5008FD0C9 /* MyProfileViewController.swift */; };
 		8A723DB022D4704F008FD0C9 /* EyUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A723DAF22D4704F008FD0C9 /* EyUser.swift */; };
 		8A723DB222D4721E008FD0C9 /* ProfileContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A723DB122D4721E008FD0C9 /* ProfileContentViewController.swift */; };
@@ -70,6 +69,8 @@
 		8ADB40FA22DD5AAF009C3538 /* EyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADB40F922DD5AAF009C3538 /* EyStore.swift */; };
 		8ADB40FC22DD5B96009C3538 /* EyComments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADB40FB22DD5B96009C3538 /* EyComments.swift */; };
 		8ADB40FE22DD5CFF009C3538 /* EyCommentLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADB40FD22DD5CFF009C3538 /* EyCommentLevel.swift */; };
+		8AE4E13722E55D7600014C3F /* EyOrders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE4E13622E55D7600014C3F /* EyOrders.swift */; };
+		8AE4E13A22E55EE500014C3F /* OrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE4E13922E55EE500014C3F /* OrdersViewController.swift */; };
 		8AE902ED22DC2402008728F3 /* RWZoomableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE902EC22DC2402008728F3 /* RWZoomableImageView.swift */; };
 		8AEC563022DEA49700520C68 /* ResultTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AEC562F22DEA49700520C68 /* ResultTableView.swift */; };
 		8AEC566D22DEAC2D00520C68 /* ModernSearchBarIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AEC566822DEAC2D00520C68 /* ModernSearchBarIcon.swift */; };
@@ -151,7 +152,6 @@
 		8A6DD6FB22CAF55500BD7904 /* PinYinConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinYinConverter.swift; sourceTree = "<group>"; };
 		8A71175C22D5D268002F9202 /* ForgetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordViewController.swift; sourceTree = "<group>"; };
 		8A723DA822D4659E008FD0C9 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
-		8A723DAA22D465A9008FD0C9 /* OrdersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersViewController.swift; sourceTree = "<group>"; };
 		8A723DAC22D465B5008FD0C9 /* MyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
 		8A723DAF22D4704F008FD0C9 /* EyUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyUser.swift; sourceTree = "<group>"; };
 		8A723DB122D4721E008FD0C9 /* ProfileContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileContentViewController.swift; sourceTree = "<group>"; };
@@ -179,6 +179,8 @@
 		8ADB40F922DD5AAF009C3538 /* EyStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyStore.swift; sourceTree = "<group>"; };
 		8ADB40FB22DD5B96009C3538 /* EyComments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyComments.swift; sourceTree = "<group>"; };
 		8ADB40FD22DD5CFF009C3538 /* EyCommentLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyCommentLevel.swift; sourceTree = "<group>"; };
+		8AE4E13622E55D7600014C3F /* EyOrders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyOrders.swift; sourceTree = "<group>"; };
+		8AE4E13922E55EE500014C3F /* OrdersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersViewController.swift; sourceTree = "<group>"; };
 		8AE902EC22DC2402008728F3 /* RWZoomableImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RWZoomableImageView.swift; path = RWZoomableImageView/RWZoomableImageView/RWZoomableImageView.swift; sourceTree = "<group>"; };
 		8AEC562F22DEA49700520C68 /* ResultTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTableView.swift; sourceTree = "<group>"; };
 		8AEC566822DEAC2D00520C68 /* ModernSearchBarIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModernSearchBarIcon.swift; sourceTree = "<group>"; };
@@ -365,6 +367,7 @@
 				8ADB40FB22DD5B96009C3538 /* EyComments.swift */,
 				8ADB40FD22DD5CFF009C3538 /* EyCommentLevel.swift */,
 				8A0CCDF322E05E0100E3CAF0 /* EyCarts.swift */,
+				8AE4E13622E55D7600014C3F /* EyOrders.swift */,
 			);
 			path = Struct;
 			sourceTree = "<group>";
@@ -403,7 +406,6 @@
 			children = (
 				8AA7BC8D22D5C9560098F292 /* ChangeEmailViewController.swift */,
 				8AA7BC8C22D5C9560098F292 /* ChangePasswordViewController.swift */,
-				8A723DAA22D465A9008FD0C9 /* OrdersViewController.swift */,
 				8A723DAC22D465B5008FD0C9 /* MyProfileViewController.swift */,
 				8A723DB122D4721E008FD0C9 /* ProfileContentViewController.swift */,
 				8A0C377D22D71D4500358F52 /* AddressManageViewController.swift */,
@@ -423,6 +425,7 @@
 		8AC9E7D722C9A2E500F80460 /* VC */ = {
 			isa = PBXGroup;
 			children = (
+				8AE4E13822E55ED700014C3F /* OrderView */,
 				8A0D3B1522E1AA65009DCF56 /* PurchaseView */,
 				8A2B704222DFFBF400452499 /* StoreDetailPage */,
 				8A11800F22DEE65F00275AA3 /* GoodsDetailPage */,
@@ -460,6 +463,14 @@
 				8A11E0C522E1497B0080B10F /* CartRefreshManager.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		8AE4E13822E55ED700014C3F /* OrderView */ = {
+			isa = PBXGroup;
+			children = (
+				8AE4E13922E55EE500014C3F /* OrdersViewController.swift */,
+			);
+			path = OrderView;
 			sourceTree = "<group>";
 		};
 		8AEC565422DEABC100520C68 /* ModernSearchBar */ = {
@@ -688,7 +699,6 @@
 				8A06394B22D3316F00699037 /* EyulingoUri.swift in Sources */,
 				8A55B28322C8CE85007E77FD /* ViewController.swift in Sources */,
 				8AC9E7F722C9B0D000F80460 /* Cart.swift in Sources */,
-				8A723DAB22D465A9008FD0C9 /* OrdersViewController.swift in Sources */,
 				8ADB40FC22DD5B96009C3538 /* EyComments.swift in Sources */,
 				8AEC567022DEAC2D00520C68 /* ModernSearchBarModel.swift in Sources */,
 				8A55B27F22C8CE85007E77FD /* AppDelegate.swift in Sources */,
@@ -730,6 +740,7 @@
 				8AC9E7E322C9A3CD00F80460 /* BookDetailVC.swift in Sources */,
 				8A6DD6F222CAE3FA00BD7904 /* TabBarController.swift in Sources */,
 				8A0D001022E047DE00DF1783 /* GoodsInCartTableCell.swift in Sources */,
+				8AE4E13722E55D7600014C3F /* EyOrders.swift in Sources */,
 				8A6DD6FC22CAF55500BD7904 /* PinYinConverter.swift in Sources */,
 				8A5050FA22DDCE12003B123B /* GoodsResultTableCell.swift in Sources */,
 				8AC9E7F322C9ACC900F80460 /* Bill.swift in Sources */,
@@ -738,6 +749,7 @@
 				8A71175D22D5D268002F9202 /* ForgetPasswordViewController.swift in Sources */,
 				8A11801322DEEF3F00275AA3 /* GoodsDetailTableViewController.swift in Sources */,
 				8AEC566D22DEAC2D00520C68 /* ModernSearchBarIcon.swift in Sources */,
+				8AE4E13A22E55EE500014C3F /* OrdersViewController.swift in Sources */,
 				8A723DA922D4659E008FD0C9 /* CartViewController.swift in Sources */,
 				8A2B704622DFFC1D00452499 /* StoreDetailTableViewController.swift in Sources */,
 				8A09F12A22DC137100CD3B16 /* ImagePreviewViewController.swift in Sources */,
