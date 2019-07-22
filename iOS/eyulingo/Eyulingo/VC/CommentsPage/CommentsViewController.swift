@@ -240,7 +240,7 @@ class CommentsViewController: UIViewController, UITableViewDataSource, UITableVi
             disableStars()
             return
         }
-        scoreLabel.text = String.init(format: "%.2d 分", averageStar)
+        scoreLabel.text = String.init(format: "%.1f 分", averageStar)
         updateStarValue(value: averageStar)
     }
     
