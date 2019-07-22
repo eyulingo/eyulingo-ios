@@ -16,6 +16,7 @@ struct EyOrders {
     var storeId: Int?
     var storeName: String?
     var transportingMethod: String?
+    var status: OrderState?
     var items: [EyOrderItems]?
 }
 
