@@ -29,8 +29,12 @@ class GoodsDetailTableViewController: UITableViewController, CartRefreshDelegate
 
     func reloadStorage() {
         var errorStr = "general error"
+        let reloadGoodsId = goodsObject?.goodsId
+        if reloadGoodsId == nil {
+            return
+        }
         let getParams: Parameters = [
-            "id": goodsObject?.goodsId!,
+            "id": reloadGoodsId!,
         ]
         Alamofire.request(Eyulingo_UserUri.goodDetailGetUri,
                           method: .get, parameters: getParams)
