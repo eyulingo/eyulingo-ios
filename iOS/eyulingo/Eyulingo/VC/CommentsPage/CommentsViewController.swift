@@ -58,8 +58,10 @@ class CommentsViewController: UIViewController, UITableViewDataSource, UITableVi
     func checkHiddenOrNot() {
         if commentsBody.count == 0 {
             noContentIndicator.isHidden = false
+            commentsTableView.isHidden = true
         } else {
             noContentIndicator.isHidden = true
+            commentsTableView.isHidden = false
         }
     }
 

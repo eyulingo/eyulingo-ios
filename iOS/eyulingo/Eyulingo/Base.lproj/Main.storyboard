@@ -2803,7 +2803,7 @@ Project Eyulingo. 一切权利保留。</string>
                                                 <constraint firstAttribute="height" constant="150" id="h6g-Sy-d0S"/>
                                             </constraints>
                                             <vibrancyEffect>
-                                                <blurEffect style="regular"/>
+                                                <blurEffect style="prominent"/>
                                             </vibrancyEffect>
                                         </visualEffectView>
                                     </subviews>
