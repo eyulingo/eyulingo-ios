@@ -29,10 +29,10 @@ class OrdersViewController: UIViewController, UITableViewDataSource, UITableView
 
         if shouldShowNothing {
             noContentIndicator.isHidden = false
-//            ordersTableView.isHidden = true
+            ordersTableView.isHidden = true
         } else {
             noContentIndicator.isHidden = true
-//            ordersTableView.isHidden = false
+            ordersTableView.isHidden = false
         }
     }
 
@@ -42,11 +42,20 @@ class OrdersViewController: UIViewController, UITableViewDataSource, UITableView
         loadingIndicator.isHidden = false
         noContentIndicator.isHidden = true
         if shouldShowNothing {
+            ordersTableView.isHidden = true
+        } else {
+            ordersTableView.isHidden = false
+        }
+    }
+
+    func judgeNoContentDisplay() {
+        let shouldShowNothing = currentFlag.rawValue >= combinedOrders.count || combinedOrders[currentFlag.rawValue].count == 0
+        if shouldShowNothing {
             noContentIndicator.isHidden = false
-//            ordersTableView.isHidden = true
+            ordersTableView.isHidden = true
         } else {
             noContentIndicator.isHidden = true
-//            ordersTableView.isHidden = false
+            ordersTableView.isHidden = false
         }
     }
 
@@ -63,7 +72,7 @@ class OrdersViewController: UIViewController, UITableViewDataSource, UITableView
         }
         return constantCellsCount
     }
-    
+
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return "订单 #\(combinedOrders[currentFlag.rawValue][section].orderId ?? -1)"
     }
@@ -107,6 +116,7 @@ class OrdersViewController: UIViewController, UITableViewDataSource, UITableView
             cell.detailTextLabel?.text = orderObject.transportingMethod
         } else if indexPath.row == 4 {
             cell.textLabel?.text = "下单时间"
+            cell.detailTextLabel?.text = "未知"
         } else {
             cell.textLabel?.text = "\(indexPath.row - constantCellsCount + 1) 号商品"
             cell.detailTextLabel?.text = combinedOrders[currentFlag.rawValue][indexPath.section].items?[indexPath.row - constantCellsCount].goodsName
@@ -127,17 +137,16 @@ class OrdersViewController: UIViewController, UITableViewDataSource, UITableView
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         loadRawData()
-        
     }
 
     @IBAction func orderTypePicked(_ sender: UISegmentedControl) {
-
         let newFlag = OrderState(rawValue: sender.selectedSegmentIndex) ?? OrderState.unpurchased
         if newFlag == currentFlag || currentFlag.rawValue >= combinedOrders.count {
             ordersTableView.reloadData()
             return
         }
         currentFlag = newFlag
+
 //        CATransaction.begin()
 //        ordersTableView.beginUpdates()
 //        CATransaction.setCompletionBlock {
@@ -151,6 +160,7 @@ class OrdersViewController: UIViewController, UITableViewDataSource, UITableView
 //        ordersTableView.endUpdates()
 //        CATransaction.commit()
         ordersTableView.reloadData()
+        judgeNoContentDisplay()
     }
 
     func loadRawData() {
@@ -201,8 +211,8 @@ class OrdersViewController: UIViewController, UITableViewDataSource, UITableView
                                     }
                                 }
                                 if orderObject.status?.rawValue ?? 4 < self.combinedOrders.count {
-                                                                        self.combinedOrders[orderObject.status?.rawValue ?? 0].append(orderObject)
-                                                                    }
+                                    self.combinedOrders[orderObject.status?.rawValue ?? 0].insert(orderObject, at: 0)
+                                }
                             }
                             self.stopLoading()
                             self.orderTypePicked(self.orderTypePicker)
@@ -219,6 +229,38 @@ class OrdersViewController: UIViewController, UITableViewDataSource, UITableView
                 Loaf("加载订单失败。" + "服务器报告了一个 “\(errorStr)” 错误。", state: .error, sender: self).show()
                 self.stopLoading()
             })
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let orderObject = combinedOrders[currentFlag.rawValue][indexPath.section]
+        if currentFlag == OrderState.unpurchased {
+            let alertController = UIAlertController(title: "想进行什么操作？",
+                                                    message: "您刚刚选中了 “\(orderObject.storeName ?? "某")” 商店开具的 \(orderObject.orderId ?? -1) 号订单。",
+                                                    preferredStyle: .actionSheet)
+            let cancelAction = UIAlertAction(title: "取消",
+                                             style: .cancel,
+                                             handler: nil)
+            let removeOrder = UIAlertAction(title: "删除订单",
+                                            style: .destructive,
+                                            handler: { _ in
+
+            })
+            let payOrder = UIAlertAction(title: "付款",
+                                         style: .default,
+                                         handler: { _ in
+
+            })
+            alertController.addAction(cancelAction)
+            alertController.addAction(payOrder)
+            alertController.addAction(removeOrder)
+
+            if let popoverController = alertController.popoverPresentationController {
+                popoverController.sourceView = view
+                popoverController.sourceRect = tableView.cellForRow(at: indexPath)!.frame
+            }
+            present(alertController, animated: true, completion: nil)
+        }
     }
 
     /*
