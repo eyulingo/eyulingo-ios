@@ -9,11 +9,10 @@
 import UIKit
 
 class GoodsDetailViewController: UIViewController, DismissMyselfDelegate {
-    
     func dismissMe() {
-        self.dismiss(animated: true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
-    
+
     override func viewWillDisappear(_ animated: Bool) {
         // if the delegate isn't null (raised by cart), tell him to refresh it
         // shortcut evaluate
@@ -33,28 +32,29 @@ class GoodsDetailViewController: UIViewController, DismissMyselfDelegate {
             self.fadeIn(image: image, handler: nil)
         })
     }
-    
+
     @IBAction func dismissMe(_ sender: UIBarButtonItem) {
-        self.dismiss(animated: true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
+
     var goodsObject: EyGoods?
-    
+
     func accessLargeImage() {
-        if self.imageViewField.image == nil {
+        if imageViewField.image == nil {
             return
         }
         let destinationStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let destinationViewController = destinationStoryboard.instantiateViewController(withIdentifier: "ImagePreviewVC") as! ImagePreviewViewController
-        
-        destinationViewController.mainImage = self.imageViewField.image
-        destinationViewController.promptText = "“\(self.goodsObject?.goodsName ?? "商品")” 图像" 
-        self.present(destinationViewController, animated: true, completion: nil)
+
+        destinationViewController.mainImage = imageViewField.image
+        destinationViewController.promptText = "“\(goodsObject?.goodsName ?? "商品")” 图像"
+        present(destinationViewController, animated: true, completion: nil)
     }
-    
+
     @IBAction func accessLargeImageButtonTapped(_ sender: UIButton) {
         accessLargeImage()
     }
-    
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if contentVC == nil {
             if segue.identifier == "GoodsDetailSegue" {
@@ -65,12 +65,21 @@ class GoodsDetailViewController: UIViewController, DismissMyselfDelegate {
             }
         }
     }
-    
-    @IBOutlet weak var imageViewField: UIImageView!
-    
+
+    @IBAction func openComments(_ sender: UIBarButtonItem) {
+        let destinationStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let destinationViewController = destinationStoryboard.instantiateViewController(withIdentifier: "CommentsVC") as! CommentsViewController
+        destinationViewController.contentType = CommentType.goodsComments
+        destinationViewController.goodsObject = goodsObject
+        destinationViewController.goodsId = goodsObject?.goodsId
+        present(destinationViewController, animated: true, completion: nil)
+    }
+
+    @IBOutlet var imageViewField: UIImageView!
+
     var contentVC: GoodsDetailTableViewController?
-    
-    func fadeIn(image: UIImage, duration: Double = 0.25, handler: (() -> ())?) {
+
+    func fadeIn(image: UIImage, duration: Double = 0.25, handler: (() -> Void)?) {
         imageViewField.alpha = 0.0
         imageViewField.image = image
         UIView.animate(withDuration: duration, delay: 0.0, options: .curveEaseOut, animations: {
@@ -83,5 +92,5 @@ class GoodsDetailViewController: UIViewController, DismissMyselfDelegate {
 }
 
 protocol CartRefreshDelegate {
-    func refreshCart() -> ()
+    func refreshCart() -> Void
 }

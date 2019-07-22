@@ -18,6 +18,7 @@ struct EyOrders {
     var transportingMethod: String?
     var status: OrderState?
     var items: [EyOrderItems]?
+    var createTime: String?
 }
 
 struct EyOrderItems {

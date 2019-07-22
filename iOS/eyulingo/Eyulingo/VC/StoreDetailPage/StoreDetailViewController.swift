@@ -9,17 +9,15 @@
 import UIKit
 
 class StoreDetailViewController: UIViewController {
-
-    
     var storeObject: EyStore?
     var contentVC: StoreDetailTableViewController?
-    
+
     var openedByGoodsId: Int?
-    
+
     @IBAction func dismissMe(_ sender: UIBarButtonItem) {
-        self.dismiss(animated: true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -28,7 +26,17 @@ class StoreDetailViewController: UIViewController {
 //            self.fadeIn(image: image, duration: 1.0, handler: nil)
 //        })
     }
+
+    @IBAction func openComments(_ sender: UIBarButtonItem) {
+        let destinationStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let destinationViewController = destinationStoryboard.instantiateViewController(withIdentifier: "CommentsVC") as! CommentsViewController
+        destinationViewController.contentType = CommentType.storeComments
+        destinationViewController.storeObject = storeObject
+        destinationViewController.storeId = storeObject?.storeId
+        present(destinationViewController, animated: true, completion: nil)
+    }
     
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if contentVC == nil {
             if segue.identifier == "StoreDetailSegue" {
@@ -38,7 +46,7 @@ class StoreDetailViewController: UIViewController {
             }
         }
     }
-    
+
 //    func fadeIn(image: UIImage, duration: Double = 0.25, handler: (() -> ())?) {
 //        imageViewField.alpha = 0.0
 //        imageViewField.image = image
@@ -49,17 +57,14 @@ class StoreDetailViewController: UIViewController {
 //            handler?()
 //        })
 //    }
-    
-    
+
     /*
-    // MARK: - Navigation
+     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+         // Get the new view controller using segue.destination.
+         // Pass the selected object to the new view controller.
+     }
+     */
 }
-

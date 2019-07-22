@@ -122,8 +122,12 @@ class Eyulingo_UserUri {
     static let purchasePostUri = baseUri + "/purchase"
     
     // parameters:
-    // order_id - 要付款的订单 ID
+    // order_id - 要付款的订单 ID 数组（多个）
     static let payPostUri = baseUri + "/pay"
+    
+    // parameters:
+    // order_id - 要删除的订单 ID （单个）
+    static let removeOrderPostUri = baseUri + "/deleteorder"
     
     // parameters:
     // id - 商品 ID

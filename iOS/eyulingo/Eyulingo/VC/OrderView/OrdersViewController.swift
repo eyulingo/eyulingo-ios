@@ -99,6 +99,109 @@ class OrdersViewController: UIViewController, UITableViewDataSource, UITableView
 //        }
         return 0
     }
+    
+    func makeAlert(_ title: String, _ message: String, completion: @escaping () -> ()) {
+        let controller = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "嗯", style: .default, handler: { _ in
+            completion()
+        })
+        controller.addAction(okAction)
+        self.present(controller, animated: true, completion: nil)
+    }
+
+    func makePayment(orderId: Int) {
+        let paramIds: [Parameters] = [[
+            "order_id": orderId
+        ]]
+        let postParams: Parameters = [
+            "order_id": paramIds
+        ]
+
+        let loadingAlert = UIAlertController(title: nil, message: "请稍等……", preferredStyle: .alert)
+
+        let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
+        loadingIndicator.hidesWhenStopped = true
+        //        loadingIndicator.style = UIActivityIndicatorView.Style.medium
+        loadingIndicator.startAnimating()
+
+        loadingAlert.view.addSubview(loadingIndicator)
+
+        present(loadingAlert, animated: true, completion: {
+            var errorStr = "general error"
+            Alamofire.request(Eyulingo_UserUri.payPostUri,
+                              method: .post,
+                              parameters: postParams,
+                              encoding: JSONEncoding.default)
+                .responseSwiftyJSON(completionHandler: { responseJSON in
+                    if responseJSON.error == nil {
+                        let jsonResp = responseJSON.value
+                        if jsonResp != nil {
+                            if jsonResp!["status"].stringValue == "ok" {
+                                loadingAlert.dismiss(animated: true, completion: {
+                                    self.makeAlert("成功", "您已成功支付订单。", completion: {
+                                        self.loadRawData()
+                                    })
+                                })
+                                return
+                            } else {
+                                errorStr = jsonResp!["status"].stringValue
+                            }
+                        } else {
+                            errorStr = "bad response"
+                        }
+                    } else {
+                        errorStr = "no response"
+                    }
+                    Loaf("支付失败。服务器报告了一个 “\(errorStr)” 错误", state: .error, sender: self).show()
+                    self.loadRawData()
+                })
+        })
+    }
+    
+    func removeOrder(orderId: Int) {
+            let postParams: Parameters = [
+                "order_id": orderId
+            ]
+
+            let loadingAlert = UIAlertController(title: nil, message: "请稍等……", preferredStyle: .alert)
+
+            let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
+            loadingIndicator.hidesWhenStopped = true
+            //        loadingIndicator.style = UIActivityIndicatorView.Style.medium
+            loadingIndicator.startAnimating()
+
+            loadingAlert.view.addSubview(loadingIndicator)
+
+            present(loadingAlert, animated: true, completion: {
+                var errorStr = "general error"
+                Alamofire.request(Eyulingo_UserUri.removeOrderPostUri,
+                                  method: .post,
+                                  parameters: postParams,
+                                  encoding: JSONEncoding.default)
+                    .responseSwiftyJSON(completionHandler: { responseJSON in
+                        if responseJSON.error == nil {
+                            let jsonResp = responseJSON.value
+                            if jsonResp != nil {
+                                if jsonResp!["status"].stringValue == "ok" {
+                                    loadingAlert.dismiss(animated: true, completion: {
+                                        Loaf("已成功删除该订单。", state: .success, sender: self).show()
+                                        self.loadRawData()
+                                    })
+                                    return
+                                } else {
+                                    errorStr = jsonResp!["status"].stringValue
+                                }
+                            } else {
+                                errorStr = "bad response"
+                            }
+                        } else {
+                            errorStr = "no response"
+                        }
+                        Loaf("删除订单失败。服务器报告了一个 “\(errorStr)” 错误", state: .error, sender: self).show()
+                        self.loadRawData()
+                    })
+            })
+        }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "OrdersCell", for: indexPath)
@@ -123,10 +226,11 @@ class OrdersViewController: UIViewController, UITableViewDataSource, UITableView
             cell.detailTextLabel?.text = orderObject.transportingMethod
         } else if indexPath.row == 4 {
             cell.textLabel?.text = "下单时间"
-            cell.detailTextLabel?.text = "未知"
+            cell.detailTextLabel?.text = orderObject.createTime
         } else {
+            let goodsObject = combinedOrders[currentFlag.rawValue][indexPath.section].items?[indexPath.row - constantCellsCount]
             cell.textLabel?.text = "\(indexPath.row - constantCellsCount + 1) 号商品"
-            cell.detailTextLabel?.text = combinedOrders[currentFlag.rawValue][indexPath.section].items?[indexPath.row - constantCellsCount].goodsName
+            cell.detailTextLabel?.text = "“\(goodsObject?.goodsName ?? "某商品")” \(goodsObject?.amount ?? 0) 件"
         }
         return cell
     }
@@ -216,7 +320,8 @@ class OrdersViewController: UIViewController, UITableViewDataSource, UITableView
                                                            storeName: nil,
                                                            transportingMethod: orderItem["transport_method"].stringValue,
                                                            status: orderStatusId,
-                                                           items: [])
+                                                           items: [],
+                                                           createTime: DateAndTimeParser.parseDateAndTimeString(orderItem["generate_time"].stringValue))
                                 for goodsItem in orderItem["goods"].arrayValue {
                                     let goodsObject = EyOrderItems(goodsId: goodsItem["id"].intValue,
                                                                    goodsName: goodsItem["name"].stringValue,
@@ -233,7 +338,7 @@ class OrdersViewController: UIViewController, UITableViewDataSource, UITableView
                                     }
                                 }
                                 if orderObject.status?.rawValue ?? 4 < self.combinedOrders.count {
-                                    self.combinedOrders[orderObject.status?.rawValue ?? 0].insert(orderObject, at: 0)
+                                    self.combinedOrders[orderObject.status?.rawValue ?? 0].append(orderObject)
                                 }
                             }
                             self.stopLoading()
@@ -265,15 +370,18 @@ class OrdersViewController: UIViewController, UITableViewDataSource, UITableView
             let cancelAction = UIAlertAction(title: "取消",
                                              style: .cancel,
                                              handler: nil)
-            let removeOrder = UIAlertAction(title: "删除订单",
+            let removeOrder = UIAlertAction(title: "放弃订单",
                                             style: .destructive,
                                             handler: { _ in
-
+                                            self.removeOrder(orderId: orderObject.orderId!)
             })
             let payOrder = UIAlertAction(title: "付款",
                                          style: .default,
                                          handler: { _ in
-
+                                            if orderObject.orderId == nil {
+                                                return
+                                            }
+                                            self.makePayment(orderId: orderObject.orderId!)
             })
             alertController.addAction(cancelAction)
             alertController.addAction(payOrder)

@@ -6,28 +6,31 @@
 //  Copyright © 2019 yuetsin. All rights reserved.
 //
 
-import UIKit
 import Alamofire
 import Alamofire_SwiftyJSON
-import SwiftyJSON
 import Loaf
+import SwiftyJSON
+import UIKit
 
-class GoodsDetailTableViewController: UITableViewController {
-    
+class GoodsDetailTableViewController: UITableViewController, CartRefreshDelegate {
+    func refreshCart() {
+        dismiss(animated: true, completion: nil)
+    }
+
     var openedByStoreId: Int?
 
-    func makeAlert(_ title: String, _ message: String, completion: @escaping () -> ()) {
+    func makeAlert(_ title: String, _ message: String, completion: @escaping () -> Void) {
         let controller = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "嗯", style: .default, handler: nil)
         controller.addAction(okAction)
-        self.present(controller, animated: true, completion: completion)
+        present(controller, animated: true, completion: completion)
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
+
         stepper.stepValue = 1.0
         stepper.minimumValue = 0.0
         if goodsObject != nil {
@@ -36,7 +39,7 @@ class GoodsDetailTableViewController: UITableViewController {
             stepper.maximumValue = 1000.0
         }
         stepper.value = min(1.0, stepper.maximumValue)
-        
+
         goodsName.text = goodsObject?.goodsName
         storeName.text = goodsObject?.storeName
         priceField.text = "¥" + (goodsObject?.price?.formattedAmount ?? "未知")
@@ -44,27 +47,26 @@ class GoodsDetailTableViewController: UITableViewController {
         storageField.text = "\(goodsObject?.storage ?? 0) 件"
         stepperChanged(stepper)
     }
-    
-    
+
     @IBAction func stepperChanged(_ sender: UIStepper) {
         amountField.text = "\(Int(sender.value)) 件"
         quantity = Int(sender.value)
     }
-    
-    @IBOutlet weak var goodsName: UILabel!
-    @IBOutlet weak var storeName: UILabel!
-    @IBOutlet weak var priceField: UILabel!
-    @IBOutlet weak var descriptionField: UILabel!
-    @IBOutlet weak var storageField: UILabel!
-    @IBOutlet weak var stepper: UIStepper!
-    @IBOutlet weak var amountField: UILabel!
-    
+
+    @IBOutlet var goodsName: UILabel!
+    @IBOutlet var storeName: UILabel!
+    @IBOutlet var priceField: UILabel!
+    @IBOutlet var descriptionField: UILabel!
+    @IBOutlet var storageField: UILabel!
+    @IBOutlet var stepper: UIStepper!
+    @IBOutlet var amountField: UILabel!
+
     var goodsObject: EyGoods?
     var quantity: Int = 0
     var delegate: DismissMyselfDelegate?
     /*
      // MARK: - Navigation
-     
+
      // In a storyboard-based application, you will often want to do a little preparation before navigation
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
      // Get the new view controller using segue.destination.
@@ -72,17 +74,16 @@ class GoodsDetailTableViewController: UITableViewController {
      }
      */
     @IBAction func addToCartButtonTapped(_ sender: UIButton) {
-        
         if quantity == 0 {
             return
         }
         if goodsObject == nil {
             return
         }
-        
+
         let postParams: Parameters = [
             "id": goodsObject!.goodsId!,
-            "amount": quantity
+            "amount": quantity,
         ]
         Alamofire.request(Eyulingo_UserUri.addToCartPostUri,
                           method: .post,
@@ -106,25 +107,108 @@ class GoodsDetailTableViewController: UITableViewController {
                 } else {
                     errCode = "no response"
                 }
-                
+
                 Loaf("加入购物车失败。" + "服务器报告了一个 “\(errCode)” 错误。", state: .error, sender: self).show()
             })
     }
-    
+
     @IBAction func purchaseButtonTapped(_ sender: UIButton) {
-        
+        if quantity == 0 {
+            return
+        }
+        if goodsObject == nil {
+            return
+        }
+        var receiveAddresses: [ReceiveAddress] = []
+        Alamofire.request(Eyulingo_UserUri.addressGetUri,
+                          method: .get)
+            .responseSwiftyJSON(completionHandler: { responseJSON in
+                var errorCode = ""
+                if responseJSON.error == nil {
+                    let jsonResp = responseJSON.value
+                    if jsonResp != nil {
+                        if jsonResp!["status"].stringValue == "ok" {
+                            for addressItem in jsonResp!["values"].arrayValue {
+                                receiveAddresses.append(ReceiveAddress(receiver: addressItem["receive_name"].stringValue,
+                                                                       phoneNo: addressItem["receive_phone"].stringValue,
+                                                                       address: addressItem["receive_address"].stringValue))
+                            }
+                        } else {
+                            errorCode = jsonResp!["status"].stringValue
+                        }
+                    } else {
+                        errorCode = "bad response"
+                    }
+                } else {
+                    errorCode = "no response"
+                }
+                //                if errorCode != "" {
+                //                    Loaf("加载常用地址失败。服务器报告了一个 “\(errorCode)” 错误。", state: .error, sender: self).show()
+                //                }
+
+                let destinationStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                let destinationViewController = destinationStoryboard.instantiateViewController(withIdentifier: "PurchaseVC") as! PurchaseViewController
+
+                destinationViewController.possibleAddresses = receiveAddresses
+//                        destinationViewController.delegate = self
+                destinationViewController.toPurchaseGoods = [EyCarts(goodsId: self.goodsObject?.goodsId,
+                                                                     goodsName: self.goodsObject?.goodsName,
+                                                                     coverId: self.goodsObject?.coverId,
+                                                                     storeId: self.goodsObject?.storeId,
+                                                                     amount: self.quantity,
+                                                                     storeName: self.goodsObject?.storeName,
+                                                                     storage: self.goodsObject?.storage,
+                                                                     price: self.goodsObject?.couponPrice,
+                                                                     imageCache: nil)]
+                destinationViewController.refreshDelegate = self
+                self.present(destinationViewController, animated: true, completion: nil)
+            })
+
+        /*
+         if !cartTableView.isEditing {
+             quitEditMode()
+             return
+         }
+         let postParams: Parameters = [
+
+         ]
+         Alamofire.request(Eyulingo_UserUri.purchasePostUri,
+                           method: .post,
+                           parameters: postParams,
+                           encoding: JSONEncoding.default)
+             .responseSwiftyJSON(completionHandler: { responseJSON in
+                 var errCode = "general error"
+                 if responseJSON.error == nil {
+                     let jsonResp = responseJSON.value
+                     if jsonResp != nil {
+                         if jsonResp!["status"].stringValue == "ok" {
+                             CartRefreshManager.setModifiedState()
+
+                             return
+                         } else {
+                             errCode = jsonResp!["status"].stringValue
+                         }
+                     } else {
+                         errCode = "bad response"
+                     }
+                 } else {
+                     errCode = "no response"
+                 }
+
+                 Loaf("加入购物车失败。" + "服务器报告了一个 “\(errCode)” 错误。", state: .error, sender: self).show()
+             })
+         */
     }
-    
 
     /*
-    // MARK: - Navigation
+     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+         // Get the new view controller using segue.destination.
+         // Pass the selected object to the new view controller.
+     }
+     */
 
     // Tap on table Row
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -150,17 +234,17 @@ class GoodsDetailTableViewController: UITableViewController {
             }
         }
     }
-    
+
     @objc func copyStoreName() {
         let pasteboard = UIPasteboard.general
         pasteboard.string = goodsObject?.storeName
     }
-    
+
     @objc func copyGoodsName() {
         let pasteboard = UIPasteboard.general
         pasteboard.string = goodsObject?.goodsName
     }
-    
+
     @objc func visitStore() {
         let storeId = goodsObject?.storeId!
         if storeId == openedByStoreId {
@@ -169,7 +253,7 @@ class GoodsDetailTableViewController: UITableViewController {
         }
         var errorStr = "general error"
         let getParams: Parameters = [
-            "id": storeId!
+            "id": storeId!,
         ]
         Alamofire.request(Eyulingo_UserUri.storeDetailGetUri,
                           method: .get, parameters: getParams)
@@ -202,14 +286,14 @@ class GoodsDetailTableViewController: UITableViewController {
                                                          imageCache: nil)
                                 storeObject.storeGoods?.append(goodObject)
                             }
-                            
+
                             for _ in jsonResp!["comments"].arrayValue {
                                 // read comments
                             }
-                            
+
                             let destinationStoryboard = UIStoryboard(name: "Main", bundle: nil)
                             let destinationViewController = destinationStoryboard.instantiateViewController(withIdentifier: "StoreDetailVC") as! StoreDetailViewController
-                            
+
                             destinationViewController.storeObject = storeObject
                             destinationViewController.openedByGoodsId = self.goodsObject?.goodsId
                             self.present(destinationViewController, animated: true, completion: nil)
@@ -229,11 +313,11 @@ class GoodsDetailTableViewController: UITableViewController {
 }
 
 protocol DismissMyselfDelegate {
-    func dismissMe() -> ()
+    func dismissMe() -> Void
 }
 
 extension UITableViewCell {
-    override open var canBecomeFirstResponder: Bool {
+    open override var canBecomeFirstResponder: Bool {
         return true
     }
 }

@@ -57,6 +57,7 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     @IBOutlet var navBar: UINavigationBar!
     func enterEditMode() {
+        cartTableView.setEditing(true, animated: true)
         navBar.topItem?.setRightBarButtonItems([confirmButton, cancelButton], animated: true)
         if cartTableView.indexPathsForSelectedRows == nil {
             confirmButton.isEnabled = false
@@ -66,11 +67,12 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
 
     func quitEditMode() {
+        cartTableView.setEditing(false, animated: true)
         navBar.topItem?.setRightBarButtonItems([purchaseButton], animated: true)
     }
 
     @IBAction func cancelButtonTapped(_ sender: UIBarButtonItem) {
-        cartTableView.setEditing(false, animated: true)
+//        cartTableView.setEditing(false, animated: true)
         quitEditMode()
     }
 
@@ -85,7 +87,7 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
 
     @IBAction func makePurchase(_ sender: UIButton) {
-        cartTableView.setEditing(true, animated: true)
+//        cartTableView.setEditing(true, animated: true)
         enterEditMode()
     }
 
@@ -177,10 +179,10 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
         loadingIndicator.isHidden = false
         noContentIndicator.isHidden = true
         if goodsInCart.count == 0 {
-            noContentIndicator.isHidden = false
+            // noContentIndicator.isHidden = false
             cartTableView.isHidden = true
         } else {
-            noContentIndicator.isHidden = true
+            // noContentIndicator.isHidden = true
             cartTableView.isHidden = false
         }
     }
@@ -292,6 +294,7 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     func constructData(completion: (() -> Void)? = nil) {
 //        loading = true
+        quitEditMode()
         startLoading()
         var errorStr = "general error"
 

@@ -71,6 +71,7 @@
 		8ADB40FE22DD5CFF009C3538 /* EyCommentLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADB40FD22DD5CFF009C3538 /* EyCommentLevel.swift */; };
 		8AE4E13722E55D7600014C3F /* EyOrders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE4E13622E55D7600014C3F /* EyOrders.swift */; };
 		8AE4E13A22E55EE500014C3F /* OrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE4E13922E55EE500014C3F /* OrdersViewController.swift */; };
+		8AE8F7A422E5A5D4008CFB62 /* CommentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE8F7A322E5A5D4008CFB62 /* CommentsViewController.swift */; };
 		8AE902ED22DC2402008728F3 /* RWZoomableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE902EC22DC2402008728F3 /* RWZoomableImageView.swift */; };
 		8AEC563022DEA49700520C68 /* ResultTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AEC562F22DEA49700520C68 /* ResultTableView.swift */; };
 		8AEC566D22DEAC2D00520C68 /* ModernSearchBarIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AEC566822DEAC2D00520C68 /* ModernSearchBarIcon.swift */; };
@@ -181,6 +182,7 @@
 		8ADB40FD22DD5CFF009C3538 /* EyCommentLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyCommentLevel.swift; sourceTree = "<group>"; };
 		8AE4E13622E55D7600014C3F /* EyOrders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyOrders.swift; sourceTree = "<group>"; };
 		8AE4E13922E55EE500014C3F /* OrdersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersViewController.swift; sourceTree = "<group>"; };
+		8AE8F7A322E5A5D4008CFB62 /* CommentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsViewController.swift; sourceTree = "<group>"; };
 		8AE902EC22DC2402008728F3 /* RWZoomableImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RWZoomableImageView.swift; path = RWZoomableImageView/RWZoomableImageView/RWZoomableImageView.swift; sourceTree = "<group>"; };
 		8AEC562F22DEA49700520C68 /* ResultTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTableView.swift; sourceTree = "<group>"; };
 		8AEC566822DEAC2D00520C68 /* ModernSearchBarIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModernSearchBarIcon.swift; sourceTree = "<group>"; };
@@ -425,6 +427,7 @@
 		8AC9E7D722C9A2E500F80460 /* VC */ = {
 			isa = PBXGroup;
 			children = (
+				8AE8F7A522E5AAA3008CFB62 /* CommentsPage */,
 				8AE4E13822E55ED700014C3F /* OrderView */,
 				8A0D3B1522E1AA65009DCF56 /* PurchaseView */,
 				8A2B704222DFFBF400452499 /* StoreDetailPage */,
@@ -471,6 +474,14 @@
 				8AE4E13922E55EE500014C3F /* OrdersViewController.swift */,
 			);
 			path = OrderView;
+			sourceTree = "<group>";
+		};
+		8AE8F7A522E5AAA3008CFB62 /* CommentsPage */ = {
+			isa = PBXGroup;
+			children = (
+				8AE8F7A322E5A5D4008CFB62 /* CommentsViewController.swift */,
+			);
+			path = CommentsPage;
 			sourceTree = "<group>";
 		};
 		8AEC565422DEABC100520C68 /* ModernSearchBar */ = {
@@ -708,6 +719,7 @@
 				8AC9E7EE22C9A7F400F80460 /* Book.swift in Sources */,
 				8AC9E7DF22C9A39700F80460 /* CartVC.swift in Sources */,
 				8ADB40FA22DD5AAF009C3538 /* EyStore.swift in Sources */,
+				8AE8F7A422E5A5D4008CFB62 /* CommentsViewController.swift in Sources */,
 				8A11801122DEE67700275AA3 /* GoodsDetailViewController.swift in Sources */,
 				8AC9E7E922C9A42300F80460 /* AdminOrderVC.swift in Sources */,
 				8A723DB222D4721E008FD0C9 /* ProfileContentViewController.swift in Sources */,

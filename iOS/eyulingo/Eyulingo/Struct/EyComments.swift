@@ -9,8 +9,7 @@
 import Foundation
 
 struct EyComments {
-    var userId: Int?
-    var userName: Int?
-    var commentStars: StarLevel?
+    var userName: String?
+    var commentStars: Int?
     var commentContents: String?
 }
