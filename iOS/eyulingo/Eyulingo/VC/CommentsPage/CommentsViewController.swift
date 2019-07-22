@@ -84,6 +84,7 @@ class CommentsViewController: UIViewController, UITableViewDataSource, UITableVi
                                                                     commentContents: commentItem["comment_content"].stringValue))
                             }
                             self.checkHiddenOrNot()
+                            self.updateStars()
                             self.commentsTableView.reloadData()
                             return
                         } else {
@@ -120,6 +121,7 @@ class CommentsViewController: UIViewController, UITableViewDataSource, UITableVi
                                                                     commentContents: commentItem["comment_content"].stringValue))
                             }
                             self.checkHiddenOrNot()
+                            self.updateStars()
                             self.commentsTableView.reloadData()
                             return
                         } else {
