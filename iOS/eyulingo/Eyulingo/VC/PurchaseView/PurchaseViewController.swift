@@ -8,19 +8,95 @@
 
 import UIKit
 
-class PurchaseViewController: UIViewController, UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
+class PurchaseViewController: UIViewController, UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate, UITableViewDelegate, UITableViewDataSource {
+    
+    var delegate: removeGoodsFromCartDelegate?
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if section == 1 {
+            return toPurchaseGoods.count
+        }
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if indexPath.section == 1 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "orderPageGoodsCell", for: indexPath)
+            let cartObject = toPurchaseGoods[indexPath.row]
+            cell.textLabel?.text = cartObject.goodsName ?? "商品"
+            cell.detailTextLabel?.text = "¥" + (cartObject.price?.formattedAmount ?? "?.??") + "×\(cartObject.amount ?? 0)"
+            return cell
+        }
+        
+        var sumUp: Decimal = Decimal(integerLiteral: 0)
+        for item in toPurchaseGoods {
+            sumUp += (item.price ?? Decimal(integerLiteral: 0)) * Decimal(integerLiteral: item.amount ?? 0)
+        }
+        let cell = tableView.dequeueReusableCell(withIdentifier: "orderPageGoodsCell", for: indexPath)
+        cell.textLabel?.text = "总金额"
+        cell.detailTextLabel?.text = "¥" + (sumUp.formattedAmount ?? "?.??")
+        return cell
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+
+    //    func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+    //        return existedStores
+    //    }
+
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if section == 1 {
+            return "商品详情"
+        }
+        return "小计"
+    }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == receiverTextField {
+            contactPhoneTextField.becomeFirstResponder()
+        } else if textField == contactPhoneTextField {
+            addressTextField.becomeFirstResponder()
+        } else {
+            textField.resignFirstResponder()
+        }
+        return true
+    }
+    @IBAction func dismissMe(_ sender: UIBarButtonItem) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func textChanged(_ sender: UITextField) {
+        if receiverTextField.text != "" && contactPhoneTextField.text != "" && addressTextField.text != "" && toPurchaseGoods.count != 0 {
+            confirmButton.isEnabled = true
+        } else {
+            confirmButton.isEnabled = false
+        }
+    }
+
+    var toPurchaseGoods: [EyCarts] = []
 
     var possibleAddresses: [ReceiveAddress] = []
     
+    @IBOutlet weak var goodsTableView: UITableView!
     @IBOutlet weak var recentButton: UIButton!
+    @IBOutlet weak var confirmButton: UIButton!
+    
+    @IBAction func confirmPurchaseButtonTapped(_ sender: UIButton) {
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        textChanged(receiverTextField)
         // Do any additional setup after loading the view.
         
         hiddenTextField.delegate = self
@@ -64,7 +140,7 @@ class PurchaseViewController: UIViewController, UITextFieldDelegate, UIPickerVie
         receiverTextField.text = possibleAddresses[row].receiver
         contactPhoneTextField.text = possibleAddresses[row].phoneNo
         addressTextField.text = possibleAddresses[row].address
-        
+        textChanged(receiverTextField)
     }
 
     @IBAction func showPickerView(sender: UIButton) {
@@ -112,4 +188,8 @@ class PurchaseViewController: UIViewController, UITextFieldDelegate, UIPickerVie
     @objc func cancelButtonTapped() {
         hiddenTextField.resignFirstResponder()
     }
+}
+
+protocol removeGoodsFromCartDelegate {
+    func removePurchasedGoods(goods: [EyCarts]) -> ()
 }

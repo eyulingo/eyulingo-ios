@@ -25,6 +25,11 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet var navBar: UINavigationBar!
     func enterEditMode() {
         navBar.topItem?.setRightBarButtonItems([confirmButton, cancelButton], animated: true)
+        if cartTableView.indexPathsForSelectedRows == nil {
+            confirmButton.isEnabled = false
+        } else {
+            confirmButton.isEnabled = true
+        }
     }
 
     func quitEditMode() {
@@ -37,7 +42,13 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
 
     @IBAction func confirmButtonTapped(_ sender: UIBarButtonItem) {
-        purchaseFromCart()
+        var goods: [EyCarts] = []
+        for indexPath in cartTableView.indexPathsForSelectedRows ?? [] {
+            if goodsInCart.count > indexPath.section && goodsInCart[indexPath.section].1.count > indexPath.row {
+                goods.append(goodsInCart[indexPath.section].1[indexPath.row])
+            }
+        }
+        purchaseFromCart(toPurchaseGoods: goods)
     }
 
     @IBAction func makePurchase(_ sender: UIButton) {
@@ -170,11 +181,25 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
 
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         if tableView.isEditing {
+            if tableView.indexPathsForSelectedRows == nil {
+                confirmButton.isEnabled = false
+            } else {
+                confirmButton.isEnabled = true
+            }
             return
         }
-
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if tableView.isEditing {
+            if tableView.indexPathsForSelectedRows == nil {
+                confirmButton.isEnabled = false
+            } else {
+                confirmButton.isEnabled = true
+            }
+            return
+        }
         tableView.deselectRow(at: indexPath, animated: true)
 
         let cartObject = goodsInCart[indexPath.section].1[indexPath.row]
@@ -484,7 +509,10 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
             })
     }
 
-    func purchaseFromCart() {
+    func purchaseFromCart(toPurchaseGoods goods: [EyCarts]) {
+        if goods.count == 0 {
+            return
+        }
         var receiveAddresses: [ReceiveAddress] = []
         Alamofire.request(Eyulingo_UserUri.addressGetUri,
                           method: .get)
@@ -516,6 +544,9 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
                 let destinationViewController = destinationStoryboard.instantiateViewController(withIdentifier: "PurchaseVC") as! PurchaseViewController
 
                 destinationViewController.possibleAddresses = receiveAddresses
+                
+                
+                destinationViewController.toPurchaseGoods = goods
                 self.present(destinationViewController, animated: true, completion: nil)
             })
 
@@ -554,4 +585,5 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
              })
          */
     }
+    
 }
