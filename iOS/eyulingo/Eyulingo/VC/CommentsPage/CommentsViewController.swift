@@ -12,11 +12,20 @@ import Loaf
 import SwiftyJSON
 import UIKit
 
-class CommentsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class CommentsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, CommentsRefreshDelegate {
+    func refreshComments() {
+        loadComments()
+        Loaf("评论成功。", state: .success, sender: self).show()
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return commentsBody.count
     }
 
+    @IBAction func dismissMe(_ sender: UIBarButtonItem) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CommentsCell", for: indexPath)
         let commentsObject = commentsBody[indexPath.row]
@@ -27,7 +36,7 @@ class CommentsViewController: UIViewController, UITableViewDataSource, UITableVi
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        checkHiddenOrNot()
         disableStars()
         // Do any additional setup after loading the view.
         loadComments()
@@ -36,7 +45,7 @@ class CommentsViewController: UIViewController, UITableViewDataSource, UITableVi
     var contentType: CommentType?
     var storeId: Int?
     var goodsId: Int?
-    
+
     var starPeopleNumber: Int?
 
     var storeObject: EyStore?
@@ -54,7 +63,7 @@ class CommentsViewController: UIViewController, UITableViewDataSource, UITableVi
             titleLabel.text = "针对 “\(goodsObject?.goodsName ?? "商品 #\(goodsId!)")” 的评价"
         }
     }
-    
+
     func checkHiddenOrNot() {
         if commentsBody.count == 0 {
             noContentIndicator.isHidden = false
@@ -143,10 +152,6 @@ class CommentsViewController: UIViewController, UITableViewDataSource, UITableVi
         NSLog("request ended with " + errorStr)
     }
 
-    @IBAction func writeComments(_ sender: UIButton) {
-        // 再说吧
-    }
-
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var commentPeopleCountLabel: UILabel!
 
@@ -232,7 +237,7 @@ class CommentsViewController: UIViewController, UITableViewDataSource, UITableVi
             starFive.image = UIImage(systemName: "star.slash")
         }
     }
-    
+
     func updateStars() {
         if starPeopleNumber == nil || starPeopleNumber == 0 || commentsBody.count == 0 {
             if #available(iOS 13.0, *) {
@@ -250,12 +255,12 @@ class CommentsViewController: UIViewController, UITableViewDataSource, UITableVi
             disableStars()
             return
         }
-        scoreLabel.text = String.init(format: "%.1f 分", averageStar)
+        scoreLabel.text = String(format: "%.1f 分", averageStar)
         if #available(iOS 13.0, *) {
             updateStarValue(value: averageStar)
         }
     }
-    
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
@@ -269,6 +274,19 @@ class CommentsViewController: UIViewController, UITableViewDataSource, UITableVi
          // Pass the selected object to the new view controller.
      }
      */
+
+    @IBAction func submitComments(_ sender: UIMenuItem) {
+        let destinationStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let destinationViewController = destinationStoryboard.instantiateViewController(withIdentifier: "SubmitCommentsVC") as! SubmitCommentsViewController
+        destinationViewController.commentType = contentType
+        destinationViewController.goodsId = goodsId
+        destinationViewController.goodsName = goodsObject?.goodsName
+        destinationViewController.storeId = storeId
+        destinationViewController.storeName = storeObject?.storeName
+        destinationViewController.delegate = self
+        present(destinationViewController, animated: true, completion: nil)
+        // SubmitCommentsVC
+    }
 }
 
 enum CommentType {
