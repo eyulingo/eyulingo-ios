@@ -95,13 +95,13 @@ class PurchaseViewController: UIViewController, UITextFieldDelegate, UIPickerVie
 //        inputView.addSubview(doneButton) // add Button to UIView
 //        doneButton.addTarget(self, action: #selector(doneButtonTapped), for: UIControl.Event.touchUpInside) // set button click event
 
-        let cancelButton = UIButton(frame: CGRect(x: self.view.frame.size.width - 100, y: 0, width: 100, height: 50))
-        cancelButton.setTitle("完成", for: UIControl.State.normal)
-        cancelButton.setTitle("完成", for: UIControl.State.highlighted)
-        cancelButton.setTitleColor(tintColor, for: UIControl.State.normal)
-        cancelButton.setTitleColor(tintColor, for: UIControl.State.highlighted)
-        inputView.addSubview(cancelButton) // add Button to UIView
-        cancelButton.addTarget(self, action: #selector(cancelButtonTapped), for: UIControl.Event.touchUpInside) // set button click event
+//        let cancelButton = UIButton(frame: CGRect(x: self.view.frame.size.width - 100, y: 0, width: 100, height: 50))
+//        cancelButton.setTitle("完成", for: UIControl.State.normal)
+//        cancelButton.setTitle("完成", for: UIControl.State.highlighted)
+//        cancelButton.setTitleColor(tintColor, for: UIControl.State.normal)
+//        cancelButton.setTitleColor(tintColor, for: UIControl.State.highlighted)
+//        inputView.addSubview(cancelButton) // add Button to UIView
+//        cancelButton.addTarget(self, action: #selector(cancelButtonTapped), for: UIControl.Event.touchUpInside) // set button click event
         sender.inputView = inputView
     }
 
