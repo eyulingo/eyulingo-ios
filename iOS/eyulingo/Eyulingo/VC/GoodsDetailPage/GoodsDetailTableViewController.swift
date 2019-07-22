@@ -14,7 +14,8 @@ import UIKit
 
 class GoodsDetailTableViewController: UITableViewController, CartRefreshDelegate {
     func refreshCart() {
-        dismiss(animated: true, completion: nil)
+//        dismiss(animated: true, completion: nil)
+        reloadStorage()
     }
 
     var openedByStoreId: Int?
@@ -24,6 +25,51 @@ class GoodsDetailTableViewController: UITableViewController, CartRefreshDelegate
         let okAction = UIAlertAction(title: "嗯", style: .default, handler: nil)
         controller.addAction(okAction)
         present(controller, animated: true, completion: completion)
+    }
+
+    func reloadStorage() {
+        var errorStr = "general error"
+        let getParams: Parameters = [
+            "id": goodsObject?.goodsId!,
+        ]
+        Alamofire.request(Eyulingo_UserUri.goodDetailGetUri,
+                          method: .get, parameters: getParams)
+            .responseSwiftyJSON(completionHandler: { responseJSON in
+                if responseJSON.error == nil {
+                    let jsonResp = responseJSON.value
+                    if jsonResp != nil {
+                        if jsonResp!["status"].stringValue == "ok" {
+                            self.goodsObject?.storage = jsonResp!["storage"].intValue
+                            self.goodsObject?.price = Decimal(string: jsonResp!["price"].string ?? "0")
+                            self.goodsObject?.couponPrice = Decimal(string: jsonResp!["coupon_price"].string ?? "0")
+                            
+                            self.stepper.stepValue = 1.0
+                            self.stepper.minimumValue = 0.0
+                            if self.goodsObject != nil {
+                                self.stepper.maximumValue = Double(self.goodsObject!.storage!)
+                            } else {
+                                self.stepper.maximumValue = 1000.0
+                            }
+                            self.stepper.value = min(1.0, self.stepper.maximumValue)
+
+                            self.goodsName.text = self.goodsObject?.goodsName
+                            self.storeName.text = self.goodsObject?.storeName
+                            self.priceField.text = "¥" + (self.goodsObject?.price?.formattedAmount ?? "未知")
+                            self.descriptionField.text = self.goodsObject?.description
+                            self.storageField.text = "\(self.goodsObject?.storage ?? 0) 件"
+                            self.stepperChanged(self.stepper)
+                            return
+                        } else {
+                            errorStr = jsonResp!["status"].stringValue
+                        }
+                    } else {
+                        errorStr = "bad response"
+                    }
+                } else {
+                    errorStr = "no response"
+                }
+                Loaf("刷新库存失败。" + "服务器报告了一个 “\(errorStr)” 错误。", state: .error, sender: self).show()
+            })
     }
 
     override func viewDidLoad() {
