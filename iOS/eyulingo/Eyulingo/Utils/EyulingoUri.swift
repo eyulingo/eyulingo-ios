@@ -122,6 +122,10 @@ class Eyulingo_UserUri {
     static let purchasePostUri = baseUri + "/purchase"
     
     // parameters:
+    // order_id - 要付款的订单 ID
+    static let payPostUri = baseUri + "/pay"
+    
+    // parameters:
     // id - 商品 ID
     // star_count - 星级 (1, 2, 3, 4, 5)
     // comment_content - 评价内容

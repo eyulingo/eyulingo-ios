@@ -13,7 +13,40 @@ import Refresher
 import SwiftyJSON
 import UIKit
 
-class CartViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CartRefreshDelegate, AmountModifyDelegate {
+class CartViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CartRefreshDelegate, AmountModifyDelegate, removeGoodsFromCartDelegate {
+    func removePurchasedGoods(goods: [EyCarts]) {
+        for goodsItem in goods {
+            let postParams: Parameters = [
+                "id": goodsItem.goodsId,
+            ]
+            Alamofire.request(Eyulingo_UserUri.removeFromCartPostUri,
+                              method: .post,
+                              parameters: postParams,
+                              encoding: JSONEncoding.default
+            ).responseSwiftyJSON(completionHandler: { responseJSON in
+                var errorCode = "general error"
+                if responseJSON.error == nil {
+                    let jsonResp = responseJSON.value
+                    if jsonResp != nil {
+                        if jsonResp!["status"].stringValue == "ok" {
+//                            self.constructData()
+                            CartRefreshManager.setModifiedState()
+//                            Loaf("成功将 “\(cartName!)” 从购物车中移除。", state: .success, sender: self).show()
+                            return
+                        } else {
+                            errorCode = jsonResp!["status"].stringValue
+                        }
+                    } else {
+                        errorCode = "bad response"
+                    }
+                } else {
+                    errorCode = "no response"
+                }
+//                Loaf("未能将 “\(cartName!)” 从购物车中移除。服务器报告了一个 “\(errorCode)” 错误", state: .error, sender: self).show()
+            })
+        }
+    }
+
     func refreshCart() {
         constructData()
     }
@@ -77,7 +110,6 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell.initCell()
         cell.checkInadequate()
 
-
         if cartObject.imageCache != nil {
             cell.imageViewField.image = cartObject.imageCache
             return cell
@@ -101,13 +133,13 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
                 cartObject.getCoverAsync(handler: { image in
                     if cell.goodsNameField.text != cartObject.goodsName {
                         if self.goodsInCart.count > indexPath.section && self.goodsInCart[indexPath.section].1.count > indexPath.row {
-                        self.goodsInCart[indexPath.section].1[indexPath.row].imageCache = image
+                            self.goodsInCart[indexPath.section].1[indexPath.row].imageCache = image
                         }
                         return
                     }
                     cell.fadeIn(image: image, handler: nil)
                     if self.goodsInCart.count > indexPath.section && self.goodsInCart[indexPath.section].1.count > indexPath.row {
-                    self.goodsInCart[indexPath.section].1[indexPath.row].imageCache = image
+                        self.goodsInCart[indexPath.section].1[indexPath.row].imageCache = image
                     }
                 })
             })
@@ -191,6 +223,7 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
             return
         }
     }
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if tableView.isEditing {
             if tableView.indexPathsForSelectedRows == nil {
@@ -544,9 +577,9 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
                 let destinationViewController = destinationStoryboard.instantiateViewController(withIdentifier: "PurchaseVC") as! PurchaseViewController
 
                 destinationViewController.possibleAddresses = receiveAddresses
-                
-                
+                destinationViewController.delegate = self
                 destinationViewController.toPurchaseGoods = goods
+                destinationViewController.refreshDelegate = self
                 self.present(destinationViewController, animated: true, completion: nil)
             })
 
@@ -585,5 +618,4 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
              })
          */
     }
-    
 }

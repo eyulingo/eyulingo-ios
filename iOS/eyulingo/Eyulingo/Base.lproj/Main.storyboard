@@ -222,7 +222,7 @@ Project Eyulingo. 一切权利保留。</string>
                                                 <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Uey-4s-fxy">
                                                     <rect key="frame" x="337" y="5" width="57" height="34"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="购买">
+                                                    <state key="normal" title="下单">
                                                         <color key="titleColor" cocoaTouchSystemColor="linkColor"/>
                                                     </state>
                                                     <connections>
@@ -263,25 +263,25 @@ Project Eyulingo. 一切权利保留。</string>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="美罗华" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xpk-05-X27">
-                                                    <rect key="frame" x="156" y="10" width="238" height="26"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                    <rect key="frame" x="156" y="9.9999999999999982" width="238" height="20.333333333333329"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$83.33" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qkh-Ux-esn">
-                                                    <rect key="frame" x="156" y="65" width="96" height="35"/>
+                                                    <rect key="frame" x="156" y="59.333333333333343" width="96" height="35"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="29"/>
                                                     <color key="textColor" red="1" green="0.43921568630000002" blue="0.30980392159999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="剩余 19837 件" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="whR-GP-f9N">
-                                                    <rect key="frame" x="156" y="38" width="72" height="14"/>
+                                                    <rect key="frame" x="156" y="32.333333333333336" width="72" height="14"/>
                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="11"/>
                                                     <color key="textColor" cocoaTouchSystemColor="tertiaryLabelColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="×1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1yD-dK-Yc4">
-                                                    <rect key="frame" x="254" y="75" width="19" height="21"/>
+                                                    <rect key="frame" x="254" y="69.333333333333329" width="19" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -293,7 +293,7 @@ Project Eyulingo. 一切权利保留。</string>
                                                     </connections>
                                                 </stepper>
                                                 <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="库存紧张" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4on-P7-Lad">
-                                                    <rect key="frame" x="230" y="35" width="58" height="17"/>
+                                                    <rect key="frame" x="230" y="29.333333333333329" width="58" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" cocoaTouchSystemColor="systemRedColor"/>
                                                     <nil key="highlightedColor"/>
@@ -638,7 +638,7 @@ Project Eyulingo. 一切权利保留。</string>
             </objects>
             <point key="canvasLocation" x="108.69565217391305" y="-580.43478260869574"/>
         </scene>
-        <!--已购项目-->
+        <!--订单-->
         <scene sceneID="lDG-Ju-rGt">
             <objects>
                 <viewController storyboardIdentifier="PurchasedVC" id="lDf-IJ-1pn" sceneMemberID="viewController">
@@ -649,7 +649,7 @@ Project Eyulingo. 一切权利保留。</string>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pY8-VH-V3c">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                 <items>
-                                    <navigationItem title="已购项目" id="jqw-zZ-7jK"/>
+                                    <navigationItem title="订单" id="jqw-zZ-7jK"/>
                                 </items>
                             </navigationBar>
                         </subviews>
@@ -661,7 +661,7 @@ Project Eyulingo. 一切权利保留。</string>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="63H-de-fb2"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="已购项目" image="yensign.square" catalog="system" id="EvB-iW-HpF"/>
+                    <tabBarItem key="tabBarItem" title="订单" image="cube.box" catalog="system" id="EvB-iW-HpF"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kFR-QX-f8i" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2013,7 +2013,7 @@ Project Eyulingo. 一切权利保留。</string>
                                 </scopeButtonTitles>
                             </searchBar>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Msj-lZ-q7G">
-                                <rect key="frame" x="0.0" y="100" width="414" height="587"/>
+                                <rect key="frame" x="10" y="100" width="404" height="587"/>
                                 <connections>
                                     <segue destination="64m-nx-cJD" kind="embed" identifier="searchResultSegue" id="cIZ-Of-epL"/>
                                 </connections>
@@ -2035,7 +2035,7 @@ Project Eyulingo. 一切权利保留。</string>
                             <constraint firstItem="Msj-lZ-q7G" firstAttribute="bottom" secondItem="YVm-6w-EfE" secondAttribute="bottom" id="1NN-Xu-vT8"/>
                             <constraint firstItem="MZw-If-OfF" firstAttribute="leading" secondItem="KBj-7K-wQM" secondAttribute="leading" id="4rh-vN-xvK"/>
                             <constraint firstItem="MZw-If-OfF" firstAttribute="trailing" secondItem="KBj-7K-wQM" secondAttribute="trailing" id="7W0-t8-ZB0"/>
-                            <constraint firstItem="Msj-lZ-q7G" firstAttribute="leading" secondItem="YVm-6w-EfE" secondAttribute="leading" id="BCT-sF-Pma"/>
+                            <constraint firstItem="Msj-lZ-q7G" firstAttribute="leading" secondItem="YVm-6w-EfE" secondAttribute="leading" constant="10" id="BCT-sF-Pma"/>
                             <constraint firstItem="IoK-Zn-ffO" firstAttribute="centerY" secondItem="ntR-hK-cLx" secondAttribute="centerY" id="C9v-KA-MJK"/>
                             <constraint firstItem="IoK-Zn-ffO" firstAttribute="centerX" secondItem="ntR-hK-cLx" secondAttribute="centerX" id="CbG-LU-XEh"/>
                             <constraint firstItem="Msj-lZ-q7G" firstAttribute="trailing" secondItem="YVm-6w-EfE" secondAttribute="trailing" id="GlQ-jF-s8w"/>
@@ -2060,21 +2060,21 @@ Project Eyulingo. 一切权利保留。</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cir-va-Ovy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1764" y="-580"/>
+            <point key="canvasLocation" x="1763.7681159420292" y="-580.43478260869574"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="bdb-VK-uxY">
             <objects>
                 <tableViewController id="64m-nx-cJD" customClass="DetailViewController" customModule="Eyulingo" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" rowHeight="144" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="I9y-KC-ykO">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="587"/>
+                        <rect key="frame" x="0.0" y="0.0" width="394" height="587"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ResultGoodsCell" rowHeight="144" id="mab-o7-uAB" customClass="GoodsResultTableCell" customModule="Eyulingo" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="144"/>
+                                <rect key="frame" x="0.0" y="28" width="394" height="144"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mab-o7-uAB" id="Lh4-wH-doz">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="144"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="394" height="144"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bm9-3R-eOP">
@@ -2084,8 +2084,8 @@ Project Eyulingo. 一切权利保留。</string>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="美罗华" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9eM-yQ-pO8">
-                                            <rect key="frame" x="156" y="10.666666666666666" width="238" height="25.333333333333336"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                            <rect key="frame" x="156" y="15.666666666666666" width="218" height="20.333333333333336"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -2097,12 +2097,13 @@ Project Eyulingo. 一切权利保留。</string>
                                                 <constraint firstAttribute="height" constant="20.329999999999998" id="idd-VD-JOh"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabel" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Tf-J7-bWS">
-                                            <rect key="frame" x="156" y="36" width="238" height="38"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Tf-J7-bWS">
+                                            <rect key="frame" x="156" y="36" width="218" height="38"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="38" id="W7m-tj-qBw"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <string key="text">LabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabel</string>
+                                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                             <color key="textColor" cocoaTouchSystemColor="secondaryLabelColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -2433,7 +2434,7 @@ Project Eyulingo. 一切权利保留。</string>
                                                     <rect key="frame" x="0.0" y="0.0" width="334" height="34"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
                                                     <connections>
                                                         <action selector="textChanged:" destination="nCk-VG-4Mf" eventType="editingChanged" id="rBJ-qR-roM"/>
                                                     </connections>
@@ -2442,7 +2443,7 @@ Project Eyulingo. 一切权利保留。</string>
                                                     <rect key="frame" x="0.0" y="54" width="334" height="34"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" keyboardType="phonePad" textContentType="tel"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="phonePad" returnKeyType="next" enablesReturnKeyAutomatically="YES" textContentType="tel"/>
                                                     <connections>
                                                         <action selector="textChanged:" destination="nCk-VG-4Mf" eventType="editingChanged" id="60y-i5-W0o"/>
                                                     </connections>
@@ -2451,7 +2452,7 @@ Project Eyulingo. 一切权利保留。</string>
                                                     <rect key="frame" x="0.0" y="108" width="334" height="34"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                                     <connections>
                                                         <action selector="textChanged:" destination="nCk-VG-4Mf" eventType="editingChanged" id="jGX-1G-BGo"/>
                                                     </connections>
@@ -2680,6 +2681,7 @@ Project Eyulingo. 一切权利保留。</string>
         <image name="arrow.upright.circle" catalog="system" width="64" height="62"/>
         <image name="cart" catalog="system" width="64" height="52"/>
         <image name="checkmark" catalog="system" width="64" height="56"/>
+        <image name="cube.box" catalog="system" width="64" height="62"/>
         <image name="escape" catalog="system" width="64" height="62"/>
         <image name="magnifyingglass.circle" catalog="system" width="64" height="62"/>
         <image name="multiply" catalog="system" width="64" height="56"/>
@@ -2687,7 +2689,6 @@ Project Eyulingo. 一切权利保留。</string>
         <image name="plus" catalog="system" width="64" height="58"/>
         <image name="slider.horizontal.3" catalog="system" width="64" height="50"/>
         <image name="square.and.arrow.down.on.square" catalog="system" width="62" height="64"/>
-        <image name="yensign.square" catalog="system" width="64" height="56"/>
     </resources>
     <color key="tintColor" cocoaTouchSystemColor="systemBlueColor"/>
 </document>
