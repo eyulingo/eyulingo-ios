@@ -40,8 +40,8 @@ class GoodsDetailTableViewController: UITableViewController, CartRefreshDelegate
                     if jsonResp != nil {
                         if jsonResp!["status"].stringValue == "ok" {
                             self.goodsObject?.storage = jsonResp!["storage"].intValue
-                            self.goodsObject?.price = Decimal(string: jsonResp!["price"].string ?? "0")
-                            self.goodsObject?.couponPrice = Decimal(string: jsonResp!["coupon_price"].string ?? "0")
+//                            self.goodsObject?.price = Decimal(string: jsonResp!["price"].string ?? "0")
+//                            self.goodsObject?.couponPrice = Decimal(string: jsonResp!["coupon_price"].string ?? "0")
                             
                             self.stepper.stepValue = 1.0
                             self.stepper.minimumValue = 0.0
@@ -92,6 +92,7 @@ class GoodsDetailTableViewController: UITableViewController, CartRefreshDelegate
         descriptionField.text = goodsObject?.description
         storageField.text = "\(goodsObject?.storage ?? 0) 件"
         stepperChanged(stepper)
+        reloadStorage()
     }
 
     @IBAction func stepperChanged(_ sender: UIStepper) {
