@@ -164,8 +164,16 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     func stopLoading() {
         loading = false
-        loadingIndicator.isHidden = true
-        if goodsInCart.count == 0 {
+        let shouldShowNothing = goodsInCart.count == 0
+        loadingIndicator.alpha = 1.0
+        UIView.animate(withDuration: 0.25, delay: 0.0, options: .curveEaseOut, animations: {
+            self.loadingIndicator.alpha = 0.0
+        }, completion: { _ in
+            self.loadingIndicator.isHidden = true
+            self.loadingIndicator.alpha = 1.0
+        })
+
+        if shouldShowNothing {
             noContentIndicator.isHidden = false
             cartTableView.isHidden = true
         } else {

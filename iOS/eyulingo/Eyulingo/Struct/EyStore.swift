@@ -42,6 +42,10 @@ struct EyStore: Hashable, Comparable {
 //    var distPhone: String?
 //    var distAddress: String?
     
+    var imageCache: UIImage?
+    
+    var currentDistance: Double?
+    
     func getStoreCoverAsync(handler: @escaping (UIImage) -> ()) {
         if coverId == nil {
             return

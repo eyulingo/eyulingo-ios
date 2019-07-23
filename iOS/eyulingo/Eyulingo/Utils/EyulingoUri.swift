@@ -88,6 +88,10 @@ class Eyulingo_UserUri {
     static let suggestionGetUri = baseUri + "/suggests"
     
     // parameters:
+    // q - 关键字
+    static let storeSuggestionGetUri = baseUri + "/suggeststore"
+    
+    // parameters:
     // id - 商品 ID
     static let goodDetailGetUri = baseUri + "/gooddetail"
     

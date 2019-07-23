@@ -13,9 +13,7 @@ import Alamofire_SwiftyJSON
 import Highlighter
 import Refresher
 
-
-
-class StoreResultViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, goToStoreDelegate {
+class StoreResultViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var delegate: RefreshDelegate?
     
@@ -55,16 +53,15 @@ class StoreResultViewController: UIViewController, UITableViewDelegate, UITableV
                                                          imageCache: nil)
                                 storeObject.storeGoods?.append(goodObject)
                             }
-                            
+
                             for _ in jsonResp!["comments"].arrayValue {
                                 // read comments
                             }
-                            
+
                             let destinationStoryboard = UIStoryboard(name: "Main", bundle: nil)
                             let destinationViewController = destinationStoryboard.instantiateViewController(withIdentifier: "StoreDetailVC") as! StoreDetailViewController
-                            
+
                             destinationViewController.storeObject = storeObject
-                            
                             self.present(destinationViewController, animated: true, completion: nil)
                             return
                         } else {
@@ -94,9 +91,9 @@ class StoreResultViewController: UIViewController, UITableViewDelegate, UITableV
             }
         }
     }
-    
+
     @IBOutlet var resultTable: UITableView!
-    var resultGoods: [EyGoods] = []
+    var resultStores: [EyStore] = []
     
     var keyWord: String?
     
@@ -107,14 +104,15 @@ class StoreResultViewController: UIViewController, UITableViewDelegate, UITableV
     // MARK: - delegate methods
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return resultGoods.count
+        return resultStores.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let goodsObject = resultGoods[indexPath.row]
+        tableView.deselectRow(at: indexPath, animated: true)
+        let storeObject = resultStores[indexPath.row]
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ResultGoodsCell", for: indexPath) as! GoodsResultTableCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ResultStoresCell", for: indexPath) as! StoreResultTableCell
         
 //        tableView.register(GoodsResultTableCell.self, forCellReuseIdentifier: "ResultGoodsCell")
         // 判断系统版本，必须iOS 9及以上，同时检测是否支持触摸力度识别
@@ -123,13 +121,9 @@ class StoreResultViewController: UIViewController, UITableViewDelegate, UITableV
 //            registerForPreviewing(with: self, sourceView: tableView)
 //        }
         
-        cell.goodsNameField.text = goodsObject.goodsName ?? "商品名"
-        cell.descriptionTextField.text = goodsObject.description ?? "商品描述"
-        cell.priceTextField.text = "¥" + (goodsObject.price?.formattedAmount ?? "未知")
-        cell.storageTextField.text = "库存 \(goodsObject.storage ?? 0) 件"
-        cell.storeTextField.text = goodsObject.storeName ?? "店铺未知"
-        cell.delegate = self
-        cell.imageViewField.layer.cornerRadius = 4
+        cell.storeName.text = storeObject.storeName
+        cell.storeAddress.text = storeObject.storeAddress
+        cell.coverImage.layer.cornerRadius = 4
 
         if keyWord != nil {
             if #available(iOS 13.0, *) {
@@ -139,36 +133,36 @@ class StoreResultViewController: UIViewController, UITableViewDelegate, UITableV
             }
         }
         
-        if goodsObject.imageCache != nil {
-            cell.imageViewField.image = goodsObject.imageCache
+        if storeObject.imageCache != nil {
+            cell.coverImage.image = storeObject.imageCache
             return cell
         }
         
-        if cell.imageViewField.image == nil {
-            goodsObject.getCoverAsync(handler: { image in
-                if cell.goodsNameField.text != goodsObject.goodsName {
-                    if self.resultGoods.count > indexPath.row {
-                        self.resultGoods[indexPath.row].imageCache = image
+        if cell.coverImage.image == nil {
+            storeObject.getStoreCoverAsync(handler: { image in
+                if cell.storeName.text != storeObject.storeName {
+                    if self.resultStores.count > indexPath.row {
+                        self.resultStores[indexPath.row].imageCache = image
                     }
                     return
                 }
                 cell.fadeIn(image: image, handler: nil)
-                if self.resultGoods.count > indexPath.row {
-                    self.resultGoods[indexPath.row].imageCache = image
+                if self.resultStores.count > indexPath.row {
+                    self.resultStores[indexPath.row].imageCache = image
                 }
             })
         } else {
             cell.fadeOut(handler: {
-                goodsObject.getCoverAsync(handler: { image in
-                    if cell.goodsNameField.text != goodsObject.goodsName {
-                        if self.resultGoods.count > indexPath.row {
-                            self.resultGoods[indexPath.row].imageCache = image
+                storeObject.getStoreCoverAsync(handler: { image in
+                    if cell.storeName.text != storeObject.storeName {
+                        if self.resultStores.count > indexPath.row {
+                            self.resultStores[indexPath.row].imageCache = image
                         }
                         return
                     }
                     cell.fadeIn(image: image, handler: nil)
-                    if self.resultGoods.count > indexPath.row {
-                        self.resultGoods[indexPath.row].imageCache = image
+                    if self.resultStores.count > indexPath.row {
+                        self.resultStores[indexPath.row].imageCache = image
                     }
                 })
             })
@@ -179,12 +173,7 @@ class StoreResultViewController: UIViewController, UITableViewDelegate, UITableV
     
     // Tap on table Row
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        let destinationStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let destinationViewController = destinationStoryboard.instantiateViewController(withIdentifier: "GoodsDetailVC") as! GoodsDetailViewController
-        destinationViewController.goodsObject = resultGoods[indexPath.row]
-//        destinationViewController.modalPresentationStyle = .currentContext
-//        destinationViewController.modalTransitionStyle = .coverVertical
-        self.present(destinationViewController, animated: true, completion: nil)
+        let storeObject = resultStores[indexPath.row]
+        goToStore(storeObject.storeId)
     }
 }
