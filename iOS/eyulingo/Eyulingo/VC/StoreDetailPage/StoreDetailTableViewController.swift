@@ -42,6 +42,9 @@ class StoreDetailTableViewController: UITableViewController {
         storePhoneField.text = storeObject?.storePhone
         storeLocationField.text = storeObject?.storeAddress
         
+        storeCoverImageField.layer.cornerRadius = 4
+        distAvatarImageField.layer.cornerRadius = 4
+        
         storeObject?.getDistAvatarAsync(handler: { image in
             self.avatarFadeIn(image: image, handler: nil)
         })
@@ -83,6 +86,7 @@ class StoreDetailTableViewController: UITableViewController {
         cell.priceTextField.text = "¥" + (goodsObject?.price?.formattedAmount ?? "未知")
         cell.storageTextField.text = "库存 \(goodsObject?.storage ?? 0) 件"
         cell.storeTextField.text = goodsObject?.storeName ?? "店铺未知"
+        cell.imageViewField.layer.cornerRadius = 4
         // Configure the cell...
 
         if goodsObject?.imageCache != nil {

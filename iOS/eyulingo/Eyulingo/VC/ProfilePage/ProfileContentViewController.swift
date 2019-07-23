@@ -17,6 +17,7 @@ class ProfileContentViewController: UITableViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        avatarImageField.layer.cornerRadius = 4
     }
 
     @IBOutlet var avatarImageField: UIImageView!

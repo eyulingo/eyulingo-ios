@@ -129,7 +129,8 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         cell.storageTextField.text = "库存 \(goodsObject.storage ?? 0) 件"
         cell.storeTextField.text = goodsObject.storeName ?? "店铺未知"
         cell.delegate = self
-        
+        cell.imageViewField.layer.cornerRadius = 4
+
         if keyWord != nil {
             if #available(iOS 13.0, *) {
                 cell.highlight(text: keyWord!, normal: nil, highlight: [NSAttributedString.Key.backgroundColor: UIColor.systemFill])

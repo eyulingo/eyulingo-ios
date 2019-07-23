@@ -104,7 +104,7 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell.amountField.text = "×\(cartObject.amount ?? 0)"
         cell.storeField.text = ""
         cell.storageField.text = "库存 \(cartObject.storage ?? 0) 件"
-
+        cell.imageViewField.layer.cornerRadius = 4
         cell.amountModifyDelegate = self
         cell.amount = cartObject.amount ?? 0
         cell.storage = cartObject.storage

@@ -1889,7 +1889,7 @@ Project Eyulingo. 一切权利保留。</string>
                                 <blurEffect style="prominent"/>
                             </visualEffectView>
                             <navigationBar contentMode="scaleToFill" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JnM-f1-yFo">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="115.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="108"/>
                                 <items>
                                     <navigationItem id="PlG-1d-4cY">
                                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="stop" id="dpv-Co-Nh6">
@@ -2157,9 +2157,9 @@ Project Eyulingo. 一切权利保留。</string>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bm9-3R-eOP">
-                                            <rect key="frame" x="0.0" y="0.0" width="144" height="144"/>
+                                            <rect key="frame" x="16" y="11" width="128" height="122"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="144" id="zxk-Us-vVQ"/>
+                                                <constraint firstAttribute="width" constant="128" id="zxk-Us-vVQ"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="美罗华" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9eM-yQ-pO8">
@@ -2224,15 +2224,15 @@ Project Eyulingo. 一切权利保留。</string>
                                         <constraint firstItem="pAy-XA-Hez" firstAttribute="leading" secondItem="nKp-4y-KwT" secondAttribute="leading" id="ACD-YH-NWz"/>
                                         <constraint firstItem="AhN-dC-B8j" firstAttribute="top" secondItem="5Tf-J7-bWS" secondAttribute="bottom" constant="3" id="AMM-ZG-DqV"/>
                                         <constraint firstItem="5Tf-J7-bWS" firstAttribute="leading" secondItem="9eM-yQ-pO8" secondAttribute="leading" id="LAy-cd-l0y"/>
-                                        <constraint firstItem="bm9-3R-eOP" firstAttribute="top" secondItem="Lh4-wH-doz" secondAttribute="top" id="MXi-UV-umw"/>
+                                        <constraint firstItem="bm9-3R-eOP" firstAttribute="top" secondItem="Lh4-wH-doz" secondAttribute="top" constant="11" id="MXi-UV-umw"/>
                                         <constraint firstItem="5Tf-J7-bWS" firstAttribute="top" secondItem="9eM-yQ-pO8" secondAttribute="bottom" id="Mab-Cu-Onj"/>
                                         <constraint firstItem="8jF-X2-bfQ" firstAttribute="top" secondItem="5Tf-J7-bWS" secondAttribute="bottom" constant="19" id="VnV-lQ-Hml"/>
                                         <constraint firstItem="5Tf-J7-bWS" firstAttribute="trailing" secondItem="Lh4-wH-doz" secondAttribute="trailingMargin" id="Y82-IX-tHi"/>
                                         <constraint firstItem="Ylf-bP-1La" firstAttribute="top" secondItem="5Tf-J7-bWS" secondAttribute="bottom" constant="40" id="eEp-JZ-Jfr"/>
                                         <constraint firstItem="AhN-dC-B8j" firstAttribute="leading" secondItem="bm9-3R-eOP" secondAttribute="trailing" constant="12" id="g1r-QV-hWj"/>
                                         <constraint firstItem="5Tf-J7-bWS" firstAttribute="leading" secondItem="bm9-3R-eOP" secondAttribute="trailing" constant="12" id="gFb-P2-JZC"/>
-                                        <constraint firstAttribute="bottom" secondItem="bm9-3R-eOP" secondAttribute="bottom" id="gyJ-k7-PQF"/>
-                                        <constraint firstItem="bm9-3R-eOP" firstAttribute="leading" secondItem="Lh4-wH-doz" secondAttribute="leading" id="iE9-KR-nz5"/>
+                                        <constraint firstAttribute="bottom" secondItem="bm9-3R-eOP" secondAttribute="bottom" constant="11" id="gyJ-k7-PQF"/>
+                                        <constraint firstItem="bm9-3R-eOP" firstAttribute="leading" secondItem="Lh4-wH-doz" secondAttribute="leading" constant="16" id="iE9-KR-nz5"/>
                                         <constraint firstItem="8jF-X2-bfQ" firstAttribute="leading" secondItem="AhN-dC-B8j" secondAttribute="trailing" id="jif-8M-yPS"/>
                                         <constraint firstAttribute="bottom" secondItem="Ylf-bP-1La" secondAttribute="bottom" constant="9.6699999999999999" id="kfk-qb-ugO"/>
                                         <constraint firstItem="Ylf-bP-1La" firstAttribute="trailing" secondItem="nKp-4y-KwT" secondAttribute="trailing" id="lML-hC-T65"/>
@@ -2262,7 +2262,7 @@ Project Eyulingo. 一切权利保留。</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NhB-G9-wyk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2583" y="-641"/>
+            <point key="canvasLocation" x="2581.5999999999999" y="-641.37931034482767"/>
         </scene>
         <!--Goods Detail Table View Controller-->
         <scene sceneID="ZMk-ON-arK">
