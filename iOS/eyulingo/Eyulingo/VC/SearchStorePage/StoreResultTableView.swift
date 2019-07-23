@@ -109,7 +109,6 @@ class StoreResultViewController: UIViewController, UITableViewDelegate, UITableV
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        tableView.deselectRow(at: indexPath, animated: true)
         let storeObject = resultStores[indexPath.row]
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "ResultStoresCell", for: indexPath) as! StoreResultTableCell
@@ -140,7 +139,8 @@ class StoreResultViewController: UIViewController, UITableViewDelegate, UITableV
         
         if cell.coverImage.image == nil {
             storeObject.getStoreCoverAsync(handler: { image in
-                if cell.storeName.text != storeObject.storeName {
+                let prepareString = cell.storeName.text ?? ""
+                if prepareString.caseInsensitiveCompare(storeObject.storeName ?? "") != ComparisonResult.orderedSame {
                     if self.resultStores.count > indexPath.row {
                         self.resultStores[indexPath.row].imageCache = image
                     }
@@ -154,7 +154,8 @@ class StoreResultViewController: UIViewController, UITableViewDelegate, UITableV
         } else {
             cell.fadeOut(handler: {
                 storeObject.getStoreCoverAsync(handler: { image in
-                    if cell.storeName.text != storeObject.storeName {
+                    let prepareString = cell.storeName.text ?? ""
+                    if prepareString.caseInsensitiveCompare(storeObject.storeName ?? "") != ComparisonResult.orderedSame {
                         if self.resultStores.count > indexPath.row {
                             self.resultStores[indexPath.row].imageCache = image
                         }
@@ -173,6 +174,7 @@ class StoreResultViewController: UIViewController, UITableViewDelegate, UITableV
     
     // Tap on table Row
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         let storeObject = resultStores[indexPath.row]
         goToStore(storeObject.storeId)
     }

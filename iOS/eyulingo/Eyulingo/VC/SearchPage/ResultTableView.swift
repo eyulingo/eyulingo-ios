@@ -146,7 +146,8 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         if cell.imageViewField.image == nil {
             goodsObject.getCoverAsync(handler: { image in
-                if cell.goodsNameField.text != goodsObject.goodsName {
+                let pretext = cell.goodsNameField.text ?? ""
+                if pretext.caseInsensitiveCompare(goodsObject.goodsName ?? "") != ComparisonResult.orderedSame {
                     if self.resultGoods.count > indexPath.row {
                         self.resultGoods[indexPath.row].imageCache = image
                     }
@@ -160,7 +161,8 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         } else {
             cell.fadeOut(handler: {
                 goodsObject.getCoverAsync(handler: { image in
-                    if cell.goodsNameField.text != goodsObject.goodsName {
+                    let pretext = cell.goodsNameField.text ?? ""
+                    if pretext.caseInsensitiveCompare(goodsObject.goodsName ?? "") != ComparisonResult.orderedSame {
                         if self.resultGoods.count > indexPath.row {
                             self.resultGoods[indexPath.row].imageCache = image
                         }
