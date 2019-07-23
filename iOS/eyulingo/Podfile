@@ -14,4 +14,5 @@ target 'Eyulingo' do
   pod 'Refresher'
   pod 'IQKeyboardManager'
   pod 'Highlighter'
+  pod 'TagListView', '~> 1.0'
 end
