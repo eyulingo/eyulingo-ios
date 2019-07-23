@@ -12,9 +12,10 @@ class RootTabBarViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        blurredTabBar.backgroundImage = UIImage(ciImage: CIImage.init(color: CIColor.clear))
         // Do any additional setup after loading the view.
     }
+    @IBOutlet weak var blurredTabBar: BlurredTabBar!
     
     func searchWord(keyWord: String) {
         tabBarController?.selectedIndex = 0

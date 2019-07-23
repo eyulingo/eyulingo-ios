@@ -11,6 +11,7 @@
 		8A06394B22D3316F00699037 /* EyulingoUri.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A06394922D3316F00699037 /* EyulingoUri.swift */; };
 		8A06394C22D3316F00699037 /* BookieUri.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A06394A22D3316F00699037 /* BookieUri.swift */; };
 		8A09F12A22DC137100CD3B16 /* ImagePreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A09F12922DC137100CD3B16 /* ImagePreviewViewController.swift */; };
+		8A0A618A22E72A05003A2385 /* BlurredTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0A618922E72A05003A2385 /* BlurredTabBar.swift */; };
 		8A0AF9E522D41F6E009430B9 /* JudgeValidEmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0AF9E422D41F6E009430B9 /* JudgeValidEmail.swift */; };
 		8A0C377E22D71D4500358F52 /* AddressManageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0C377D22D71D4500358F52 /* AddressManageViewController.swift */; };
 		8A0C378022D71E2700358F52 /* ReceiveAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0C377F22D71E2700358F52 /* ReceiveAddress.swift */; };
@@ -122,6 +123,7 @@
 		8A06394922D3316F00699037 /* EyulingoUri.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EyulingoUri.swift; sourceTree = "<group>"; };
 		8A06394A22D3316F00699037 /* BookieUri.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookieUri.swift; sourceTree = "<group>"; };
 		8A09F12922DC137100CD3B16 /* ImagePreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePreviewViewController.swift; sourceTree = "<group>"; };
+		8A0A618922E72A05003A2385 /* BlurredTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurredTabBar.swift; sourceTree = "<group>"; };
 		8A0AF9E422D41F6E009430B9 /* JudgeValidEmail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JudgeValidEmail.swift; sourceTree = "<group>"; };
 		8A0BC64622D88A500099E79A /* DynamicBg.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = DynamicBg.mp4; path = ../../DynamicBg/DynamicBg.mp4; sourceTree = "<group>"; };
 		8A0BC65322D88B6D0099E79A /* Eyulingo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Eyulingo-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -413,6 +415,7 @@
 				8A6DD6F122CAE3FA00BD7904 /* TabBarController.swift */,
 				8A09F12922DC137100CD3B16 /* ImagePreviewViewController.swift */,
 				8A838F6622E701A700986DDA /* RootTabBarViewController.swift */,
+				8A0A618922E72A05003A2385 /* BlurredTabBar.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -770,6 +773,7 @@
 				8AC9E7FD22C9C1A300F80460 /* AdminBill.swift in Sources */,
 				8A83FAB622E6D0A1005EB4D0 /* StoreResultTableCell.swift in Sources */,
 				8AC9E7DD22C9A37500F80460 /* BookQueryVC.swift in Sources */,
+				8A0A618A22E72A05003A2385 /* BlurredTabBar.swift in Sources */,
 				8AC9E7E122C9A3AE00F80460 /* PurchasedVC.swift in Sources */,
 				8AC9E7E522C9A3F700F80460 /* AdminBookVC.swift in Sources */,
 				8A0C378022D71E2700358F52 /* ReceiveAddress.swift in Sources */,

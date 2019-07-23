@@ -156,7 +156,7 @@ Project Eyulingo. 一切权利保留。</string>
                                 </subviews>
                             </stackView>
                             <navigationBar contentMode="scaleToFill" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cPn-Ox-KRc">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="103.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="96"/>
                                 <items>
                                     <navigationItem id="DhO-JF-WjR">
                                         <barButtonItem key="rightBarButtonItem" style="plain" id="Vv9-gl-hpc">
@@ -246,7 +246,7 @@ Project Eyulingo. 一切权利保留。</string>
                                 </items>
                             </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" allowsSelectionDuringEditing="YES" allowsMultipleSelectionDuringEditing="YES" rowHeight="144" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="xTS-9X-kZq">
-                                <rect key="frame" x="0.0" y="44" width="375" height="574"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
                                 <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CartGoodsCell" rowHeight="144" id="GyK-e2-t4U" customClass="GoodsInCartTableCell" customModule="Eyulingo" customModuleProvider="target">
@@ -369,7 +369,7 @@ Project Eyulingo. 一切权利保留。</string>
                             <constraint firstItem="gsd-ys-tBG" firstAttribute="top" secondItem="FCN-tx-SaY" secondAttribute="top" id="Mmw-gm-teh"/>
                             <constraint firstItem="xTS-9X-kZq" firstAttribute="leading" secondItem="gsd-ys-tBG" secondAttribute="leading" id="ZXl-z5-Vkq"/>
                             <constraint firstItem="gsd-ys-tBG" firstAttribute="centerX" secondItem="n5T-hg-xvz" secondAttribute="centerX" id="aBV-B7-GgU"/>
-                            <constraint firstItem="xTS-9X-kZq" firstAttribute="bottom" secondItem="FCN-tx-SaY" secondAttribute="bottom" id="o0v-dl-6zH"/>
+                            <constraint firstItem="xTS-9X-kZq" firstAttribute="bottom" secondItem="FCN-tx-SaY" secondAttribute="bottom" constant="49" id="o0v-dl-6zH"/>
                             <constraint firstItem="fwh-1D-yXr" firstAttribute="centerY" secondItem="n5T-hg-xvz" secondAttribute="centerY" id="yBo-PB-3t5"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="FCN-tx-SaY"/>
@@ -387,18 +387,18 @@ Project Eyulingo. 一切权利保留。</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sO8-Xt-mI9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1763.7681159420292" y="119.83695652173914"/>
+            <point key="canvasLocation" x="1762.4000000000001" y="119.1904047976012"/>
         </scene>
         <!--Root Tab Bar View Controller-->
         <scene sceneID="jwg-9u-FSc">
             <objects>
                 <tabBarController storyboardIdentifier="NormalUserVC" id="ANh-au-Fu3" customClass="RootTabBarViewController" customModule="Eyulingo" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="72w-1O-vhc">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="72w-1O-vhc" customClass="BlurredTabBar" customModule="Eyulingo" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
+                        <outlet property="blurredTabBar" destination="72w-1O-vhc" id="Tzy-s0-ahk"/>
                         <segue destination="JOP-LN-rqx" kind="relationship" relationship="viewControllers" id="a7d-Bi-2b9"/>
                         <segue destination="I8L-CL-hV7" kind="relationship" relationship="viewControllers" id="qGF-KS-ruu"/>
                         <segue destination="IiF-5N-S8a" kind="relationship" relationship="viewControllers" id="ovX-eB-i3w"/>
@@ -2093,7 +2093,7 @@ Project Eyulingo. 一切权利保留。</string>
                                 </scopeButtonTitles>
                             </searchBar>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Msj-lZ-q7G">
-                                <rect key="frame" x="0.0" y="100" width="375" height="518"/>
+                                <rect key="frame" x="0.0" y="100" width="375" height="567"/>
                                 <connections>
                                     <segue destination="64m-nx-cJD" kind="embed" identifier="searchResultSegue" id="cIZ-Of-epL"/>
                                 </connections>
@@ -2112,7 +2112,7 @@ Project Eyulingo. 一切权利保留。</string>
                         </subviews>
                         <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="Msj-lZ-q7G" firstAttribute="bottom" secondItem="YVm-6w-EfE" secondAttribute="bottom" id="1NN-Xu-vT8"/>
+                            <constraint firstItem="Msj-lZ-q7G" firstAttribute="bottom" secondItem="YVm-6w-EfE" secondAttribute="bottom" constant="49" id="1NN-Xu-vT8"/>
                             <constraint firstItem="MZw-If-OfF" firstAttribute="leading" secondItem="KBj-7K-wQM" secondAttribute="leading" id="4rh-vN-xvK"/>
                             <constraint firstItem="MZw-If-OfF" firstAttribute="trailing" secondItem="KBj-7K-wQM" secondAttribute="trailing" id="7W0-t8-ZB0"/>
                             <constraint firstItem="Msj-lZ-q7G" firstAttribute="leading" secondItem="YVm-6w-EfE" secondAttribute="leading" id="BCT-sF-Pma"/>
@@ -2147,7 +2147,7 @@ Project Eyulingo. 一切权利保留。</string>
             <objects>
                 <tableViewController id="64m-nx-cJD" customClass="DetailViewController" customModule="Eyulingo" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" rowHeight="144" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="I9y-KC-ykO">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="518"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="567"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ResultGoodsCell" rowHeight="144" id="mab-o7-uAB" customClass="GoodsResultTableCell" customModule="Eyulingo" customModuleProvider="target">
@@ -3166,7 +3166,7 @@ Project Eyulingo. 一切权利保留。</string>
                                 </scopeButtonTitles>
                             </searchBar>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QiK-3m-Wbm">
-                                <rect key="frame" x="0.0" y="100" width="375" height="518"/>
+                                <rect key="frame" x="0.0" y="100" width="375" height="567"/>
                                 <connections>
                                     <segue destination="YGM-KZ-FYL" kind="embed" identifier="searchStoreResultSegue" id="4y6-cG-yOd"/>
                                 </connections>
@@ -3190,7 +3190,7 @@ Project Eyulingo. 一切权利保留。</string>
                             <constraint firstItem="QiK-3m-Wbm" firstAttribute="top" secondItem="IiR-ZV-oA1" secondAttribute="bottom" id="7wO-FJ-KXv"/>
                             <constraint firstItem="QiK-3m-Wbm" firstAttribute="leading" secondItem="Ksc-lY-3lz" secondAttribute="leading" id="Kfk-ak-PmR"/>
                             <constraint firstItem="QiK-3m-Wbm" firstAttribute="trailing" secondItem="Ksc-lY-3lz" secondAttribute="trailing" id="PDb-nA-d0A"/>
-                            <constraint firstItem="QiK-3m-Wbm" firstAttribute="bottom" secondItem="Ksc-lY-3lz" secondAttribute="bottom" id="PfB-Lj-0XG"/>
+                            <constraint firstItem="QiK-3m-Wbm" firstAttribute="bottom" secondItem="Ksc-lY-3lz" secondAttribute="bottom" constant="49" id="PfB-Lj-0XG"/>
                             <constraint firstItem="IiR-ZV-oA1" firstAttribute="top" secondItem="2x7-Gf-bus" secondAttribute="bottom" id="ZMV-Yz-ce5"/>
                             <constraint firstItem="2x7-Gf-bus" firstAttribute="top" secondItem="Ksc-lY-3lz" secondAttribute="top" id="fcQ-wp-NH9"/>
                             <constraint firstItem="2x7-Gf-bus" firstAttribute="leading" secondItem="Ksc-lY-3lz" secondAttribute="leading" id="jup-uh-HJW"/>
@@ -3213,14 +3213,14 @@ Project Eyulingo. 一切权利保留。</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bWe-65-q17" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1762" y="-1281"/>
+            <point key="canvasLocation" x="1760.8" y="-1281.4092953523239"/>
         </scene>
         <!--Store Result View Controller-->
         <scene sceneID="KqU-Hx-qsw">
             <objects>
                 <tableViewController id="YGM-KZ-FYL" customClass="StoreResultViewController" customModule="Eyulingo" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" rowHeight="96" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="vE6-cP-JpM">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="518"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="567"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ResultStoresCell" rowHeight="96" id="AnT-jK-Old" customClass="StoreResultTableCell" customModule="Eyulingo" customModuleProvider="target">
