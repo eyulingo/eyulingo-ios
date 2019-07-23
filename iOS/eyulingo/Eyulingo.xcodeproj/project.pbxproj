@@ -48,6 +48,7 @@
 		8A723DB022D4704F008FD0C9 /* EyUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A723DAF22D4704F008FD0C9 /* EyUser.swift */; };
 		8A723DB222D4721E008FD0C9 /* ProfileContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A723DB122D4721E008FD0C9 /* ProfileContentViewController.swift */; };
 		8A723DB422D47954008FD0C9 /* LogoutNow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A723DB322D47954008FD0C9 /* LogoutNow.swift */; };
+		8A838F6722E701A700986DDA /* RootTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A838F6622E701A700986DDA /* RootTabBarViewController.swift */; };
 		8A83FAB422E6D03C005EB4D0 /* SearchStoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A83FAB322E6D03C005EB4D0 /* SearchStoreViewController.swift */; };
 		8A83FAB622E6D0A1005EB4D0 /* StoreResultTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A83FAB522E6D0A1005EB4D0 /* StoreResultTableCell.swift */; };
 		8A83FAB822E6D0BD005EB4D0 /* StoreResultTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A83FAB722E6D0BD005EB4D0 /* StoreResultTableView.swift */; };
@@ -164,6 +165,7 @@
 		8A723DAF22D4704F008FD0C9 /* EyUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyUser.swift; sourceTree = "<group>"; };
 		8A723DB122D4721E008FD0C9 /* ProfileContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileContentViewController.swift; sourceTree = "<group>"; };
 		8A723DB322D47954008FD0C9 /* LogoutNow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutNow.swift; sourceTree = "<group>"; };
+		8A838F6622E701A700986DDA /* RootTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabBarViewController.swift; sourceTree = "<group>"; };
 		8A83FAB322E6D03C005EB4D0 /* SearchStoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchStoreViewController.swift; sourceTree = "<group>"; };
 		8A83FAB522E6D0A1005EB4D0 /* StoreResultTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreResultTableCell.swift; sourceTree = "<group>"; };
 		8A83FAB722E6D0BD005EB4D0 /* StoreResultTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreResultTableView.swift; sourceTree = "<group>"; };
@@ -408,6 +410,7 @@
 			children = (
 				8A6DD6F122CAE3FA00BD7904 /* TabBarController.swift */,
 				8A09F12922DC137100CD3B16 /* ImagePreviewViewController.swift */,
+				8A838F6622E701A700986DDA /* RootTabBarViewController.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -754,6 +757,7 @@
 				8AE8F7A422E5A5D4008CFB62 /* CommentsViewController.swift in Sources */,
 				8A11801122DEE67700275AA3 /* GoodsDetailViewController.swift in Sources */,
 				8AC9E7E922C9A42300F80460 /* AdminOrderVC.swift in Sources */,
+				8A838F6722E701A700986DDA /* RootTabBarViewController.swift in Sources */,
 				8A723DB222D4721E008FD0C9 /* ProfileContentViewController.swift in Sources */,
 				8A2B704422DFFC0500452499 /* StoreDetailViewController.swift in Sources */,
 				8A11E0C622E1497B0080B10F /* CartRefreshManager.swift in Sources */,

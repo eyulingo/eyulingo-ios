@@ -187,6 +187,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         destinationViewController.goodsObject = resultGoods[indexPath.row]
 //        destinationViewController.modalPresentationStyle = .currentContext
 //        destinationViewController.modalTransitionStyle = .coverVertical
+        destinationViewController.suicideDelegate = self.parent as! SearchViewController
         self.present(destinationViewController, animated: true, completion: nil)
     }
 }

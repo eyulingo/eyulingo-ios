@@ -389,10 +389,10 @@ Project Eyulingo. 一切权利保留。</string>
             </objects>
             <point key="canvasLocation" x="1763.7681159420292" y="119.83695652173914"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Root Tab Bar View Controller-->
         <scene sceneID="jwg-9u-FSc">
             <objects>
-                <tabBarController storyboardIdentifier="NormalUserVC" id="ANh-au-Fu3" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="NormalUserVC" id="ANh-au-Fu3" customClass="RootTabBarViewController" customModule="Eyulingo" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="72w-1O-vhc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -906,7 +906,7 @@ Project Eyulingo. 一切权利保留。</string>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="ste-Zj-eNl" detailTextLabel="qrd-s1-eQb" style="IBUITableViewCellStyleSubtitle" id="WII-Q0-eDU">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="ste-Zj-eNl" detailTextLabel="qrd-s1-eQb" rowHeight="58" style="IBUITableViewCellStyleSubtitle" id="WII-Q0-eDU">
                                         <rect key="frame" x="0.0" y="287.5" width="375" height="58"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WII-Q0-eDU" id="x3f-L5-TKD">
@@ -1890,7 +1890,7 @@ Project Eyulingo. 一切权利保留。</string>
                                 <blurEffect style="prominent"/>
                             </visualEffectView>
                             <navigationBar contentMode="scaleToFill" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JnM-f1-yFo">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="115.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="108"/>
                                 <items>
                                     <navigationItem id="PlG-1d-4cY">
                                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="stop" id="dpv-Co-Nh6">
@@ -2270,7 +2270,7 @@ Project Eyulingo. 一切权利保留。</string>
             <objects>
                 <tableViewController id="FkX-I3-bGp" customClass="GoodsDetailTableViewController" customModule="Eyulingo" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="jjd-o2-PhP">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="311.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="289.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <sections>
@@ -3049,16 +3049,55 @@ Project Eyulingo. 一切权利保留。</string>
                                 </items>
                             </navigationBar>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NGx-Mu-sS5">
-                                <rect key="frame" x="0.0" y="44" width="375" height="311.5"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="289.5"/>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oDg-K0-3wP">
+                                <rect key="frame" x="0.0" y="333.5" width="375" height="44"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="znX-x3-0ld" customClass="TagListView" customModule="TagListView">
+                                        <rect key="frame" x="8" y="8" width="359" height="28"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="paddingY">
+                                                <real key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="paddingX">
+                                                <real key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="marginY">
+                                                <real key="value" value="11"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="marginX">
+                                                <real key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="selectedBorderColor">
+                                                <color key="value" cocoaTouchSystemColor="secondaryLabelColor"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                <color key="value" red="1" green="0.43921568630000002" blue="0.30980392159999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="znX-x3-0ld" secondAttribute="bottom" constant="8" id="0Jh-jy-dw7"/>
+                                    <constraint firstItem="znX-x3-0ld" firstAttribute="leading" secondItem="oDg-K0-3wP" secondAttribute="leading" constant="8" id="4hB-tm-gNk"/>
+                                    <constraint firstAttribute="trailing" secondItem="znX-x3-0ld" secondAttribute="trailing" constant="8" id="7op-jv-O6s"/>
+                                    <constraint firstItem="znX-x3-0ld" firstAttribute="top" secondItem="oDg-K0-3wP" secondAttribute="top" constant="8" id="Bfg-mt-UWv"/>
+                                </constraints>
+                            </view>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kfJ-gZ-NZ2">
-                                <rect key="frame" x="0.0" y="355.5" width="375" height="311.5"/>
+                                <rect key="frame" x="0.0" y="377.5" width="375" height="289.5"/>
                                 <connections>
                                     <segue destination="FkX-I3-bGp" kind="embed" identifier="GoodsDetailSegue" id="I2g-eH-qGw"/>
                                 </connections>
                             </containerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Ou-Rz-VnO">
-                                <rect key="frame" x="0.0" y="44" width="375" height="311.5"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="30"/>
                                 <connections>
                                     <action selector="accessLargeImageButtonTapped:" destination="9UF-e4-Qdo" eventType="touchUpInside" id="q0z-c3-SVN"/>
                                 </connections>
@@ -3069,6 +3108,7 @@ Project Eyulingo. 一切权利保留。</string>
                             <constraint firstItem="GBB-sv-HmT" firstAttribute="bottom" secondItem="d1r-52-BE0" secondAttribute="bottom" id="2Bx-53-lf1"/>
                             <constraint firstItem="r4P-WG-eSs" firstAttribute="trailing" secondItem="NGx-Mu-sS5" secondAttribute="trailing" id="2ZC-4A-27b"/>
                             <constraint firstItem="r4P-WG-eSs" firstAttribute="top" secondItem="d1r-52-BE0" secondAttribute="top" id="6Jn-6J-UIZ"/>
+                            <constraint firstItem="oDg-K0-3wP" firstAttribute="leading" secondItem="d1r-52-BE0" secondAttribute="leading" id="6xg-J5-5Gs"/>
                             <constraint firstItem="kfJ-gZ-NZ2" firstAttribute="leading" secondItem="d1r-52-BE0" secondAttribute="leading" id="9OC-rF-AoR"/>
                             <constraint firstItem="W8D-28-osW" firstAttribute="top" secondItem="GBB-sv-HmT" secondAttribute="top" id="9oF-K8-Suj"/>
                             <constraint firstItem="NGx-Mu-sS5" firstAttribute="leading" secondItem="d1r-52-BE0" secondAttribute="leading" id="GIH-5E-GA8"/>
@@ -3077,28 +3117,30 @@ Project Eyulingo. 一切权利保留。</string>
                             <constraint firstItem="W8D-28-osW" firstAttribute="leading" secondItem="GBB-sv-HmT" secondAttribute="leading" id="OKq-HH-u1w"/>
                             <constraint firstItem="W8D-28-osW" firstAttribute="trailing" secondItem="GBB-sv-HmT" secondAttribute="trailing" id="OaO-MT-TgQ"/>
                             <constraint firstItem="GBB-sv-HmT" firstAttribute="leading" secondItem="d1r-52-BE0" secondAttribute="leading" id="Sba-7P-7MR"/>
-                            <constraint firstItem="kfJ-gZ-NZ2" firstAttribute="top" secondItem="0Ou-Rz-VnO" secondAttribute="bottom" id="T6I-5d-OZO"/>
                             <constraint firstItem="NGx-Mu-sS5" firstAttribute="top" secondItem="W8D-28-osW" secondAttribute="bottom" id="TfY-wv-kYN"/>
                             <constraint firstItem="d1r-52-BE0" firstAttribute="bottom" secondItem="kfJ-gZ-NZ2" secondAttribute="bottom" id="WW0-2c-NdF"/>
+                            <constraint firstItem="oDg-K0-3wP" firstAttribute="trailing" secondItem="d1r-52-BE0" secondAttribute="trailing" id="Z3Y-es-SDZ"/>
+                            <constraint firstItem="oDg-K0-3wP" firstAttribute="top" secondItem="NGx-Mu-sS5" secondAttribute="bottom" id="bGy-hd-3Ga"/>
                             <constraint firstItem="d1r-52-BE0" firstAttribute="trailing" secondItem="NGx-Mu-sS5" secondAttribute="trailing" id="bnz-dZ-xPU"/>
                             <constraint firstItem="GBB-sv-HmT" firstAttribute="top" secondItem="d1r-52-BE0" secondAttribute="top" id="fOQ-w0-Tbd"/>
                             <constraint firstItem="r4P-WG-eSs" firstAttribute="bottom" secondItem="d1r-52-BE0" secondAttribute="bottom" id="gAy-Kh-vnv"/>
                             <constraint firstItem="0Ou-Rz-VnO" firstAttribute="leading" secondItem="d1r-52-BE0" secondAttribute="leading" id="he5-hv-gnf"/>
                             <constraint firstItem="kfJ-gZ-NZ2" firstAttribute="height" secondItem="NGx-Mu-sS5" secondAttribute="height" id="jpA-jd-6Ca"/>
                             <constraint firstItem="d1r-52-BE0" firstAttribute="trailing" secondItem="kfJ-gZ-NZ2" secondAttribute="trailing" id="kDE-os-9jp"/>
-                            <constraint firstItem="kfJ-gZ-NZ2" firstAttribute="top" secondItem="NGx-Mu-sS5" secondAttribute="bottom" id="riF-zQ-ETh"/>
                             <constraint firstItem="0Ou-Rz-VnO" firstAttribute="top" secondItem="W8D-28-osW" secondAttribute="bottom" id="uHd-Vg-tF5"/>
+                            <constraint firstItem="kfJ-gZ-NZ2" firstAttribute="top" secondItem="oDg-K0-3wP" secondAttribute="bottom" id="vHA-2S-iWc"/>
                             <constraint firstItem="0Ou-Rz-VnO" firstAttribute="trailing" secondItem="d1r-52-BE0" secondAttribute="trailing" id="wdV-CL-y2G"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="d1r-52-BE0"/>
                     </view>
                     <connections>
                         <outlet property="imageViewField" destination="NGx-Mu-sS5" id="C7P-qx-7zf"/>
+                        <outlet property="tagListView" destination="znX-x3-0ld" id="xpo-vJ-WF1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DQs-XJ-AAI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3369.5652173913045" y="-580.43478260869574"/>
+            <point key="canvasLocation" x="3368.8000000000002" y="-580.65967016491754"/>
         </scene>
         <!--Title-->
         <scene sceneID="NEs-JD-Ngo">

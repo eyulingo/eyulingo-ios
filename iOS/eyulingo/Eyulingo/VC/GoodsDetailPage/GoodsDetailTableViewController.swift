@@ -19,6 +19,7 @@ class GoodsDetailTableViewController: UITableViewController, CartRefreshDelegate
     }
 
     var openedByStoreId: Int?
+    var writeBackTagsDelegate: WriteBackTagsDelegate?
 
     func makeAlert(_ title: String, _ message: String, completion: @escaping () -> Void) {
         let controller = UIAlertController(title: title, message: message, preferredStyle: .alert)
@@ -43,10 +44,15 @@ class GoodsDetailTableViewController: UITableViewController, CartRefreshDelegate
                     let jsonResp = responseJSON.value
                     if jsonResp != nil {
                         if jsonResp!["status"].stringValue == "ok" {
+                            var tags: [String] = []
+                            for tagItem in jsonResp!["tags"].arrayValue {
+                                tags.append(tagItem.stringValue)
+                            }
+                            self.writeBackTagsDelegate?.writeTags(tags: tags)
                             self.goodsObject?.storage = jsonResp!["storage"].intValue
 //                            self.goodsObject?.price = Decimal(string: jsonResp!["price"].string ?? "0")
 //                            self.goodsObject?.couponPrice = Decimal(string: jsonResp!["coupon_price"].string ?? "0")
-                            
+
                             self.stepper.stepValue = 1.0
                             self.stepper.minimumValue = 0.0
                             if self.goodsObject != nil {
@@ -371,4 +377,8 @@ extension UITableViewCell {
     open override var canBecomeFirstResponder: Bool {
         return true
     }
+}
+
+protocol WriteBackTagsDelegate {
+    func writeTags(tags: [String]) -> Void
 }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class StoreDetailViewController: UIViewController {
+class StoreDetailViewController: UIViewController, SuicideDelegate {
     var storeObject: EyStore?
     var contentVC: StoreDetailTableViewController?
 
@@ -67,4 +67,13 @@ class StoreDetailViewController: UIViewController {
          // Pass the selected object to the new view controller.
      }
      */
+    
+    
+    var suicideDelegate: SuicideDelegate?
+     
+    func killMe(lastWord: String) {
+         self.dismiss(animated: true, completion: {
+            self.suicideDelegate?.killMe(lastWord: lastWord)
+         })
+     }
 }

@@ -12,11 +12,16 @@ import Loaf
 import SwiftyJSON
 import UIKit
 
-class SearchStoreViewController: UIViewController, ModernSearchBarDelegate, SearchDelegate, RefreshDelegate {
+class SearchStoreViewController: UIViewController, ModernSearchBarDelegate, SearchDelegate, RefreshDelegate, SuicideDelegate {
     func callRefresh(handler: (() -> Void)?) {
         updateResultList(searchBar.text ?? "", completion: handler)
     }
 
+    func killMe(lastWord: String) {
+        let rootTabBarController = self.tabBarController as! RootTabBarViewController
+        rootTabBarController.searchWord(keyWord: lastWord)
+    }
+    
     func makeAlert(_ title: String, _ message: String, completion: @escaping () -> Void) {
         let controller = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "嗯", style: .default, handler: { _ in

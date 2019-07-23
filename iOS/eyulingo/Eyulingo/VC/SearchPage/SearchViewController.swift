@@ -12,10 +12,15 @@ import Alamofire
 import SwiftyJSON
 import Alamofire_SwiftyJSON
 
-class SearchViewController: UIViewController, ModernSearchBarDelegate, SearchDelegate, RefreshDelegate {
+class SearchViewController: UIViewController, ModernSearchBarDelegate, SearchDelegate, RefreshDelegate, SuicideDelegate {
     
     func callRefresh(handler: (() -> ())?) {
         updateResultList(self.searchBar.text ?? "", completion: handler)
+    }
+    
+    func killMe(lastWord: String) {
+        let rootTabBarController = self.tabBarController as! RootTabBarViewController
+        rootTabBarController.searchWord(keyWord: lastWord)
     }
     
     

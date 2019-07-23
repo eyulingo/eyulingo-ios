@@ -10,6 +10,7 @@ PODS:
   - Refresher (0.7.0)
   - SteviaLayout (4.4.4)
   - SwiftyJSON (4.0.0)
+  - TagListView (1.4.0)
   - VideoSplashKit (1.2.1)
   - YPImagePicker (4.0.0):
     - PryntTrimmerView (~> 3.0.0)
@@ -23,6 +24,7 @@ DEPENDENCIES:
   - Loaf
   - Refresher
   - SwiftyJSON
+  - TagListView (~> 1.0)
   - VideoSplashKit
   - YPImagePicker
 
@@ -37,6 +39,7 @@ SPEC REPOS:
     - Refresher
     - SteviaLayout
     - SwiftyJSON
+    - TagListView
     - VideoSplashKit
     - YPImagePicker
 
@@ -50,9 +53,10 @@ SPEC CHECKSUMS:
   Refresher: a72fdd35f0e1854d787eb5eb6853dd3f6d81c1e5
   SteviaLayout: 523469269059f2c6da02820bb2ff28a5fe0780aa
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
+  TagListView: 987b0bdbb16cd9d9e7c0e2ec32aff37ecba8b173
   VideoSplashKit: 9d5670948cfb0be15262d973cedbfd3faecddcad
   YPImagePicker: 8039f89ad79281545fa868486f32d9bf5d65ede1
 
-PODFILE CHECKSUM: 2c92e7881abc246de5dbf420c70a076011a6d38f
+PODFILE CHECKSUM: f520d4ef96929262e7ea7bfced9a5bde1ad52572
 
 COCOAPODS: 1.7.4

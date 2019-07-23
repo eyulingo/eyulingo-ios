@@ -13,7 +13,11 @@ import Refresher
 import SwiftyJSON
 import UIKit
 
-class CartViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CartRefreshDelegate, AmountModifyDelegate, removeGoodsFromCartDelegate {
+class CartViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CartRefreshDelegate, AmountModifyDelegate, removeGoodsFromCartDelegate, SuicideDelegate {
+    
+    func killMe(lastWord: String) {
+        (self.tabBarController as! RootTabBarViewController).searchWord(keyWord: lastWord)
+    }
     func removePurchasedGoods(goods: [EyCarts]) {
         for goodsItem in goods {
             let postParams: Parameters = [
@@ -436,7 +440,7 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
 
                             destinationViewController.goodsObject = goodObj
                             destinationViewController.refreshCartDelegate = self
-
+                            destinationViewController.suicideDelegate = self
                             self.present(destinationViewController, animated: true, completion: nil)
                             return
                         } else {
@@ -497,6 +501,7 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
                             let destinationViewController = destinationStoryboard.instantiateViewController(withIdentifier: "StoreDetailVC") as! StoreDetailViewController
 
                             destinationViewController.storeObject = storeObject
+                            destinationViewController.suicideDelegate = self
 //                            destinationViewController.openedByGoodsId = self.goodsObject?.goodsId
                             self.present(destinationViewController, animated: true, completion: nil)
                             return

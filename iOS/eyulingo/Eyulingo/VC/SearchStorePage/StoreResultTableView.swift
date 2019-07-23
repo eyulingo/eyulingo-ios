@@ -61,6 +61,7 @@ class StoreResultViewController: UIViewController, UITableViewDelegate, UITableV
                             let destinationStoryboard = UIStoryboard(name: "Main", bundle: nil)
                             let destinationViewController = destinationStoryboard.instantiateViewController(withIdentifier: "StoreDetailVC") as! StoreDetailViewController
 
+                            destinationViewController.suicideDelegate = self.parent as! SearchStoreViewController
                             destinationViewController.storeObject = storeObject
                             self.present(destinationViewController, animated: true, completion: nil)
                             return

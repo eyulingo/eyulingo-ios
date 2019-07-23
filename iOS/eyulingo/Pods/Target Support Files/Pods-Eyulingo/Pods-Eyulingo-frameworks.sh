@@ -170,6 +170,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/Refresher/Refresher.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SteviaLayout/Stevia.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/TagListView/TagListView.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/VideoSplashKit/VideoSplashKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/YPImagePicker/YPImagePicker.framework"
 fi
@@ -183,6 +184,7 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/Refresher/Refresher.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SteviaLayout/Stevia.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/TagListView/TagListView.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/VideoSplashKit/VideoSplashKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/YPImagePicker/YPImagePicker.framework"
 fi

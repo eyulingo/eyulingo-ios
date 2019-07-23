@@ -6,9 +6,19 @@
 //  Copyright © 2019 yuetsin. All rights reserved.
 //
 
+import TagListView
 import UIKit
 
-class GoodsDetailViewController: UIViewController, DismissMyselfDelegate {
+class GoodsDetailViewController: UIViewController, DismissMyselfDelegate, TagListViewDelegate, SuicideDelegate, WriteBackTagsDelegate {
+    func writeTags(tags: [String]) {
+        tagListView.removeAllTags()
+        if (goodsObject?.tags ?? []) != [] {
+            tagListView.addTags(tags)
+        } else {
+            tagListView.isHidden = true
+        }
+    }
+    
     func dismissMe() {
         dismiss(animated: true, completion: nil)
     }
@@ -24,6 +34,8 @@ class GoodsDetailViewController: UIViewController, DismissMyselfDelegate {
     var openedByStoreId: Int?
     var refreshCartDelegate: CartRefreshDelegate?
 
+    @IBOutlet var tagListView: TagListView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -31,6 +43,8 @@ class GoodsDetailViewController: UIViewController, DismissMyselfDelegate {
         goodsObject?.getCoverAsync(handler: { image in
             self.fadeIn(image: image, handler: nil)
         })
+
+        tagListView.delegate = self
     }
 
     @IBAction func dismissMe(_ sender: UIBarButtonItem) {
@@ -61,6 +75,7 @@ class GoodsDetailViewController: UIViewController, DismissMyselfDelegate {
                 contentVC = segue.destination as? GoodsDetailTableViewController
                 contentVC?.goodsObject = goodsObject
                 contentVC?.delegate = self
+                contentVC?.writeBackTagsDelegate = self
                 contentVC?.openedByStoreId = openedByStoreId
             }
         }
@@ -89,6 +104,23 @@ class GoodsDetailViewController: UIViewController, DismissMyselfDelegate {
             handler?()
         })
     }
+
+    func tagPressed(_ title: String, tagView: TagView, sender: TagListView) {
+        //        self.navigationController?.popToRootViewController(animated: true)
+        killMe(lastWord: title)
+    }
+
+    var suicideDelegate: SuicideDelegate?
+
+    func killMe(lastWord: String) {
+        dismiss(animated: true, completion: {
+            self.suicideDelegate?.killMe(lastWord: lastWord)
+        })
+    }
+}
+
+protocol SuicideDelegate {
+    func killMe(lastWord: String) -> Void
 }
 
 protocol CartRefreshDelegate {
