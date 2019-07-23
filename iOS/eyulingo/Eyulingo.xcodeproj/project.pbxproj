@@ -48,6 +48,9 @@
 		8A723DB022D4704F008FD0C9 /* EyUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A723DAF22D4704F008FD0C9 /* EyUser.swift */; };
 		8A723DB222D4721E008FD0C9 /* ProfileContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A723DB122D4721E008FD0C9 /* ProfileContentViewController.swift */; };
 		8A723DB422D47954008FD0C9 /* LogoutNow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A723DB322D47954008FD0C9 /* LogoutNow.swift */; };
+		8A83FAB422E6D03C005EB4D0 /* SearchStoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A83FAB322E6D03C005EB4D0 /* SearchStoreViewController.swift */; };
+		8A83FAB622E6D0A1005EB4D0 /* StoreResultTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A83FAB522E6D0A1005EB4D0 /* StoreResultTableCell.swift */; };
+		8A83FAB822E6D0BD005EB4D0 /* StoreResultTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A83FAB722E6D0BD005EB4D0 /* StoreResultTableView.swift */; };
 		8AA7BC8E22D5C9560098F292 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA7BC8C22D5C9560098F292 /* ChangePasswordViewController.swift */; };
 		8AA7BC8F22D5C9560098F292 /* ChangeEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA7BC8D22D5C9560098F292 /* ChangeEmailViewController.swift */; };
 		8AC9E7D922C9A31400F80460 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC9E7D822C9A31400F80460 /* LoginVC.swift */; };
@@ -161,6 +164,9 @@
 		8A723DAF22D4704F008FD0C9 /* EyUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyUser.swift; sourceTree = "<group>"; };
 		8A723DB122D4721E008FD0C9 /* ProfileContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileContentViewController.swift; sourceTree = "<group>"; };
 		8A723DB322D47954008FD0C9 /* LogoutNow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutNow.swift; sourceTree = "<group>"; };
+		8A83FAB322E6D03C005EB4D0 /* SearchStoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchStoreViewController.swift; sourceTree = "<group>"; };
+		8A83FAB522E6D0A1005EB4D0 /* StoreResultTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreResultTableCell.swift; sourceTree = "<group>"; };
+		8A83FAB722E6D0BD005EB4D0 /* StoreResultTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreResultTableView.swift; sourceTree = "<group>"; };
 		8AA7BC8C22D5C9560098F292 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
 		8AA7BC8D22D5C9560098F292 /* ChangeEmailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeEmailViewController.swift; sourceTree = "<group>"; };
 		8AC9E7D822C9A31400F80460 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
@@ -387,6 +393,16 @@
 			path = Struct;
 			sourceTree = "<group>";
 		};
+		8A83FAB222E6D01E005EB4D0 /* SearchStorePage */ = {
+			isa = PBXGroup;
+			children = (
+				8A83FAB322E6D03C005EB4D0 /* SearchStoreViewController.swift */,
+				8A83FAB522E6D0A1005EB4D0 /* StoreResultTableCell.swift */,
+				8A83FAB722E6D0BD005EB4D0 /* StoreResultTableView.swift */,
+			);
+			path = SearchStorePage;
+			sourceTree = "<group>";
+		};
 		8AC867DC22D5C8B0008E9CDA /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -448,6 +464,7 @@
 				8AC867E022D5C8DC008E9CDA /* CartPage */,
 				8AC867DF22D5C8D3008E9CDA /* ProfilePage */,
 				8AC867DE22D5C8CA008E9CDA /* SearchPage */,
+				8A83FAB222E6D01E005EB4D0 /* SearchStorePage */,
 				8AC867DD22D5C8BC008E9CDA /* LoginPage */,
 				8AC867DC22D5C8B0008E9CDA /* Common */,
 			);
@@ -743,11 +760,13 @@
 				8AE902ED22DC2402008728F3 /* RWZoomableImageView.swift in Sources */,
 				8AEC567322DEAC2D00520C68 /* ModernSearchBarCell.swift in Sources */,
 				8AC9E7FD22C9C1A300F80460 /* AdminBill.swift in Sources */,
+				8A83FAB622E6D0A1005EB4D0 /* StoreResultTableCell.swift in Sources */,
 				8AC9E7DD22C9A37500F80460 /* BookQueryVC.swift in Sources */,
 				8AC9E7E122C9A3AE00F80460 /* PurchasedVC.swift in Sources */,
 				8AC9E7E522C9A3F700F80460 /* AdminBookVC.swift in Sources */,
 				8A0C378022D71E2700358F52 /* ReceiveAddress.swift in Sources */,
 				8ADB40F822DD5A9A009C3538 /* EyGoods.swift in Sources */,
+				8A83FAB422E6D03C005EB4D0 /* SearchStoreViewController.swift in Sources */,
 				8AC9E7EB22C9A43C00F80460 /* AdminAddBookVC.swift in Sources */,
 				8A723DAD22D465B5008FD0C9 /* MyProfileViewController.swift in Sources */,
 				8AC9E7D922C9A31400F80460 /* LoginVC.swift in Sources */,
@@ -764,6 +783,7 @@
 				8AC9E7F522C9AF4A00F80460 /* PurchaseVC.swift in Sources */,
 				8AC9E7DB22C9A34700F80460 /* RegisterVC.swift in Sources */,
 				8A723DB422D47954008FD0C9 /* LogoutNow.swift in Sources */,
+				8A83FAB822E6D0BD005EB4D0 /* StoreResultTableView.swift in Sources */,
 				8A0F4ECB22E5CFB40011B8F8 /* RateControl.swift in Sources */,
 				8AC9E7E322C9A3CD00F80460 /* BookDetailVC.swift in Sources */,
 				8A6DD6F222CAE3FA00BD7904 /* TabBarController.swift in Sources */,
