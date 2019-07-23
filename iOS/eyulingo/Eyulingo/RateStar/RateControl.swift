@@ -53,10 +53,11 @@ class RateControl: UIControl {
         switch sender.state {
         case .changed, .began, .ended:
             let translate = sender.location(in: sender.view!)
-            rate = Int((translate.x / label.bounds.size.width) * CGFloat(rateMax + 1))
+            rate = min(max(Int(((translate.x - label.bounds.minX) / label.bounds.size.width) * CGFloat(rateMax + 1)), 1), rateMax)
         default:
             return
         }
+        
         delegate?.valueChanged(rate)
     }
     

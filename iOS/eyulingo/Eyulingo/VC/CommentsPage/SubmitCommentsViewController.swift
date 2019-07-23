@@ -29,7 +29,7 @@ class SubmitCommentsViewController: UIViewController, ValueChangeDelegate, UITex
         commentTextField.delegate = self
     }
 
-//    func textViewDidBeginEditing(_ textView: UITextView) {
+    //    func textViewDidBeginEditing(_ textView: UITextView) {
 //        if textView.text != "" {
 //            valueChanged(rateControl.rate)
 //        } else {

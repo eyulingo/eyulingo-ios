@@ -439,7 +439,7 @@ Project Eyulingo. 一切权利保留。</string>
                                 <blurEffect style="prominent"/>
                             </visualEffectView>
                             <navigationBar contentMode="scaleToFill" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="myk-3u-1Ju">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="108"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="115.5"/>
                                 <items>
                                     <navigationItem id="vS8-D0-JnM">
                                         <barButtonItem key="backBarButtonItem" title="登录" id="TDU-mg-eyX"/>
@@ -2901,31 +2901,51 @@ Project Eyulingo. 一切权利保留。</string>
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="316"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DvQ-0b-CO2" customClass="RateControl" customModule="Eyulingo" customModuleProvider="target">
+                                        <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UdI-aQ-l5I">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="76"/>
-                                            <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="18M-oJ-xkG">
-                                                    <rect key="frame" x="330" y="8" width="37" height="33"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="33" id="4g7-Nl-fJx"/>
-                                                        <constraint firstAttribute="width" constant="37" id="6Fg-sl-ifX"/>
-                                                    </constraints>
-                                                    <state key="normal" image="xmark" catalog="system"/>
-                                                    <connections>
-                                                        <action selector="dismissMe:" destination="82v-rw-9JW" eventType="touchUpInside" id="8fm-Dx-zev"/>
-                                                    </connections>
-                                                </button>
-                                            </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="PI9-dc-uwD">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="76"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DvQ-0b-CO2" customClass="RateControl" customModule="Eyulingo" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="76"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="18M-oJ-xkG">
+                                                                <rect key="frame" x="330" y="8" width="37" height="33"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="33" id="36L-3I-FDi"/>
+                                                                    <constraint firstAttribute="width" constant="37" id="q0y-yF-lgY"/>
+                                                                </constraints>
+                                                                <state key="normal" image="xmark" catalog="system"/>
+                                                                <connections>
+                                                                    <action selector="dismissMe:" destination="82v-rw-9JW" eventType="touchUpInside" id="8fm-Dx-zev"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstItem="18M-oJ-xkG" firstAttribute="top" secondItem="DvQ-0b-CO2" secondAttribute="top" constant="8" id="O8e-ah-X7f"/>
+                                                            <constraint firstAttribute="trailing" secondItem="18M-oJ-xkG" secondAttribute="trailing" constant="8" id="ZSu-p3-EQP"/>
+                                                        </constraints>
+                                                        <connections>
+                                                            <action selector="rateControlTapped:" destination="82v-rw-9JW" eventType="valueChanged" id="gTD-mQ-IRb"/>
+                                                        </connections>
+                                                    </view>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="DvQ-0b-CO2" secondAttribute="trailing" id="GGx-LP-STL"/>
+                                                    <constraint firstAttribute="bottom" secondItem="DvQ-0b-CO2" secondAttribute="bottom" id="VVA-RU-pqv"/>
+                                                    <constraint firstItem="DvQ-0b-CO2" firstAttribute="top" secondItem="PI9-dc-uwD" secondAttribute="top" id="W7R-HZ-vu2"/>
+                                                    <constraint firstItem="DvQ-0b-CO2" firstAttribute="leading" secondItem="PI9-dc-uwD" secondAttribute="leading" id="meZ-0d-ex8"/>
+                                                </constraints>
+                                            </view>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="18M-oJ-xkG" secondAttribute="trailing" constant="8" id="GM7-Xm-jAs"/>
-                                                <constraint firstAttribute="height" constant="76" id="GvT-Hu-bqI"/>
-                                                <constraint firstItem="18M-oJ-xkG" firstAttribute="top" secondItem="DvQ-0b-CO2" secondAttribute="top" constant="8" id="gNF-zP-tNm"/>
+                                                <constraint firstAttribute="height" constant="76" id="LL4-k7-hOn"/>
                                             </constraints>
-                                            <connections>
-                                                <action selector="rateControlTapped:" destination="82v-rw-9JW" eventType="valueChanged" id="gTD-mQ-IRb"/>
-                                            </connections>
-                                        </view>
+                                            <vibrancyEffect>
+                                                <blurEffect style="regular"/>
+                                            </vibrancyEffect>
+                                        </visualEffectView>
                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="4Yv-1W-aoZ">
                                             <rect key="frame" x="16" y="84" width="343" height="170"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2942,14 +2962,14 @@ Project Eyulingo. 一切权利保留。</string>
                                         </button>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="UdI-aQ-l5I" firstAttribute="top" secondItem="7vk-qC-bAD" secondAttribute="top" id="2sM-eg-ngW"/>
                                         <constraint firstAttribute="trailing" secondItem="4Yv-1W-aoZ" secondAttribute="trailing" constant="16" id="3wI-Zu-QvU"/>
-                                        <constraint firstItem="DvQ-0b-CO2" firstAttribute="leading" secondItem="7vk-qC-bAD" secondAttribute="leading" id="5wE-Fm-qdb"/>
-                                        <constraint firstAttribute="trailing" secondItem="DvQ-0b-CO2" secondAttribute="trailing" id="9Y1-xm-jhP"/>
+                                        <constraint firstAttribute="trailing" secondItem="UdI-aQ-l5I" secondAttribute="trailing" id="Bzz-4k-QOi"/>
                                         <constraint firstItem="7ul-f1-Nz3" firstAttribute="centerX" secondItem="7vk-qC-bAD" secondAttribute="centerX" id="Fr0-oc-RNI"/>
-                                        <constraint firstItem="DvQ-0b-CO2" firstAttribute="top" secondItem="7vk-qC-bAD" secondAttribute="top" id="LUw-W0-fMw"/>
+                                        <constraint firstItem="UdI-aQ-l5I" firstAttribute="leading" secondItem="7vk-qC-bAD" secondAttribute="leading" id="Lmv-Fe-uhm"/>
                                         <constraint firstItem="4Yv-1W-aoZ" firstAttribute="leading" secondItem="7vk-qC-bAD" secondAttribute="leading" constant="16" id="bxd-xn-zLE"/>
-                                        <constraint firstItem="4Yv-1W-aoZ" firstAttribute="top" secondItem="DvQ-0b-CO2" secondAttribute="bottom" constant="8" id="fO8-VW-t8H"/>
                                         <constraint firstAttribute="bottom" secondItem="7ul-f1-Nz3" secondAttribute="bottom" constant="24" id="j7I-RZ-rcL"/>
+                                        <constraint firstItem="4Yv-1W-aoZ" firstAttribute="top" secondItem="UdI-aQ-l5I" secondAttribute="bottom" constant="8" id="lGJ-D3-PZV"/>
                                         <constraint firstItem="7ul-f1-Nz3" firstAttribute="top" secondItem="4Yv-1W-aoZ" secondAttribute="bottom" constant="8" id="sz5-Sg-h1Z"/>
                                     </constraints>
                                 </view>
@@ -2958,12 +2978,22 @@ Project Eyulingo. 一切权利保留。</string>
                                 </constraints>
                                 <blurEffect style="regular"/>
                             </visualEffectView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1HV-Mb-0jA">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="351"/>
+                                <connections>
+                                    <action selector="dismissMe:" destination="82v-rw-9JW" eventType="touchUpInside" id="SgX-Bb-4ag"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="1HV-Mb-0jA" firstAttribute="trailing" secondItem="Qak-8l-WhH" secondAttribute="trailing" id="3c0-qK-Ye8"/>
+                            <constraint firstItem="1HV-Mb-0jA" firstAttribute="top" secondItem="Qak-8l-WhH" secondAttribute="top" id="AfJ-PW-kkZ"/>
+                            <constraint firstItem="UxJ-Lg-DqG" firstAttribute="top" secondItem="1HV-Mb-0jA" secondAttribute="bottom" id="FNa-3C-Mmp"/>
                             <constraint firstItem="UxJ-Lg-DqG" firstAttribute="bottom" secondItem="Qak-8l-WhH" secondAttribute="bottom" id="H15-Pw-aUF"/>
                             <constraint firstItem="UxJ-Lg-DqG" firstAttribute="trailing" secondItem="Qak-8l-WhH" secondAttribute="trailing" id="abQ-1d-XYl"/>
                             <constraint firstItem="UxJ-Lg-DqG" firstAttribute="leading" secondItem="Qak-8l-WhH" secondAttribute="leading" id="jAj-MR-ma9"/>
+                            <constraint firstItem="1HV-Mb-0jA" firstAttribute="leading" secondItem="Qak-8l-WhH" secondAttribute="leading" id="oXj-d8-O0M"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Qak-8l-WhH"/>
                     </view>
