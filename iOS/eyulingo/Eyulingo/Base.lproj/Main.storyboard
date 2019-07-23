@@ -440,7 +440,7 @@ Project Eyulingo. 一切权利保留。</string>
                                 <blurEffect style="prominent"/>
                             </visualEffectView>
                             <navigationBar contentMode="scaleToFill" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="myk-3u-1Ju">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="108"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="115.5"/>
                                 <items>
                                     <navigationItem id="vS8-D0-JnM">
                                         <barButtonItem key="backBarButtonItem" title="登录" id="TDU-mg-eyX"/>
@@ -3088,6 +3088,7 @@ Project Eyulingo. 一切权利保留。</string>
                                     <constraint firstItem="znX-x3-0ld" firstAttribute="leading" secondItem="oDg-K0-3wP" secondAttribute="leading" constant="8" id="4hB-tm-gNk"/>
                                     <constraint firstAttribute="trailing" secondItem="znX-x3-0ld" secondAttribute="trailing" constant="8" id="7op-jv-O6s"/>
                                     <constraint firstItem="znX-x3-0ld" firstAttribute="top" secondItem="oDg-K0-3wP" secondAttribute="top" constant="8" id="Bfg-mt-UWv"/>
+                                    <constraint firstAttribute="height" constant="44" id="d4F-1r-Iqt"/>
                                 </constraints>
                             </view>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kfJ-gZ-NZ2">
