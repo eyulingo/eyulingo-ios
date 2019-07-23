@@ -18,8 +18,8 @@ class SearchStoreViewController: UIViewController, ModernSearchBarDelegate, Sear
     }
 
     func killMe(lastWord: String) {
-        let rootTabBarController = self.tabBarController as! RootTabBarViewController
-        rootTabBarController.searchWord(keyWord: lastWord)
+        GlobalTagManager.keyWord = lastWord
+        tabBarController?.selectedIndex = 0
     }
     
     func makeAlert(_ title: String, _ message: String, completion: @escaping () -> Void) {

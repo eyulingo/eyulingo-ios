@@ -16,8 +16,10 @@ import UIKit
 class CartViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CartRefreshDelegate, AmountModifyDelegate, removeGoodsFromCartDelegate, SuicideDelegate {
     
     func killMe(lastWord: String) {
-        (self.tabBarController as! RootTabBarViewController).searchWord(keyWord: lastWord)
+        GlobalTagManager.keyWord = lastWord
+        tabBarController?.selectedIndex = 0
     }
+    
     func removePurchasedGoods(goods: [EyCarts]) {
         for goodsItem in goods {
             let postParams: Parameters = [

@@ -72,8 +72,9 @@ class StoreDetailViewController: UIViewController, SuicideDelegate {
     var suicideDelegate: SuicideDelegate?
      
     func killMe(lastWord: String) {
-         self.dismiss(animated: true, completion: {
+        
+        self.dismiss(animated: true, completion: {
             self.suicideDelegate?.killMe(lastWord: lastWord)
-         })
+        })
      }
 }

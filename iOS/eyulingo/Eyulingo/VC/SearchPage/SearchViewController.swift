@@ -6,24 +6,23 @@
 //  Copyright © 2019 yuetsin. All rights reserved.
 //
 
-import Loaf
-import UIKit
 import Alamofire
-import SwiftyJSON
 import Alamofire_SwiftyJSON
+import Loaf
+import SwiftyJSON
+import UIKit
 
 class SearchViewController: UIViewController, ModernSearchBarDelegate, SearchDelegate, RefreshDelegate, SuicideDelegate {
-    
-    func callRefresh(handler: (() -> ())?) {
-        updateResultList(self.searchBar.text ?? "", completion: handler)
+    func callRefresh(handler: (() -> Void)?) {
+        updateResultList(searchBar.text ?? "", completion: handler)
     }
-    
+
     func killMe(lastWord: String) {
-        let rootTabBarController = self.tabBarController as! RootTabBarViewController
-        rootTabBarController.searchWord(keyWord: lastWord)
+        searchBar.text = lastWord
+        performSearch(lastWord)
+        GlobalTagManager.keyWord = nil
     }
-    
-    
+
     func makeAlert(_ title: String, _ message: String, completion: @escaping () -> Void) {
         let controller = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "嗯", style: .default, handler: { _ in
@@ -33,68 +32,75 @@ class SearchViewController: UIViewController, ModernSearchBarDelegate, SearchDel
         present(controller, animated: true, completion: nil)
     }
 
-    
     func performSearch(_ query: String?) {
         NSLog("Should perform search to \(query ?? "(null)")")
         if query != nil && query! != "" {
             updateResultList(query!)
         }
     }
-    
+
     func performSuggestion(_ query: String) {
         if query.replacingOccurrences(of: " ", with: "").count == 0 {
             updateSuggestionList(words: [])
         }
         NSLog("Should asks for suggestion \(query)")
-        
+
         let getParams: Parameters = [
-            "q": query
+            "q": query,
         ]
         Alamofire.request(Eyulingo_UserUri.suggestionGetUri,
                           method: .get,
                           parameters: getParams)
-        .responseSwiftyJSON(completionHandler: { responseJSON in
-            if responseJSON.error == nil {
-                let jsonResp = responseJSON.value
-                if jsonResp != nil {
-                    if jsonResp!["status"].stringValue == "ok" {
-                        var suggestions: [String] = []
-                        for goodsItem in jsonResp!["values"].arrayValue {
-                            let suggest = goodsItem.string
-                            if suggest != nil {
-                                suggestions.append(suggest!)
-                                if suggestions.count > 5 {
-                                    break
+            .responseSwiftyJSON(completionHandler: { responseJSON in
+                if responseJSON.error == nil {
+                    let jsonResp = responseJSON.value
+                    if jsonResp != nil {
+                        if jsonResp!["status"].stringValue == "ok" {
+                            var suggestions: [String] = []
+                            for goodsItem in jsonResp!["values"].arrayValue {
+                                let suggest = goodsItem.string
+                                if suggest != nil {
+                                    suggestions.append(suggest!)
+                                    if suggestions.count > 5 {
+                                        break
+                                    }
                                 }
                             }
+                            self.updateSuggestionList(words: suggestions)
+                            return
                         }
-                        self.updateSuggestionList(words: suggestions)
-                        return
                     }
                 }
-            }
-            self.updateSuggestionList(words: [])
-        })
+                self.updateSuggestionList(words: [])
+            })
     }
-    
+
     var resultGoods: [EyGoods] = []
     var isSearching: Bool = false
     var contentVC: DetailViewController?
-    
-    @IBOutlet weak var noContentIndicator: UILabel!
-    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
-    @IBOutlet weak var searchBar: ModernSearchBar!
-    @IBOutlet weak var containerView: UIView!
-    
+
+    @IBOutlet var noContentIndicator: UILabel!
+    @IBOutlet var loadingIndicator: UIActivityIndicatorView!
+    @IBOutlet var searchBar: ModernSearchBar!
+    @IBOutlet var containerView: UIView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         stopLoading()
         searchBar.delegateModernSearchBar = self
         searchBar.searchDelegate = self
         searchBar.suggestionsView_searchIcon_isRound = false
-
     }
-    
+
+    override func viewWillAppear(_ animated: Bool) {
+        if GlobalTagManager.keyWord != nil {
+            searchBar.text = GlobalTagManager.keyWord
+            performSearch(GlobalTagManager.keyWord)
+            GlobalTagManager.keyWord = nil
+        }
+        super.viewWillAppear(animated)
+    }
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if contentVC == nil {
             if segue.identifier == "searchResultSegue" {
@@ -103,70 +109,70 @@ class SearchViewController: UIViewController, ModernSearchBarDelegate, SearchDel
             }
         }
     }
-    
+
     func updateSuggestionList(words: [String]) {
         searchBar.setDatas(datas: words)
         /// Forcefully raise a refresh, but only once
         searchBar.searchWhenUserTyping(caracters: searchBar.text ?? "", notAgain: true)
     }
-    
-    func updateResultList(_ query: String, completion: (() -> ())? = nil) {
+
+    func updateResultList(_ query: String, completion: (() -> Void)? = nil) {
         let getParams: Parameters = [
-            "q": query
+            "q": query,
         ]
-        self.resultGoods.removeAll()
-        self.startLoading()
+        resultGoods.removeAll()
+        startLoading()
         var errorStr = "general error"
         Alamofire.request(Eyulingo_UserUri.searchGoodsGetUri,
                           method: .get, parameters: getParams)
-        .responseSwiftyJSON(completionHandler: { responseJSON in
-            if responseJSON.error == nil {
-                let jsonResp = responseJSON.value
-                if jsonResp != nil {
-                    if jsonResp!["status"].stringValue == "ok" {
-                        for goodsItem in jsonResp!["values"].arrayValue {
-                            var tags: [String] = []
-                            for tagItem in goodsItem["tags"].arrayValue {
-                                tags.append(tagItem.stringValue)
-                            }
+            .responseSwiftyJSON(completionHandler: { responseJSON in
+                if responseJSON.error == nil {
+                    let jsonResp = responseJSON.value
+                    if jsonResp != nil {
+                        if jsonResp!["status"].stringValue == "ok" {
+                            for goodsItem in jsonResp!["values"].arrayValue {
+                                var tags: [String] = []
+                                for tagItem in goodsItem["tags"].arrayValue {
+                                    tags.append(tagItem.stringValue)
+                                }
 //                            let c = goodsItem["price"].stringValue
 //                            let d = Decimal(string: goodsItem["price"].stringValue)
-                            self.resultGoods.append(EyGoods(goodsId: goodsItem["id"].int,
-                                                            goodsName: goodsItem["name"].string,
-                                                            coverId: goodsItem["image_id"].string,
-                                                            description: goodsItem["description"].string,
-                                                            storeId: goodsItem["store_id"].int,
-                                                            storeName: goodsItem["store"].string,
-                                                            storage: goodsItem["storage"].int,
-                                                            price: Decimal(string: goodsItem["price"].stringValue),
-                                                            couponPrice: Decimal(string: goodsItem["coupon_price"].stringValue),
-                                                            tags: tags,
-                                                            comments: []))
+                                self.resultGoods.append(EyGoods(goodsId: goodsItem["id"].int,
+                                                                goodsName: goodsItem["name"].string,
+                                                                coverId: goodsItem["image_id"].string,
+                                                                description: goodsItem["description"].string,
+                                                                storeId: goodsItem["store_id"].int,
+                                                                storeName: goodsItem["store"].string,
+                                                                storage: goodsItem["storage"].int,
+                                                                price: Decimal(string: goodsItem["price"].stringValue),
+                                                                couponPrice: Decimal(string: goodsItem["coupon_price"].stringValue),
+                                                                tags: tags,
+                                                                comments: []))
+                            }
+                            self.flushData()
+                            self.contentVC?.keyWord = self.searchBar.text
+                            completion?()
+                            return
+                        } else {
+                            errorStr = jsonResp!["status"].stringValue
                         }
-                        self.flushData()
-                        self.contentVC?.keyWord = self.searchBar.text
-                        completion?()
-                        return
                     } else {
-                        errorStr = jsonResp!["status"].stringValue
+                        errorStr = "bad response"
                     }
                 } else {
-                    errorStr = "bad response"
+                    errorStr = "no response"
                 }
-            } else {
-                errorStr = "no response"
-            }
-            Loaf("搜索失败。" + "服务器报告了一个 “\(errorStr)” 错误。", state: .error, sender: self).show()
-            completion?()
-        })
+                Loaf("搜索失败。" + "服务器报告了一个 “\(errorStr)” 错误。", state: .error, sender: self).show()
+                completion?()
+            })
     }
-    
+
     func flushData() {
-        self.stopLoading()
+        stopLoading()
         contentVC?.resultGoods = resultGoods
         contentVC?.reloadData()
     }
-    
+
     func stopLoading() {
         let shouldShowNothing = resultGoods.count == 0
         loadingIndicator.alpha = 1.0
@@ -185,15 +191,14 @@ class SearchViewController: UIViewController, ModernSearchBarDelegate, SearchDel
             containerView.isHidden = false
         }
     }
-    
+
     func startLoading() {
         loadingIndicator.isHidden = false
         noContentIndicator.isHidden = true
         containerView.isHidden = true
     }
 
-    
-    ///Called if you use String suggestion list
+    /// Called if you use String suggestion list
     func onClickItemSuggestionsView(item: String) {
         print("User touched this item: " + item)
         searchBar.text = item
@@ -202,17 +207,17 @@ class SearchViewController: UIViewController, ModernSearchBarDelegate, SearchDel
         searchBar.resignFirstResponder()
         callRefresh(searchBar.text!)
     }
-    
-    ///Called when user touched shadowView
+
+    /// Called when user touched shadowView
     func onClickShadowView(shadowView: UIView) {
         print("User touched shadowView")
     }
-    
+
     func callRefresh(_ keyword: String) {
         updateResultList(keyword)
     }
 }
 
 protocol RefreshDelegate {
-    func callRefresh(handler: (() -> ())?) -> ()
+    func callRefresh(handler: (() -> Void)?) -> Void
 }

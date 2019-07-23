@@ -12,7 +12,7 @@ import UIKit
 class GoodsDetailViewController: UIViewController, DismissMyselfDelegate, TagListViewDelegate, SuicideDelegate, WriteBackTagsDelegate {
     func writeTags(tags: [String]) {
         tagListView.removeAllTags()
-        if (goodsObject?.tags ?? []) != [] {
+        if tags.count != 0 {
             tagListView.addTags(tags)
         } else {
             tagListView.isHidden = true

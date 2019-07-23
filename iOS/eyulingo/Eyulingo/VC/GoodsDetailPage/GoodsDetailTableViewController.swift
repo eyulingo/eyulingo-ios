@@ -350,7 +350,7 @@ class GoodsDetailTableViewController: UITableViewController, CartRefreshDelegate
 
                             let destinationStoryboard = UIStoryboard(name: "Main", bundle: nil)
                             let destinationViewController = destinationStoryboard.instantiateViewController(withIdentifier: "StoreDetailVC") as! StoreDetailViewController
-
+                            destinationViewController.suicideDelegate = self.parent as! GoodsDetailViewController
                             destinationViewController.storeObject = storeObject
                             destinationViewController.openedByGoodsId = self.goodsObject?.goodsId
                             self.present(destinationViewController, animated: true, completion: nil)

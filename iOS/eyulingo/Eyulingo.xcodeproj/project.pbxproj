@@ -75,6 +75,7 @@
 		8ADB40FA22DD5AAF009C3538 /* EyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADB40F922DD5AAF009C3538 /* EyStore.swift */; };
 		8ADB40FC22DD5B96009C3538 /* EyComments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADB40FB22DD5B96009C3538 /* EyComments.swift */; };
 		8ADB40FE22DD5CFF009C3538 /* EyCommentLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADB40FD22DD5CFF009C3538 /* EyCommentLevel.swift */; };
+		8ADF3A5022E7124300E8D8C2 /* GlobalTagManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADF3A4F22E7124300E8D8C2 /* GlobalTagManager.swift */; };
 		8AE4E13722E55D7600014C3F /* EyOrders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE4E13622E55D7600014C3F /* EyOrders.swift */; };
 		8AE4E13A22E55EE500014C3F /* OrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE4E13922E55EE500014C3F /* OrdersViewController.swift */; };
 		8AE8F7A422E5A5D4008CFB62 /* CommentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE8F7A322E5A5D4008CFB62 /* CommentsViewController.swift */; };
@@ -192,6 +193,7 @@
 		8ADB40F922DD5AAF009C3538 /* EyStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyStore.swift; sourceTree = "<group>"; };
 		8ADB40FB22DD5B96009C3538 /* EyComments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyComments.swift; sourceTree = "<group>"; };
 		8ADB40FD22DD5CFF009C3538 /* EyCommentLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyCommentLevel.swift; sourceTree = "<group>"; };
+		8ADF3A4F22E7124300E8D8C2 /* GlobalTagManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalTagManager.swift; sourceTree = "<group>"; };
 		8AE4E13622E55D7600014C3F /* EyOrders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyOrders.swift; sourceTree = "<group>"; };
 		8AE4E13922E55EE500014C3F /* OrdersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersViewController.swift; sourceTree = "<group>"; };
 		8AE8F7A322E5A5D4008CFB62 /* CommentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsViewController.swift; sourceTree = "<group>"; };
@@ -497,6 +499,7 @@
 				8A0AF9E422D41F6E009430B9 /* JudgeValidEmail.swift */,
 				8A723DB322D47954008FD0C9 /* LogoutNow.swift */,
 				8A11E0C522E1497B0080B10F /* CartRefreshManager.swift */,
+				8ADF3A4F22E7124300E8D8C2 /* GlobalTagManager.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -749,6 +752,7 @@
 				8A55B27F22C8CE85007E77FD /* AppDelegate.swift in Sources */,
 				8A0CCDF422E05E0100E3CAF0 /* EyCarts.swift in Sources */,
 				8A06394C22D3316F00699037 /* BookieUri.swift in Sources */,
+				8ADF3A5022E7124300E8D8C2 /* GlobalTagManager.swift in Sources */,
 				8A0F4ECD22E5D24F0011B8F8 /* SubmitCommentsViewController.swift in Sources */,
 				8A0D3B1422E1AA61009DCF56 /* PurchaseViewController.swift in Sources */,
 				8AC9E7EE22C9A7F400F80460 /* Book.swift in Sources */,

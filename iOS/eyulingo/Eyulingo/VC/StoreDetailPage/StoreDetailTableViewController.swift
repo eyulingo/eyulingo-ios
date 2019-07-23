@@ -232,7 +232,7 @@ class StoreDetailTableViewController: UITableViewController {
                             
                             let destinationStoryboard = UIStoryboard(name: "Main", bundle: nil)
                             let destinationViewController = destinationStoryboard.instantiateViewController(withIdentifier: "GoodsDetailVC") as! GoodsDetailViewController
-                            
+                            destinationViewController.suicideDelegate = self.parent as! StoreDetailViewController
                             destinationViewController.goodsObject = goodObj
                             destinationViewController.openedByStoreId = self.storeObject?.storeId
                             
