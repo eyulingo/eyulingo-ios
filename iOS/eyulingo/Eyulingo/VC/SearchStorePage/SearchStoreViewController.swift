@@ -98,6 +98,11 @@ class SearchStoreViewController: UIViewController, ModernSearchBarDelegate, Sear
 
         navigationBar.topItem?.setRightBarButtonItems([defaultButton], animated: false)
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        longitude = nil
+        latitude = nil
+    }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if contentVC == nil {
@@ -271,7 +276,7 @@ class SearchStoreViewController: UIViewController, ModernSearchBarDelegate, Sear
                 locationManager?.requestWhenInUseAuthorization()
 
             }
-            locationManager?.startUpdatingLocation()
+            locationManager?.requestLocation()
             navigationBar.topItem?.setRightBarButtonItems([byDistanceButton], animated: true)
             return
         } else if currentSortingMethod == .byRate {
@@ -294,11 +299,15 @@ class SearchStoreViewController: UIViewController, ModernSearchBarDelegate, Sear
         if location.horizontalAccuracy > 0 {
             longitude = location.coordinate.longitude
             latitude = location.coordinate.latitude
-            locationManager?.stopUpdatingLocation()
             if currentSortingMethod == .byDistance {
                 updateResultList(searchBar.text ?? "", completion: nil)
             }
         }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        makeAlert("失败", "无法获取您的当前位置。错误信息：“\(error.localizedDescription)”", completion: { })
+        print("Failed to find user's location: \(error.localizedDescription)")
     }
 }
 
