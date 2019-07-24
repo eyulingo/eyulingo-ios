@@ -133,6 +133,8 @@ class SearchStoreViewController: UIViewController, ModernSearchBarDelegate, Sear
         
             if longitude == nil || latitude == nil {
                 makeAlert("失败", "无法获取您当前的位置。", completion: {})
+                self.stopLoading()
+                completion?()
                 return
             }
             getParams = [
@@ -174,6 +176,7 @@ class SearchStoreViewController: UIViewController, ModernSearchBarDelegate, Sear
                             self.flushData()
                             self.contentVC?.keyWord = self.searchBar.text
                             self.contentVC?.refreshStyle(style: self.currentSortingMethod)
+                            self.stopLoading()
                             completion?()
                             return
                         } else {
@@ -187,6 +190,7 @@ class SearchStoreViewController: UIViewController, ModernSearchBarDelegate, Sear
                 }
                 Loaf("搜索失败。" + "服务器报告了一个 “\(errorStr)” 错误。", state: .error, sender: self).show()
                 completion?()
+                self.stopLoading()
             })
     }
 
@@ -270,11 +274,15 @@ class SearchStoreViewController: UIViewController, ModernSearchBarDelegate, Sear
         if currentSortingMethod == .byDefault {
             navigationBar.topItem?.setRightBarButtonItems([defaultButton], animated: true)
         } else if currentSortingMethod == .byDistance {
+            if longitude != nil && latitude != nil {
+                updateResultList(searchBar.text ?? "", completion: nil)
+                navigationBar.topItem?.setRightBarButtonItems([byDistanceButton], animated: true)
+                return
+            }
             if locationManager == nil {
                 locationManager = CLLocationManager()
                 locationManager?.delegate = self
                 locationManager?.requestWhenInUseAuthorization()
-
             }
             locationManager?.requestLocation()
             navigationBar.topItem?.setRightBarButtonItems([byDistanceButton], animated: true)
@@ -306,7 +314,10 @@ class SearchStoreViewController: UIViewController, ModernSearchBarDelegate, Sear
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        makeAlert("失败", "无法获取您的当前位置。错误信息：“\(error.localizedDescription)”", completion: { })
+        makeAlert("失败", "无法获取您的当前位置。错误信息：“\(error.localizedDescription)”", completion: {
+            self.stopLoading()
+            self.contentVC?.resultTable.stopPullToRefresh()
+        })
         print("Failed to find user's location: \(error.localizedDescription)")
     }
 }
