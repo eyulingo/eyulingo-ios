@@ -85,6 +85,20 @@ class Eyulingo_UserUri {
     
     // parameters:
     // q - 关键字
+    // long - 经度
+    // lat - 纬度
+    static let searchStoresByDistanceGetUri = baseUri + "/searchstorebydistance"
+    
+    // parameters:
+    // q - 关键字
+    static let searchStoresByRateGetUri = baseUri + "/searchstorebystar"
+    
+    // parameters:
+    // q - 关键字
+    static let searchStoresByHeatGetUri = baseUri + "/searchstorebysold"
+    
+    // parameters:
+    // q - 关键字
     static let suggestionGetUri = baseUri + "/suggests"
     
     // parameters:

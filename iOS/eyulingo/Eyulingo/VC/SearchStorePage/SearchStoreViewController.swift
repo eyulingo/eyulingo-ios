@@ -8,11 +8,16 @@
 
 import Alamofire
 import Alamofire_SwiftyJSON
+import CoreLocation
 import Loaf
 import SwiftyJSON
 import UIKit
 
-class SearchStoreViewController: UIViewController, ModernSearchBarDelegate, SearchDelegate, RefreshDelegate, SuicideDelegate {
+class SearchStoreViewController: UIViewController, ModernSearchBarDelegate, SearchDelegate, RefreshDelegate, SuicideDelegate, CLLocationManagerDelegate {
+    var locationManager: CLLocationManager?
+    var longitude: Double?
+    var latitude: Double?
+
     func callRefresh(handler: (() -> Void)?) {
         updateResultList(searchBar.text ?? "", completion: handler)
     }
@@ -21,7 +26,7 @@ class SearchStoreViewController: UIViewController, ModernSearchBarDelegate, Sear
         GlobalTagManager.keyWord = lastWord
         tabBarController?.selectedIndex = 0
     }
-    
+
     func makeAlert(_ title: String, _ message: String, completion: @escaping () -> Void) {
         let controller = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "嗯", style: .default, handler: { _ in
@@ -47,6 +52,7 @@ class SearchStoreViewController: UIViewController, ModernSearchBarDelegate, Sear
         let getParams: Parameters = [
             "q": query,
         ]
+
         Alamofire.request(Eyulingo_UserUri.storeSuggestionGetUri,
                           method: .get,
                           parameters: getParams)
@@ -89,6 +95,8 @@ class SearchStoreViewController: UIViewController, ModernSearchBarDelegate, Sear
         searchBar.delegateModernSearchBar = self
         searchBar.searchDelegate = self
         searchBar.suggestionsView_searchIcon_isRound = false
+
+        navigationBar.topItem?.setRightBarButtonItems([defaultButton], animated: false)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -107,13 +115,34 @@ class SearchStoreViewController: UIViewController, ModernSearchBarDelegate, Sear
     }
 
     func updateResultList(_ query: String, completion: (() -> Void)? = nil) {
-        let getParams: Parameters = [
+        var getParams: Parameters = [
             "q": query,
         ]
+
         resultStores.removeAll()
+
+        var url = Eyulingo_UserUri.searchStoresGetUri
+
+        if currentSortingMethod == .byDistance {
+            url = Eyulingo_UserUri.searchStoresByDistanceGetUri
+        
+            if longitude == nil || latitude == nil {
+                makeAlert("失败", "无法获取您当前的位置。", completion: {})
+                return
+            }
+            getParams = [
+                "q": query,
+                "long": longitude!,
+                "lat": latitude!,
+            ]
+        } else if currentSortingMethod == .byRate {
+            url = Eyulingo_UserUri.searchStoresByRateGetUri
+        } else if currentSortingMethod == .byHeat {
+            url = Eyulingo_UserUri.searchStoresByHeatGetUri
+        }
         startLoading()
         var errorStr = "general error"
-        Alamofire.request(Eyulingo_UserUri.searchStoresGetUri,
+        Alamofire.request(url,
                           method: .get, parameters: getParams)
             .responseSwiftyJSON(completionHandler: { responseJSON in
                 if responseJSON.error == nil {
@@ -131,10 +160,15 @@ class SearchStoreViewController: UIViewController, ModernSearchBarDelegate, Sear
                                                                  storeGoods: nil,
                                                                  storeComments: nil,
                                                                  distAvatarId: nil,
-                                                                 distName: nil))
+                                                                 distName: nil,
+                                                                 currentDistance: storeItem["distance"].doubleValue,
+                                                                 commentStar: storeItem["star"].doubleValue,
+                                                                 commentPeopleCount: storeItem["star_number"].intValue,
+                                                                 heatCount: storeItem["orders"].intValue))
                             }
                             self.flushData()
                             self.contentVC?.keyWord = self.searchBar.text
+                            self.contentVC?.refreshStyle(style: self.currentSortingMethod)
                             completion?()
                             return
                         } else {
@@ -200,4 +234,77 @@ class SearchStoreViewController: UIViewController, ModernSearchBarDelegate, Sear
     func callRefresh(_ keyword: String) {
         updateResultList(keyword)
     }
+
+    @IBOutlet var navigationBar: UINavigationBar!
+
+    @IBOutlet var defaultButton: UIBarButtonItem!
+    @IBOutlet var byDistanceButton: UIBarButtonItem!
+    @IBOutlet var byRateButton: UIBarButtonItem!
+    @IBOutlet var byHeatButton: UIBarButtonItem!
+
+    var currentSortingMethod: SortMethod = .byDefault
+
+    func switchMethod() {
+        if currentSortingMethod == .byDefault {
+            currentSortingMethod = .byDistance
+        } else if currentSortingMethod == .byDistance {
+            currentSortingMethod = .byRate
+        } else if currentSortingMethod == .byRate {
+            currentSortingMethod = .byHeat
+        } else if currentSortingMethod == .byHeat {
+            currentSortingMethod = .byDefault
+        }
+        setMenuBar()
+    }
+
+    @IBAction func switchOrderMethod(_ sender: UIBarButtonItem) {
+        switchMethod()
+    }
+
+    func setMenuBar() {
+        if currentSortingMethod == .byDefault {
+            navigationBar.topItem?.setRightBarButtonItems([defaultButton], animated: true)
+        } else if currentSortingMethod == .byDistance {
+            if locationManager == nil {
+                locationManager = CLLocationManager()
+                locationManager?.delegate = self
+                locationManager?.requestWhenInUseAuthorization()
+
+            }
+            locationManager?.startUpdatingLocation()
+            navigationBar.topItem?.setRightBarButtonItems([byDistanceButton], animated: true)
+            return
+        } else if currentSortingMethod == .byRate {
+            navigationBar.topItem?.setRightBarButtonItems([byRateButton], animated: true)
+        } else if currentSortingMethod == .byHeat {
+            navigationBar.topItem?.setRightBarButtonItems([byHeatButton], animated: true)
+        }
+        
+        updateResultList(searchBar.text ?? "", completion: nil)
+    }
+    
+
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        // 取得locations数组的最后一个
+        if locations.count == 0 {
+            return
+        }
+        
+        let location: CLLocation = locations.last!
+        if location.horizontalAccuracy > 0 {
+            longitude = location.coordinate.longitude
+            latitude = location.coordinate.latitude
+            locationManager?.stopUpdatingLocation()
+            if currentSortingMethod == .byDistance {
+                updateResultList(searchBar.text ?? "", completion: nil)
+            }
+        }
+    }
+}
+
+enum SortMethod {
+    case byDefault
+    case byDistance
+    case byRate
+    case byHeat
 }

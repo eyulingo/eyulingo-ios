@@ -102,6 +102,13 @@ class StoreResultViewController: UIViewController, UITableViewDelegate, UITableV
         resultTable.reloadData()
     }
     
+    var currentSortMethod: SortMethod = .byDefault
+    
+    func refreshStyle(style: SortMethod) {
+        currentSortMethod = style
+        resultTable.reloadData()
+    }
+    
     // MARK: - delegate methods
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -124,6 +131,16 @@ class StoreResultViewController: UIViewController, UITableViewDelegate, UITableV
         cell.storeName.text = storeObject.storeName
         cell.storeAddress.text = storeObject.storeAddress
         cell.coverImage.layer.cornerRadius = 4
+        
+        if currentSortMethod == .byDefault {
+            cell.detailLabel.text = ""
+        } else if currentSortMethod == .byDistance {
+            cell.detailLabel.text = "距离您当前位置 \(String.init(format: "%.2f", storeObject.currentDistance ?? 0.0)) 公里"
+        } else if currentSortMethod == .byRate {
+            cell.detailLabel.text = " \(storeObject.commentPeopleCount ?? 0) 名用户给出平均分 \(String.init(format: "%.1f", storeObject.commentStar ?? 0.0)) 分"
+        } else if currentSortMethod == .byHeat {
+            cell.detailLabel.text = "销售 \(storeObject.heatCount ?? 0) 单"
+        }
 
         if keyWord != nil {
             if #available(iOS 13.0, *) {

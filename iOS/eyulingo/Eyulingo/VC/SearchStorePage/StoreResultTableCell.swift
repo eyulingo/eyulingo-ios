@@ -12,7 +12,7 @@ class StoreResultTableCell: UITableViewCell {
     @IBOutlet var coverImage: UIImageView!
     @IBOutlet var storeName: UILabel!
     @IBOutlet var storeAddress: UILabel!
-    @IBOutlet weak var distanceLabel: UILabel!
+    @IBOutlet weak var detailLabel: UILabel!
     
     func fadeOut(duration: Double = 0.25, handler: (() -> Void)?) {
         coverImage.alpha = 1.0

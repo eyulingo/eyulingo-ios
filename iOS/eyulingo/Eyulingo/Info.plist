@@ -29,6 +29,10 @@
 	</dict>
 	<key>NSCameraUsageDescription</key>
 	<string>Eyulingo! 需要授权来访问相机。</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Eyulingo! 需要授权来获取您当前的地理位置。</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Eyulingo! 需要授权来获取您当前的地理位置。</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>Eyulingo! 需要授权来访问您的麦克风。</string>
 	<key>NSPhotoLibraryUsageDescription</key>

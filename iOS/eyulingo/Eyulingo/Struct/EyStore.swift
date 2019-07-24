@@ -46,6 +46,11 @@ struct EyStore: Hashable, Comparable {
     
     var currentDistance: Double?
     
+    var commentStar: Double?
+    var commentPeopleCount: Int?
+    
+    var heatCount: Int?
+    
     func getStoreCoverAsync(handler: @escaping (UIImage) -> ()) {
         if coverId == nil {
             return

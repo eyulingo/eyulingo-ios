@@ -1890,7 +1890,7 @@ Project Eyulingo. 一切权利保留。</string>
                                 <blurEffect style="prominent"/>
                             </visualEffectView>
                             <navigationBar contentMode="scaleToFill" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JnM-f1-yFo">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="108"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="115.5"/>
                                 <items>
                                     <navigationItem id="PlG-1d-4cY">
                                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="stop" id="dpv-Co-Nh6">
@@ -3098,7 +3098,7 @@ Project Eyulingo. 一切权利保留。</string>
                                 </connections>
                             </containerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Ou-Rz-VnO">
-                                <rect key="frame" x="0.0" y="44" width="375" height="30"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="289.5"/>
                                 <connections>
                                     <action selector="accessLargeImageButtonTapped:" destination="9UF-e4-Qdo" eventType="touchUpInside" id="q0z-c3-SVN"/>
                                 </connections>
@@ -3113,12 +3113,14 @@ Project Eyulingo. 一切权利保留。</string>
                             <constraint firstItem="kfJ-gZ-NZ2" firstAttribute="leading" secondItem="d1r-52-BE0" secondAttribute="leading" id="9OC-rF-AoR"/>
                             <constraint firstItem="W8D-28-osW" firstAttribute="top" secondItem="GBB-sv-HmT" secondAttribute="top" id="9oF-K8-Suj"/>
                             <constraint firstItem="NGx-Mu-sS5" firstAttribute="leading" secondItem="d1r-52-BE0" secondAttribute="leading" id="GIH-5E-GA8"/>
+                            <constraint firstItem="0Ou-Rz-VnO" firstAttribute="top" secondItem="W8D-28-osW" secondAttribute="bottom" id="HYO-db-iwP"/>
                             <constraint firstItem="GBB-sv-HmT" firstAttribute="trailing" secondItem="d1r-52-BE0" secondAttribute="trailing" id="Htq-BS-HMx"/>
                             <constraint firstItem="r4P-WG-eSs" firstAttribute="leading" secondItem="0Ou-Rz-VnO" secondAttribute="leading" id="HvF-uv-aaA"/>
                             <constraint firstItem="W8D-28-osW" firstAttribute="leading" secondItem="GBB-sv-HmT" secondAttribute="leading" id="OKq-HH-u1w"/>
                             <constraint firstItem="W8D-28-osW" firstAttribute="trailing" secondItem="GBB-sv-HmT" secondAttribute="trailing" id="OaO-MT-TgQ"/>
                             <constraint firstItem="GBB-sv-HmT" firstAttribute="leading" secondItem="d1r-52-BE0" secondAttribute="leading" id="Sba-7P-7MR"/>
                             <constraint firstItem="NGx-Mu-sS5" firstAttribute="top" secondItem="W8D-28-osW" secondAttribute="bottom" id="TfY-wv-kYN"/>
+                            <constraint firstItem="0Ou-Rz-VnO" firstAttribute="trailing" secondItem="d1r-52-BE0" secondAttribute="trailing" id="UkJ-fa-w9l"/>
                             <constraint firstItem="d1r-52-BE0" firstAttribute="bottom" secondItem="kfJ-gZ-NZ2" secondAttribute="bottom" id="WW0-2c-NdF"/>
                             <constraint firstItem="oDg-K0-3wP" firstAttribute="trailing" secondItem="d1r-52-BE0" secondAttribute="trailing" id="Z3Y-es-SDZ"/>
                             <constraint firstItem="oDg-K0-3wP" firstAttribute="top" secondItem="NGx-Mu-sS5" secondAttribute="bottom" id="bGy-hd-3Ga"/>
@@ -3128,8 +3130,10 @@ Project Eyulingo. 一切权利保留。</string>
                             <constraint firstItem="0Ou-Rz-VnO" firstAttribute="leading" secondItem="d1r-52-BE0" secondAttribute="leading" id="he5-hv-gnf"/>
                             <constraint firstItem="kfJ-gZ-NZ2" firstAttribute="height" secondItem="NGx-Mu-sS5" secondAttribute="height" id="jpA-jd-6Ca"/>
                             <constraint firstItem="d1r-52-BE0" firstAttribute="trailing" secondItem="kfJ-gZ-NZ2" secondAttribute="trailing" id="kDE-os-9jp"/>
+                            <constraint firstItem="0Ou-Rz-VnO" firstAttribute="height" secondItem="NGx-Mu-sS5" secondAttribute="height" id="kxk-OC-Ete"/>
                             <constraint firstItem="0Ou-Rz-VnO" firstAttribute="top" secondItem="W8D-28-osW" secondAttribute="bottom" id="uHd-Vg-tF5"/>
                             <constraint firstItem="kfJ-gZ-NZ2" firstAttribute="top" secondItem="oDg-K0-3wP" secondAttribute="bottom" id="vHA-2S-iWc"/>
+                            <constraint firstItem="0Ou-Rz-VnO" firstAttribute="leading" secondItem="d1r-52-BE0" secondAttribute="leading" id="vgn-lg-KZ2"/>
                             <constraint firstItem="0Ou-Rz-VnO" firstAttribute="trailing" secondItem="d1r-52-BE0" secondAttribute="trailing" id="wdV-CL-y2G"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="d1r-52-BE0"/>
@@ -3154,7 +3158,30 @@ Project Eyulingo. 一切权利保留。</string>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2x7-Gf-bus">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                 <items>
-                                    <navigationItem title="检索店铺" id="UBB-fd-E5Q"/>
+                                    <navigationItem title="检索店铺" id="UBB-fd-E5Q">
+                                        <rightBarButtonItems>
+                                            <barButtonItem title="按热度" id="fkN-HN-kof">
+                                                <connections>
+                                                    <action selector="switchOrderMethod:" destination="I8L-CL-hV7" id="NJD-rs-cNQ"/>
+                                                </connections>
+                                            </barButtonItem>
+                                            <barButtonItem title="按评分" id="Iuy-OR-o8g">
+                                                <connections>
+                                                    <action selector="switchOrderMethod:" destination="I8L-CL-hV7" id="qAV-Iq-BbC"/>
+                                                </connections>
+                                            </barButtonItem>
+                                            <barButtonItem title="按距离" id="Ebk-A7-7ht">
+                                                <connections>
+                                                    <action selector="switchOrderMethod:" destination="I8L-CL-hV7" id="EyN-EG-NiU"/>
+                                                </connections>
+                                            </barButtonItem>
+                                            <barButtonItem title="默认排序" id="Gkc-F5-2uW">
+                                                <connections>
+                                                    <action selector="switchOrderMethod:" destination="I8L-CL-hV7" id="ExK-ps-jqi"/>
+                                                </connections>
+                                            </barButtonItem>
+                                        </rightBarButtonItems>
+                                    </navigationItem>
                                 </items>
                             </navigationBar>
                             <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="IiR-ZV-oA1" customClass="ModernSearchBar" customModule="Eyulingo" customModuleProvider="target">
@@ -3176,9 +3203,9 @@ Project Eyulingo. 一切权利保留。</string>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="color" xcode11CocoaTouchSystemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                             </activityIndicatorView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="无内容" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Znb-0V-gIE">
-                                <rect key="frame" x="143" y="316" width="89" height="35"/>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="29"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="无内容" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Znb-0V-gIE">
+                                <rect key="frame" x="144" y="317.5" width="87" height="32.5"/>
+                                <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="29"/>
                                 <color key="textColor" cocoaTouchSystemColor="tertiaryLabelColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -3205,8 +3232,13 @@ Project Eyulingo. 一切权利保留。</string>
                     <tabBarItem key="tabBarItem" title="检索店铺" image="house" catalog="system" id="5p4-4t-yYD"/>
                     <navigationItem key="navigationItem" title="Title" id="WX0-TP-8bO"/>
                     <connections>
+                        <outlet property="byDistanceButton" destination="Ebk-A7-7ht" id="lXi-SN-hXU"/>
+                        <outlet property="byHeatButton" destination="fkN-HN-kof" id="CBT-y2-jOg"/>
+                        <outlet property="byRateButton" destination="Iuy-OR-o8g" id="LoZ-Hu-Ztt"/>
                         <outlet property="containerView" destination="QiK-3m-Wbm" id="gJa-qZ-4Ug"/>
+                        <outlet property="defaultButton" destination="Gkc-F5-2uW" id="4As-Cj-VCq"/>
                         <outlet property="loadingIndicator" destination="gKO-sy-ixR" id="UXi-y3-C7v"/>
+                        <outlet property="navigationBar" destination="2x7-Gf-bus" id="4k5-lA-jcw"/>
                         <outlet property="noContentIndicator" destination="Znb-0V-gIE" id="vr6-KB-zht"/>
                         <outlet property="searchBar" destination="IiR-ZV-oA1" id="3aD-Lu-6GC"/>
                     </connections>
@@ -3274,7 +3306,7 @@ Project Eyulingo. 一切权利保留。</string>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="coverImage" destination="M4C-P7-miL" id="KQX-a5-JDa"/>
-                                    <outlet property="distanceLabel" destination="Voo-hh-Em7" id="KA2-5m-FaM"/>
+                                    <outlet property="detailLabel" destination="Voo-hh-Em7" id="KA2-5m-FaM"/>
                                     <outlet property="storeAddress" destination="GW9-sG-HIX" id="QVg-QS-7fd"/>
                                     <outlet property="storeName" destination="iDv-aX-JPD" id="s3O-Zk-wrD"/>
                                 </connections>
