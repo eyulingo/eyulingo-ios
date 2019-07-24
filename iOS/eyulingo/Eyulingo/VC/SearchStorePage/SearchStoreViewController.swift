@@ -17,6 +17,10 @@ class SearchStoreViewController: UIViewController, ModernSearchBarDelegate, Sear
     var locationManager: CLLocationManager?
     var longitude: Double?
     var latitude: Double?
+    
+    let navigatingAlert = UIAlertController(title: nil, message: "正在定位……", preferredStyle: .alert)
+            
+    let navigatingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
 
     func callRefresh(handler: (() -> Void)?) {
         updateResultList(searchBar.text ?? "", completion: handler)
@@ -97,6 +101,12 @@ class SearchStoreViewController: UIViewController, ModernSearchBarDelegate, Sear
         searchBar.suggestionsView_searchIcon_isRound = false
 
         navigationBar.topItem?.setRightBarButtonItems([defaultButton], animated: false)
+        
+        navigatingIndicator.hidesWhenStopped = true
+        //        loadingIndicator.style = UIActivityIndicatorView.Style.medium
+        navigatingIndicator.startAnimating();
+                
+        navigatingAlert.view.addSubview(navigatingIndicator)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -217,12 +227,16 @@ class SearchStoreViewController: UIViewController, ModernSearchBarDelegate, Sear
             noContentIndicator.isHidden = true
             containerView.isHidden = false
         }
+        loading = false
     }
+    
+    var loading = false
 
     func startLoading() {
         loadingIndicator.isHidden = false
         noContentIndicator.isHidden = true
         containerView.isHidden = true
+        loading = true
     }
 
     /// Called if you use String suggestion list
@@ -263,22 +277,29 @@ class SearchStoreViewController: UIViewController, ModernSearchBarDelegate, Sear
         } else if currentSortingMethod == .byHeat {
             currentSortingMethod = .byDefault
         }
+        
         setMenuBar()
     }
 
     @IBAction func switchOrderMethod(_ sender: UIBarButtonItem) {
-        switchMethod()
+        if !loading {
+            switchMethod()
+        }
     }
 
     func setMenuBar() {
         if currentSortingMethod == .byDefault {
             navigationBar.topItem?.setRightBarButtonItems([defaultButton], animated: true)
         } else if currentSortingMethod == .byDistance {
+            if searchBar.text == "" {
+                return
+            }
             if longitude != nil && latitude != nil {
                 updateResultList(searchBar.text ?? "", completion: nil)
                 navigationBar.topItem?.setRightBarButtonItems([byDistanceButton], animated: true)
                 return
             }
+            self.present(navigatingAlert, animated: true, completion: nil)
             if locationManager == nil {
                 locationManager = CLLocationManager()
                 locationManager?.delegate = self
@@ -292,13 +313,13 @@ class SearchStoreViewController: UIViewController, ModernSearchBarDelegate, Sear
         } else if currentSortingMethod == .byHeat {
             navigationBar.topItem?.setRightBarButtonItems([byHeatButton], animated: true)
         }
-        
         updateResultList(searchBar.text ?? "", completion: nil)
     }
     
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         // 取得locations数组的最后一个
+        self.navigatingAlert.dismiss(animated: true, completion: nil)
         if locations.count == 0 {
             return
         }
@@ -317,6 +338,7 @@ class SearchStoreViewController: UIViewController, ModernSearchBarDelegate, Sear
         makeAlert("失败", "无法获取您的当前位置。错误信息：“\(error.localizedDescription)”", completion: {
             self.stopLoading()
             self.contentVC?.resultTable.stopPullToRefresh()
+            self.navigatingAlert.dismiss(animated: true, completion: nil)
         })
         print("Failed to find user's location: \(error.localizedDescription)")
     }

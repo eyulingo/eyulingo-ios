@@ -25,21 +25,23 @@ class LoginVC: VideoSplashViewController, UITextFieldDelegate {
         userNameField.delegate = self
         passwordField.delegate = self
         
-
-        self.automaticallyAdjustsScrollViewInsets = false
-        
-        let url = URL.init(fileURLWithPath: Bundle.main.path(forResource: "DynamicBg", ofType: "mp4")!)
-        self.videoFrame = view.frame
-        self.fillMode = .resizeAspectFill
-        self.alwaysRepeat = true
-        self.sound = true
-//        self.startTime = 12.0
-//        self.duration = 4.0
-        self.alpha = 0.7
-        self.backgroundColor = UIColor.black
-        self.contentURL = url
-        self.restartForeground = true
-        
+        if #available(iOS 13.0, *) {
+            self.automaticallyAdjustsScrollViewInsets = false
+            
+            let url = URL.init(fileURLWithPath: Bundle.main.path(forResource: "DynamicBg", ofType: "mp4")!)
+            self.videoFrame = view.frame
+            self.fillMode = .resizeAspectFill
+            self.alwaysRepeat = true
+            self.sound = false
+    //        self.startTime = 12.0
+    //        self.duration = 4.0
+            self.alpha = 0.7
+            self.backgroundColor = UIColor.black
+            self.contentURL = url
+            self.restartForeground = true
+        } else {
+            self.backgroundColor = UIColor.white
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
