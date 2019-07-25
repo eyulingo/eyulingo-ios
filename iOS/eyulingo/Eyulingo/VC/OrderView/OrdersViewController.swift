@@ -351,11 +351,11 @@ class OrdersViewController: UIViewController, UITableViewDataSource, UITableView
                 cell.detailTextLabel?.textColor = UIColor(red: 1.0, green: 0.44, blue: 0.31, alpha: 1.0)
             } else if indexPath.row == 5 {
                 if orderObject.rated ?? false {
-                    cell.textLabel?.text = "评价"
-                    cell.detailTextLabel?.text = "\(StarVisualizer.getStarsText(orderObject.rateLevel ?? 5)) 查看评价"
+                    cell.textLabel?.text = "订单评价"
+                    cell.detailTextLabel?.text = "\(StarVisualizer.getStarsText(orderObject.rateLevel ?? 5))"
                     cell.detailTextLabel?.textColor = UIColor.systemBlue
                 } else {
-                    cell.textLabel?.text = "评价"
+                    cell.textLabel?.text = "订单评价"
                     cell.detailTextLabel?.text = "立即评价"
                     cell.detailTextLabel?.textColor = UIColor.systemBlue
                 }
@@ -530,8 +530,8 @@ class OrdersViewController: UIViewController, UITableViewDataSource, UITableView
             present(alertController, animated: true, completion: nil)
         } else if currentFlag == OrderState.received && indexPath.row == 5 {
             if orderObject.rated ?? false {
-                makeAlert("您对此订单的评价", "评价等第 \(StarVisualizer.getStarsText(orderObject.rateLevel ?? 5))\n" +
-                    "评价内容：\n\(orderObject.commentContent ?? "空白")", completion: {})
+                makeAlert("您对此订单的评价", "\(StarVisualizer.getStarsText(orderObject.rateLevel ?? 5))\n" +
+                    "\(orderObject.commentContent ?? "无评价内容。")", completion: {})
             } else {
                 let destinationStoryboard = UIStoryboard(name: "Main", bundle: nil)
                 let destinationViewController = destinationStoryboard.instantiateViewController(withIdentifier: "SubmitCommentsVC") as! SubmitCommentsViewController

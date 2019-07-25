@@ -27,6 +27,8 @@ class SubmitCommentsViewController: UIViewController, ValueChangeDelegate, UITex
         commentTextField.layer.cornerRadius = 4
         commentTextField.layer.borderWidth = 0.5
         commentTextField.delegate = self
+        
+        visualEffectView.layer.cornerRadius = 10
     }
 
     //    func textViewDidBeginEditing(_ textView: UITextView) {
@@ -44,6 +46,7 @@ class SubmitCommentsViewController: UIViewController, ValueChangeDelegate, UITex
         dismiss(animated: true, completion: nil)
     }
 
+    @IBOutlet weak var visualEffectView: UIVisualEffectView!
     @IBOutlet var rateControl: RateControl!
     @IBOutlet var commentButton: UIButton!
 
