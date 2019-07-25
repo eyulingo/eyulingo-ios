@@ -35,7 +35,12 @@ internal class AnimatorView: UIView {
         return label
     }()
     fileprivate let activityIndicatorView: UIActivityIndicatorView = {
-        let activity = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.white)
+        var activity: UIActivityIndicatorView!
+        if #available(iOS 13.0, *) {
+            activity = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.medium)
+        } else {
+            activity = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.white)
+        }
         activity.translatesAutoresizingMaskIntoConstraints = false
         return activity
     }()
