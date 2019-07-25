@@ -159,6 +159,12 @@ class Eyulingo_UserUri {
     // comment_content - 评价内容
     static let commentStorePostUri = baseUri + "/commentstore"
     
+    // parameters:
+    // order_id - 订单 ID
+    // star_count - 星级 (1, 2, 3, 4, 5)
+    // comment_content - 评价内容
+    static let rateOrderPostUri = baseUri + "/rateorder"
+    
     // parameters: <none>
     static let purchasedGetUri = baseUri + "/orderlist"
     

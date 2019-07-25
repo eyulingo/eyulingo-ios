@@ -19,6 +19,17 @@ struct EyOrders {
     var status: OrderState?
     var items: [EyOrderItems]?
     var createTime: String?
+    var rated: Bool?
+    var rateLevel: Int?
+    var commentContent: String?
+    
+    func calculatePrice() -> Decimal {
+        var sumUp: Decimal = Decimal.zero
+        for itemObject in items ?? [] {
+            sumUp = sumUp.advanced(by: (itemObject.currentPrice ?? Decimal.zero) * Decimal(integerLiteral: itemObject.amount ?? 0))
+        }
+        return sumUp
+    }
 }
 
 struct EyOrderItems {

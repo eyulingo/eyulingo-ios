@@ -292,4 +292,5 @@ class CommentsViewController: UIViewController, UITableViewDataSource, UITableVi
 enum CommentType {
     case storeComments
     case goodsComments
+    case ordersComments
 }

@@ -21,6 +21,7 @@
 		8A0C378622D7252400358F52 /* UIImageCompression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0C378522D7252400358F52 /* UIImageCompression.swift */; };
 		8A0CCDF422E05E0100E3CAF0 /* EyCarts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0CCDF322E05E0100E3CAF0 /* EyCarts.swift */; };
 		8A0D001022E047DE00DF1783 /* GoodsInCartTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0D000F22E047DE00DF1783 /* GoodsInCartTableCell.swift */; };
+		8A0D2A0222E9457700305A6B /* StarVisualizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0D2A0122E9457700305A6B /* StarVisualizer.swift */; };
 		8A0D3B1422E1AA61009DCF56 /* PurchaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0D3B1322E1AA61009DCF56 /* PurchaseViewController.swift */; };
 		8A0DFDD322D8AA7400145FDC /* DynamicBg.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 8A0BC64622D88A500099E79A /* DynamicBg.mp4 */; };
 		8A0EA45522D6BE1500EFE92C /* EyulingoUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0EA45422D6BE1500EFE92C /* EyulingoUnitTests.swift */; };
@@ -135,6 +136,7 @@
 		8A0C378522D7252400358F52 /* UIImageCompression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UIImageCompression.swift; path = UIImageCompression/UIImageCompression.swift; sourceTree = SOURCE_ROOT; };
 		8A0CCDF322E05E0100E3CAF0 /* EyCarts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyCarts.swift; sourceTree = "<group>"; };
 		8A0D000F22E047DE00DF1783 /* GoodsInCartTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodsInCartTableCell.swift; sourceTree = "<group>"; };
+		8A0D2A0122E9457700305A6B /* StarVisualizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarVisualizer.swift; sourceTree = "<group>"; };
 		8A0D3B1322E1AA61009DCF56 /* PurchaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseViewController.swift; sourceTree = "<group>"; };
 		8A0EA45222D6BE1500EFE92C /* EyulingoUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EyulingoUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A0EA45422D6BE1500EFE92C /* EyulingoUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyulingoUnitTests.swift; sourceTree = "<group>"; };
@@ -503,6 +505,7 @@
 				8A723DB322D47954008FD0C9 /* LogoutNow.swift */,
 				8A11E0C522E1497B0080B10F /* CartRefreshManager.swift */,
 				8ADF3A4F22E7124300E8D8C2 /* GlobalTagManager.swift */,
+				8A0D2A0122E9457700305A6B /* StarVisualizer.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -813,6 +816,7 @@
 				8A723DA922D4659E008FD0C9 /* CartViewController.swift in Sources */,
 				8A2B704622DFFC1D00452499 /* StoreDetailTableViewController.swift in Sources */,
 				8A09F12A22DC137100CD3B16 /* ImagePreviewViewController.swift in Sources */,
+				8A0D2A0222E9457700305A6B /* StarVisualizer.swift in Sources */,
 				8ADB40FE22DD5CFF009C3538 /* EyCommentLevel.swift in Sources */,
 				8AC9E7FB22C9B57E00F80460 /* User.swift in Sources */,
 			);

@@ -132,11 +132,45 @@ class SubmitCommentsViewController: UIViewController, ValueChangeDelegate, UITex
                     Loaf("评论失败。服务器报告了一个 “\(errorStr)” 错误", state: .error, sender: self).show()
                     //                    self.loadRawData()
                 })
+        } else if commentType == CommentType.ordersComments && ordersId != nil {
+            let postParams: Parameters = [
+                "order_id": ordersId!,
+                "star_count": rateControl.rate ?? 5,
+                "comment_content": commentTextField.text!,
+            ]
+            var errorStr = "general error"
+            Alamofire.request(Eyulingo_UserUri.rateOrderPostUri,
+                              method: .post,
+                              parameters: postParams,
+                              encoding: JSONEncoding.default)
+                .responseSwiftyJSON(completionHandler: { responseJSON in
+                    if responseJSON.error == nil {
+                        let jsonResp = responseJSON.value
+                        if jsonResp != nil {
+                            if jsonResp!["status"].stringValue == "ok" {
+                                //                                Loaf("评论成功。", state: .success, sender: self).show()
+                                self.dismiss(animated: true, completion: {
+                                    self.delegate?.refreshComments()
+                                })
+                                return
+                            } else {
+                                errorStr = jsonResp!["status"].stringValue
+                            }
+                        } else {
+                            errorStr = "bad response"
+                        }
+                    } else {
+                        errorStr = "no response"
+                    }
+                    Loaf("评价失败。服务器报告了一个 “\(errorStr)” 错误", state: .error, sender: self).show()
+                    //                    self.loadRawData()
+                })
         }
     }
 
     var storeId: Int?
     var storeName: String?
+    var ordersId: Int?
 
     @IBOutlet var commentTextField: UITextView!
 

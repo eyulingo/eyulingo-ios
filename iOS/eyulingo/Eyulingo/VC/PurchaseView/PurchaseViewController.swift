@@ -112,6 +112,11 @@ class PurchaseViewController: UIViewController, UITextFieldDelegate, UIPickerVie
     @IBOutlet var confirmButton: UIButton!
 
     @IBAction func confirmPurchaseButtonTapped(_ sender: UIButton) {
+        
+        hiddenTextField.resignFirstResponder()
+        addressTextField.resignFirstResponder()
+        receiverTextField.resignFirstResponder()
+        contactPhoneTextField.resignFirstResponder()
         if receiverTextField.text != "" && contactPhoneTextField.text != "" && addressTextField.text != "" && toPurchaseGoods.count != 0 {
             // test passed
         } else {
