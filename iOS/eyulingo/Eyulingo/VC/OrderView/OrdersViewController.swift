@@ -14,9 +14,9 @@ import UIKit
 
 class OrdersViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, CommentsRefreshDelegate {
     func refreshComments() {
-        self.loadRawData()
+        loadRawData()
     }
-    
+
     let constantCellsCount = 6
 
     @IBOutlet var ordersTableView: UITableView!
@@ -220,15 +220,35 @@ class OrdersViewController: UIViewController, UITableViewDataSource, UITableView
             if indexPath.row == 0 {
                 cell.textLabel?.text = "收件人"
                 cell.detailTextLabel?.text = orderObject.receiver
+                if #available(iOS 13.0, *) {
+                    cell.detailTextLabel?.textColor = UIColor.label
+                } else {
+                    cell.detailTextLabel?.textColor = UIColor.black
+                }
             } else if indexPath.row == 1 {
                 cell.textLabel?.text = "联系电话"
                 cell.detailTextLabel?.text = orderObject.receiverPhone
+                if #available(iOS 13.0, *) {
+                    cell.detailTextLabel?.textColor = UIColor.label
+                } else {
+                    cell.detailTextLabel?.textColor = UIColor.black
+                }
             } else if indexPath.row == 2 {
                 cell.textLabel?.text = "收件地址"
                 cell.detailTextLabel?.text = orderObject.receiverAddress
+                if #available(iOS 13.0, *) {
+                    cell.detailTextLabel?.textColor = UIColor.label
+                } else {
+                    cell.detailTextLabel?.textColor = UIColor.black
+                }
             } else if indexPath.row == 3 {
                 cell.textLabel?.text = "配送方式"
                 cell.detailTextLabel?.text = orderObject.transportingMethod
+                if #available(iOS 13.0, *) {
+                    cell.detailTextLabel?.textColor = UIColor.label
+                } else {
+                    cell.detailTextLabel?.textColor = UIColor.black
+                }
             } else if indexPath.row == 4 {
                 cell.textLabel?.text = "总金额"
                 cell.detailTextLabel?.text = "¥" + (orderObject.calculatePrice().formattedAmount ?? "0.00")
@@ -250,15 +270,35 @@ class OrdersViewController: UIViewController, UITableViewDataSource, UITableView
             if indexPath.row == 0 {
                 cell.textLabel?.text = "收件人"
                 cell.detailTextLabel?.text = orderObject.receiver
+                if #available(iOS 13.0, *) {
+                    cell.detailTextLabel?.textColor = UIColor.label
+                } else {
+                    cell.detailTextLabel?.textColor = UIColor.black
+                }
             } else if indexPath.row == 1 {
                 cell.textLabel?.text = "联系电话"
                 cell.detailTextLabel?.text = orderObject.receiverPhone
+                if #available(iOS 13.0, *) {
+                    cell.detailTextLabel?.textColor = UIColor.label
+                } else {
+                    cell.detailTextLabel?.textColor = UIColor.black
+                }
             } else if indexPath.row == 2 {
                 cell.textLabel?.text = "收件地址"
                 cell.detailTextLabel?.text = orderObject.receiverAddress
+                if #available(iOS 13.0, *) {
+                    cell.detailTextLabel?.textColor = UIColor.label
+                } else {
+                    cell.detailTextLabel?.textColor = UIColor.black
+                }
             } else if indexPath.row == 3 {
                 cell.textLabel?.text = "配送方式"
                 cell.detailTextLabel?.text = orderObject.transportingMethod
+                if #available(iOS 13.0, *) {
+                    cell.detailTextLabel?.textColor = UIColor.label
+                } else {
+                    cell.detailTextLabel?.textColor = UIColor.black
+                }
             } else if indexPath.row == 4 {
                 cell.textLabel?.text = "总金额"
                 cell.detailTextLabel?.text = "¥" + (orderObject.calculatePrice().formattedAmount ?? "0.00")
@@ -276,15 +316,35 @@ class OrdersViewController: UIViewController, UITableViewDataSource, UITableView
             if indexPath.row == 0 {
                 cell.textLabel?.text = "收件人"
                 cell.detailTextLabel?.text = orderObject.receiver
+                if #available(iOS 13.0, *) {
+                    cell.detailTextLabel?.textColor = UIColor.label
+                } else {
+                    cell.detailTextLabel?.textColor = UIColor.black
+                }
             } else if indexPath.row == 1 {
                 cell.textLabel?.text = "联系电话"
                 cell.detailTextLabel?.text = orderObject.receiverPhone
+                if #available(iOS 13.0, *) {
+                    cell.detailTextLabel?.textColor = UIColor.label
+                } else {
+                    cell.detailTextLabel?.textColor = UIColor.black
+                }
             } else if indexPath.row == 2 {
                 cell.textLabel?.text = "收件地址"
                 cell.detailTextLabel?.text = orderObject.receiverAddress
+                if #available(iOS 13.0, *) {
+                    cell.detailTextLabel?.textColor = UIColor.label
+                } else {
+                    cell.detailTextLabel?.textColor = UIColor.black
+                }
             } else if indexPath.row == 3 {
                 cell.textLabel?.text = "配送方式"
                 cell.detailTextLabel?.text = orderObject.transportingMethod
+                if #available(iOS 13.0, *) {
+                    cell.detailTextLabel?.textColor = UIColor.label
+                } else {
+                    cell.detailTextLabel?.textColor = UIColor.black
+                }
             } else if indexPath.row == 4 {
                 cell.textLabel?.text = "总金额"
                 cell.detailTextLabel?.text = "¥" + (orderObject.calculatePrice().formattedAmount ?? "0.00")
@@ -471,7 +531,7 @@ class OrdersViewController: UIViewController, UITableViewDataSource, UITableView
         } else if currentFlag == OrderState.received && indexPath.row == 5 {
             if orderObject.rated ?? false {
                 makeAlert("您对此订单的评价", "评价等第 \(StarVisualizer.getStarsText(orderObject.rateLevel ?? 5))\n" +
-                    "评价内容：\n\(orderObject.commentContent ?? "空白")", completion: { })
+                    "评价内容：\n\(orderObject.commentContent ?? "空白")", completion: {})
             } else {
                 let destinationStoryboard = UIStoryboard(name: "Main", bundle: nil)
                 let destinationViewController = destinationStoryboard.instantiateViewController(withIdentifier: "SubmitCommentsVC") as! SubmitCommentsViewController

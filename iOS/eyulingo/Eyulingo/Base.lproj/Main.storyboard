@@ -3204,8 +3204,8 @@ Project Eyulingo. 一切权利保留。</string>
                                 <color key="color" xcode11CocoaTouchSystemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                             </activityIndicatorView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="无内容" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Znb-0V-gIE">
-                                <rect key="frame" x="144" y="317.5" width="87" height="32.5"/>
-                                <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="29"/>
+                                <rect key="frame" x="143.5" y="316" width="88.5" height="35"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="29"/>
                                 <color key="textColor" cocoaTouchSystemColor="tertiaryLabelColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
