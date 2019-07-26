@@ -26,26 +26,10 @@ class EyulingoUITests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-        func testOperation() {
+    func testOperation() {
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
-            
-            let app = XCUIApplication()
-            app.textFields["用户名"].tap()
-            app.textFields["用户名"].typeText("随千山")
-            app.secureTextFields["密码"].tap()
-            app.secureTextFields["密码"].typeText("Suiqianshan123456")
-            app.buttons["登录按钮"].tap()
-            let tabBarsQuery = app.tabBars
-            tabBarsQuery.buttons["购物车"].tap()
-            tabBarsQuery.buttons["已购项目"].tap()
-            tabBarsQuery.buttons["我"].tap()
-            XCUIDevice.shared.orientation = .portrait
-            app.tables/*@START_MENU_TOKEN@*/.staticTexts["头像"]/*[[".cells.staticTexts[\"头像\"]",".staticTexts[\"头像\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
-            app.sheets["想进行什么操作？"].scrollViews.otherElements.buttons["修改头像"].tap()
-            
-            let element = app.children(matching: .window).element(boundBy: 0).children(matching: .other).element.children(matching: .other).element(boundBy: 1).children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element
-            
+
     }
 
 }

@@ -265,6 +265,11 @@ class OrdersViewController: UIViewController, UITableViewDataSource, UITableView
                 let goodsObject = combinedOrders[currentFlag.rawValue][indexPath.section].items?[indexPath.row - constantCellsCount]
                 cell.textLabel?.text = "\(indexPath.row - constantCellsCount + 1) 号商品"
                 cell.detailTextLabel?.text = "“\(goodsObject?.goodsName ?? "某商品")” \(goodsObject?.amount ?? 0) 件"
+                if #available(iOS 13.0, *) {
+                    cell.detailTextLabel?.textColor = UIColor.label
+                } else {
+                    cell.detailTextLabel?.textColor = UIColor.black
+                }
             }
         } else if currentFlag == .unpurchased {
             if indexPath.row == 0 {
@@ -311,6 +316,11 @@ class OrdersViewController: UIViewController, UITableViewDataSource, UITableView
                 let goodsObject = combinedOrders[currentFlag.rawValue][indexPath.section].items?[indexPath.row - constantCellsCount]
                 cell.textLabel?.text = "\(indexPath.row - constantCellsCount + 1) 号商品"
                 cell.detailTextLabel?.text = "“\(goodsObject?.goodsName ?? "某商品")” \(goodsObject?.amount ?? 0) 件"
+                if #available(iOS 13.0, *) {
+                    cell.detailTextLabel?.textColor = UIColor.label
+                } else {
+                    cell.detailTextLabel?.textColor = UIColor.black
+                }
             }
         } else if currentFlag == .received {
             if indexPath.row == 0 {
@@ -363,6 +373,11 @@ class OrdersViewController: UIViewController, UITableViewDataSource, UITableView
                 let goodsObject = combinedOrders[currentFlag.rawValue][indexPath.section].items?[indexPath.row - constantCellsCount]
                 cell.textLabel?.text = "\(indexPath.row - constantCellsCount + 1) 号商品"
                 cell.detailTextLabel?.text = "“\(goodsObject?.goodsName ?? "某商品")” \(goodsObject?.amount ?? 0) 件"
+                if #available(iOS 13.0, *) {
+                    cell.detailTextLabel?.textColor = UIColor.label
+                } else {
+                    cell.detailTextLabel?.textColor = UIColor.black
+                }
             }
         }
         return cell

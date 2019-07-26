@@ -291,6 +291,7 @@ class SearchStoreViewController: UIViewController, ModernSearchBarDelegate, Sear
         if currentSortingMethod == .byDefault {
             navigationBar.topItem?.setRightBarButtonItems([defaultButton], animated: true)
         } else if currentSortingMethod == .byDistance {
+            navigationBar.topItem?.setRightBarButtonItems([byDistanceButton], animated: true)
             if searchBar.text == "" {
                 return
             }
@@ -306,7 +307,6 @@ class SearchStoreViewController: UIViewController, ModernSearchBarDelegate, Sear
                 locationManager?.requestWhenInUseAuthorization()
             }
             locationManager?.requestLocation()
-            navigationBar.topItem?.setRightBarButtonItems([byDistanceButton], animated: true)
             return
         } else if currentSortingMethod == .byRate {
             navigationBar.topItem?.setRightBarButtonItems([byRateButton], animated: true)
