@@ -79,10 +79,12 @@ class SearchViewController: UIViewController, ModernSearchBarDelegate, SearchDel
     var isSearching: Bool = false
     var contentVC: DetailViewController?
 
+    @IBOutlet weak var heightConstraints: NSLayoutConstraint!
     @IBOutlet var noContentIndicator: UILabel!
     @IBOutlet var loadingIndicator: UIActivityIndicatorView!
     @IBOutlet var searchBar: ModernSearchBar!
     @IBOutlet var containerView: UIView!
+    @IBOutlet var noResultPromptView: UIView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -90,6 +92,8 @@ class SearchViewController: UIViewController, ModernSearchBarDelegate, SearchDel
         searchBar.delegateModernSearchBar = self
         searchBar.searchDelegate = self
         searchBar.suggestionsView_searchIcon_isRound = false
+        noResultPromptView.isHidden = true
+        heightConstraints.constant = 0.0
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -122,6 +126,8 @@ class SearchViewController: UIViewController, ModernSearchBarDelegate, SearchDel
         ]
         resultGoods.removeAll()
         startLoading()
+        noResultPromptView.isHidden = true
+        heightConstraints.constant = 0.0
         var errorStr = "general error"
         Alamofire.request(Eyulingo_UserUri.searchGoodsGetUri,
                           method: .get, parameters: getParams)
@@ -129,7 +135,8 @@ class SearchViewController: UIViewController, ModernSearchBarDelegate, SearchDel
                 if responseJSON.error == nil {
                     let jsonResp = responseJSON.value
                     if jsonResp != nil {
-                        if jsonResp!["status"].stringValue == "ok" {
+                        let resultCode = jsonResp!["status"].stringValue
+                        if resultCode == "ok" || resultCode == "推荐商品" {
                             for goodsItem in jsonResp!["values"].arrayValue {
                                 var tags: [String] = []
                                 for tagItem in goodsItem["tags"].arrayValue {
@@ -151,6 +158,13 @@ class SearchViewController: UIViewController, ModernSearchBarDelegate, SearchDel
                             }
                             self.flushData()
                             self.contentVC?.keyWord = self.searchBar.text
+                            if resultCode == "推荐商品" {
+                                self.noResultPromptView.isHidden = false
+                                self.heightConstraints.constant = 40.0
+                            } else {
+                                self.noResultPromptView.isHidden = true
+                                self.heightConstraints.constant = 0.0
+                            }
                             completion?()
                             return
                         } else {
@@ -220,4 +234,15 @@ class SearchViewController: UIViewController, ModernSearchBarDelegate, SearchDel
 
 protocol RefreshDelegate {
     func callRefresh(handler: (() -> Void)?) -> Void
+}
+
+extension UIView {
+    var height: CGFloat {
+        get {
+            return frame.size.height
+        }
+        set(newValue) {
+            frame.size.height = newValue
+        }
+    }
 }

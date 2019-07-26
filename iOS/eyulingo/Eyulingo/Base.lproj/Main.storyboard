@@ -440,7 +440,7 @@ Project Eyulingo. 一切权利保留。</string>
                                 <blurEffect style="prominent"/>
                             </visualEffectView>
                             <navigationBar contentMode="scaleToFill" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="myk-3u-1Ju">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="108"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="115.5"/>
                                 <items>
                                     <navigationItem id="vS8-D0-JnM">
                                         <barButtonItem key="backBarButtonItem" title="登录" id="TDU-mg-eyX"/>
@@ -1889,7 +1889,7 @@ Project Eyulingo. 一切权利保留。</string>
                                 <blurEffect style="prominent"/>
                             </visualEffectView>
                             <navigationBar contentMode="scaleToFill" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JnM-f1-yFo">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="115.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="108"/>
                                 <items>
                                     <navigationItem id="PlG-1d-4cY">
                                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="stop" id="dpv-Co-Nh6">
@@ -2091,8 +2091,26 @@ Project Eyulingo. 一切权利保留。</string>
                                     <string>店铺</string>
                                 </scopeButtonTitles>
                             </searchBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Zr-kT-0fb">
+                                <rect key="frame" x="0.0" y="100" width="375" height="40"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="没找到相关商品，您可能对这些商品感兴趣" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Ew-Q4-0sD">
+                                        <rect key="frame" x="32" y="10" width="311" height="20"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <color key="textColor" cocoaTouchSystemColor="secondaryLabelColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="6Ew-Q4-0sD" firstAttribute="top" secondItem="9Zr-kT-0fb" secondAttribute="top" constant="10" id="0Xq-Vb-VP3"/>
+                                    <constraint firstAttribute="height" constant="40" id="SB8-76-Elw"/>
+                                    <constraint firstAttribute="bottom" secondItem="6Ew-Q4-0sD" secondAttribute="bottom" constant="10" id="oOI-LJ-dYu"/>
+                                    <constraint firstItem="6Ew-Q4-0sD" firstAttribute="centerX" secondItem="9Zr-kT-0fb" secondAttribute="centerX" id="uYz-2V-5nF"/>
+                                </constraints>
+                            </view>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Msj-lZ-q7G">
-                                <rect key="frame" x="0.0" y="100" width="375" height="567"/>
+                                <rect key="frame" x="0.0" y="140" width="375" height="527"/>
                                 <connections>
                                     <segue destination="64m-nx-cJD" kind="embed" identifier="searchResultSegue" id="cIZ-Of-epL"/>
                                 </connections>
@@ -2112,6 +2130,7 @@ Project Eyulingo. 一切权利保留。</string>
                         <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="Msj-lZ-q7G" firstAttribute="bottom" secondItem="YVm-6w-EfE" secondAttribute="bottom" constant="49" id="1NN-Xu-vT8"/>
+                            <constraint firstItem="Msj-lZ-q7G" firstAttribute="top" secondItem="9Zr-kT-0fb" secondAttribute="bottom" id="1TI-1X-UL8"/>
                             <constraint firstItem="MZw-If-OfF" firstAttribute="leading" secondItem="KBj-7K-wQM" secondAttribute="leading" id="4rh-vN-xvK"/>
                             <constraint firstItem="MZw-If-OfF" firstAttribute="trailing" secondItem="KBj-7K-wQM" secondAttribute="trailing" id="7W0-t8-ZB0"/>
                             <constraint firstItem="Msj-lZ-q7G" firstAttribute="leading" secondItem="YVm-6w-EfE" secondAttribute="leading" id="BCT-sF-Pma"/>
@@ -2119,12 +2138,14 @@ Project Eyulingo. 一切权利保留。</string>
                             <constraint firstItem="IoK-Zn-ffO" firstAttribute="centerX" secondItem="ntR-hK-cLx" secondAttribute="centerX" id="CbG-LU-XEh"/>
                             <constraint firstItem="Msj-lZ-q7G" firstAttribute="trailing" secondItem="YVm-6w-EfE" secondAttribute="trailing" id="GlQ-jF-s8w"/>
                             <constraint firstItem="KBj-7K-wQM" firstAttribute="leading" secondItem="YVm-6w-EfE" secondAttribute="leading" id="LD5-0Z-NZz"/>
+                            <constraint firstItem="9Zr-kT-0fb" firstAttribute="top" secondItem="MZw-If-OfF" secondAttribute="bottom" id="Ulq-vn-HHu"/>
                             <constraint firstItem="J6O-fl-VCU" firstAttribute="centerX" secondItem="ntR-hK-cLx" secondAttribute="centerX" id="VaJ-sD-oBk"/>
                             <constraint firstItem="KBj-7K-wQM" firstAttribute="top" secondItem="YVm-6w-EfE" secondAttribute="top" id="Vk5-5y-x1g"/>
                             <constraint firstItem="KBj-7K-wQM" firstAttribute="centerX" secondItem="ntR-hK-cLx" secondAttribute="centerX" id="ZBW-A9-ZO2"/>
+                            <constraint firstItem="9Zr-kT-0fb" firstAttribute="leading" secondItem="YVm-6w-EfE" secondAttribute="leading" id="bTj-iJ-Qc9"/>
                             <constraint firstItem="J6O-fl-VCU" firstAttribute="centerY" secondItem="ntR-hK-cLx" secondAttribute="centerY" id="cf4-gS-08g"/>
                             <constraint firstItem="MZw-If-OfF" firstAttribute="top" secondItem="KBj-7K-wQM" secondAttribute="bottom" id="ebc-fb-tzg"/>
-                            <constraint firstItem="Msj-lZ-q7G" firstAttribute="top" secondItem="MZw-If-OfF" secondAttribute="bottom" id="pBp-NR-w3i"/>
+                            <constraint firstItem="9Zr-kT-0fb" firstAttribute="trailing" secondItem="YVm-6w-EfE" secondAttribute="trailing" id="wM1-uw-LvC"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="YVm-6w-EfE"/>
                     </view>
@@ -2132,8 +2153,10 @@ Project Eyulingo. 一切权利保留。</string>
                     <navigationItem key="navigationItem" title="Title" id="gfG-lv-2pZ"/>
                     <connections>
                         <outlet property="containerView" destination="Msj-lZ-q7G" id="ThW-Ha-Kpx"/>
+                        <outlet property="heightConstraints" destination="SB8-76-Elw" id="ddq-fb-YI7"/>
                         <outlet property="loadingIndicator" destination="J6O-fl-VCU" id="rMB-3C-vfD"/>
                         <outlet property="noContentIndicator" destination="IoK-Zn-ffO" id="6Uc-0Z-bhw"/>
+                        <outlet property="noResultPromptView" destination="9Zr-kT-0fb" id="B1l-Lo-FAx"/>
                         <outlet property="searchBar" destination="MZw-If-OfF" id="xYk-Qh-oFo"/>
                     </connections>
                 </viewController>
@@ -2146,7 +2169,7 @@ Project Eyulingo. 一切权利保留。</string>
             <objects>
                 <tableViewController id="64m-nx-cJD" customClass="DetailViewController" customModule="Eyulingo" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" rowHeight="144" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="I9y-KC-ykO">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="567"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="527"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ResultGoodsCell" rowHeight="144" id="mab-o7-uAB" customClass="GoodsResultTableCell" customModule="Eyulingo" customModuleProvider="target">
