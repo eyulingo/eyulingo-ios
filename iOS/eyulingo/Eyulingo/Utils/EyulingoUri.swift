@@ -1,5 +1,5 @@
 //
-//  EyulingoUrl.swift
+//  EyulingoUri.swift
 //  Eyulingo
 //
 //  Created by 法好 on 2019/7/8.
