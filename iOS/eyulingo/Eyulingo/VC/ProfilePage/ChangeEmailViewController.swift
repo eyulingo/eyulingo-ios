@@ -65,6 +65,7 @@ class ChangeEmailViewController: UIViewController, UITextFieldDelegate {
         }
         let postParams: Parameters = [
             "email": emailAddr,
+            "type": 1
         ]
 
         let loadingAlert = UIAlertController(title: nil, message: "请稍等……", preferredStyle: .alert)

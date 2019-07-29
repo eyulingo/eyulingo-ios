@@ -165,6 +165,8 @@ class Eyulingo_UserUri {
     // comment_content - 评价内容
     static let rateOrderPostUri = baseUri + "/rateorder"
     
+    static let confirmBillPostUri = baseUri + "/confirm"
+    
     // parameters: <none>
     static let purchasedGetUri = baseUri + "/orderlist"
     

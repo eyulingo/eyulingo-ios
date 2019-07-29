@@ -91,7 +91,8 @@ class RegisterVC: UIViewController, UITextFieldDelegate {
             return
         }
         let postParams: Parameters = [
-            "email": emailAddr
+            "email": emailAddr,
+            "type": 0
         ]
         
         let loadingAlert = UIAlertController(title: nil, message: "请稍等……", preferredStyle: .alert)

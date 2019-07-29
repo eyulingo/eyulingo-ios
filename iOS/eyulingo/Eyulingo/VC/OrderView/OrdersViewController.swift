@@ -207,6 +207,53 @@ class OrdersViewController: UIViewController, UITableViewDataSource, UITableView
         })
     }
 
+    func confirmReceived(orderId: Int) {
+        let postParams: Parameters = [
+            "order_id": orderId,
+        ]
+
+        let loadingAlert = UIAlertController(title: nil, message: "请稍等……", preferredStyle: .alert)
+
+        let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
+        loadingIndicator.hidesWhenStopped = true
+        //        loadingIndicator.style = UIActivityIndicatorView.Style.medium
+        loadingIndicator.startAnimating()
+
+        loadingAlert.view.addSubview(loadingIndicator)
+
+        present(loadingAlert, animated: true, completion: {
+            var errorStr = "general error"
+            Alamofire.request(Eyulingo_UserUri.confirmBillPostUri,
+                              method: .post,
+                              parameters: postParams,
+                              encoding: JSONEncoding.default)
+                .responseSwiftyJSON(completionHandler: { responseJSON in
+                    if responseJSON.error == nil {
+                        let jsonResp = responseJSON.value
+                        if jsonResp != nil {
+                            if jsonResp!["status"].stringValue == "ok" {
+                                loadingAlert.dismiss(animated: true, completion: {
+                                    Loaf("已成功确认收货。", state: .success, sender: self).show()
+                                    self.loadRawData()
+                                })
+                                return
+                            } else {
+                                errorStr = jsonResp!["status"].stringValue
+                            }
+                        } else {
+                            errorStr = "bad response"
+                        }
+                    } else {
+                        errorStr = "no response"
+                    }
+                    loadingAlert.dismiss(animated: true, completion: {
+                        Loaf("确认收货失败。服务器报告了一个 “\(errorStr)” 错误", state: .error, sender: self).show()
+                    })
+                    self.loadRawData()
+                })
+        })
+    }
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "OrdersCell", for: indexPath)
         // receiver
@@ -216,7 +263,7 @@ class OrdersViewController: UIViewController, UITableViewDataSource, UITableView
         // create time
         let orderObject = combinedOrders[currentFlag.rawValue][indexPath.section]
 
-        if currentFlag == .pending || currentFlag == .transporting {
+        if currentFlag == .pending {
             if indexPath.row == 0 {
                 cell.textLabel?.text = "收件人"
                 cell.detailTextLabel?.text = orderObject.receiver
@@ -261,6 +308,57 @@ class OrdersViewController: UIViewController, UITableViewDataSource, UITableView
                 } else {
                     cell.detailTextLabel?.textColor = UIColor.black
                 }
+            } else {
+                let goodsObject = combinedOrders[currentFlag.rawValue][indexPath.section].items?[indexPath.row - constantCellsCount]
+                cell.textLabel?.text = "\(indexPath.row - constantCellsCount + 1) 号商品"
+                cell.detailTextLabel?.text = "“\(goodsObject?.goodsName ?? "某商品")” \(goodsObject?.amount ?? 0) 件"
+                if #available(iOS 13.0, *) {
+                    cell.detailTextLabel?.textColor = UIColor.label
+                } else {
+                    cell.detailTextLabel?.textColor = UIColor.black
+                }
+            }
+        } else if currentFlag == .transporting {
+            if indexPath.row == 0 {
+                cell.textLabel?.text = "收件人"
+                cell.detailTextLabel?.text = orderObject.receiver
+                if #available(iOS 13.0, *) {
+                    cell.detailTextLabel?.textColor = UIColor.label
+                } else {
+                    cell.detailTextLabel?.textColor = UIColor.black
+                }
+            } else if indexPath.row == 1 {
+                cell.textLabel?.text = "联系电话"
+                cell.detailTextLabel?.text = orderObject.receiverPhone
+                if #available(iOS 13.0, *) {
+                    cell.detailTextLabel?.textColor = UIColor.label
+                } else {
+                    cell.detailTextLabel?.textColor = UIColor.black
+                }
+            } else if indexPath.row == 2 {
+                cell.textLabel?.text = "收件地址"
+                cell.detailTextLabel?.text = orderObject.receiverAddress
+                if #available(iOS 13.0, *) {
+                    cell.detailTextLabel?.textColor = UIColor.label
+                } else {
+                    cell.detailTextLabel?.textColor = UIColor.black
+                }
+            } else if indexPath.row == 3 {
+                cell.textLabel?.text = "配送方式"
+                cell.detailTextLabel?.text = orderObject.transportingMethod
+                if #available(iOS 13.0, *) {
+                    cell.detailTextLabel?.textColor = UIColor.label
+                } else {
+                    cell.detailTextLabel?.textColor = UIColor.black
+                }
+            } else if indexPath.row == 4 {
+                cell.textLabel?.text = "总金额"
+                cell.detailTextLabel?.text = "¥" + (orderObject.calculatePrice().formattedAmount ?? "0.00")
+                cell.detailTextLabel?.textColor = UIColor(red: 1.0, green: 0.44, blue: 0.31, alpha: 1.0)
+            } else if indexPath.row == 5 {
+                cell.textLabel?.text = "操作"
+                cell.detailTextLabel?.text = "确认收货"
+                cell.detailTextLabel?.textColor = UIColor.systemBlue
             } else {
                 let goodsObject = combinedOrders[currentFlag.rawValue][indexPath.section].items?[indexPath.row - constantCellsCount]
                 cell.textLabel?.text = "\(indexPath.row - constantCellsCount + 1) 号商品"
@@ -555,6 +653,29 @@ class OrdersViewController: UIViewController, UITableViewDataSource, UITableView
                 destinationViewController.delegate = self
                 present(destinationViewController, animated: true, completion: nil)
             }
+        } else if currentFlag == OrderState.transporting && indexPath.row == 5 {
+            let alertController = UIAlertController(title: "您确定已经收到了这笔订单吗？",
+                                                    message: "您刚刚选中了 “\(orderObject.storeName ?? "某商店")” 开具的 \(orderObject.orderId ?? -1) 号订单。",
+                                                    preferredStyle: .actionSheet)
+            let cancelAction = UIAlertAction(title: "取消",
+                                             style: .cancel,
+                                             handler: nil)
+
+            let confirmReceived = UIAlertAction(title: "确定",
+                                                style: .default,
+                                                handler: { _ in
+                                                    if orderObject.orderId == nil {
+                                                        return
+                                                    }
+                                                    self.confirmReceived(orderId: orderObject.orderId!)
+            })
+            alertController.addAction(cancelAction)
+            alertController.addAction(confirmReceived)
+            if let popoverController = alertController.popoverPresentationController {
+                popoverController.sourceView = view
+                popoverController.sourceRect = tableView.cellForRow(at: indexPath)!.frame
+            }
+            present(alertController, animated: true, completion: nil)
         } else {
             if let cell = tableView.cellForRow(at: indexPath) {
                 cell.becomeFirstResponder()
