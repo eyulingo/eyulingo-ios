@@ -8,7 +8,7 @@ iOS Client Develop Repository for “eyulingo”.
 
 > [Project Dashboard](https://github.com/eyulingo/eyulingo-dashboard)
 
-> `icon.image = pixiv(id: 62457185)!`
+> `icon.image = Pixiv.imageWith(id: 62457185)!`
 
 ---
 
