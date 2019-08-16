@@ -35,6 +35,8 @@
 	<string>Eyulingo! 需要授权来获取您当前的地理位置。</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>Eyulingo! 需要授权来访问您的麦克风。</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Eyulingo! 想要写入到您的相册。</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Eyulingo! 需要授权来访问您的相册。</string>
 	<key>UIApplicationSceneManifest</key>
