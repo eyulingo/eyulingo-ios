@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14845" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14799.2"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -156,7 +155,7 @@ Project Eyulingo. 一切权利保留。</string>
                                 </subviews>
                             </stackView>
                             <navigationBar contentMode="scaleToFill" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cPn-Ox-KRc">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="96"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="103.5"/>
                                 <items>
                                     <navigationItem id="DhO-JF-WjR">
                                         <barButtonItem key="rightBarButtonItem" style="plain" id="Vv9-gl-hpc">
@@ -2933,8 +2932,21 @@ Project Eyulingo. 一切权利保留。</string>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DvQ-0b-CO2" customClass="RateControl" customModule="Eyulingo" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="76"/>
                                                         <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="18M-oJ-xkG">
+                                                                <rect key="frame" x="8" y="20" width="36" height="36"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="36" id="ADd-sj-3wv"/>
+                                                                    <constraint firstAttribute="width" constant="36" id="e0q-re-OKs"/>
+                                                                </constraints>
+                                                                <state key="normal" image="xmark.circle" catalog="system">
+                                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="dismissMe:" destination="82v-rw-9JW" eventType="touchUpInside" id="8fm-Dx-zev"/>
+                                                                </connections>
+                                                            </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ul-f1-Nz3">
-                                                                <rect key="frame" x="319" y="20" width="36" height="36"/>
+                                                                <rect key="frame" x="331" y="20" width="36" height="36"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="36" id="1F5-FH-xK2"/>
                                                                     <constraint firstAttribute="width" constant="36" id="n5D-yA-gfV"/>
@@ -2947,27 +2959,15 @@ Project Eyulingo. 一切权利保留。</string>
                                                                     <action selector="commentButtonTapped:" destination="82v-rw-9JW" eventType="touchUpInside" id="lte-zg-AvT"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="18M-oJ-xkG">
-                                                                <rect key="frame" x="20" y="20" width="36" height="36"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="height" constant="36" id="ADd-sj-3wv"/>
-                                                                    <constraint firstAttribute="width" constant="36" id="e0q-re-OKs"/>
-                                                                </constraints>
-                                                                <state key="normal" image="xmark.circle" catalog="system">
-                                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
-                                                                </state>
-                                                                <connections>
-                                                                    <action selector="dismissMe:" destination="82v-rw-9JW" eventType="touchUpInside" id="8fm-Dx-zev"/>
-                                                                </connections>
-                                                            </button>
                                                         </subviews>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="bottom" secondItem="7ul-f1-Nz3" secondAttribute="bottom" constant="20" id="End-17-Jrd"/>
                                                             <constraint firstAttribute="bottom" secondItem="18M-oJ-xkG" secondAttribute="bottom" constant="20" id="H4k-Az-hwI"/>
                                                             <constraint firstItem="18M-oJ-xkG" firstAttribute="top" secondItem="DvQ-0b-CO2" secondAttribute="top" constant="20" id="PEX-2M-B6Y"/>
-                                                            <constraint firstItem="18M-oJ-xkG" firstAttribute="leading" secondItem="DvQ-0b-CO2" secondAttribute="leading" constant="20" id="VCG-vX-TFy"/>
-                                                            <constraint firstAttribute="trailing" secondItem="7ul-f1-Nz3" secondAttribute="trailing" constant="20" id="lYu-bq-dDU"/>
+                                                            <constraint firstItem="18M-oJ-xkG" firstAttribute="leading" secondItem="DvQ-0b-CO2" secondAttribute="leading" constant="8" id="VCG-vX-TFy"/>
+                                                            <constraint firstAttribute="trailing" secondItem="7ul-f1-Nz3" secondAttribute="trailing" constant="8" id="lYu-bq-dDU"/>
+                                                            <constraint firstAttribute="trailing" secondItem="7ul-f1-Nz3" secondAttribute="trailing" constant="8" id="uq8-h2-QqW"/>
                                                             <constraint firstItem="7ul-f1-Nz3" firstAttribute="top" secondItem="DvQ-0b-CO2" secondAttribute="top" constant="20" id="yke-rk-BLs"/>
                                                         </constraints>
                                                         <connections>
