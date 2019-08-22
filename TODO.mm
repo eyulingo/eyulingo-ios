@@ -1,7 +1,7 @@
 class ToDoList
 {
     todo() {
-
+        - [ ] 考虑考虑还要不要资瓷 iOS 12.x
     }
     completed() {
         - [x] 付款选择常用收货地址洁界面，把 hiddenTextBox 放在按钮附近
