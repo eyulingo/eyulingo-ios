@@ -12,20 +12,8 @@ import SwiftyJSON
 import Alamofire_SwiftyJSON
 import Highlighter
 import Refresher
-import MapKit
 
-class StoreResultViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, NavigateButtonTappedDelegate {
-    
-    func buttonTapped(id: Int) {
-        if id >= resultStores.count {
-            return
-        }
-        
-        if
-
-        let currentLocation = MKMapItem.forCurrentLocation()
-        let toLocation = MKMapItem(placemark: MKPlacemark(coordinate: CLLocationCoordinate2D(latitude: , longitude: <#T##CLLocationDegrees#>), addressDictionary: <#T##[String : Any]?#>)
-    }
+class StoreResultViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var delegate: RefreshDelegate?
     
@@ -131,8 +119,6 @@ class StoreResultViewController: UIViewController, UITableViewDelegate, UITableV
         
         let storeObject = resultStores[indexPath.row]
         
-        
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: "ResultStoresCell", for: indexPath) as! StoreResultTableCell
         
 //        tableView.register(GoodsResultTableCell.self, forCellReuseIdentifier: "ResultGoodsCell")
@@ -146,20 +132,14 @@ class StoreResultViewController: UIViewController, UITableViewDelegate, UITableV
         cell.storeAddress.text = storeObject.storeAddress
         cell.coverImage.layer.cornerRadius = 4
         
-        cell.cellId = indexPath.row
-        
         if currentSortMethod == .byDefault {
             cell.detailLabel.text = ""
-            cell.navigateButton.isHidden = true
         } else if currentSortMethod == .byDistance {
             cell.detailLabel.text = "距离您当前位置 \(String.init(format: "%.2f", storeObject.currentDistance ?? 0.0)) 公里"
-            cell.navigateButton.isHidden = false
         } else if currentSortMethod == .byRate {
             cell.detailLabel.text = " \(storeObject.commentPeopleCount ?? 0) 名用户给出平均分 \(String.init(format: "%.1f", storeObject.commentStar ?? 0.0)) 分"
-            cell.navigateButton.isHidden = true
         } else if currentSortMethod == .byHeat {
             cell.detailLabel.text = "销售 \(storeObject.heatCount ?? 0) 单"
-            cell.navigateButton.isHidden = true
         }
 
         if keyWord != nil {
@@ -216,8 +196,4 @@ class StoreResultViewController: UIViewController, UITableViewDelegate, UITableV
         let storeObject = resultStores[indexPath.row]
         goToStore(storeObject.storeId)
     }
-}
-
-protocol NavigateButtonTappedDelegate {
-    func buttonTapped(id: Int) -> ()
 }

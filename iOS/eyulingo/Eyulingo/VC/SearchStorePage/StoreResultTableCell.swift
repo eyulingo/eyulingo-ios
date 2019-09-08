@@ -13,16 +13,6 @@ class StoreResultTableCell: UITableViewCell {
     @IBOutlet var storeName: UILabel!
     @IBOutlet var storeAddress: UILabel!
     @IBOutlet weak var detailLabel: UILabel!
-    @IBOutlet weak var navigateButton: UIButton!
-    
-    var delegate: NavigateButtonTappedDelegate?
-    
-    var cellId: Int = -1
-    
-    @IBAction func navigationButtonTapped(_ sender: UIButton) {
-        delegate?.buttonTapped(id: cellId)
-    }
-
     
     func fadeOut(duration: Double = 0.25, handler: (() -> Void)?) {
         coverImage.alpha = 1.0
