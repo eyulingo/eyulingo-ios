@@ -51,6 +51,10 @@ struct EyStore: Hashable, Comparable {
     
     var heatCount: Int?
     
+    var longitude: Double?
+    
+    var latitude: Double?
+    
     func getStoreCoverAsync(handler: @escaping (UIImage) -> ()) {
         if coverId == nil {
             return
