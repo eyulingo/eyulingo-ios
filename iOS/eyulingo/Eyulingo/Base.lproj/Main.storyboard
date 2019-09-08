@@ -3323,6 +3323,17 @@ Project Eyulingo. 一切权利保留。</string>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Urp-Qg-kSW">
+                                            <rect key="frame" x="195" y="66" width="19" height="22"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="19" id="Yos-6c-Lf4"/>
+                                                <constraint firstAttribute="height" constant="22" id="tHj-ts-W0i"/>
+                                            </constraints>
+                                            <state key="normal" image="mappin.and.ellipse" catalog="system"/>
+                                            <connections>
+                                                <action selector="navigationButtonTapped:" destination="AnT-jK-Old" eventType="touchUpInside" id="vOn-nf-9q3"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="iDv-aX-JPD" firstAttribute="leading" secondItem="M4C-P7-miL" secondAttribute="trailing" constant="12" id="0ka-IO-xoL"/>
@@ -3331,9 +3342,11 @@ Project Eyulingo. 一切权利保留。</string>
                                         <constraint firstItem="M4C-P7-miL" firstAttribute="leading" secondItem="mb8-td-eJL" secondAttribute="leading" constant="16" id="D1R-mR-LLp"/>
                                         <constraint firstItem="iDv-aX-JPD" firstAttribute="top" secondItem="mb8-td-eJL" secondAttribute="topMargin" constant="4" id="KfH-9b-Bjh"/>
                                         <constraint firstItem="GW9-sG-HIX" firstAttribute="trailing" secondItem="mb8-td-eJL" secondAttribute="trailingMargin" id="PK4-qT-pvw"/>
+                                        <constraint firstAttribute="bottom" secondItem="Urp-Qg-kSW" secondAttribute="bottom" constant="8" id="QRx-Sv-feh"/>
                                         <constraint firstItem="GW9-sG-HIX" firstAttribute="top" secondItem="iDv-aX-JPD" secondAttribute="bottom" constant="4" id="Tcg-Fe-Qxp"/>
                                         <constraint firstItem="M4C-P7-miL" firstAttribute="top" secondItem="mb8-td-eJL" secondAttribute="top" constant="11" id="jY1-Fc-xgu"/>
                                         <constraint firstItem="GW9-sG-HIX" firstAttribute="leading" secondItem="M4C-P7-miL" secondAttribute="trailing" constant="12" id="jeM-qj-TIx"/>
+                                        <constraint firstItem="Voo-hh-Em7" firstAttribute="leading" secondItem="Urp-Qg-kSW" secondAttribute="trailing" constant="4" id="lxm-u7-B4s"/>
                                         <constraint firstItem="iDv-aX-JPD" firstAttribute="trailing" secondItem="mb8-td-eJL" secondAttribute="trailingMargin" id="y8g-QQ-MDQ"/>
                                         <constraint firstAttribute="bottom" secondItem="M4C-P7-miL" secondAttribute="bottom" constant="11" id="yvL-uf-kk5"/>
                                     </constraints>
@@ -3341,6 +3354,7 @@ Project Eyulingo. 一切权利保留。</string>
                                 <connections>
                                     <outlet property="coverImage" destination="M4C-P7-miL" id="KQX-a5-JDa"/>
                                     <outlet property="detailLabel" destination="Voo-hh-Em7" id="KA2-5m-FaM"/>
+                                    <outlet property="navigateButton" destination="Urp-Qg-kSW" id="zN2-0c-R81"/>
                                     <outlet property="storeAddress" destination="GW9-sG-HIX" id="QVg-QS-7fd"/>
                                     <outlet property="storeName" destination="iDv-aX-JPD" id="s3O-Zk-wrD"/>
                                 </connections>
@@ -3372,6 +3386,7 @@ Project Eyulingo. 一切权利保留。</string>
         <image name="escape" catalog="system" width="64" height="62"/>
         <image name="house" catalog="system" width="64" height="54"/>
         <image name="magnifyingglass.circle" catalog="system" width="64" height="62"/>
+        <image name="mappin.and.ellipse" catalog="system" width="62" height="64"/>
         <image name="multiply" catalog="system" width="64" height="56"/>
         <image name="pencil.circle" catalog="system" width="64" height="62"/>
         <image name="person.circle" catalog="system" width="64" height="62"/>
