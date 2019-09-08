@@ -11,6 +11,7 @@ import Alamofire_SwiftyJSON
 import Loaf
 import SwiftyJSON
 import UIKit
+import MapKit
 
 class OrdersViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, CommentsRefreshDelegate {
     func refreshComments() {
@@ -489,6 +490,10 @@ class OrdersViewController: UIViewController, UITableViewDataSource, UITableView
     var combinedOrders: [[EyOrders]] = [[], [], [], []]
 
     var currentFlag: OrderState = .unpurchased
+    
+    var currentLocation: CLLocationCoordinate2D?
+    
+    var targetDescription: String = "配送位置"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -570,7 +575,9 @@ class OrdersViewController: UIViewController, UITableViewDataSource, UITableView
                                                            createTime: DateAndTimeParser.parseDateAndTimeString(orderItem["generate_time"].stringValue),
                                                            rated: orderItem["rated"].boolValue,
                                                            rateLevel: orderItem["star_count"].intValue,
-                                                           commentContent: orderItem["comment_content"].stringValue)
+                                                           commentContent: orderItem["comment_content"].stringValue,
+                                                           location: CLLocationCoordinate2D(latitude: orderItem["latitude"].doubleValue,
+                                                                                            longitude: orderItem["longitude"].doubleValue))
                                 for goodsItem in orderItem["goods"].arrayValue {
                                     let goodsObject = EyOrderItems(goodsId: goodsItem["id"].intValue,
                                                                    goodsName: goodsItem["name"].stringValue,
@@ -653,6 +660,21 @@ class OrdersViewController: UIViewController, UITableViewDataSource, UITableView
                 destinationViewController.delegate = self
                 present(destinationViewController, animated: true, completion: nil)
             }
+        } else if currentFlag == OrderState.transporting && indexPath.row == 2 {
+            if let cell = tableView.cellForRow(at: indexPath) {
+                cell.becomeFirstResponder()
+                activeIndexPath = indexPath
+                currentLocation = orderObject.location
+                targetDescription = "\(orderObject.orderId ?? 0) 号订单当前位置"
+                let copyItem = UIMenuItem(title: "拷贝", action: #selector(copyValidInfo))
+                let showDistance = UIMenuItem(title: "显示距离", action: #selector(showDistanceFunction))
+                let menuController = UIMenuController.shared
+                menuController.menuItems = [copyItem, showDistance]
+//                menuController.setTargetRect(cell.frame, in: cell.superview!)
+//                menuController.setMenuVisible(true, animated: true)
+//
+                menuController.showMenu(from: cell.superview!, rect: cell.frame)
+            }
         } else if currentFlag == OrderState.transporting && indexPath.row == 5 {
             let alertController = UIAlertController(title: "您确定已经收到了这笔订单吗？",
                                                     message: "您刚刚选中了 “\(orderObject.storeName ?? "某商店")” 开具的 \(orderObject.orderId ?? -1) 号订单。",
@@ -699,6 +721,23 @@ class OrdersViewController: UIViewController, UITableViewDataSource, UITableView
 
         } else {
             activeIndexPath = nil
+        }
+    }
+    
+    @objc func showDistanceFunction() {
+        if currentLocation != nil {
+            /*
+            MKMapItem *currentLocation = [MKMapItem mapItemForCurrentLocation];
+            MKMapItem *toLocation = [[MKMapItem alloc] initWithPlacemark:[[MKPlacemark alloc] initWithCoordinate:CLLocationCoordinate2DMake(self.lat.floatValue, self.lon.floatValue) addressDictionary:nil]]; //目的地坐标
+            toLocation.name = self.destination; //目的地名字
+            [toLocation openInMapsWithLaunchOptions:nil];
+            */
+            
+            let currentLocationItem = MKMapItem.forCurrentLocation()
+            let toLocationItem = MKMapItem(placemark: MKPlacemark(coordinate: currentLocation!, addressDictionary: nil))
+            
+            toLocationItem.name = targetDescription
+            toLocationItem.openInMaps(launchOptions: nil)
         }
     }
 

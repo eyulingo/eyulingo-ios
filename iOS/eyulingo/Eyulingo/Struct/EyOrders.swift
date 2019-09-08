@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import MapKit
 
 struct EyOrders {
     var orderId: Int?
@@ -22,6 +23,8 @@ struct EyOrders {
     var rated: Bool?
     var rateLevel: Int?
     var commentContent: String?
+    
+    var location: CLLocationCoordinate2D?
     
     func calculatePrice() -> Decimal {
         var sumUp: Decimal = Decimal.zero

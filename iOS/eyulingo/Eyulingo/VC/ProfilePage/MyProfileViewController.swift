@@ -11,8 +11,9 @@ import Alamofire
 import SwiftyJSON
 import YPImagePicker
 import Alamofire_SwiftyJSON
+import MessageUI
 
-class MyProfileViewController: UIViewController, profileChangesDelegate, profileRefreshDelegate, backgroundImageReloadDelegate {
+class MyProfileViewController: UIViewController, profileChangesDelegate, profileRefreshDelegate, backgroundImageReloadDelegate, UINavigationControllerDelegate {
     func fadeOutBg(duration: Double = 1.5, completion: (() -> ())?) {
         self.backgroundImageView.alpha = 0.6
         UIView.animate(withDuration: duration, delay: 0.0, options: .curveEaseOut, animations: {
@@ -250,7 +251,21 @@ class MyProfileViewController: UIViewController, profileChangesDelegate, profile
     }
     
     func contactSupport() {
-        
+        if MFMailComposeViewController.canSendMail() {
+            let contactEmailAddress = "1217281706@qq.com"
+            
+            let emailSender = MFMailComposeViewController()
+            
+            emailSender.delegate = self
+            emailSender.setSubject("Eyulingo 用户反馈")
+            emailSender.setToRecipients([contactEmailAddress])
+            emailSender.setCcRecipients(["eyulingo@163.com"])
+            emailSender.setMessageBody("请在此处书写反馈内容……", isHTML: false)
+            
+            self.present(emailSender, animated: true, completion: nil)
+        } else {
+            makeAlert("错误", "请先在「设置」中配置一个有效的电子邮件帐户。", completion: { })
+        }
     }
     
     
