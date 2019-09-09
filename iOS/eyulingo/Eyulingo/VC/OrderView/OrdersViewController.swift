@@ -733,7 +733,7 @@ class OrdersViewController: UIViewController, UITableViewDataSource, UITableView
             [toLocation openInMapsWithLaunchOptions:nil];
             */
             
-            let currentLocationItem = MKMapItem.forCurrentLocation()
+//            let currentLocationItem = MKMapItem.forCurrentLocation()
             let toLocationItem = MKMapItem(placemark: MKPlacemark(coordinate: currentLocation!, addressDictionary: nil))
             
             toLocationItem.name = targetDescription
